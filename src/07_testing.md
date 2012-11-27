@@ -194,3 +194,12 @@ Executing Behat:
 
     !bash
     $ behat
+
+---
+
+# Behat Documentation
+
+[http://docs.behat.org/](http://docs.behat.org/)
+
+**Must Read**: [https://speakerdeck.com/everzet/behat-by-example
+](https://speakerdeck.com/everzet/behat-by-example).
