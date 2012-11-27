@@ -31,9 +31,9 @@ Create a `composer.json` file in your project's root directory:
 
     !javascript
     {
-      "require": {
-        "willdurand/geocoder": "dev-master"
-      }
+        "require": {
+            "willdurand/geocoder": "1.1.*"
+        }
     }
 
 Run the following command to download and install the project dependencies into
