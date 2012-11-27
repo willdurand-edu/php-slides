@@ -1,0 +1,3 @@
+[submodule "themes/avalanche"]
+	path = themes/avalanche
+	url = git://github.com/akrabat/avalanche.git
