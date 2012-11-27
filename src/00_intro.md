@@ -20,8 +20,8 @@ Worked at:
 
 Open-Source evangelist:
 
-* Lead developer of the [Propel ORM](http://propelorm.org), [Geocoder
-](http://geocoder-php.org/), and several other projects;
+* Lead developer of the [Propel ORM](http://propelorm.org),
+[Geocoder](http://geocoder-php.org/), and several other projects;
 * (Inactive?) Contributor on Symfony2.
 
 [twitter.com/couac](https://twitter.com/couac)

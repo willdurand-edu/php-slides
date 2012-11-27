@@ -37,8 +37,8 @@ And 3 **pseudo** types: `mixed`, `number`, `callback`.
     // compare type/value (integer vs. string); return false
     var_dump($a === '5');
 
-> [http://php.net/manual/en/language.operators.comparison.php
-](http://php.net/manual/en/language.operators.comparison.php).
+> Read more:
+[http://php.net/manual/en/language.operators.comparison.php](http://php.net/manual/en/language.operators.comparison.php).
 
 ---
 
@@ -96,8 +96,8 @@ Or:
 describes a set of rules related to namespaces for autoloader interoperability.
 
     !php
-    \ns\package\Class_Name      => /path/to/project/vendor/ns/package/Class/Name.php
-    \ns\package_name\Class_Name => /path/to/project/vendor/ns/package_name/Class/Name.php
+    \ns\package\Class_Name      => vendor/ns/package/Class/Name.php
+    \ns\package_name\Class_Name => vendor/ns/package_name/Class/Name.php
 
 ---
 
@@ -125,8 +125,7 @@ Horizontal Inheritance FTW!
 
 
 > Read more about **traits**:
-[http://www.php.net/manual/en/language.oop5.traits.php
-](http://www.php.net/manual/en/language.oop5.traits.php).
+[http://www.php.net/manual/en/language.oop5.traits.php](http://www.php.net/manual/en/language.oop5.traits.php).
 
 ---
 
@@ -175,10 +174,13 @@ Two useful methods:
     !php
     __construct() { /* ... */ }
 
+and:
+
+    !php
     __toString() { /* ... */ }
 
 Other methods are not really useful but it's worth knowing them.
 
-> Read more about magic methods:
+> Read more about **magic methods**:
 [http://php.net/manual/en/language.oop5.magic.php
 ](http://php.net/manual/en/language.oop5.magic.php).

@@ -211,8 +211,8 @@ Writing your Step definitions:
         throw new PendingException();
      }
 
-**Must Read**: [https://speakerdeck.com/everzet/behat-by-example
-](https://speakerdeck.com/everzet/behat-by-example).
+**Must Read**:
+[https://speakerdeck.com/everzet/behat-by-example](https://speakerdeck.com/everzet/behat-by-example).
 
 > Read more about Behat:
 [http://docs.behat.org/](http://docs.behat.org/).

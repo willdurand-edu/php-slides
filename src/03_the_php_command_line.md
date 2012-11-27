@@ -23,8 +23,7 @@ PHP also provides an interactive shell:
     Hello, World
 
 > The command line is really useful, read more about command line options:
-[http://php.net/manual/en/features.commandline.options.php
-](http://php.net/manual/en/features.commandline.options.php).
+[http://php.net/manual/en/features.commandline.options.php](http://php.net/manual/en/features.commandline.options.php).
 
 ---
 
@@ -42,8 +41,7 @@ Embedded web server:
     $ php -S localhost:8000
 
 > Learn more about the built-in, command line web server:
-[http://www.php.net/manual/en/features.commandline.webserver.php
-](http://www.php.net/manual/en/features.commandline.webserver.php).
+[http://www.php.net/manual/en/features.commandline.webserver.php](http://www.php.net/manual/en/features.commandline.webserver.php).
 
 ---
 
@@ -70,5 +68,5 @@ Run the script:
     $ php hello.php
     Usage: php hello.php [name]
 
-    $ php hello.php world
+    $ php hello.php World
     Hello, World!

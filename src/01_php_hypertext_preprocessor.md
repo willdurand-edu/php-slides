@@ -35,9 +35,11 @@ The best solution is to use a Virtual Machine (VM):
 [Vagrant](http://vagrantup.com/).
 
     !bash
-    $ vagrant box add squeeze64 http://dl.dropbox.com/u/937870/VMs/squeeze64.box
-    $ vagrant init squeeze64
+    $ vagrant box add <name> <url>
+    $ vagrant init <name>
     $ vagrant up
+
+> Debian **squeeze64**: http://dl.dropbox.com/u/937870/VMs/squeeze64.box
 
 Then, ssh into your VM:
 
