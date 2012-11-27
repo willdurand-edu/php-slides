@@ -23,9 +23,9 @@ blockquote p:after {
     content: none;
 }
 
-blockquote a,
-blockquote a:visited {
-    color: black;
+a,
+a:visited {
+    color: blue;
 }
 
 pre {
