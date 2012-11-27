@@ -1,0 +1,34 @@
+body {
+    font-size: 24px;
+}
+
+.slide header:only-child h1 {
+    font-size: 70px;
+}
+
+.center {
+    text-align: center;
+}
+
+blockquote {
+    text-indent: 0;
+    margin: auto;
+    border: 1px solid #DDE;
+    background: ghostWhite;
+    padding: 10px;
+}
+
+blockquote p:before,
+blockquote p:after {
+    content: none;
+}
+
+blockquote a,
+blockquote a:visited {
+    color: black;
+}
+
+pre {
+    padding: 5px;
+    font-size: 20px;
+}

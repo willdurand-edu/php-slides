@@ -33,6 +33,7 @@ Install it using Composer:
 
 Or as a PHAR:
 
+    !bash
     $ wget http://pear.phpunit.de/get/phpunit.phar
     $ chmod +x phpunit.phar
 
@@ -60,7 +61,7 @@ You can also use the `@test` annotation:
         public function testFoo()
         {
             $object = new MyClass();
-            $this->assertEquals('foo', $object->foo(), 'an optional comment');
+            $this->assertEquals('foo', $object->foo(), 'optional comment');
         }
     }
 
@@ -166,7 +167,7 @@ Or as a PHAR:
 
 ---
 
-# Using Behat
+# Using Behat (1/2)
 
 Initialize your project:
 
@@ -190,16 +191,28 @@ Define a **Scenario**:
       When I do something
       Then I should see something
 
+---
+
+# Using Behat (2/2)
+
 Executing Behat:
 
     !bash
     $ behat
 
----
+Writing your Step definitions:
 
-# Behat Documentation
-
-[http://docs.behat.org/](http://docs.behat.org/)
+    !php
+    /**
+     * @Given /^there is something$/
+     */
+     public function thereIsSomething()
+     {
+        throw new PendingException();
+     }
 
 **Must Read**: [https://speakerdeck.com/everzet/behat-by-example
 ](https://speakerdeck.com/everzet/behat-by-example).
+
+> Read more about Behat:
+[http://docs.behat.org/](http://docs.behat.org/).
