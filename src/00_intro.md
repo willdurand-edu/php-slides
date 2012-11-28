@@ -30,7 +30,7 @@ Open-Source evangelist:
 
 ---
 
-# Julien Muetton
+# Julien MUETTON
 
 Software developer at IT Networks
 

@@ -11,28 +11,48 @@
 
 ---
 
-# Getting Started (1/2)
+# Getting Started
 
 ## Linux
 
     !bash
-    $ sudo apt-get install php5
+    $ sudo apt-get install php5-common libapache2-mod-php5 php5-cli
 
-## Mac OS
+> [http://php.net/manual/en/install.unix.debian.php](http://php.net/manual/en/install.unix.debian.php)
+
+---
+
+# Getting Started
+
+## Mac OS X
 
     !bash
-    $ brew install php
+    $ curl -s http://php-osx.liip.ch/install.sh | bash -s 5.4
+
+> [http://php-osx.liip.ch/](http://php-osx.liip.ch/)
+
+---
+
+# Getting Started
 
 ## Windows
 
 ![](images/y-u-no-use-linux.jpg)
 
+> [http://www.php.net/manual/en/install.windows.installer.msi.php](http://www.php.net/manual/en/install.windows.installer.msi.php)
+
 ---
 
-# Getting Started (2/2)
+# Getting Started
 
 The best solution is to use a Virtual Machine (VM):
-[Vagrant](http://vagrantup.com/).
+[Vagrant](http://vagrantup.com/) to the rescue!
+
+* Works on all platforms;
+* Uses VirtualBox under the hood;
+* Lightweight, reproductible, portable dev environments.
+
+3 steps to run a VM:
 
     !bash
     $ vagrant box add <name> <url>
@@ -45,4 +65,3 @@ Then, ssh into your VM:
 
     !bash
     $ vagrant ssh
-
