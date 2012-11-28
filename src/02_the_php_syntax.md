@@ -10,7 +10,7 @@
 
 2 **special** types: `resource`, `null`;
 
-And 3 **pseudo** types: `mixed`, `number`, `callback`.
+And 3 **pseudo** types: `mixed`, `number`, `callable`.
 
 **Note:** most of these types have aliases. E.g. `double` for `float`.
 
@@ -267,7 +267,7 @@ This is different!
 ### Inheritance
 
     !php
-    interface MyTraversable extends extends Traversable
+    interface MyTraversable extends Traversable
     {
     }
 
