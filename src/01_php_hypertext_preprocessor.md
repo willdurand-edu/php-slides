@@ -65,3 +65,7 @@ Then, ssh into your VM:
 
     !bash
     $ vagrant ssh
+
+---
+
+# RTFM: [http://www.php.net](http://www.php.net)

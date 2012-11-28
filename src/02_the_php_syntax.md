@@ -22,6 +22,7 @@ And 3 **pseudo** types: `mixed`, `number`, `callback`.
 # Comparison Operators
 
     !php
+    // so, this is a PHP variable
     $a = 5;
 
     // compare value; return true
@@ -138,7 +139,7 @@ Methods without any explicit visibility keyword are defined as `public`.
 
 ---
 
-# Methods (1/2)
+# Methods (1/3)
 
     !php
     class Foo
@@ -165,7 +166,9 @@ scalar types such as `int` or `string`:
 
 ---
 
-# Methods (2/2)
+# Methods (2/3)
+
+The `->` sign is used to call methods on objects.
 
 ### Usage
 
@@ -179,8 +182,12 @@ scalar types such as `int` or `string`:
     $method = 'doSomething';
     $foo->$method();
 
+    $foo->{$method . 'Else'}();
+    // will call 'doSomethingElse()'
 
-### Pseudo-variable
+---
+
+# Methods (3/3)
 
     !php
     public function doSomething()
@@ -191,20 +198,54 @@ scalar types such as `int` or `string`:
         // parent method call (inheritance)
         parent::doSomething();
 
+        // accessing a constant
+        self::VALUE;
+
+        // accessing a constant from another class
+        Bar::ANOTHER_VALUE;
+
         // accessing an attribute
         return $this->attribute;
     }
 
+---
+
+# Static Keyword (1/2)
+
+Attributes/Methods can be defined as `static`:
+
+    !php
+    class Foo
+    {
+        public static $value;
+
+        public static function doThings()
+        {
+            // accessing a static attribute
+            // don't forget the dollar sign!
+            self::$value;
+        }
+    }
+
+**Warning:** the `static` keyword can also be used to
+[define static variables](http://www.php.net/manual/en/language.variables.scope.php#language.variables.scope.static) and for [late static bindings](http://www.php.net/manual/en/language.oop5.late-static-bindings.php).
+This is different!
 
 ---
 
-### Scope Resolution Operator
+# Static Keyword (2/2)
 
+### Usage
 
+    !php
+    $foo = new Foo();
 
-### Static Keyword
+    // accessing the attribute from an instance
+    $foo::$value = 123;
 
-Attributes/Methods can be defined as `static`.
+    // accessing the attribute directly from the class
+    echo Foo::value;
+    => 123
 
 > [http://php.net/manual/en/language.oop5.static.php](http://php.net/manual/en/language.oop5.static.php)
 
