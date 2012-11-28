@@ -41,7 +41,7 @@ And 3 **pseudo** types: `mixed`, `number`, `callback`.
 
 ---
 
-# Classes
+# Classes (1/2)
 
 ### Simple class definition
 
@@ -62,17 +62,49 @@ And 3 **pseudo** types: `mixed`, `number`, `callback`.
 
 ---
 
+# Classes (2/2)
+
+Creating an instance:
+
+    !php
+    $foo = new Foo();
+    // $foo = new Foo;
+
+    // can also be done with a variable
+    $class = 'Foo';
+    $foo   = new $class();
+
+Getting the classname of an instance:
+
+    !php
+    echo get_class($foo);
+    => Foo
+
+Useful keyword: `instanceof`
+
+    !php
+    if ($foo instanceof Foo) {
+        // do something
+    }
+
+> [http://www.php.net/manual/en/language.oop5.basic.php](http://www.php.net/manual/en/language.oop5.basic.php)
+
+---
+
 # Visibility
 
-3 keywords:
+### Keywords
 
 * `public`
 * `protected`
 * `private`
 
-Attribute visibility must be set.
 
-Method visibility **should** be set.
+### The Rules
+
+Attribute visibility MUST be set.
+
+Method visibility SHOULD be set.
 
 Methods without any explicit visibility keyword are defined as `public`.
 
@@ -106,7 +138,7 @@ Methods without any explicit visibility keyword are defined as `public`.
 
 ---
 
-# Methods
+# Methods (1/2)
 
     !php
     class Foo
@@ -129,6 +161,52 @@ scalar types such as `int` or `string`:
     public function doSomething(array $values);
 
     public function doSomething(callable $callback);
+
+
+---
+
+# Methods (2/2)
+
+### Usage
+
+    !php
+    $foo->doSomething();
+
+    // >= PHP 5.4
+    (new Foo())->doSomething();
+
+    // can also be done with a variable
+    $method = 'doSomething';
+    $foo->$method();
+
+
+### Pseudo-variable
+
+    !php
+    public function doSomething()
+    {
+        // method call
+        $this->doSomethingElse();
+
+        // parent method call (inheritance)
+        parent::doSomething();
+
+        // accessing an attribute
+        return $this->attribute;
+    }
+
+
+---
+
+### Scope Resolution Operator
+
+
+
+### Static Keyword
+
+Attributes/Methods can be defined as `static`.
+
+> [http://php.net/manual/en/language.oop5.static.php](http://php.net/manual/en/language.oop5.static.php)
 
 ---
 
@@ -296,3 +374,22 @@ Other methods are not really useful but it's worth knowing them.
 > Read more about **coding standards** with [PSR-1](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md) and
 [PSR-2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md).
 
+---
+
+# PHP Coding Standards Fixer
+
+The PHP Coding Standards Fixer tool fixes most issues in your code when
+you want to follow the PHP coding standards as defined in the PSR-1 and
+PSR-2 documents.
+
+Installation:
+
+    !bash
+    $ wget http://cs.sensiolabs.org/get/php-cs-fixer.phar
+
+Usage:
+
+    !bash
+    $ php php-cs-fixer.phar fix /path/to/dir/or/file
+
+> [http://cs.sensiolabs.org/](http://cs.sensiolabs.org/)
