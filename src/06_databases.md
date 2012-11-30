@@ -445,11 +445,17 @@ external behavior.
     !php
     class Connection extends PDO
     {
+        /**
+         * @param string $query
+         * @param array  $parameters
+         *
+         * @return bool Returns `true` on success, `false` otherwise
+         */
         public function executeQuery($query, $parameters = array())
         {
             $stmt = $this->prepare($query);
 
-            forech ($parameters as $name => $value) {
+            foreach ($parameters as $name => $value) {
                 $stmt->bind(':' . $name, $value);
             }
 
