@@ -4,9 +4,12 @@
 
 # Agenda
 
+* Database Design Patterns
+* Data Access Layer
+
 ---
 
-# ...
+# Quick note
 
 In our context, a **database** is seen as a server hosting:
 
@@ -24,15 +27,22 @@ In our context, a **database** is seen as a server hosting:
 * Data Mapper
 * etc.
 
+Definitions and figures are part of the [Catalog of Patterns of Enterprise
+Application Architecture](http://martinfowler.com/eaaCatalog/index.html)
+created by **Martin Fowler**.
+
+Don't forget his name! Read his books!
+
 ---
 
-# Row Data Gateway
+# Row Data Gateway ![](http://martinfowler.com/eaaCatalog/dbgateRow.gif)
 
 ---
 
 # Row Data Gateway
 
 An object that acts as a Gateway to a single record (row) in a database.
+There is one instance per row.
 
     !php
     class Banana
@@ -104,13 +114,14 @@ An object that acts as a Gateway to a single record (row) in a database.
 
 ---
 
-# Table Data Gateway
+# Table Data Gateway ![](http://martinfowler.com/eaaCatalog/dbgateTable.gif)
 
 ---
 
 # Table Data Gateway
 
 An object that acts as a _Gateway_ to a database table.
+One instance handles all the rows in the table.
 
 It's a **D**ata **A**ccess **O**bject.
 
@@ -254,7 +265,7 @@ A DAO implements the well-known **C**reate **R**ead **U**pdate
 
 ---
 
-# Active Record
+# Active Record ![](http://martinfowler.com/eaaCatalog/activeRecordSketch.gif)
 
 ---
 
@@ -312,10 +323,163 @@ the database access, and adds domain logic on that data.
 
 ---
 
-# Data Mapper
+# Data Mapper ![](http://martinfowler.com/eaaCatalog/databaseMapperSketch.gif)
 
 ---
 
 # Data Mapper
 
+A layer of Mappers (473) that moves data between objects and a database
+while keeping them independent of each other and the mapper itself.
 
+Sort of _"Man in the Middle"_.
+
+    !php
+    class BananaMapper
+    {
+        private $con;
+
+        public function __construct(Connection $con)
+        {
+            $this->con = $con;
+        }
+
+        public function persist(Banana $banana)
+        {
+            // code to save the banana
+        }
+
+        public function remove(Banana $banana)
+        {
+            // code to delete the banana
+        }
+    }
+
+---
+
+# Data Mapper
+
+### Usage
+
+    !php
+    $banana = new Banana();
+    $banana->setName('Fantastic Banana');
+
+    $con    = new Connection('...');
+    $mapper = new BananaMapper($con);
+
+    $mapper->persist($banana);
+
+    $mapper->remove($banana);
+
+But also:
+
+    !php
+    // Retrieve a collection
+    $bananas = $mapper->findAll();
+
+    // or a single record
+    $banana = $mapper->find(123);
+
+---
+
+# Data Access Layer
+
+---
+
+# Data Access Layer
+
+A **D**ata **A**ccess **L**ayer (DAL) is a standard API to manipulate data,
+no matter which database server is used.
+
+The **D**ata **S**ource **N**ame (DSN) can be used to determine which database
+vendor you are using.
+
+### PHP Data Object (PDO)
+
+A DSN in PHP looks like: `<database>:host=<host>;dbname=<dbname>` where:
+
+* `<database>` can be: `mysql`, `sqlite`, `pgsql`, etc;
+* `<host>` is the IP address of the database server (most of the time `localhost`);
+* `<dbname>` is your database name.
+
+> [http://www.php.net/manual/en/intro.pdo.php](http://www.php.net/manual/en/intro.pdo.php)
+
+---
+
+# Data Access Layer
+
+### PDO usage
+
+    !php
+    $dsn = 'mysql:host=localhost;dbname=test';
+
+    $con = new PDO($dsn, $user, $password);
+
+    // Prepared statement
+    $stmt = $con->prepare($query);
+    $stmt->execute();
+
+Looks like the `Connection` class we used before, right?
+
+    !php
+    class Connection extends PDO
+    {
+    }
+
+### Usage
+
+    !php
+    $con = new Connection($dsn, $user, $password);
+
+---
+
+# Data Access Layer
+
+### Refactoring
+
+Refactoring is a disciplined technique for restructuring an existing
+body of code, altering its internal structure without changing its
+external behavior.
+
+    !php
+    class Connection extends PDO
+    {
+        public function executeQuery($query, $parameters = array())
+        {
+            $stmt = $this->prepare($query);
+
+            forech ($parameters as $name => $value) {
+                $stmt->bind(':' . $name, $value);
+            }
+
+            return $stmt->execute();
+        }
+    }
+
+---
+
+# Data Access Layer
+
+### Usage
+
+    !php
+    /**
+     * @param int    $id   The id of the banana to update
+     * @param string $name The new name of the banana
+     *
+     * @return bool Returns `true` on success, `false` otherwise
+     */
+    public function update($id, $name)
+    {
+        $query = 'UPDATE bananas SET name = :name WHERE id = :id';
+
+        return $this->con->executeQuery($query, array(
+            'id'    => $id,
+            'name'  => $name,
+        ));
+    }
+
+---
+
+# Your turn!
