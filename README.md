@@ -22,8 +22,10 @@ build the presentation:
 Usage
 -----
 
-Basically, just build the presentation and open it in your favorite browser. If you need to serve it through
-a socket, a shell script is provided to serve the presentation on a given port (default: `4000`):
+Basically, just build the presentation and open it in your favorite browser.
+
+If you need to serve it through a socket, a shell script is provided to serve
+the presentation on a given port (default: `4000`):
 
     bin/serve.sh
 
