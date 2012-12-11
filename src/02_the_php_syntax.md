@@ -381,7 +381,7 @@ and:
     !php
     __toString() { /* ... */ }
 
-Other methods are not really useful but it's worth knowing them.
+Other methods are not really useful but it's worth knowing them (`__get()`, `__set()`).
 
 > Read more about **magic methods**:
 [http://php.net/manual/en/language.oop5.magic.php](http://php.net/manual/en/language.oop5.magic.php).
