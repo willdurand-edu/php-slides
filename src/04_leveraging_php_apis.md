@@ -21,6 +21,25 @@ Provides a collection of classes and interfaces:
 
 ---
 
+# Observer/Observable
+
+The `SplObserver` interface is used alongside `SplSubject` to implement the
+**Observer** Design Pattern.
+
+> Read more: [php.net/manual/en/class.splobserver.php](php.net/manual/en/class.splobserver.php).
+
+However, these classes have limitations:
+
+* Classes have to extend `SplSubject`;
+* A subject can only notify on one channel (only a `notify()` method).
+
+Symfony2 [EventDispatcher](https://github.com/symfony/EventDispatcher)
+component to the rescue!
+
+> Read more: [http://symfony.com/doc/2.0/components/event_dispatcher/](http://symfony.com/doc/2.0/components/event_dispatcher/).
+
+---
+
 # Exceptions
 
 `try`/`catch` block with multiple `catch` statements:
