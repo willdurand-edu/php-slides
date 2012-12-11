@@ -2,10 +2,6 @@
 
 ---
 
-# Model View Controller
-
----
-
 # The View
 
 PHP is a templating language per se.

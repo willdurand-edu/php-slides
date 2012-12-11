@@ -59,7 +59,8 @@ The best solution is to use a Virtual Machine (VM):
     $ vagrant init <name>
     $ vagrant up
 
-> Debian **squeeze64**: http://dl.dropbox.com/u/937870/VMs/squeeze64.box
+> Debian **Squeeze 32**:
+> [http://mathie-vagrant-boxes.s3.amazonaws.com/debian_squeeze_32.box](http://mathie-vagrant-boxes.s3.amazonaws.com/debian_squeeze_32.box).
 
 Then, ssh into your VM:
 

@@ -38,5 +38,3 @@ Software developer at IT Networks
 
 [twitter.com/themouette](https://twitter.com/themouette)
  | [github.com/themouette](https://github.com/themouette)
-
----
