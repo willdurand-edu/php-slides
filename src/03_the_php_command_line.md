@@ -70,3 +70,80 @@ Run the script:
 
     $ php hello.php World
     Hello, World!
+
+
+---
+
+# The Symfony2 Console Component
+
+The easiest way to write **strong console applications**:
+
+* Create a set of commands;
+* Add them to a console application.
+
+Your _Commands_ should extend the `Command` class:
+
+    !php
+    class GreetCommand extends Command
+    {
+        protected function configure()
+        {
+            // configure the name, arguments, options, etc.
+        }
+
+        protected function execute(InputInterface $input,
+            OutputInterface $output)
+        {
+        }
+    }
+
+---
+
+# A Basic Command (1/2)
+
+### Configuration
+
+    !php
+    $this
+        ->setName('demo:greet')
+        ->addArgument(
+            'name',
+            InputArgument::OPTIONAL,
+            'Who do you want to greet?'
+        );
+
+
+### Execution
+
+    !php
+    if (null === $name = $input->getArgument('name')) {
+        $name = 'World';
+    }
+
+    $output->writeln('Hello, ' . $name);
+
+---
+
+# A Basic Command (2/2)
+
+### The Console Application
+
+    !php
+    #!/usr/bin/env php
+    # app/console
+    <?php
+
+    $application = new Application();
+    $application->add(new GreetCommand());
+    $application->run();
+
+
+### Usage
+
+    $ app/console demo:greet
+    Hello, World
+
+    $ app/console demo:greet William
+    Hello, William
+
+> [http://symfony.com/doc/master/components/console/introduction.html](http://symfony.com/doc/master/components/console/introduction.html).
