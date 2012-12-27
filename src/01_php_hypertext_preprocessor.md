@@ -69,9 +69,4 @@ Then, ssh into your VM:
 
 ---
 
-# Resources
-
-
----
-
 # RTFM: [http://www.php.net](http://www.php.net)

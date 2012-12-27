@@ -130,7 +130,7 @@ as template engine thanks to the `TemplateEngineInterface`:
          *
          * @return string
          */
-        public function render($template, $parameters = array());
+        public function render($template, array $parameters = array());
     }
 
 You should think about interfaces, not about internal implementation details.
