@@ -6,6 +6,8 @@
 
 * Database Design Patterns
 * Data Access Layer
+* Object Relational Mapping
+* Existing Components
 
 ---
 
@@ -25,6 +27,7 @@ In our context, a **database** is seen as a server hosting:
 * Table Data Gateway
 * Active Record
 * Data Mapper
+* Identity Map
 * etc.
 
 Definitions and figures are part of the [Catalog of Patterns of Enterprise
@@ -329,7 +332,7 @@ the database access, and adds domain logic on that data.
 
 # Data Mapper
 
-A layer of Mappers (473) that moves data between objects and a database
+A layer of Mappers that moves data between objects and a database
 while keeping them independent of each other and the mapper itself.
 
 Sort of _"Man in the Middle"_.
@@ -380,6 +383,33 @@ But also:
 
     // or a single record
     $banana = $mapper->find(123);
+
+---
+
+# Identity Map ![](http://martinfowler.com/eaaCatalog/idMapperSketch.gif)
+
+---
+
+# Identity Map
+
+Ensures that each object gets loaded only once by keeping every loaded object in
+a map. Looks up objects using the map when referring to them.
+
+    !php
+    class Finder
+    {
+        private $identityMap = array();
+
+        public function findOneById($id)
+        {
+            if (!isset($this->identityMap[$id])) {
+                // fetch the object for the given id
+                $this->identityMap[$id] = ...;
+            }
+
+            return $this->identityMap[$id];
+        }
+    }
 
 ---
 
@@ -488,4 +518,84 @@ external behavior.
 
 ---
 
-# Your turn!
+# Object Relational Mapping
+
+---
+
+# Object Relational Mapping (1/4)
+
+Introduces the notion of **relations** between objects:
+
+* One-To-One;
+* One-To-Many;
+* Many-To-Many.
+
+An **ORM** is often considered as a _tool_ that implements some design patterns
+seen above, and that eases relationships between objects.
+
+---
+
+# Object Relational Mapping (2/4)
+
+### One-To-One (1-1)
+
+![](http://yuml.me/diagram/scruffy;/class///%20Cool%20Class%20Diagram,%20%5BBanana%5D%3C1---1%3E%5BProfile%5D.png)
+
+
+### Example
+
+    !php
+    $profile = $banana->getProfile();
+
+---
+
+# Object Relational Mapping (3/4)
+
+### One-To-Many (1-N)
+
+![](http://yuml.me/diagram/scruffy;/class/%5BBananaTree%5D++-0..N%5BBanana%5D.png)
+
+### Example
+
+    !php
+    $bananas = $bananaTree->getBananas();
+
+---
+
+# Object Relational Mapping (4/4)
+
+### Many-To-Many (N-N)
+
+![](http://yuml.me/diagram/scruffy;/class/%5BBanana%5D1-0..N%5BBananaRole%5D,%20%5BBananaRole%5D0..N-1%5BRole%5D.png)
+
+### Example
+
+    !php
+    $roles = array();
+    foreach ($banana->getBananaRoles() as $bananaRole) {
+        $roles[] = $bananaRole->getRole();
+    }
+
+    // Or, better:
+    $roles = $banana->getRoles();
+
+---
+
+# Existing Components
+
+### Propel ORM
+
+An ORM that implements the **Table Data Gateway** and **Row Data Gateway**
+patterns, often seen as an **Active Record** approach.
+
+> Documentation: [propelorm.org](http://www.propelorm.org).
+
+### Doctrine2 ORM
+
+An ORM that implements the **Data Mapper** pattern.
+
+> Documentation: [doctrine-project.org](http://www.doctrine-project.org/).
+
+---
+
+# Your Turn!
