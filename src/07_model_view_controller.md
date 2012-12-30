@@ -114,6 +114,16 @@ It **should not** contain any logic.
 
 ---
 
+# Front Controller Pattern
+
+A controller that handles all requests for a web application:
+
+![](http://martinfowler.com/eaaCatalog/frontController-sketch.gif)
+
+This controller dispatches the request to the **specialized controllers**.
+
+---
+
 # Programming To The Interface
 
 Reduces dependency on implementation specifics and makes code more reusable.
