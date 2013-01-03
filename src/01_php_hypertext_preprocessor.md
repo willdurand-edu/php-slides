@@ -41,6 +41,11 @@
 
 > [http://www.php.net/manual/en/install.windows.installer.msi.php](http://www.php.net/manual/en/install.windows.installer.msi.php)
 
+# Presenter notes
+
+* case sensitivity issues
+* be as close as possible to production environment
+
 ---
 
 # Getting Started
