@@ -34,7 +34,19 @@ Open-Source evangelist:
 
 Software developer at IT Networks
 
-// ...
+Graduated from ESIGELEC (Rouen)
+
+Co-founder of [Carpe Hora](http://www.carpe-hora.com/) (Clermont-Ferrand, France)
+
+Worked at:
+
+* [Orange R&D](http://www.orange.fr) (Issy les Moulineaux, France)
+* [Efixo]() - [Neuf telecom]() now [SFR]() (Marseille, France)
+* [MSD-Chibret]() (Riom, France)
+
+Passionate front end developer, believe in standards and open source.
+
+> Read the code, not the doc
 
 [twitter.com/themouette](https://twitter.com/themouette)
  | [github.com/themouette](https://github.com/themouette)
