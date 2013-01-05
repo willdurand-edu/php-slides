@@ -63,6 +63,16 @@ the **Symfony2 Console** component:
         }
     }
 
+The structure of your application should look like:
+
+    console-app
+    ├── app
+    │   └── console
+    ├── composer.json
+    ├── src
+    ├── tests
+    └── vendor
+
 ---
 
 # The Symfony2 Console Component
