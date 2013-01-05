@@ -412,8 +412,10 @@ Other methods are not really useful but it's worth knowing them (`__get()`, `__s
         }
     }
 
-> Read more about **coding standards** with [PSR-1](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md) and
-[PSR-2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md).
+> Read more about **coding standards** with
+> [PSR-1](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md)
+> and
+> [PSR-2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md).
 
 ---
 
