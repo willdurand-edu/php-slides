@@ -4,9 +4,61 @@
 
 # Agenda
 
+* Coding Standards
 * Programming To The Interface
 * Component Driven Development
 * Dependency Injection
+
+---
+
+# Coding Standards
+
+    !php
+    <?php
+
+    namespace Vendor\Model;
+
+    class Foo
+    {
+        const VERSION   = '1.0';
+
+        public $bar     = null;
+
+        protected $opts = array();
+
+        private $var3   = 123;
+
+        public function __construct(BarInterface $bar, $opts = array())
+        {
+            $this->bar  = $bar;
+            $this->opts = $opts;
+        }
+    }
+
+> Read more about **coding standards** with
+> [PSR-1](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md)
+> and
+> [PSR-2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md).
+
+---
+
+# PHP Coding Standards Fixer
+
+The PHP Coding Standards Fixer tool fixes most issues in your code when
+you want to follow the PHP coding standards as defined in the PSR-1 and
+PSR-2 documents.
+
+Installation:
+
+    !bash
+    $ wget http://cs.sensiolabs.org/get/php-cs-fixer.phar
+
+Usage:
+
+    !bash
+    $ php php-cs-fixer.phar fix /path/to/dir/or/file
+
+> [http://cs.sensiolabs.org/](http://cs.sensiolabs.org/).
 
 ---
 
