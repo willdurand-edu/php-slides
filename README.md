@@ -23,3 +23,9 @@ Usage
 -----
 
 Basically, just build the presentation and open it in your favorite browser.
+
+
+License
+-------
+
+These slides are released under the MIT License. See the bundled LICENSE file for details.
