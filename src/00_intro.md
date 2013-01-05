@@ -50,3 +50,23 @@ Passionate front end developer, believe in standards and open source.
 
 [twitter.com/themouette](https://twitter.com/themouette)
  | [github.com/themouette](https://github.com/themouette)
+
+---
+
+# Agenda
+
+### Week #1
+
+PHP: Hypertext Preprocessor, The PHP Syntax, The PHP Command Line
+
+### Week #2
+
+Leveraging PHP APIs, Dependency Management in PHP, Model View Controller
+
+### Week #3
+
+Databases
+
+### Week #4
+
+Writing Better Code, Testing, Embracing Open Source
