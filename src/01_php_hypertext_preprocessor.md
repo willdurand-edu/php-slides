@@ -41,37 +41,6 @@
 
 > [http://www.php.net/manual/en/install.windows.installer.msi.php](http://www.php.net/manual/en/install.windows.installer.msi.php)
 
-# Presenter notes
-
-* case sensitivity issues
-* be as close as possible to production environment
-
----
-
-# Getting Started
-
-The best solution is to use a Virtual Machine (VM):
-[Vagrant](http://vagrantup.com/) to the rescue!
-
-* Works on all platforms;
-* Uses VirtualBox under the hood;
-* Lightweight, reproductible, portable dev environments.
-
-3 steps to run a VM:
-
-    !bash
-    $ vagrant box add <name> <url>
-    $ vagrant init <name>
-    $ vagrant up
-
-> Debian **Squeeze 32**:
-> [http://mathie-vagrant-boxes.s3.amazonaws.com/debian_squeeze_32.box](http://mathie-vagrant-boxes.s3.amazonaws.com/debian_squeeze_32.box).
-
-Then, ssh into your VM:
-
-    !bash
-    $ vagrant ssh
-
 ---
 
 # RTFM: [http://www.php.net](http://www.php.net)
