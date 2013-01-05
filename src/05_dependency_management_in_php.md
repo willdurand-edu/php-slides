@@ -53,6 +53,16 @@ Require the generated autoloader in your project:
 
 # Example
 
+Instead of writing a console application by hand, let's use an existing library:
+the **Symfony2 Console** component:
+
+    !json
+    {
+        "require": {
+            "symfony/console": "v2.1.5"
+        }
+    }
+
 ---
 
 # The Symfony2 Console Component
@@ -113,6 +123,9 @@ Your _Commands_ should extend the `Command` class:
     #!/usr/bin/env php
     # app/console
     <?php
+
+    // require the Composer autoloader
+    require __DIR__ . '/../vendor/autoload.php';
 
     $application = new Application();
     $application->add(new GreetCommand());
