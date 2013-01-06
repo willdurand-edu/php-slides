@@ -12,6 +12,7 @@ You can try PHP using the command line:
     $ php -r 'echo "Hello, World\n"'
     Hello, World
 
+> Help available by running: `php -h`.
 
 PHP also provides an interactive shell:
 
@@ -34,6 +35,9 @@ Your new best friend is the _linter_:
     !bash
     $ php -l my/script.php
     No syntax errors detected in my/script.php
+
+> A **linter** is a program that looks for problems in your code (_syntax
+errors_ for instance).
 
 Embedded web server:
 

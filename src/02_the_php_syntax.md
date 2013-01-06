@@ -42,6 +42,33 @@ And 3 **pseudo** types: `mixed`, `number`, `callable`.
 
 ---
 
+# Operators
+
+    !php
+    $a++; // or: ++$a;
+
+    $b--; // or: --$b;
+
+    $a && $b;   // AND
+    $a || $b;   // OR
+
+    ! $a;       // `true` if $a is not `true`
+
+    $a . 'foo'; // concatenation
+
+But also:
+
+    !php
+    $a  = 'foo';
+    $a .= 'bar';
+    // $a => 'foobar'
+
+    $b  = 0;
+    $b += 1;    // $b = 1
+    $b -= 1;    // $b = 0
+
+---
+
 # Classes (1/2)
 
 ### Simple class definition
