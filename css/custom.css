@@ -31,4 +31,5 @@ a:visited {
 pre {
     padding: 5px;
     font-size: 20px;
+    font-family: Courier, monospace;
 }
