@@ -13,7 +13,8 @@ Next week :)
 PHP is a templating language per se.
 
 **Never**, **ever**, **ever** mix HTML and PHP codes or kittens
-will die. But creating a template engine is ok!
+will die: you have to separate the presentation from the business logic.
+But creating a template engine is ok!
 
     !php
     class TemplateEngine
