@@ -57,7 +57,7 @@ Passionate front end developer, believe in standards and open source.
 
 ### Week #1
 
-PHP: Hypertext Preprocessor, The PHP Syntax, The PHP Command Line
+PHP: Hypertext Preprocessor, The PHP Syntax, The PHP Command Line, Client/Server
 
 ### Week #2
 
