@@ -140,3 +140,21 @@ You are encouraged to map request parameter access in a dedicated class :
 ---
 
 # REST (Representational State Transfer)
+
+Each URI represent a unique `ressource` that can be formatted as requested
+(`json`, `xml`, `html`).
+
+* `/banana/joe`: _URI_ for banana Joe
+* `/banana/henry`: _URI_ for banana Henry
+
+Those ressources are organized into collections
+
+* `/bananas`: collection of all available bananas
+
+So it make sense to use HTTP verbs to execute an action:
+
+> GET `/banana/joe` will return banana Joe.
+
+And:
+
+> DELETE `/bananas` will delete all bananas in the collection !
