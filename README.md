@@ -10,8 +10,7 @@ Installation
 
 Get the code:
 
-    git clone git://github.com/willdurand/licpro-slides.git
-    git submodule update --init
+    git clone git://github.com/willdurand/licpro-php-slides.git --recursive
 
 Install [landslide](https://github.com/adamzap/landslide#installation), then
 build the presentation:
