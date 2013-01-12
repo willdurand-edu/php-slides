@@ -2,6 +2,8 @@ body {
     font-size: 24px;
 }
 
+.slide.future {display:none;}
+
 .slide header:only-child h1 {
     font-size: 70px;
 }
