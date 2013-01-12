@@ -1,9 +1,9 @@
 # Model View Controller
 ---
 
-# MVC overview
+# MVC Overview
 
-Typical client request process in MVC architecture
+Typical client request process in MVC architecture:
 
 ![](./src/images/MVC.png)
 
@@ -20,15 +20,16 @@ Typical client request process in MVC architecture
 
 # The Model
 
-**Model** is the layer in charge with data interaction.
+**Model** is the layer in charge of data interaction.
 
-All **data logic** is embedded here, user does not require to understand internals.
+All **data related business logic** is embedded here.
+Using it should not require to understand internals.
 
 _Examples_:
 
-* Manipulate **database** records
-* Communicate with **search engine**
-* **API** calls
+* Manipulate **database** records;
+* Communicate with **search engine**;
+* **API** calls;
 * etc.
 
 > More on this next week!
@@ -154,7 +155,7 @@ Routing is the process of binding `URI`s to controllers.
 
 ## Folder organization
 
-The simplest kind of routing, but also the hardest to maintain.
+The simplest kind of routing, but also the hardest to maintain:
 
     web/
     ├ trees/
@@ -168,7 +169,7 @@ Modern frameworks all provide a routing component such as **Symfony2 Routing**
 component allowing to define all routes in a centralized place and easing
 `URI` generation.
 
-> This require a single entrypoint: the `frontend controller`
+> This require a single entry point: the `frontend controller`
 
 ---
 
@@ -180,21 +181,21 @@ A controller that handles all requests for a web application:
 
 This controller dispatches the request to the **specialized controllers**.
 
-> Usually coupled to `URL rewritning`
+> Usually tied to `URL rewriting`
 
 ---
 
 # Interact with multiple services
 
-Web applications becomes **more and more complex** and interract with
+Web applications become **more and more complex** and interract with
 **multiple services** such as:
 
-* [Relationnal database](http://en.wikipedia.org/wiki/Relational_database) to store consistent data
-* Search engine to index and retrieve documents
-* [Message queues](http://en.wikipedia.org/wiki/Message_queue) to postpone executions or as event brokers
-* External APIs (geocoding, payment, social...)
-* Mail server to send or recieve emails
-* Text message gateway
-* HTTP cache server to reduce ressources needs and speedup responses
-* ...
+* [Relational database](http://en.wikipedia.org/wiki/Relational_database) to store consistent data;
+* Search engine to index and retrieve documents;
+* [Message queues](http://en.wikipedia.org/wiki/Message_queue) to postpone executions or as event brokers;
+* External APIs (geocoding, payment, social, ...);
+* Mail server to send or receive emails;
+* Text message gateway;
+* HTTP cache server to reduce ressources needs and speed up responses;
+* etc
 
