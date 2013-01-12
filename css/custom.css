@@ -8,9 +8,6 @@ div.presentation, div.slides {
     -khtml-border-radius:   10px;
     border-radius:          10px;
 }
-.slides {
-    background: top right url(css/php.gif) no-repeat #fff;
-}
 .slide.future {display:none;}
 
 .slide header:only-child h1 {
