@@ -2,18 +2,11 @@ body {
     font-size: 24px;
 }
 
-div.presentation, div.slides {
-    -moz-border-radius:     10px;
-    -webkit-border-radius:  10px;
-    -khtml-border-radius:   10px;
-    border-radius:          10px;
-}
 .slide.future {display:none;}
 
 .slide header:only-child h1 {
     font-size: 70px;
 }
-.slides .slide {background:transparent;}
 
 .center {
     text-align: center;
