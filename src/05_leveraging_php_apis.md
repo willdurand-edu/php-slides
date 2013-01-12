@@ -132,7 +132,7 @@ The `SplObserver` interface is used alongside `SplSubject` to implement the
 
 # Observer/Observable (2/2)
 
-Those interfaces are **never** used as no **channel** can be specified for the
+Those interfaces are **never** used as default **channel** has to be specified for the
 `notify()` method.
 
 Symfony2 [EventDispatcher](https://github.com/symfony/EventDispatcher)
