@@ -1,10 +1,37 @@
 # Model View Controller
+---
+
+# MVC overview
+
+Typical client request process in MVC architecture
+
+![](./src/images/MVC.png)
+
+## Presenter notes
+
+1. Client makes a request
+1. Controller handles request:
+    * interactions with model
+    * data preparation
+    * send data to view
+1. View format data
 
 ---
 
 # The Model
 
-Next week :)
+**Model** is the layer in charge with data interaction.
+
+All **data logic** is embedded here, user does not require to understand internals.
+
+_Examples_:
+
+* Manipulate **database** records
+* Communicate with **search engine**
+* **API** calls
+* etc.
+
+> More on this next week!
 
 ---
 
@@ -121,6 +148,30 @@ It **should not** contain any logic.
 
 ---
 
+# Routing
+
+Routing is the process of binding `URI`s to controllers.
+
+## Folder organization
+
+The simplest kind of routing, but also the hardest to maintain.
+
+    web/
+    ├ trees/
+    │ ├ banana.php
+    │ └ pineapple.php
+    └ tree.php
+
+## Centralized declaration
+
+Modern frameworks all provide a routing component such as **Symfony2 Routing**
+component allowing to define all routes in a centralized place and easing
+`URI` generation.
+
+> This require a single entrypoint: the `frontend controller`
+
+---
+
 # Front Controller Pattern
 
 A controller that handles all requests for a web application:
@@ -128,3 +179,22 @@ A controller that handles all requests for a web application:
 ![](http://martinfowler.com/eaaCatalog/frontController-sketch.gif)
 
 This controller dispatches the request to the **specialized controllers**.
+
+> Usually coupled to `URL rewritning`
+
+---
+
+# Interact with multiple services
+
+Web applications becomes **more and more complex** and interract with
+**multiple services** such as:
+
+* [Relationnal database](http://en.wikipedia.org/wiki/Relational_database) to store consistent data
+* Search engine to index and retrieve documents
+* [Message queues](http://en.wikipedia.org/wiki/Message_queue) to postpone executions or as event brokers
+* External APIs (geocoding, payment, social...)
+* Mail server to send or recieve emails
+* Text message gateway
+* HTTP cache server to reduce ressources needs and speedup responses
+* ...
+
