@@ -141,12 +141,10 @@ Your _Commands_ should extend the `Command` class:
     $application->add(new GreetCommand());
     $application->run();
 
-
 ### Usage
 
     $ app/console demo:greet
     Hello, World
-
     $ app/console demo:greet William
     Hello, William
 
