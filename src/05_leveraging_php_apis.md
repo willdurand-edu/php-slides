@@ -14,13 +14,13 @@ Access properties as an array:
 
 ## Serializable
 
-Allow the use of `serialize` and `unserialize`.
+Allow the use of `serialize()` and `unserialize()`.
 
 ## Traversable
 
 Allow the use of `foreach`.
 
-> Read more [http://fr2.php.net/manual/en/reserved.interfaces.php](http://fr2.php.net/manual/en/reserved.interfaces.php)
+> Read more [http://fr2.php.net/manual/en/reserved.interfaces.php](http://fr2.php.net/manual/en/reserved.interfaces.php).
 
 ---
 
@@ -32,14 +32,9 @@ Enable code introspection:
     /** a comment */
     class MyClass
     {
-        protected function getName() {
-            return 'foo';
-        }
+        protected function getName() { return 'foo'; }
 
-        public function hello()
-        {
-            printf("Hello %s", $this->getName());
-        }
+        public function hello() { printf("Hello %s", $this->getName()); }
     }
 
     $ref = new ReflectionClass('MyClass');
@@ -48,26 +43,25 @@ Enable code introspection:
     var_dump($ref->getDocComment());
     // string(16) "/** a comment */"
 
+    // get all methods
+    $ref->getMethods();
+
     // get all public methods
     $ref->getMethods(ReflectionMethod::IS_PUBLIC);
+
 
 ---
 
 # The Reflection API (2/2)
 
-It is even posible to invoke protected methods !
+It is even possible to invoke protected methods!
 
     !php
     class MyClass
     {
-        protected function getName() {
-            return 'foo';
-        }
+        protected function getName() { return 'foo'; }
 
-        public function hello()
-        {
-            printf("Hello %s", $this->getName());
-        }
+        public function hello() { printf("Hello %s", $this->getName()); }
     }
 
     $ref = new ReflectionClass('MyClass');
@@ -81,7 +75,7 @@ It is even posible to invoke protected methods !
 
 
 > Read more [http://www.php.net/manual/en/book.reflection.php
-](http://www.php.net/manual/en/book.reflection.php)
+](http://www.php.net/manual/en/book.reflection.php).
 
 ---
 
@@ -91,7 +85,7 @@ Provides a collection of classes and interfaces:
 
 ## Datastructures
 
-`SplStack`, `SplQueue`, `OutOfRangeException`, etc;
+`SplStack`, `SplQueue`, `OutOfRangeException`, etc.
 
 ## Named Exceptions
 
@@ -99,7 +93,7 @@ Provides a collection of classes and interfaces:
 
 ## SPL functions
 
-`class_parents`, `spl_autoload_register`, `spl_autoload_unregister`, etc.
+`class_parents()`, `spl_autoload_register()`, `spl_autoload_unregister()`, etc.
 
 ## Iterators, interfaces...
 
@@ -194,8 +188,8 @@ installation.
 
 But, the API is **hard** to use.
 
-Solution? [Box](http://box-project.org/), a command line to ease
-PHAR creation process.
+Solution? [Box](http://box-project.org/), a command line for simplifying
+the PHAR creation process.
 
 > Read more about **PHAR**:
 >
