@@ -2,7 +2,7 @@
 
 ---
 
-# Built in interfaces
+# Built-in Interfaces
 
 ## ArrayAccess
 
@@ -29,25 +29,25 @@ Allow the use of `foreach`.
 Enable code introspection:
 
     !php
-    /** a comment */
+    /** A comment */
     class MyClass
     {
-        protected function getName() { return 'foo'; }
-
         public function hello() { printf("Hello %s", $this->getName()); }
+
+        protected function getName() { return 'foo'; }
     }
 
-    $ref = new ReflectionClass('MyClass');
+    $reflClass = new ReflectionClass('MyClass');
 
     // access comments
-    var_dump($ref->getDocComment());
-    // string(16) "/** a comment */"
+    var_dump($reflClass->getDocComment());
+    // string(16) "/** A comment */"
 
     // get all methods
-    $ref->getMethods();
+    $reflClass->getMethods();
 
     // get all public methods
-    $ref->getMethods(ReflectionMethod::IS_PUBLIC);
+    $reflClass->getMethods(ReflectionMethod::IS_PUBLIC);
 
 
 ---
@@ -59,15 +59,15 @@ It is even possible to invoke protected methods!
     !php
     class MyClass
     {
-        protected function getName() { return 'foo'; }
-
         public function hello() { printf("Hello %s", $this->getName()); }
+
+        private function getName() { return 'foo'; }
     }
 
-    $ref = new ReflectionClass('MyClass');
+    $reflClass = new ReflectionClass('MyClass');
 
-    // access protected method
-    $method = $ref->getMethod('getName');
+    // access private method
+    $method = $reflClass->getMethod('getName');
     $method->setAccessible(true);
 
     $method->invoke(new MyClass());
@@ -91,11 +91,9 @@ Provides a collection of classes and interfaces:
 
 `LogicException`, `InvalidArgumentException`, etc.
 
-## SPL functions
+## SPL Functions
 
 `class_parents()`, `spl_autoload_register()`, `spl_autoload_unregister()`, etc.
-
-## Iterators, interfaces...
 
 > Read more about the **SPL**:
 [http://php.net/manual/en/book.spl.php](http://php.net/manual/en/book.spl.php).

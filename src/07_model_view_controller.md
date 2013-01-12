@@ -169,7 +169,7 @@ Modern frameworks all provide a routing component such as **Symfony2 Routing**
 component allowing to define all routes in a centralized place and easing
 `URI` generation.
 
-> This require a single entry point: the `frontend controller`
+This require a single entry point: the **Frontend Controller**.
 
 ---
 
@@ -181,13 +181,13 @@ A controller that handles all requests for a web application:
 
 This controller dispatches the request to the **specialized controllers**.
 
-> Usually tied to `URL rewriting`
+It is usually tied to `URL rewriting`.
 
 ---
 
-# Interact with multiple services
+# Interact With Multiple Services
 
-Web applications become **more and more complex** and interract with
+Web applications become **more and more complex** and interact with
 **multiple services** such as:
 
 * [Relational database](http://en.wikipedia.org/wiki/Relational_database) to store consistent data;
@@ -197,5 +197,4 @@ Web applications become **more and more complex** and interract with
 * Mail server to send or receive emails;
 * Text message gateway;
 * HTTP cache server to reduce ressources needs and speed up responses;
-* etc
-
+* and much much more.

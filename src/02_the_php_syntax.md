@@ -115,7 +115,7 @@ Useful keyword: `instanceof`
         // do something
     }
 
-> [http://www.php.net/manual/en/language.oop5.basic.php](http://www.php.net/manual/en/language.oop5.basic.php)
+> [http://www.php.net/manual/en/language.oop5.basic.php](http://www.php.net/manual/en/language.oop5.basic.php).
 
 ---
 
@@ -274,7 +274,7 @@ This is different!
     echo Foo::value;
     => 123
 
-> [http://php.net/manual/en/language.oop5.static.php](http://php.net/manual/en/language.oop5.static.php)
+> [http://php.net/manual/en/language.oop5.static.php](http://php.net/manual/en/language.oop5.static.php).
 
 ---
 
