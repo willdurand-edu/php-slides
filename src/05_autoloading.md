@@ -1,14 +1,12 @@
-PHP Autoloading
-===============
+# PHP Autoloading
 
 ---
 
-Include other files
-===================
+# Why Is It Necessary?
 
-`PHP` language does not magically load classes by itself.
+PHP won't magically load your classes by itself.
 
-You have to manually include class declaration:
+You have to manually include the class declaration:
 
     !php
     class Octopus
@@ -19,58 +17,55 @@ You have to manually include class declaration:
         }
     }
 
-To create a new `Octopus`:
+If you want to create a new `Octopus`, you will write the following code:
 
     !php
     $paul = new Octopus();
     $paul->scream();
 
-As class declaration is not included, php raises a `Fatal error`:
+As the class declaration isn't included, PHP raises a `Fatal Error`:
 
     !bash
     Fatal error: Class 'Octopus' not found in /path/to/file.php
 
 ---
 
-Using include
-=============
+# The `require()` Way
 
-To create a new `Octopus`:
+Include the class definition before instanciating it:
 
     !php
-    require __DIR__ . "../Model/Octopus.php";
+    require __DIR__ . '../Model/Octopus.php';
 
     $paul = new Octopus();
     $paul->scream();
 
-It works !
+It works!
 
-What happens when class is included somewhere else ?
+But, what happens when the class is included again, somewhere else?
 
     !php
     // somewhere further in your application
-    require __DIR__ . "../Model/Octopus.php";
+    require __DIR__ . '../Model/Octopus.php';
 
     class Squid extends Octopus
     {
     }
 
-Php raises a Fatal error:
+PHP raises a `Fatal Error`:
 
     !bash
     Fatal error: Cannot redeclare class Octopus in /path/to/file.php
 
-
 ---
 
-Using require_once
-==================
+# The `require_once()` Way
 
-The `require_once` statement is identical to `require` except PHP will check if
-the file has already been included.
+The `require_once()` function is identical to `require()` except that PHP will
+check whether the file has already been included:
 
     !php
-    require_once __DIR__ . "../Model/Octopus.php";
+    require_once __DIR__ . '../Model/Octopus.php';
 
     $paul = new Octopus();
     $paul->scream();
@@ -79,20 +74,20 @@ And somewhere else:
 
     !php
     // somewhere further in your application
-    require_once __DIR__ . "../Model/Octopus.php";
+    require_once __DIR__ . '../Model/Octopus.php';
 
     class Squid extends Octopus
     {
     }
 
-> problem solved !
+It just works!
 
 ---
 
-Anatomy of a big library
-========================
+# Working With Multiple Files
 
-Explicit `includes` can turn into nightmare when your library/project turns big.
+Multiple `require()` can turn into a nightmare when you deal with more than a
+few files.
 
     !php
     <?php
@@ -100,12 +95,12 @@ Explicit `includes` can turn into nightmare when your library/project turns big.
     /**
      * lib/Model/Location.php
      */
-    require_once __DIR__ . "/../../common.php";
-    require_once DOCROOT . "/lib/Model/ModelInterface.php";
-    require_once DOCROOT . "/lib/Model/User.php";
-    require_once DOCROOT . "/lib/Validator/Email.php";
-    require_once DOCROOT . "/lib/Validator/Username.php";
-    require_once DOCROOT . "/lib/Validator/Url.php";
+    require_once __DIR__ . '/../../common.php';
+    require_once DOCROOT . '/lib/Model/ModelInterface.php';
+    require_once DOCROOT . '/lib/Model/User.php';
+    require_once DOCROOT . '/lib/Validator/Email.php';
+    require_once DOCROOT . '/lib/Validator/Username.php';
+    require_once DOCROOT . '/lib/Validator/Url.php';
 
     class Location implements ModelInterface
     {
@@ -114,28 +109,26 @@ Explicit `includes` can turn into nightmare when your library/project turns big.
 
 ---
 
-Removing includes
-=================
+# Rethinking The Way We Load Classes
 
-Php 5.2 and upper provide a usable autoloading api with performances close to
-require through following functions:
+PHP 5.2 and upper provides a usable autoloading API with performances close to
+the use of `require()` thanks to the following functions:
 
-* `__autoload()`: main autoload callback
-* `spl_autoload_register()`: Register a new autoload callback
-* `spl_autoload_unregister()`: Unregister an autoload callback
-* `spl_autoload_functions()`: List all autoload methods
+* `__autoload()`: main autoload callback;
+* `spl_autoload_register()`: **register** a new autoload callback;
+* `spl_autoload_unregister()`: **unregister** an autoload callback;
+* `spl_autoload_functions()`: list all autoload methods.
 
 ---
 
-Examples
-========
+# Examples
 
 ## `__autoload()`
 
     !php
     function __autoload($className)
     {
-        require __DIR__ . DIRECTORY_SEPARATOR . $className . '.php';
+        require_once __DIR__ . DIRECTORY_SEPARATOR . $className . '.php';
     }
 
 ## `spl_autoload_register()`
@@ -143,31 +136,31 @@ Examples
     !php
     function my_autoload($className)
     {
-        require __DIR__ . DIRECTORY_SEPARATOR . $className . '.php';
+        require_once __DIR__ . DIRECTORY_SEPARATOR . $className . '.php';
     }
-    spl_autoload_register("my_autoload");
+    spl_autoload_register('my_autoload');
 
 ## `spl_autoload_unregister()`
 
     !php
-    spl_autoload_unregister("my_autoload");
+    spl_autoload_unregister('my_autoload');
 
 ---
 
-Under the Hood (`new` pseudo algorithm)
-=======================================
+# Under The Hood: The `new` Pseudo Algorithm
 
     !php
     new Foo();
 
-* Does "Foo" class exists ?
-    * Yes: go on
-    * No:
-        * Is there `spl_autoloaders` ?
-            * Yes: call all `spl_autoloaders` with "Foo" as parameter
-                until class is included
-            * No: is there a `__autoload` method ?
-                * Yes: call `__autoload("Foo")`
-* Does "Foo" class exists ?
-    * Yes: continue
-    * No: Fatal error
+    Does the 'Foo' class exist?
+        Yes: go on
+        No:
+             Do we have registered autoload functions?
+                Yes: Call each function with 'Foo' as parameter
+                     until the class gets included
+                No:  Is there a `__autoload()` method?
+                     Yes: call `__autoload('Foo')`
+
+    Does the 'Foo' class exist?
+        Yes: Continue
+        No:  Fatal Error
