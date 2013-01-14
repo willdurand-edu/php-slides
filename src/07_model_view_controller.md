@@ -5,7 +5,7 @@
 
 Typical client request process in MVC architecture:
 
-![](./src/images/MVC.png)
+![](images/MVC.png)
 
 ## Presenter notes
 
