@@ -85,11 +85,11 @@ Provides a collection of classes and interfaces:
 
 ## Datastructures
 
-`SplStack`, `SplQueue`, `OutOfRangeException`, etc.
+`SplStack`, `SplQueue`, [`SplObjectStorage`](http://fr2.php.net/manual/en/splobjectstorage.getinfo.php), etc.
 
 ## Named Exceptions
 
-`LogicException`, `InvalidArgumentException`, etc.
+`LogicException`, `InvalidArgumentException`, `OutOfRangeException`, etc.
 
 ## SPL Functions
 
