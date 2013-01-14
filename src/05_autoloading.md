@@ -38,7 +38,7 @@ Using include
 To create a new `Octopus`:
 
     !php
-    include __DIR__ . "../Model/Octopus.php";
+    require __DIR__ . "../Model/Octopus.php";
 
     $paul = new Octopus();
     $paul->scream();
@@ -49,7 +49,7 @@ What happens when class is included somewhere else ?
 
     !php
     // somewhere further in your application
-    include __DIR__ . "../Model/Octopus.php";
+    require __DIR__ . "../Model/Octopus.php";
 
     class Squid extends Octopus
     {
