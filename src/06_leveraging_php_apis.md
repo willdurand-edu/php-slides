@@ -85,7 +85,7 @@ Provides a collection of classes and interfaces:
 
 ## Datastructures
 
-`SplStack`, `SplQueue`, [`SplObjectStorage`](http://fr2.php.net/manual/en/splobjectstorage.getinfo.php), etc.
+`SplStack`, `SplQueue`, [`SplObjectStorage`](http://php.net/manual/en/class.splobjectstorage.php), etc.
 
 ## Named Exceptions
 
