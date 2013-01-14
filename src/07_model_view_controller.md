@@ -51,7 +51,7 @@ But creating a template engine is ok!
 
         public function __construct($templateDir)
         {
-            $his->templateDir = $templateDir;
+            $this->templateDir = $templateDir;
         }
 
         public function render($template, $parameters = array())
