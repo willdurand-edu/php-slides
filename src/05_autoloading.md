@@ -32,7 +32,7 @@ As the class declaration isn't included, PHP raises a `Fatal Error`:
 
 # The `require()` Way
 
-Include the class definition before instanciating it:
+Include the class definition before instantiating it:
 
     !php
     require __DIR__ . '../Model/Octopus.php';
@@ -86,8 +86,8 @@ It just works!
 
 # Working With Multiple Files
 
-Multiple `require()` can turn into a nightmare when you deal with more than a
-few files.
+Multiple `require_once()` can turn into a nightmare when you deal with more than
+a few files:
 
     !php
     <?php
@@ -112,18 +112,29 @@ few files.
 # Rethinking The Way We Load Classes
 
 PHP 5.2 and upper provides a usable autoloading API with performances close to
-the use of `require()` thanks to the following functions:
+the use of `require_once()` thanks to the following functions:
 
-* `__autoload()`: main autoload callback;
-* `spl_autoload_register()`: **register** a new autoload callback;
-* `spl_autoload_unregister()`: **unregister** an autoload callback;
-* `spl_autoload_functions()`: list all autoload methods.
+### `__autoload()`
+
+Main autoload callback.
+
+### `spl_autoload_register()`
+
+**Register** a new autoload callback.
+
+### `spl_autoload_unregister()`
+
+**Unregister** an autoload callback.
+
+### `spl_autoload_functions()`
+
+List all autoload methods.
 
 ---
 
 # Examples
 
-## `__autoload()`
+### `__autoload()`
 
     !php
     function __autoload($className)
@@ -131,36 +142,47 @@ the use of `require()` thanks to the following functions:
         require_once __DIR__ . DIRECTORY_SEPARATOR . $className . '.php';
     }
 
-## `spl_autoload_register()`
+### `spl_autoload_register()`
 
     !php
     function my_autoload($className)
     {
         require_once __DIR__ . DIRECTORY_SEPARATOR . $className . '.php';
     }
+
     spl_autoload_register('my_autoload');
 
-## `spl_autoload_unregister()`
+### `spl_autoload_unregister()`
 
     !php
     spl_autoload_unregister('my_autoload');
 
 ---
 
-# Under The Hood: The `new` Pseudo Algorithm
+# Under The Hood
 
     !php
     new Foo();
 
-    Does the 'Foo' class exist?
-        Yes: go on
-        No:
-             Do we have registered autoload functions?
-                Yes: Call each function with 'Foo' as parameter
-                     until the class gets included
-                No:  Is there a `__autoload()` method?
-                     Yes: call `__autoload('Foo')`
+The `new` algorithm in pseudo code:
 
-    Does the 'Foo' class exist?
-        Yes: Continue
-        No:  Fatal Error
+    1. Does the 'Foo' class exist?
+        => Yes
+            Go on
+
+        => No
+             Do we have registered autoload functions?
+                => Yes
+                    Call each function with 'Foo' as parameter
+                    until the class gets included
+
+                => No
+                    Is there a `__autoload()` method?
+                        => Yes
+                            Call `__autoload('Foo')`
+
+    2. Does the 'Foo' class exist?
+        => Yes
+            Continue
+        => No
+            Fatal Error
