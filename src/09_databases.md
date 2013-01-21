@@ -288,7 +288,7 @@ the database access, and adds domain logic on that data.
 
     // Call a method that is part of the domain logic
     // What can a banana do anyway?
-    $banana->growth();
+    $banana->grow();
 
     // Smart `save()` method
     // use `isNew()` under the hood
@@ -303,7 +303,7 @@ the database access, and adds domain logic on that data.
     {
         private $height = 1;
 
-        public function growth()
+        public function grow()
         {
             $this->height++;
         }
@@ -311,7 +311,7 @@ the database access, and adds domain logic on that data.
         public function save(Connection $con)
         {
             if ($this->isNew()) {
-                // issue a INSERT query
+                // issue an INSERT query
             } else {
                 // issue an UPDATE query
             }
