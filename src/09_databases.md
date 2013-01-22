@@ -320,7 +320,7 @@ the database access, and adds domain logic on that data.
         public function isNew()
         {
             // Yoda style
-            return null !== $this->id;
+            return null === $this->id;
         }
     }
 
