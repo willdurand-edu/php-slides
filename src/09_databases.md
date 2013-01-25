@@ -104,7 +104,7 @@ There is one instance per row.
         // Prepared statement
         $stmt = $this->con->prepare('INSERT INTO bananas VALUES (:name)');
 
-        $stmt->bind(':name', $name);
+        $stmt->bindValue(':name', $name);
 
         $stmt->execute();
 
@@ -188,7 +188,7 @@ A DAO implements the well-known **C**reate **R**ead **U**pdate
         // Prepared statement
         $stmt = $this->con->prepare('INSERT INTO bananas VALUES (:name)');
 
-        $stmt->bind(':name', $name);
+        $stmt->bindValue(':name', $name);
 
         $stmt->execute();
 
@@ -217,8 +217,8 @@ A DAO implements the well-known **C**reate **R**ead **U**pdate
     SQL
         );
 
-        $stmt->bind(':id', $id);
-        $stmt->bind(':name', $name);
+        $stmt->bindValue(':id', $id);
+        $stmt->bindValue(':name', $name);
 
         return $stmt->execute();
     }
@@ -239,7 +239,7 @@ A DAO implements the well-known **C**reate **R**ead **U**pdate
     {
         $stmt = $this->con->prepare('DELETE FROM bananas WHERE id = :id');
 
-        $stmt->bind(':id', $id);
+        $stmt->bindValue(':id', $id);
 
         return $stmt->execute();
     }
@@ -486,7 +486,7 @@ external behavior.
             $stmt = $this->prepare($query);
 
             foreach ($parameters as $name => $value) {
-                $stmt->bind(':' . $name, $value);
+                $stmt->bindValue(':' . $name, $value);
             }
 
             return $stmt->execute();
