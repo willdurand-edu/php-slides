@@ -109,7 +109,7 @@ and their **dependencies**.
 A **class** in this context is also known as a **service**, and all services live
 in a **service container** or **dependency injection container**.
 
-You ask this container to retrive a service, and it is **lazy loaded** and dynamically
+You ask this container to retrieve a service, and it is **lazy loaded** and dynamically
 built:
 
     !php
