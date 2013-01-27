@@ -251,7 +251,7 @@ A DAO implements the well-known **C**reate **R**ead **U**pdate
 ### Finders
 
     !php
-    // Retrive all bananas
+    // Retrieve all bananas
     $bananas = $table->findAll();
 
     // Find bananas by name matching 'THE %'
@@ -260,7 +260,7 @@ A DAO implements the well-known **C**reate **R**ead **U**pdate
     // Retrieve a given banana using its id
     $banana = $table->find(123);
 
-    // Find one banana by name matcing 'THE %'
+    // Find one banana by name matching 'THE %'
     $banana = $table->findOneByName('THE %');
 
 > Use the `__call()` magic method to create magic finders:
