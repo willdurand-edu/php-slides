@@ -196,5 +196,5 @@ Web applications become **more and more complex** and interact with
 * External APIs (geocoding, payment, social, ...);
 * Mail server to send or receive emails;
 * Text message gateway;
-* HTTP cache server to reduce ressources needs and speed up responses;
+* HTTP cache server to reduce resources needs and speed up responses;
 * and much much more.

@@ -118,7 +118,7 @@ The `SplObserver` interface is used alongside `SplSubject` to implement the
 
     $subject = new Subject();
 
-    $oberver1 = new Observer();
+    $observer1 = new Observer();
 
     $subject->attach($observer1);
 
