@@ -183,3 +183,21 @@ If authentication fails, the server should return a `401` status code.
 
         return $app->redirect('/');
     });
+
+---
+
+# Stateless Authentication
+
+Useful for API authentication.
+
+### OAuth
+
+[http://oauth.net/](http://oauth.net/)
+
+### Basic and Digest Access Authentication
+
+[http://pretty-rfc.herokuapp.com/RFC2617](http://pretty-rfc.herokuapp.com/RFC2617)
+
+### WSSE Username Token
+
+[http://www.xml.com/pub/a/2003/12/17/dive.html](http://www.xml.com/pub/a/2003/12/17/dive.html)
