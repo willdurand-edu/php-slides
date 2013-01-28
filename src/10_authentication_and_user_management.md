@@ -18,7 +18,7 @@ No **Authentication**/**Security Layer**, anyone can access everything:
 
 # The Interceptor Pattern
 
-Th **Security Layer**, seen before, has to **intercept** the process of
+The **Security Layer**, seen before, has to **intercept** the process of
 converting a request into a response in order to perform some checks.
 
 We need a way to hook into this process before invoking the controller:
