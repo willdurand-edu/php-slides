@@ -121,7 +121,7 @@ of just verifying that individual units of code are behaving correctly.
 
 * [Selenium](http://seleniumhq.org/)
 * [Mink](http://mink.behat.org/)
-* [Casperjs](http://casperjs.org/)
+* [CasperJS](http://casperjs.org/)
 
 ---
 
@@ -134,14 +134,14 @@ of just verifying that individual units of code are behaving correctly.
 ## SpecBDD
 
 * You write specifications that describe how your actual code should
-    behave;
+  behave;
 * Focused on technical behavior;
 * [PHPSpec](http://www.phpspec.net/).
 
 ## StoryBDD
 
 * You write human-readable stories that describe the behavior of your
-    application;
+  application;
 * Business oriented;
 * [Behat](http://behat.org/).
 
