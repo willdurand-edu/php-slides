@@ -1,28 +1,25 @@
-Sessions
-========
+# Sessions
 
 ---
 
-Overview
-========
+# Overview
 
-### A way to persist browsing data accross client calls
+### A way to persist browsing data accross client calls:
 
-* unique identifier ;
-* stored server side ;
-* easy to use ;
-* built in.
+* unique identifier;
+* stored server side;
+* easy to use;
+* built-in.
 
-### Some usecase:
+### Some usecases:
 
-* Keep user auhentication and roles ;
-* Store cart ;
+* Keep user authentication and roles;
+* Store cart;
 * Store a flash message between redirections.
 
 ---
 
-Code Please
------------
+# Code Please
 
     !php
     // initalize session
@@ -41,25 +38,21 @@ Code Please
     session_destroy();
 
 
-> session should be started before headers are sent !
-
-> http://php.net/manual/en/book.session.php
+> Session should be started before headers are sent!
+> [http://php.net/manual/en/book.session.php](http://php.net/manual/en/book.session.php).
 
 ---
 
-Security Concerns
-=================
+# Security Concerns
 
-* Cookie hijacking / XSS ;
-* Man in the middle ;
-* predicatable session token.
+* Cookie hijacking/XSS;
+* Man in the Middle;
+* Predicatable session token.
 
 Workarounds
 -----------
 
-* Regenerate ids when authentication changes ;
-* Validate client informations (user agent) ;
-* Maximum lifetime ;
+* Regenerate ids when authentication changes;
+* Validate client informations (user agent);
+* Maximum lifetime;
 * Use HTTPS.
-
-
