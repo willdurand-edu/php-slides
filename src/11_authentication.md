@@ -18,7 +18,7 @@ No **Authentication**/**Security Layer**, anyone can access everything:
 
 # The Interceptor Pattern
 
-The **Security Layer**, seen before, has to **intercept** the process of
+The **Security Layer**, as seen before, has to **intercept** the process of
 converting a request into a response in order to perform some checks.
 
 We need a way to hook into this process before invoking the controller:
@@ -32,11 +32,11 @@ the **Observer**/**Observable** pattern.
 
 ### Event Dispatcher
 
-The application notifies a set of subscribers to an event.
+The application notifies a set of listeners to an event.
 
-Subscribers can register themselves to a particular event.
+The listeners can register themselves to a particular event.
 
-An **Event Dispatcher** manages both the subscribers, and the events.
+An **Event Dispatcher** manages both the listeners, and the events.
 
 ---
 
@@ -49,12 +49,12 @@ Using a **trait**:
     {
         private $events = [];
 
-        public function register($name, $callable)
+        public function addListener($name, $callable)
         {
             $this->events[$name][] = $callable;
         }
 
-        public function notify($name, array $arguments = [])
+        public function dispatch($name, array $arguments = [])
         {
             foreach ($this->events[$name] as $callable) {
                 call_user_func_array($callable, $arguments);
@@ -67,7 +67,7 @@ Using a **trait**:
 # Using the EventDispatcherTrait
 
 In order to intercept the process described before, we have to **notify** some
-subscribers once we enter in the `process()` method:
+listeners once we enter in the `process()` method by **dispatching** the event:
 
     !php
     class App
@@ -78,16 +78,16 @@ subscribers once we enter in the `process()` method:
 
         private function process(Request $request, Route $route)
         {
-            $this->notify('process.before', [ $request ]);
+            $this->dispatch('process.before', [ $request ]);
 
             ...
         }
     }
 
-The **subscribers** have to subscribe to this event:
+The **listeners** have to listen to this event:
 
     !php
-    $app->register('process.before', function (Request $request) {
+    $app->addListener('process.before', function (Request $request) {
         // code to execute
     });
 
@@ -125,7 +125,7 @@ If authentication fails, the server should return a `401` status code.
 # Implementing The Firewall
 
     !php
-    $app->register('process.before', function (Request $req) use ($app) {
+    $app->addListener('process.before', function (Request $req) use ($app) {
         session_start();
 
         $allowed = [
