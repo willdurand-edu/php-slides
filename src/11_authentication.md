@@ -1,4 +1,4 @@
-# Authentication And User Management
+# Authentication
 
 ---
 
