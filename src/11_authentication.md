@@ -179,7 +179,7 @@ If authentication fails, the server should return a `401` status code.
     });
 
     $app->get('/logout', function (Request $request) use ($app) {
-        $_SESSION['is_authenticated'] = false;
+        session_destroy();
 
         return $app->redirect('/');
     });
