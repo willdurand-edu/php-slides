@@ -125,7 +125,7 @@ If authentication fails, the server should return a `401` status code.
 # Implementing The Firewall
 
     !php
-    $app->addListener('process.before', function (Request $req) use ($app) {
+    $app->addListener('process.before', function(Request $req) use ($app) {
         session_start();
 
         $allowed = [
