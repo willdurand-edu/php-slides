@@ -137,9 +137,11 @@ If authentication fails, the server should return a `401` status code.
             return;
         }
 
-        if (isset($allowed[$request->getUri()])
-            && in_array($req->getMethod(), $allowed[$req->getUri()])) {
-            return;
+        foreach ($allowed as $pattern => $methods) {
+            if (preg_match(sprintf('#^%s$#', $pattern), $req->getUri())
+                && in_array($req->getMethod(), $methods)) {
+                return;
+            }
         }
 
         switch ($req->guessBestFormat()) {
