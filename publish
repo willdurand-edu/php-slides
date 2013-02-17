@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+TMP_DIR=/tmp/licpro-php-slides
+
+git stash
+
+landslide part1.cfg
+landslide part2.cfg
+
+rm -rf $TMP_DIR
+mkdir $TMP_DIR
+mv index* $TMP_DIR
+
+git checkout gh-pages
+
+mv $TMP_DIR/index* .
+git add index*
+git commit --amend -m "Publish slides"
+
+git push origin gh-pages -f
+
+git checkout master
+git stash apply
