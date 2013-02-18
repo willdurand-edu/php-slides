@@ -37,7 +37,7 @@
 
 ## Windows
 
-![](images/y-u-no-use-linux.jpg)
+![](../images/y-u-no-use-linux.jpg)
 
 > [http://www.php.net/manual/en/install.windows.installer.msi.php](http://www.php.net/manual/en/install.windows.installer.msi.php)
 

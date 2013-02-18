@@ -6,7 +6,7 @@
 
 A typical **client/server** request follows this pattern:
 
-![](images/client-server.png)
+![](../images/client-server.png)
 
 * **Client**: Hello _server_, give me the _resource_ at `URI`.
 

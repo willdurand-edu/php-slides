@@ -2,10 +2,14 @@
 
 ---
 
+# Let's Do Professional Development Now!
+
+---
+
 # A Framework To Simplify Developments
 
-A **framework helps you work better** (structuring developments)
-and faster (reusing generic modules).
+A **framework helps you work better** by structuring developments,
+and **faster** by reusing generic modules.
 
 A framework **facilitates long-term maintenance** and **scalability** by
 complying with standard development rules.
@@ -18,5 +22,5 @@ easier and more productive.
 
 Most of the time, a framework implements many kinds of **design patterns**.
 
-> Source: [Symfony explained to a
+> Read more: [Symfony explained to a
 > Developer](http://symfony.com/symfony-explained-to-a-developer).

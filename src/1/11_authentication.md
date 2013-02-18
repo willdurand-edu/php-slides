@@ -6,13 +6,13 @@
 
 No **Authentication**/**Security Layer**, anyone can access everything:
 
-![](images/client_server_without_auth.png)
+![](../images/client_server_without_auth.png)
 
 ---
 
 # The Big Picture
 
-![](images/client_server_with_auth.png)
+![](../images/client_server_with_auth.png)
 
 ---
 
@@ -156,7 +156,7 @@ If authentication fails, the server should return a `401` status code.
 
 # Authentication Mechanism
 
-![](images/authentication_mechanism.png)
+![](../images/authentication_mechanism.png)
 
 ---
 

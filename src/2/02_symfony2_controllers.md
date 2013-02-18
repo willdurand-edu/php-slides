@@ -152,18 +152,18 @@ it might need:
 
 ---
 
-# The Response Object
+# The Response
 
-The only requirement for a controller is to return a `Response` object.
+The only **requirement** for a controller is to return a `Response` object.
 
-Create a simple Response with a 200 status code:
+Create a simple `Response` with a `200` status code:
 
     !php
     use Symfony\Component\HttpFoundation\Response;
 
     $response = new Response('Hello, ' . $name, 200);
 
-Create a JSON response with a 200 status code:
+Create a JSON response with a `200` status code:
 
     !php
     $response = new Response(json_encode(array('name' => $name)));
@@ -184,8 +184,8 @@ Or:
 
 # Basic Route Configuration
 
-The Symfony2 router lets you define creative URLs that you map to different
-areas of your application.
+The Symfony2 router lets you define URLs that you map to different areas of
+your application.
 
 A _route_ is a map from a URL path to a controller. Each route is named, and
 maps a `pattern` (or `path` as of Symfony2.2) to a `_controller`:
@@ -214,9 +214,9 @@ This route matches the homepage (`/`) and maps it to the
         defaults:  { _controller: AcmeBlogBundle:Blog:index }
 
 The path will match anything that looks like `/blog/*`. Even better, the value
-matching the `{page}` placeholder will be available inside your controller.
+matching the `{page}` **placeholder** will be available inside your controller.
 
-However, the path will not, however, match simply `/blog`.
+`/blog` will **not** match.
 
 ### Optional Placeholders
 
@@ -225,11 +225,10 @@ However, the path will not, however, match simply `/blog`.
         path:      /blog/{page}
         defaults:  { _controller: AcmeBlogBundle:Blog:index, page: 1 }
 
-By adding `page` to the defaults key, the `{page}` placeholder is no longer
-required.
-The URL `/blog` will match this route and the value of the `page` parameter will be
-set to `1`. The URL `/blog/2` will also match, giving the `page` parameter a value of
-`2`.
+By adding `page` to the **defaults** key, `{page}` is **no longer required**.
+
+`/blog` will match this route and the value of the `page` parameter will be
+set to `1`. `/blog/2` will also match, giving the `page` parameter a value of `2`.
 
 ---
 
@@ -242,8 +241,8 @@ set to `1`. The URL `/blog/2` will also match, giving the `page` parameter a val
         requirements:
             page:  \d+
 
-The `\d+` requirement is a regular expression that says that the value of the
-`{page}` parameter must be a digit (i.e. a number).
+The `\d+` requirement is a **regular expression** that says that the value of
+the `{page}` parameter must be a digit (i.e. a number).
 
 ### HTTP Method Requirements
 
@@ -256,7 +255,7 @@ The `\d+` requirement is a regular expression that says that the value of the
             _method: GET
             # _methods: GET|POST
 
-            # New in Symfony2.2
+            # New in Symfony2.2!
             methods: [ GET ]
             # methods: [ GET, POST ]
 

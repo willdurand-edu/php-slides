@@ -34,7 +34,9 @@ Symfony2 is built on powerful concepts:
 * **Pragmatism**;
 * **Best Practices**.
 
-It has been written by ~700 developers.
+![](../images/symfony-github.png)
+
+It has been written by [~700 developers](http://symfony.com/contributors/code).
 
 Open Source, **MIT** licensed.
 
@@ -57,7 +59,6 @@ There are more than 21 components, including:
     CssSelector            HttpKernel         Translation
     DependencyInjection    Locale             Validator
     DomCrawler             Process            Yaml
-    ...
 
 ---
 
@@ -112,7 +113,7 @@ applications** without imposing on your application.
 
 ---
 
-# Requests In Symfony
+# The Symfony2 Request
 
     !php
     use Symfony\Component\HttpFoundation\Request;
@@ -139,7 +140,7 @@ applications** without imposing on your application.
 
 ---
 
-# Responses In Symfony
+# The Symfony2 Response
 
     !php
     use Symfony\Component\HttpFoundation\Response;
