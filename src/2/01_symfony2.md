@@ -40,6 +40,74 @@ Open Source, **MIT** licensed.
 
 ---
 
+# The Symfony2 Components
+
+The Components implement **common features** needed to develop websites.
+
+They are the **foundation of the Symfony full-stack framework**, but they can
+also be used **standalone** even if you don't use the framework as they don't
+have any mandatory dependencies.
+
+There are more than 21 components, including:
+
+    BrowserKit             EventDispatcher    Routing
+    ClassLoader            Finder             Security
+    Config                 Form               Serializer
+    Console                HttpFoundation     Templating
+    CssSelector            HttpKernel         Translation
+    DependencyInjection    Locale             Validator
+    DomCrawler             Process            Yaml
+    ...
+
+---
+
+# Getting Ready With Components
+
+Assuming you want to play with YAML files, start by requiring the `symfony/yaml`
+component into your `composer.json` file:
+
+    !yaml
+    {
+        "require": {
+            "symfony/yaml": "~2.1"
+        }
+    }
+
+Install it by running `php composer.phar install`, and use it:
+
+    !php
+    require __DIR__ . '/vendor/autoload.php';
+
+    use Symfony\Component\Yaml\Yaml;
+
+    $yaml = Yaml::parse('/path/to/file.yml');
+
+> Read more:
+> [http://symfony.com/doc/current/components/yaml/introduction.html](http://symfony.com/doc/current/components/yaml/introduction.html).
+
+---
+
+# Full-Stack Framework
+
+The **Symfony2 Framework** is a PHP library that accomplishes two distinct
+tasks:
+
+* Provides a selection of components;
+* Provides sensible configuration and a "glue" library that ties all of these
+  pieces together.
+
+The goal of the framework is **to integrate many independent tools** in order to
+provide a consistent experience for the developer. Even **the framework itself is
+a Symfony2 bundle** (i.e. a plugin) that can be configured or replaced entirely.
+
+Symfony2 **provides a powerful set of tools for rapidly developing web
+applications** without imposing on your application.
+
+> Documentation available at:
+> [http://symfony.com/doc/current/book/index.html](http://symfony.com/doc/current/book/index.html).
+
+---
+
 # Overall Architecture
 
 ---
@@ -402,8 +470,8 @@ In order to use a bundle in your application, you need to register it in the
 Recommended structure for a bundle:
 
     XXX/...
-        HelloBundle/
-            HelloBundle.php
+        DemoBundle/
+            DemoBundle.php
             Controller/
             Resources/
                 meta/
@@ -416,7 +484,7 @@ Recommended structure for a bundle:
                 public/
             Tests/
 
-The `HelloBundle` class is mandatory, and both `Resources/meta/LICENSE` and
+The `DemoBundle` class is mandatory, and both `Resources/meta/LICENSE` and
 `Resources/doc/index.rst` files should be present.
 
 The `XXX` directory(ies) reflects the namespace structure of the bundle.
@@ -530,3 +598,24 @@ The front controller file (`app.php` in this example) is the actual PHP file
 that's executed when using a Symfony2 application and its job is to use a Kernel
 class, `AppKernel`, to bootstrap the application.
 
+---
+
+# Summary
+
+Creating a page is a three-step process involving a _route_, a _controller_, and
+(optionally) a _template_.
+
+Each project contains just a few main directories: `web/` (web assets and the
+front controllers), `app/` (configuration), `src/` (your bundles), and `vendor/`
+(third-party code).
+
+Each feature in Symfony2 (including the Symfony2 framework core) is organized
+into a **bundle**, which is a structured set of files for that feature.
+
+The configuration for each bundle lives in the `Resources/config` directory of the
+bundle and can be specified in `YAML`, `XML` or `PHP`.
+
+The global application configuration lives in the `app/config/` directory.
+
+Each environment is accessible via a different front controller (e.g. `app.php`
+and `app_dev.php`) and loads a different configuration file.
