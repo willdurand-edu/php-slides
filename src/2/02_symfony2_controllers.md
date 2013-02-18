@@ -28,7 +28,7 @@ client.
     !yaml
     # app/config/routing.yml
     homepage:
-        pattern:  /homepage
+        pattern:  /
         defaults: { _controller: AcmeDemoBundle:Hello:index }
 
 ### Controller Implementation
@@ -193,7 +193,7 @@ maps a `pattern` (or `path` as of Symfony2.2) to a `_controller`:
     !yaml
     # app/config/routing.yml
     homepage:
-        pattern:  /homepage
+        pattern:  /
         defaults: { _controller: AcmeDemoBundle:Hello:index }
 
 This route matches the homepage (`/`) and maps it to the
