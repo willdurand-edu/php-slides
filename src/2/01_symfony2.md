@@ -596,8 +596,9 @@ controller lives:
     $response->send();
 
 The front controller file (`app.php` in this example) is the actual PHP file
-that's executed when using a Symfony2 application and its job is to use a Kernel
-class, `AppKernel`, to bootstrap the application.
+that's executed when using a Symfony2 application and its job is to **use a
+Kernel** class, `AppKernel`, to **bootstrap the application**, for a given
+**environment**.
 
 ---
 
