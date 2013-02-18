@@ -1,4 +1,4 @@
-# Symfony2
+# ![](http://symfony.com/logos/symfony_black_02.png)
 
 ---
 
@@ -15,6 +15,32 @@ Then, based on these components:
 
 _Fabien Potencier,
 [http://fabien.potencier.org/article/49/what-is-symfony2](http://fabien.potencier.org/article/49/what-is-symfony2)._
+
+---
+
+# Is Symfony2 A MVC Framework?
+
+---
+
+# NO!
+
+---
+
+# Why You Should Use Symfony2
+
+Symfony2 is built on powerful concepts:
+
+* **Separation of Concerns**;
+* **Pragmatism**;
+* **Best Practices**.
+
+It has been written by ~700 developers.
+
+Open Source, **MIT** licensed.
+
+---
+
+# Overall Architecture
 
 ---
 
@@ -82,8 +108,8 @@ _Fabien Potencier,
 
     if (in_array($path, array('', '/'))) {
         $response = new Response('Welcome to the homepage.');
-    } elseif ($path == '/contact') {
-        $response = new Response('Contact us');
+    } elseif ($path == '/hello') {
+        $response = new Response('hello, World!');
     } else {
         $response = new Response('Page not found.', 404);
     }
@@ -94,7 +120,8 @@ _Fabien Potencier,
 
 # The Symfony Application Flow
 
-It's all about transforming a **request** into a **response**:
+It's all about transforming a **Request** into a **Response**:
+<br><br>
 
 ![](http://symfony.com/doc/current/_images/request-flow.png)
 
@@ -107,12 +134,12 @@ information from the request and routing configuration you've created.
 
     !yaml
     # app/config/routing.yml
-    contact:
-        pattern:  /contact
-        defaults: { _controller: AcmeDemoBundle:Main:contact }
+    hello:
+        pattern:  /hello
+        defaults: { _controller: AcmeDemoBundle:Main:hello }
 
-The `AcmeDemoBundle:Main:contact` string is a short syntax that points to a
-specific PHP method named `contactAction()` inside a class called
+The `AcmeDemoBundle:Main:hello` string is a short syntax that points to a
+specific PHP method named `helloAction()` inside a class called
 `MainController`.
 
 > **Note:** this example uses **YAML** to define the routing configuration.
@@ -130,13 +157,15 @@ Also, each controller should be suffixed with `Controller`.
 
     !php
     // src/Acme/DemoBundle/Controller/MainController.php
+    namespace Acme\DemoBundle\Controller;
+
     use Symfony\Component\HttpFoundation\Response;
 
     class MainController
     {
-        public function contactAction()
+        public function helloAction()
         {
-            return new Response('<h1>Contact us!</h1>');
+            return new Response('<h1>Hello, World!</h1>');
         }
     }
 
@@ -144,7 +173,7 @@ Also, each controller should be suffixed with `Controller`.
 
 # A Symfony2 Project
 
-Recommended structure of a Symfony2 project:
+**Recommended** structure of a Symfony2 project:
 
     path/to/project/
         app/
@@ -197,19 +226,25 @@ This is the **central part** of your application:
 
 # Application Configuration
 
-An application consists of a collection of bundles representing all of the
+An application consists of a collection of "bundles" representing all of the
 features and capabilities of your application.
 
-Each bundle can be customized via configuration files written in `YAML`, `XML`
+Each "bundle" can be customized via configuration files written in `YAML`, `XML`
 or `PHP`.
 
 By default, the main configuration file lives in the `app/config/`
 directory and is called either `config.yml`, `config.xml` or `config.php`
 depending on which format you prefer.
 
+Symfony2 is all about configuring everything, and you can do pretty much
+everything you want. That's why people agreed on some conventions, but then
+again, a convention is just **A** way to do things, not **THE** way to do them.
+
 ---
 
 # YAML Configuration
+
+### Example:
 
     !yaml
     # app/config/config.yml
@@ -233,6 +268,8 @@ depending on which format you prefer.
 
 # XML Configuration
 
+### Example:
+
     !xml
     <!-- app/config/config.xml -->
     <imports>
@@ -253,6 +290,8 @@ depending on which format you prefer.
 ---
 
 # PHP Configuration
+
+### Example:
 
     !php
     $this->import('parameters.yml');
@@ -276,7 +315,7 @@ depending on which format you prefer.
 
 ---
 
-# Configuration: The Rules
+# The Rules (Well... My Rules)
 
 The **main configuration** has to be written in `YAML`:
 
@@ -291,9 +330,9 @@ The **routing definition** has to be written in `YAML`:
 
     !yaml
     # app/config/routing.yml
-    contact:
-        pattern:  /contact
-        defaults: { _controller: AcmeDemoBundle:Main:contact }
+    hello:
+        pattern:  /hello
+        defaults: { _controller: AcmeDemoBundle:Main:hello }
 
 The **Dependency Injection Container configuration** has to be written in `XML`.
 
@@ -302,6 +341,33 @@ The **Dependency Injection Container configuration** has to be written in `XML`.
         <service id="acme_demo.controllers.main"
             class="Acme\DemoBundle\MainController" />
     </services>
+
+---
+
+# Environments
+
+An application can run in various environments. The different environments
+**share the same PHP code**, but use different configuration.
+
+A Symfony2 project generally uses three environments: `dev`, `test` and `prod`.
+
+    !php
+    // web/app.php
+
+    // ...
+    $kernel = new AppKernel('prod', false);
+
+The `AppKernel` class is responsible for actually loading the configuration file
+of your choice:
+
+    !php
+    // app/AppKernel.php
+    public function registerContainerConfiguration(LoaderInterface $loader)
+    {
+        $loader->load(
+            __DIR__ . '/config/config_' . $this->getEnvironment() . '.yml'
+        );
+    }
 
 ---
 
@@ -463,3 +529,4 @@ controller lives:
 The front controller file (`app.php` in this example) is the actual PHP file
 that's executed when using a Symfony2 application and its job is to use a Kernel
 class, `AppKernel`, to bootstrap the application.
+
