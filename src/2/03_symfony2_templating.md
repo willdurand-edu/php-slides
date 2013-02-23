@@ -43,6 +43,7 @@
   loops and if statements, for example;
 * `{# ... #}`: comments.
 
+> Documentation: [http://twig.sensiolabs.org/](http://twig.sensiolabs.org/).
 
 ---
 
@@ -94,6 +95,33 @@
             <li>No users found</li>
         {% endfor %}
     </ul>
+
+---
+
+# Filters
+
+Filters are used to modify Twig variables.
+
+You can use inline filters by using the `|` symbol:
+
+    !jinja
+    {{ 'hello'|upper }}
+
+But you can also use the _block_ syntax:
+
+    !jinja
+    {% filter upper %}
+        hello
+    {% endfilter %}
+
+Filters can be parametrized:
+
+    !jinja
+    {{ post.createdAt|date('Y-m-d') }}
+
+> Documentation for all filters is available at:
+[http://twig.sensiolabs.org/doc/filters/index.html](http://twig.sensiolabs.org/doc/filters/index.html).
+
 
 ---
 
@@ -226,4 +254,163 @@ path to the layout would be:
 
 ---
 
+# Overriding Bundle Templates
 
+Once you use a third-party bundle, you'll likely need to override and customize
+one or more of its templates.
+
+When the `FooBarBundle:Bar:index.html.twig` is rendered, Symfony2 actually
+looks in two different locations for the template:
+
+* `app/Resources/FooBarBundle/views/Bar/index.html.twig`;
+* `src/Foo/BarBundle/Resources/views/Bar/index.html.twig`.
+
+To override the bundle template, copy the `index.html.twig` template from the
+bundle to: `app/Resources/FooBarBundle/views/Bar/index.html.twig`.
+
+### Overriding Core Templates
+
+The core **TwigBundle** contains a number of different templates that can be
+overridden by copying each from the `Resources/views/` directory of the
+**TwigBundle** to the `app/Resources/TwigBundle/views/` directory.
+
+---
+
+# The Three-Level Approach
+
+1. Create a `app/Resources/views/base.html.twig` file that contains the main layout
+for your application (like in the previous example). Internally, this template
+is called `::base.html.twig`.
+
+2. Create a template for each "section" of your site. The _AcmeBlogBundle_
+would have a template called `AcmeBlogBundle::layout.html.twig` that contains
+only blog section-specific elements.
+
+3. Create individual templates for each page and make each extend the appropriate
+section template. For example, the "index" page would be called something close
+to `AcmeBlogBundle:Blog:index.html.twig` and list the actual blog posts.
+
+---
+
+# Twig Into Symfony2
+
+---
+
+# Rendering A Template
+
+### Using The Base Controller
+
+    !php
+    public function listAction()
+    {
+        // ...
+
+        return $this->render('AcmeBlogBundle:Blog:list.html.twig', array(
+            'posts' => $posts,
+        ));
+    }
+
+### Using the Templating Service
+
+    !php
+    $engine  = $this->container->get('templating');
+    $content = $engine->render('AcmeBlogBundle:Blog:list.html.twig', array(
+        'posts' => $posts,
+    ));
+
+    return new Response($content);
+
+---
+
+# Linking to Pages
+
+Assuming the following routing definition:
+
+    !yaml
+    _welcome:
+        path:     /
+        defaults: { _controller: AcmeDemoBundle:Welcome:index }
+
+    article_show:
+        path:     /article/{slug}
+        defaults: { _controller: AcmeArticleBundle:Article:show }
+
+You can create a relative URL using `path()`:
+
+    !jinja
+    <a href="{{ path('_welcome') }}">Home</a>
+
+You can create an absolute URL using `url()`:
+
+    !jinja
+    <a href="{{ url('_welcome') }}">Home</a>
+
+The second argument is used to pass parameters:
+
+    !jinja
+    <a href="{{ path('article_show', {'slug': 'my-super-slug'}) }}">
+
+---
+
+# Linking to Assets
+
+    !jinja
+    <script src={{ asset('js/script.js') }}></script>
+
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
+    <img src="{{ asset('images/logo.png') }}" alt="Symfony!" />
+
+### Cache Busting
+
+Cache busting is the process of forcing browsers or proxy servers to update
+their cache, for instance, JavaScript and CSS files or images.
+
+    !yaml
+    # app/config/config.yml
+    framework:
+        # ...
+        templating: { engines: ['twig'], assets_version: v2 }
+
+The `asset_version` parameter is used to **bust the cache on assets** by globally
+adding a query parameter to all rendered asset paths:
+
+    /images/logo.png?v2
+
+---
+
+# Linking To Pages In JavaScript
+
+The [FOSJsRoutingBundle](https://github.com/FriendsOfSymfony/FOSJsRoutingBundle)
+allows you to expose your routing in your JavaScript code. That means you'll be
+able to generate URL with given parameters like you can do with the Router
+component provided in the Symfony2 core.
+
+    !yaml
+    # app/config/routing.yml
+    my_route_to_expose:
+        pattern:  /foo/{id}/bar
+        defaults:  { _controller: HelloBundle:Hello:index }
+        options:
+            expose: true
+
+According to the routing definition above, you can write the following
+JavaScript code to generate URLs:
+
+    !javascript
+    Routing.generate('my_route_to_expose', { id: 10 });
+    // /foo/10/bar
+
+    Routing.generate('my_route_to_expose', { id: 10 }, true);
+    // http://example.org/foo/10/bar
+
+---
+
+# Global Template Variables
+
+* `app.security`: the security context;
+* `app.user`: the current user object;
+* `app.request`: the request object;
+* `app.session`: the session object;
+* `app.environment`: the current environment (`dev`, `prod`, etc);
+* `app.debug`: `true` if in debug mode. `false` otherwise.
