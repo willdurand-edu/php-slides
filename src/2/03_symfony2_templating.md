@@ -38,10 +38,10 @@
 
 ### Delimiters
 
-* `{{ ... }}`: prints a variable or the result of an expression;
-* `{% ... %}`: controls the logic of the template; it is used to execute for
+* `{{ ... }}`: prints a **variable** or the result of an expression;
+* `{% ... %}`: controls the **logic** of the template; it is used to execute for
   loops and if statements, for example;
-* `{# ... #}`: comments.
+* `{# ... #}`: **comments**.
 
 > Documentation: [http://twig.sensiolabs.org/](http://twig.sensiolabs.org/).
 
@@ -102,12 +102,12 @@
 
 Filters are used to modify Twig variables.
 
-You can use inline filters by using the `|` symbol:
+You can use **inline filters** by using the `|` symbol:
 
     !jinja
     {{ 'hello'|upper }}
 
-But you can also use the _block_ syntax:
+But you can also use the **block syntax**:
 
     !jinja
     {% filter upper %}
@@ -204,8 +204,8 @@ A **child template** might look like this:
     {% endblock %}
 
 The **parent template** is identified by a special string syntax
-(`::base.html.twig`) that indicates that the template lives in the
-`app/Resources/views`.
+(`::base.html.twig`) that indicates that the template lives in
+`app/Resources/views/`.
 
 If you need to get the content of a block from the **parent template**, you can
 use the `{{ parent() }}` function.
@@ -278,17 +278,18 @@ overridden by copying each from the `Resources/views/` directory of the
 
 # The Three-Level Approach
 
-1. Create a `app/Resources/views/base.html.twig` file that contains the main layout
-for your application (like in the previous example). Internally, this template
-is called `::base.html.twig`.
+1. Create a `app/Resources/views/base.html.twig` file that contains the **main
+layout** for your application (like in the previous example). Internally, this
+template is called `::base.html.twig`.
 
-2. Create a template for each "section" of your site. The _AcmeBlogBundle_
+2. Create a template for each **section** of your site. The _AcmeBlogBundle_
 would have a template called `AcmeBlogBundle::layout.html.twig` that contains
 only blog section-specific elements.
 
-3. Create individual templates for each page and make each extend the appropriate
-section template. For example, the "index" page would be called something close
-to `AcmeBlogBundle:Blog:index.html.twig` and list the actual blog posts.
+3. Create **individual templates for each page** and make each extend the
+appropriate section template. For example, the "index" page would be called
+something close to `AcmeBlogBundle:Blog:index.html.twig` and list the actual
+blog posts.
 
 ---
 
@@ -335,12 +336,12 @@ Assuming the following routing definition:
         path:     /posts/{slug}
         defaults: { _controller: AcmeBlogBundle:Post:show }
 
-You can create a relative URL using `path()`:
+You can create a **relative URL** using `path()`:
 
     !jinja
     <a href="{{ path('homepage') }}">Home</a>
 
-You can create an absolute URL using `url()`:
+You can create an **absolute URL** using `url()`:
 
     !jinja
     <a href="{{ url('homepage') }}">Home</a>
@@ -363,8 +364,8 @@ The second argument is used to pass parameters:
 
 ### Cache Busting
 
-Cache busting is the process of forcing browsers or proxy servers to update
-their cache, for instance, JavaScript and CSS files or images.
+**Cache busting** is the process of **forcing browsers** or proxy servers **to
+update their cache**, for instance, JavaScript and CSS files or images.
 
     !yaml
     # app/config/config.yml
@@ -382,9 +383,9 @@ adding a query parameter to all rendered asset paths:
 # Linking To Pages In JavaScript
 
 The [FOSJsRoutingBundle](https://github.com/FriendsOfSymfony/FOSJsRoutingBundle)
-allows you to expose your routing in your JavaScript code. That means you'll be
-able to generate URL with given parameters like you can do with the Router
-component provided in the Symfony2 core.
+allows you to **expose your routing in your JavaScript code**. That means you'll
+be able to generate URL with given parameters like you can do with the _Router_
+component provided in Symfony2.
 
     !yaml
     # app/config/routing.yml
@@ -408,9 +409,9 @@ JavaScript code to generate URLs:
 
 # Global Template Variables
 
-* `app.security`: the security context;
-* `app.user`: the current user object;
-* `app.request`: the request object;
-* `app.session`: the session object;
+* `app.security`: the **security** context;
+* `app.user`: the **current user** object;
+* `app.request`: the **request** object;
+* `app.session`: the **session** object;
 * `app.environment`: the current environment (`dev`, `prod`, etc);
 * `app.debug`: `true` if in debug mode. `false` otherwise.

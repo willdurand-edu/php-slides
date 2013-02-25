@@ -8,23 +8,21 @@
 
 A **Service** is a generic term for any PHP object that performs a specific task.
 
-A service is usually used "globally", such as a database connection object or an
+A service is usually used **globally**, such as a database connection object or an
 object that delivers email messages.
 
-In Symfony2, services are often configured and retrieved from the service
-container. An application that has many decoupled services is said to follow a
-**service-oriented architecture**.
+In Symfony2, services are often **configured and retrieved from the service
+container**. An application that has many decoupled services is said to follow a
+**Service-Oriented Architecture** (SOA).
 
 ### What is a Service Container?
 
 A **Service Container**, also known as a **Dependency Injection Container**
-(DIC), is a special object that manages the instantiation of services inside an
-application.
+(DIC), is a special object that **manages the instantiation of services** inside
+an application.
 
-Instead of creating services directly, the developer trains the service
-container (via configuration) on how to create the services.
-The service container takes care of lazily instantiating and injecting dependent
-services.
+The service container takes care of **lazily instantiating** and **injecting
+dependent services**.
 
 ---
 
@@ -43,7 +41,7 @@ services.
         }
     }
 
-Service definition for the class described above:
+The **service definition** for the class described above is:
 
     !xml
     <services>
@@ -51,7 +49,7 @@ Service definition for the class described above:
     </services>
 
 This service is now available in the container, and you can access it by
-_asking_ the service from the container:
+**asking** the service from the container:
 
     !php
     $foo = $this->container->get('foo');
@@ -63,7 +61,7 @@ _asking_ the service from the container:
 The service definition described before is not flexible enough. For instance,
 we never configure the `$debug` argument.
 
-**Parameters** make defining services more organized and flexible:
+**Parameters** make defining services more **organized** and **flexible**:
 
     !xml
     <parameters>
@@ -89,8 +87,8 @@ change the implementation of this service by simply overriding the
 # Injecting Services
 
 As you may noticed, the `Foo` class takes an instance of `Bar` as first
-argument. You can **inject** this instance in your `foo` service by referencing
-the `bar` service:
+argument. You can **inject** this instance in your `foo` service by
+**referencing** the `bar` service:
 
     !xml
     <parameters>
@@ -127,13 +125,13 @@ the `bar` service:
 
 ### Container Extensions
 
-A service container extension is a PHP class to accomplish two things:
+A **service container extension** is a PHP class to accomplish two things:
 
-* import all service container resources needed to configure the services for
+* **import** all service container resources needed to configure the services for
   the bundle;
-* provide semantic, straightforward configuration so that the bundle can be
-  configured without interacting with the flat parameters of the bundle's service
-  container configuration.
+* **provide semantic**, straightforward **configuration** so that the bundle can
+  be configured without interacting with the flat parameters of the bundle's
+  service container configuration.
 
 ---
 
@@ -195,11 +193,10 @@ The array passed to your `load()` method will look like this:
 
 # Dealing With Configuration (2/2)
 
-The `$configs` argument  is an array of arrays, not just a single flat array of
-the configuration values. This is intentional.
+The `$configs` argument is an **array of arrays**, not just a single flat array
+of the configuration values.
 
-It's your job, then, to decide how these configurations should be merged
-together.
+It's your job to decide how these configurations should be merged together.
 
 You might, for example, have later values override previous values or
 somehow merge them together:
@@ -261,9 +258,9 @@ somehow merge them together:
         // ...
     }
 
-The `processConfiguration()` method uses the configuration tree you've defined
-in the `Configuration` class to validate, normalize and merge all of the
-configuration arrays together.
+The `processConfiguration()` method uses the **configuration tree** you've defined
+in the `Configuration` class to **validate**, **normalize** and **merge** all of
+the configuration arrays together.
 
 > Read more on How to expose a Semantic Configuration for a Bundle:
 [http://symfony.com/doc/master/cookbook/bundles/extension.html](http://symfony.com/doc/master/cookbook/bundles/extension.html).
@@ -294,4 +291,3 @@ them as extensions.
 
 > Documentation at:
 [http://symfony.com/doc/master/book/service_container.html](http://symfony.com/doc/master/book/service_container.html).
-

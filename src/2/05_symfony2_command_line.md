@@ -10,7 +10,7 @@
 
 ### Global Options
 
-You can get help information:
+You can get **help** information:
 
     !bash
     $ php app/console help cmd
