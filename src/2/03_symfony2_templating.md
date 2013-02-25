@@ -305,7 +305,7 @@ to `AcmeBlogBundle:Blog:index.html.twig` and list the actual blog posts.
     {
         // ...
 
-        return $this->render('AcmeBlogBundle:Blog:list.html.twig', array(
+        return $this->render('AcmeBlogBundle:Blog:index.html.twig', array(
             'posts' => $posts,
         ));
     }
@@ -314,7 +314,7 @@ to `AcmeBlogBundle:Blog:index.html.twig` and list the actual blog posts.
 
     !php
     $engine  = $this->container->get('templating');
-    $content = $engine->render('AcmeBlogBundle:Blog:list.html.twig', array(
+    $content = $engine->render('AcmeBlogBundle:Blog:index.html.twig', array(
         'posts' => $posts,
     ));
 
@@ -327,28 +327,28 @@ to `AcmeBlogBundle:Blog:index.html.twig` and list the actual blog posts.
 Assuming the following routing definition:
 
     !yaml
-    _welcome:
+    homepage:
         path:     /
-        defaults: { _controller: AcmeDemoBundle:Welcome:index }
+        defaults: { _controller: AcmeDemoBundle:Hello:index }
 
-    article_show:
-        path:     /article/{slug}
-        defaults: { _controller: AcmeArticleBundle:Article:show }
+    acme_blog.post_show:
+        path:     /posts/{slug}
+        defaults: { _controller: AcmeBlogBundle:Post:show }
 
 You can create a relative URL using `path()`:
 
     !jinja
-    <a href="{{ path('_welcome') }}">Home</a>
+    <a href="{{ path('homepage') }}">Home</a>
 
 You can create an absolute URL using `url()`:
 
     !jinja
-    <a href="{{ url('_welcome') }}">Home</a>
+    <a href="{{ url('homepage') }}">Home</a>
 
 The second argument is used to pass parameters:
 
     !jinja
-    <a href="{{ path('article_show', {'slug': 'my-super-slug'}) }}">
+    <a href="{{ path('acme_blog.post_show', {'slug': 'my-super-slug'}) }}">
 
 ---
 
@@ -390,7 +390,7 @@ component provided in the Symfony2 core.
     # app/config/routing.yml
     my_route_to_expose:
         pattern:  /foo/{id}/bar
-        defaults:  { _controller: HelloBundle:Hello:index }
+        defaults: { _controller: FooBarBundle:Foo:bar }
         options:
             expose: true
 

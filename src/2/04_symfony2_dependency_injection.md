@@ -123,7 +123,7 @@ the `bar` service:
     !yaml
     # app/config/config.yml
     imports:
-        - { resource: "@AcmeHelloBundle/Resources/config/services.xml" }
+        - { resource: "@AcmeDemoBundle/Resources/config/services.xml" }
 
 ### Container Extensions
 
@@ -144,15 +144,15 @@ bundle and its name should be constructed by replacing the `Bundle` suffix of
 the Bundle class name with `Extension`.
 
     !php
-    // Acme/HelloBundle/DependencyInjection/AcmeHelloExtension.php
-    namespace Acme\HelloBundle\DependencyInjection;
+    // Acme/DemoBundle/DependencyInjection/AcmeDemoExtension.php
+    namespace Acme\DemoBundle\DependencyInjection;
 
     use Symfony\Component\Config\FileLocator;
     use Symfony\Component\DependencyInjection\ContainerBuilder;
     use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
     use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
-    class AcmeHelloExtension extends Extension
+    class AcmeDemoExtension extends Extension
     {
         public function load(array $configs, ContainerBuilder $container)
         {
@@ -168,16 +168,16 @@ the Bundle class name with `Extension`.
 # Dealing With Configuration (1/2)
 
 The presence of the previous class means that you can now define an
-`acme_hello` configuration namespace in any configuration file:
+`acme_demo` configuration namespace in any configuration file:
 
     !yaml
     # app/config/config.yml
-    acme_hello: ~
+    acme_demo: ~
 
 Take the following configuration:
 
     !yaml
-    acme_hello:
+    acme_demo:
         foo: fooValue
         bar: barValue
 
@@ -223,8 +223,8 @@ somehow merge them together:
 ### Definition
 
     !php
-    // src/Acme/HelloBundle/DependencyInjection/Configuration.php
-    namespace Acme\HelloBundle\DependencyInjection;
+    // src/Acme/DemoBundle/DependencyInjection/Configuration.php
+    namespace Acme\DemoBundle\DependencyInjection;
 
     use Symfony\Component\Config\Definition\Builder\TreeBuilder;
     use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -234,7 +234,7 @@ somehow merge them together:
         public function getConfigTreeBuilder()
         {
             $treeBuilder = new TreeBuilder();
-            $rootNode    = $treeBuilder->root('acme_hello');
+            $rootNode    = $treeBuilder->root('acme_demo');
 
             $rootNode
                 ->children()

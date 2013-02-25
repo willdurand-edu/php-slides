@@ -147,7 +147,7 @@ it might need:
 
     !php
     return $this->render(
-        'AcmeHelloBundle:Hello:index.html.twig', array('name' => $name)
+        'AcmeDemoBundle:Hello:hello.html.twig', array('name' => $name)
     );
 
 ---

@@ -66,8 +66,8 @@ Create a `Command` directory inside your bundle and create a php file suffixed
 with `Command.php` for each command that you want to provide:
 
     !php
-    // src/Acme/HelloBundle/Command/GreetCommand.php
-    namespace Acme\HelloBundle\Command;
+    // src/Acme/DemoBundle/Command/GreetCommand.php
+    namespace Acme\DemoBundle\Command;
 
     use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
     use Symfony\Component\Console\Input\InputArgument;
@@ -79,7 +79,7 @@ with `Command.php` for each command that you want to provide:
     {
         protected function configure()
         {
-            $this->setName('hello:greet');
+            $this->setName('demo:greet');
         }
 
         protected function execute(InputInterface $input,
@@ -140,7 +140,7 @@ setup to accept a value or simply as a boolean flag without a value.
 ### Usage
 
     !php
-    // php app/console hello:greet --yell
+    // php app/console demo:greet --yell
 
     if ($input->getOption('yell')) {
         // ...
@@ -167,7 +167,7 @@ setup to accept a value or simply as a boolean flag without a value.
 ### Usage
 
     !php
-    // php app/console hello:greet --iterations=10
+    // php app/console demo:greet --iterations=10
 
     for ($i = 0; $i < $input->getOption('iterations'); $i++) {
     }
@@ -188,9 +188,9 @@ setup to accept a value or simply as a boolean flag without a value.
 ### Calling an existing Command
 
     !php
-    $command   = $this->getApplication()->find('hello:greet');
+    $command   = $this->getApplication()->find('demo:greet');
     $arguments = array(
-        'command' => 'hello:greet',
+        'command' => 'demo:greet',
         'name'    => 'Fabien',
         'yell'    => true,
     );
