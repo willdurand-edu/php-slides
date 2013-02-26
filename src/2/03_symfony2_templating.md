@@ -224,7 +224,7 @@ By default, templates can live in two different locations:
 
 Symfony2 uses a `bundle:controller:template` string syntax for templates.
 
-You can skip the `controller` string: `bundle::controller:template`. The `template`
+You can skip the `controller` string: `bundle::template`. The `template`
 file would live in `Resources/views/`.
 
 You can also skip the `bundle` string. It refers to an application-wide base
