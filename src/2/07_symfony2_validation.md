@@ -39,9 +39,9 @@ You can configure a set of **constraints** on this class:
     !yaml
     # src/Acme/DemoBundle/Resources/config/validation.yml
     Acme\DemoBundle\Entity\Author:
-    properties:
-        name:
-            - NotBlank: ~
+        properties:
+            name:
+                - NotBlank: ~
 
 ---
 
