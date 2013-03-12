@@ -255,9 +255,9 @@ the `{page}` parameter must be a digit (i.e. a number).
             _method: GET
             # _methods: GET|POST
 
-            # New in Symfony2.2!
-            methods: [ GET ]
-            # methods: [ GET, POST ]
+        # New in Symfony2.2!
+        methods: [ GET ]
+        # methods: [ GET, POST ]
 
 ---
 
