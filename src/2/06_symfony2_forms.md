@@ -31,7 +31,7 @@ View layer. It's achieved through the `createView()` method.
 
     !jinja
     {# src/Acme/DemoBundle/Resources/views/Default/new.html.twig #}
-    <form action="{{ path('task_new') }}" method="post">
+    <form action="{{ path('acme_demo.default_new') }}" method="post">
         {{ form_widget(form) }}
 
         <input type="submit" />
