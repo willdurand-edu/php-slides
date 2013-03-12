@@ -119,7 +119,7 @@ allows you to add a constraint to any public method whose name starts with
     Acme\DemoBundle\Entity\Author:
         getters:
             passwordLegal:
-                - "True":
+                - "False":
                     message: "The password cannot match your first name"
 
 With the following code in the `Author` class:

@@ -14,7 +14,7 @@ application and **into a layer where they can be translated** and converted
 ### Localization
 
 The act of creating translation files is an important part of **localization**
-(often abbreviated **L10n**). It is the **process of adapting a product or
+(often abbreviated **l10n**). It is the **process of adapting a product or
 service to a particular language**, **culture**, and desired local
 **look-and-feel**.
 
