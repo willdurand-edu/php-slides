@@ -189,12 +189,15 @@ the `newAction()` and the `updateAction()`:
     private function processForm(Person $person)
     {
         $form = $this->createForm(new PersonType(), $person);
-        $form->bind($this->getRequest());
 
-        if ($form->isValid()) {
-            $person->save();
+        if ($this->getRequest()->isMethod('POST')) {
+            $form->bind($this->getRequest());
 
-            return $this->redirect($this->generateUrl('success'));
+            if ($form->isValid()) {
+                $person->save();
+
+                return $this->redirect($this->generateUrl('success'));
+            }
         }
 
         return $this->render('AcmeDemoBundle:Default:new.html.twig', [
