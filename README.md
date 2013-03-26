@@ -1,5 +1,5 @@
-LicPro-Slides
-=============
+LicPro-PHP-Slides
+=================
 
 PHP lessons by [Julien Muetton](http://github.com/themouette) and
 [William Durand](http://github.com/willdurand).
@@ -15,7 +15,8 @@ Get the code:
 Install [landslide](https://github.com/adamzap/landslide#installation), then
 build the presentation:
 
-    landslide config.cfg
+    landslide part1.cfg
+    landslide part2.cfg
 
 
 Usage
