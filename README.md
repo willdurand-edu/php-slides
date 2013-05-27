@@ -1,5 +1,5 @@
-LicPro-PHP-Slides
-=================
+PHP
+===
 
 PHP lessons by [Julien Muetton](http://github.com/themouette) and
 [William Durand](http://github.com/willdurand).
@@ -10,7 +10,7 @@ Installation
 
 Get the code:
 
-    git clone git://github.com/willdurand/licpro-php-slides.git --recursive
+    git clone git://github.com/licpro/php-slides.git --recursive
 
 Install [landslide](https://github.com/adamzap/landslide#installation), then
 build the presentation:
