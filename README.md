@@ -1,7 +1,7 @@
 PHP
 ===
 
-PHP lessons by [Julien Muetton](http://github.com/themouette) and
+PHP lectures by [Julien Muetton](http://github.com/themouette) and
 [William Durand](http://github.com/willdurand).
 
 
