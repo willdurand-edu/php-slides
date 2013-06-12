@@ -968,6 +968,7 @@ div.slide div.presenter_notes {
 
     </style>
     
+    <link rel="stylesheet" href="file:///Users/william/projects/php-slides/themes/avalanche/avalanche/css/font-awesome/css/font-awesome.min.css">
     
       
       <style type="text/css" media="screen, projection">
@@ -978,11 +979,37 @@ div.slide div.presenter_notes {
     
       
       <style type="text/css" media="screen, projection">
-        body {
-    font-size: 24px;
+        @import url(http://fonts.googleapis.com/css?family=Droid+Sans);
+
+body {
+    font-size: 1.5em;
+    font-family: 'Droid Sans', sans-serif;
 }
 
-.slide.future {display:none;}
+p, li {
+    line-height: 1.5em;
+}
+
+body,
+.slides,
+.slide.current {
+    color: #FFFFFF;
+    background-color: #69A8C2;
+}
+
+div.slide h1,
+div.slide h2,
+div.slide h3,
+div.slide h4,
+div.slide h5,
+div.slide h6 {
+    color: #3E6478;
+    font-weight: bold;
+}
+
+.slide.future {
+    display:none;
+}
 
 .slide header:only-child h1 {
     font-size: 70px;
@@ -992,28 +1019,106 @@ div.slide div.presenter_notes {
     text-align: center;
 }
 
+blockquote:before {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.5em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\f02d";
+    margin-right: 10px;
+    float: left;
+}
+
 blockquote {
-    text-indent: 0;
     margin: auto;
-    border: 1px solid #DDE;
-    background: ghostWhite;
-    padding: 10px;
+    text-indent: 0;
+    background: #373637;
+    padding: 10px 10px 7px 10px;
+    clear: both;
 }
 
 blockquote p:before,
-blockquote p:after {
+blockquote p:after,
+blockquote.no-before-icon:before {
     content: none;
+}
+
+blockquote.no-before-icon i {
+    margin-right: 10px;
+    line-height: 1.5em;
+    float: left;
 }
 
 a,
 a:visited {
-    color: blue;
+    color: #FFFFFF;
+}
+
+a:hover,
+a:focus {
+    color: #3E6478;
 }
 
 pre {
-    padding: 5px;
-    font-size: 20px;
+    padding: 5px 10px 5px 10px;
+    font-size: 75%;
     font-family: Courier, monospace;
+}
+
+code {
+    padding: 2px 6px 3px 6px;
+    font-size: 100%;
+    font-family: Courier, monospace;
+    background-color: #073642;
+    color: #FFF;
+}
+
+strong, b {
+    font-weight: bolder;
+    font-size: 110%;
+}
+
+li {
+    padding: 5px 0;
+}
+
+ol li p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+h1 {
+    margin-top: 10px;
+}
+
+h1 img {
+    margin-top: 30px;
+}
+
+img {
+    border-radius: 3px;
+    box-shadow: 3px 3px 10px 5px #373637;
+}
+
+.no-border h1 img {
+    margin-top: auto;
+}
+
+.no-border img {
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.sidebar,
+.sidebar a,
+.sidebar a:visited {
+    color: #000;
+}
+
+#toc img {
+    display: none;
 }
 
       </style>
@@ -1410,7 +1515,7 @@ a){var b=F.exec(a);b&&(b[1]=(b[1]||"").toLowerCase(),b[3]=b[3]&&new RegExp("(?:^
   <div class="presentation">
     <div id="time">
       <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
-    </div>            
+    </div>
     <div id="current_presenter_notes">
       <div id="presenter_note"></div>
     </div>
@@ -7378,7 +7483,7 @@ flushing it to the client.</p>
       
     </div>
   </div>
-  
+
   
   <div id="toc" class="sidebar hidden">
     <h2>Table of Contents</h2>
@@ -8244,6 +8349,9 @@ flushing it to the client.</p>
       </tr>
     </table>
   </div>
-  <script>$().landslide();</script>
+  <script>
+      $().landslide();
+      $('.page_number').toggle();
+  </script>
 </body>
 </html>
