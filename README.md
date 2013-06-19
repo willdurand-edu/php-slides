@@ -28,4 +28,7 @@ Basically, just build the presentation and open it in your favorite browser.
 License
 -------
 
-These slides are released under the MIT License. See the bundled LICENSE file for details.
+[![](http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png)
+](http://creativecommons.org/licenses/by-nc-sa/3.0/)<br />This work is
+licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 3.0
+Unported License](http://creativecommons.org/licenses/by-nc-sa/3.0/).
