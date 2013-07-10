@@ -74,8 +74,8 @@ It is even possible to invoke protected methods!
     // Hello
 
 
-> Read more [http://www.php.net/manual/en/book.reflection.php
-](http://www.php.net/manual/en/book.reflection.php).
+> Read more [http://php.net/manual/en/book.reflection.php
+](http://php.net/manual/en/book.reflection.php).
 
 ---
 
@@ -124,7 +124,7 @@ The `SplObserver` interface is used alongside `SplSubject` to implement the
 
     $subject->notify();
 
-> Read more: [php.net/manual/en/class.splobserver.php](php.net/manual/en/class.splobserver.php).
+> Read more: [http://php.net/manual/en/class.splobserver.php](http://php.net/manual/en/class.splobserver.php).
 
 ---
 
