@@ -5,7 +5,7 @@
 # History & Numbers
 
 * Created by Rasmus Lerdorf
-* 5th language in the world (TIOBE November 2012)
+* 6th language in the world (TIOBE December 2013)
 * 1st language for web development
 * Running on 75% of all web servers
 
@@ -27,7 +27,7 @@
 ## Mac OS X
 
     !bash
-    $ curl -s http://php-osx.liip.ch/install.sh | bash -s 5.4
+    $ curl -s http://php-osx.liip.ch/install.sh | bash -s 5.5
 
 > [http://php-osx.liip.ch/](http://php-osx.liip.ch/)
 

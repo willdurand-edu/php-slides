@@ -42,6 +42,7 @@ PHP is a templating language per se.
 
 **Never**, **ever**, **ever** mix HTML and PHP codes or kittens
 will die: you have to separate the presentation from the business logic.
+
 But creating a template engine is ok!
 
     !php
@@ -54,7 +55,7 @@ But creating a template engine is ok!
             $this->templateDir = $templateDir;
         }
 
-        public function render($template, $parameters = array())
+        public function render($template, array $parameters = [])
         {
             extract($parameters);
 
@@ -75,7 +76,7 @@ But creating a template engine is ok!
     <!-- my_template.html -->
     <p>Hello, <?php echo $name; ?>!</p>
 
-Even better with PHP 5.4:
+Even better with PHP 5.4+:
 
     !html
     <p>Hello, <?= $name ?>!</p>
@@ -86,9 +87,9 @@ Even better with PHP 5.4:
     !php
     $engine = new TemplateEngine('/path/to/templates');
 
-    echo $engine->render('my_template.html', array(
+    echo $engine->render('my_template.html', [
         'name' => 'World',
-    ));
+    ]);
     => <p>Hello, World!</p>
 
 ---
@@ -110,13 +111,13 @@ you and much much more! Read more:
 
     !php
     $loader = new Twig_Loader_Filesystem('/path/to/templates');
-    $engine = new Twig_Environment($loader, array(
+    $engine = new Twig_Environment($loader, [
         'cache' => '/path/to/compilation_cache',
-    ));
+    ]);
 
-    echo $engine->render('my_template.html', array(
+    echo $engine->render('my_template.html', [
         'name' => 'World',
-    ));
+    ]);
     => <p>Hello, World!</p>
 
 ---
@@ -125,14 +126,15 @@ you and much much more! Read more:
 
 **Glue** between the **Model** and the **View** layers.
 
-It **should not** contain any logic.
+It **should not** contain any business logic.
 
     !php
     class BananaController
     {
-        public function __construct(BananaMapper $mapper,
-                TemplateEngineInterface $engine)
-        {
+        public function __construct(
+            BananaMapper $mapper,
+            TemplateEngineInterface $engine
+        ) {
             $this->mapper = $mapper;
             $this->engine = $engine;
         }
@@ -141,9 +143,9 @@ It **should not** contain any logic.
         {
             $bananas = $this->mapper->findAll();
 
-            return $this->engine->render('list.html', array(
+            return $this->engine->render('list.html', [
                 'bananas' => $bananas,
-            ));
+            ]);
         }
     }
 

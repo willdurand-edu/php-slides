@@ -9,12 +9,12 @@ A typical **client/server** request follows this pattern:
 ![](../images/client-server.png)
 
 * **Client**: Hello _server_, give me the _resource_ at `URI`.
-
 * **Server**: Here is the resource at `URI`:<br />
 
     `> Content`
 
-For HTTP, a typical client is a **web browser**, and a server is a **web server**.
+For HTTP, a typical client is a **web browser**, and a server is a **web
+server**.
 
 ---
 
@@ -44,7 +44,7 @@ Here is an example:
 Response is made of:
 
 * Some **headers** to describe the content;
-* The response **status**;
+* The response's **status code**;
 * The **content** of the request;
 
 Here is an example:
@@ -72,9 +72,12 @@ An HTTP verb is an action to perform on a **resource** located at a given
 
 * `GET`: retrieve a **resource** or a **collection of resources**;
 * `POST`: create a new **resource**;
-* `PUT`: update an existing **resource**;
+* `PUT`: update an existing **resource** _or_ create a new **resource** at a
+  given URI;
 * `DELETE`: delete a given **resource**;
 * `PATCH`: partial update of a given **resource**.
+
+**Important:** this list is not exhaustive.
 
 ---
 
@@ -113,15 +116,15 @@ Also, **never trust user input**, **never!**
 Will result in:
 
     !php
-    $_GET = array("a" => 1, "id" => 2);
+    $_GET     = [ "a" => 1, "id" => 2 ];
 
-    $_POST = array("b" => 3, "city" => 'paris');
+    $_POST    = [ "b" => 3, "city" => 'paris' ];
 
-    $_REQUEST = array("a" => 1, "id" => 2, "b" => 3, "city" => 'paris');
+    $_REQUEST = [ "a" => 1, "id" => 2, "b" => 3, "city" => 'paris' ];
 
     $_SERVER['QUERY_STRING'] = "a=1&id=2";
 
-    $HTTP_RAW_POST_DATA = "b=3&city=paris";
+    $HTTP_RAW_POST_DATA      = "b=3&city=paris";
 
 ---
 
@@ -130,8 +133,8 @@ Will result in:
 Each URI represents a unique **resource** that can be formatted as requested in
 `json`, `xml`, or `html`.
 
-* `/bananas/joe`: _URI_ for banana "Joe"
-* `/bananas/henry`: _URI_ for banana "Henry"
+* `/bananas/joe`: _URI_ for banana "Joe";
+* `/bananas/henry`: _URI_ for banana "Henry".
 
 Those resources are organized into collections:
 

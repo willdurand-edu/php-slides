@@ -11,7 +11,7 @@
 * easy to use;
 * built-in.
 
-### Some usecases:
+### A few use cases:
 
 * Keep user authentication and roles;
 * Store cart;

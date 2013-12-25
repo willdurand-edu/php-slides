@@ -8,6 +8,8 @@
 * Programming To The Interface
 * Component Driven Development
 * Dependency Injection
+* From STUPID to SOLID code!
+* Object Calisthenics
 
 ---
 
@@ -20,15 +22,15 @@
 
     class Foo
     {
-        const VERSION   = '1.0';
+        const VERSION = '1.0';
 
-        public $bar     = null;
+        public $bar = null;
 
-        protected $opts = array();
+        protected $opts;
 
-        private $var3   = 123;
+        private $var3 = 123;
 
-        public function __construct(BarInterface $bar, $opts = array())
+        public function __construct(BarInterface $bar, array $opts = [])
         {
             $this->bar  = $bar;
             $this->opts = $opts;
@@ -58,7 +60,8 @@ Usage:
     !bash
     $ php php-cs-fixer.phar fix /path/to/dir/or/file
 
-> [http://cs.sensiolabs.org/](http://cs.sensiolabs.org/).
+> More information at:
+[http://cs.sensiolabs.org/](http://cs.sensiolabs.org/).
 
 ---
 
@@ -78,7 +81,7 @@ as template engine thanks to the `TemplateEngineInterface`:
          *
          * @return string
          */
-        public function render($template, array $parameters = array());
+        public function render($template, array $parameters = []);
     }
 
 You should think about interfaces, not about internal implementation details.
@@ -94,7 +97,8 @@ well**, and **only one thing**.
 
 How to manage these components in your application?
 
-> Read [Component Driven Development: it's like Lego!](http://williamdurand.fr/2012/02/01/component-driven-development-it-s-like-lego/).
+> Read more: [Component Driven Development: it's like
+Lego!](http://williamdurand.fr/2012/02/01/component-driven-development-it-s-like-lego/)
 
 ---
 
@@ -228,3 +232,54 @@ application.
 >
 > * [http://symfony.com/doc/current/book/service_container.html](http://symfony.com/doc/current/book/service_container.html);
 > * [http://symfony.com/doc/current/components/dependency_injection/](http://symfony.com/doc/current/components/dependency_injection/).
+
+---
+
+# From STUPID to SOLID code! (1/2)
+
+### STUPID
+
+* **S**ingleton
+* **T**ight Coupling
+* **U**ntestability
+* **P**remature Optimization
+* **I**ndescriptive Naming
+* **D**uplication
+
+> Read more:
+[http://williamdurand.fr/2013/07/30/from-stupid-to-solid-code/#stupid-code-seriously](http://williamdurand.fr/2013/07/30/from-stupid-to-solid-code/#stupid-code-seriously).
+
+---
+
+# From STUPID to SOLID code! (2/2)
+
+### SOLID
+
+* **S**ingle Responsibility Principle
+* **O**pen/Closed Principle
+* **L**iskov Substitution Principle
+* **I**nterface Segregation Principle
+* **D**ependency Inversion Principle
+
+> Read more:
+[http://williamdurand.fr/2013/07/30/from-stupid-to-solid-code/#solid-to-the-rescue](http://williamdurand.fr/2013/07/30/from-stupid-to-solid-code/#solid-to-the-rescue)
+
+---
+
+# Object Calisthenics
+
+**9 rules** invented by Jeff Bay in his book [The ThoughWorks
+Anthology](http://pragprog.com/book/twa/thoughtworks-anthology):
+
+1. Only One Level Of Indentation Per Method
+2. Don't Use The ELSE Keyword
+3. Wrap All Primitives And Strings
+4. First Class Collections
+5. One Dot Per Line
+6. Don't Abbreviate
+7. Keep All Entities Small
+8. No Classes With More Than Two Instance Variables
+9. No Getters/Setters/Properties
+
+> Read more:
+[http://williamdurand.fr/2013/06/03/object-calisthenics/](http://williamdurand.fr/2013/06/03/object-calisthenics/).

@@ -21,35 +21,13 @@ Worked at:
 Open-Source evangelist:
 
 * Lead developer of the [Propel ORM](http://propelorm.org),
-[Geocoder](http://geocoder-php.org/), and several other projects;
+[Geocoder](http://geocoder-php.org/), and [several other
+projects](https://github.com/willdurand);
 * (Inactive?) Contributor on Symfony2.
 
 [twitter.com/couac](https://twitter.com/couac)
  | [github.com/willdurand](https://github.com/willdurand)
  | [williamdurand.fr](http://www.williamdurand.fr)
-
----
-
-# Julien MUETTON
-
-Software developer at IT Networks
-
-Graduated from ESIGELEC (Rouen)
-
-Co-founder of [Carpe Hora](http://www.carpe-hora.com/) (Clermont-Ferrand, France)
-
-Worked at:
-
-* [Orange R&D](http://www.orange.fr) (Issy les Moulineaux, France)
-* [Efixo]() - [Neuf telecom]() now [SFR]() (Marseille, France)
-* [MSD-Chibret]() (Riom, France)
-
-Passionate front end developer, believe in standards and open source.
-
-> Read the code, not the doc
-
-[twitter.com/themouette](https://twitter.com/themouette)
- | [github.com/themouette](https://github.com/themouette)
 
 ---
 
@@ -61,7 +39,8 @@ PHP: Hypertext Preprocessor, The PHP Syntax, The PHP Command Line, Client/Server
 
 ### Week #2
 
-Autoloading, Leveraging PHP APIs, Dependency Management in PHP, Model View Controller
+Autoloading, Leveraging PHP APIs, Dependency Management in PHP, Model View
+Controller
 
 ### Week #3
 

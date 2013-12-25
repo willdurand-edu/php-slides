@@ -16,7 +16,7 @@ A lot of PHP libraries are compatible with Composer and listed on
 PHP libraries.
 
     !bash
-    $ curl -s https://getcomposer.org/installer | php
+    $ curl -sS https://getcomposer.org/installer | php
 
 This will download `composer.phar` (a PHP binary archive).
 
@@ -32,7 +32,7 @@ Create a `composer.json` file in your project's root directory:
     !javascript
     {
         "require": {
-            "willdurand/geocoder": "1.1.*"
+            "willdurand/geocoder": "~2.0"
         }
     }
 
@@ -59,7 +59,7 @@ the **Symfony2 Console** component:
     !json
     {
         "require": {
-            "symfony/console": "v2.1.5"
+            "symfony/console": "~2.4"
         }
     }
 
@@ -92,9 +92,10 @@ Your _Commands_ should extend the `Command` class:
             // configure the name, arguments, options, etc.
         }
 
-        protected function execute(InputInterface $input,
-            OutputInterface $output)
-        {
+        protected function execute(
+            InputInterface $input,
+            OutputInterface $output
+        ) {
         }
     }
 
@@ -148,4 +149,5 @@ Your _Commands_ should extend the `Command` class:
     $ app/console demo:greet William
     Hello, William
 
-> [http://symfony.com/doc/master/components/console/introduction.html](http://symfony.com/doc/master/components/console/introduction.html).
+> Read more:
+[http://symfony.com/doc/current/components/console/](http://symfony.com/doc/current/components/console/index.html).

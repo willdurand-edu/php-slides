@@ -27,7 +27,7 @@ Install it using Composer:
     !javascript
     {
         "require-dev": {
-            "phpunit/phpunit": "3.7.*"
+            "phpunit/phpunit": "~3.7"
         }
     }
 
@@ -74,7 +74,8 @@ You can also use the `@test` annotation:
 * `assertFalse()`
 * etc.
 
-See all assertion methods: [http://www.phpunit.de/manual/current/en/writing-tests-for-phpunit.html](http://www.phpunit.de/manual/current/en/writing-tests-for-phpunit.html#writing-tests-for-phpunit.assertions).
+> See all assertion methods:
+[http://www.phpunit.de/manual/current/en/writing-tests-for-phpunit.html](http://www.phpunit.de/manual/current/en/writing-tests-for-phpunit.html#writing-tests-for-phpunit.assertions).
 
 ---
 
@@ -116,8 +117,8 @@ See also:
 
 Also known as **acceptance testing**.
 
-Use tools to create automated tests that actually use your application instead
-of just verifying that individual units of code are behaving correctly.
+Use tools to create automated tests that actually use your application rather
+than only verifying that individual units of code behave correctly.
 
 * [Selenium](http://seleniumhq.org/)
 * [Mink](http://mink.behat.org/)
@@ -215,8 +216,10 @@ Writing your Step definitions:
         throw new PendingException();
      }
 
-**Must Read**:
+> **Must Read**:
 [https://speakerdeck.com/everzet/behat-by-example](https://speakerdeck.com/everzet/behat-by-example).
+
+<p></p>
 
 > Read more about Behat:
 [http://docs.behat.org/](http://docs.behat.org/).

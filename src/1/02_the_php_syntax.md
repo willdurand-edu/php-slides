@@ -274,7 +274,8 @@ This is different!
     echo Foo::value;
     => 123
 
-> [http://php.net/manual/en/language.oop5.static.php](http://php.net/manual/en/language.oop5.static.php).
+> Read more:
+[http://php.net/manual/en/language.oop5.static.php](http://php.net/manual/en/language.oop5.static.php).
 
 ---
 
@@ -329,6 +330,29 @@ describes a set of rules related to namespaces for autoloader interoperability.
     !php
     \ns\package\Class_Name      => vendor/ns/package/Class/Name.php
     \ns\package_name\Class_Name => vendor/ns/package_name/Class/Name.php
+
+---
+
+# The `class` Keyword
+
+Since PHP 5.5.0, class name resolution is possible via `::class`.
+
+    !php
+    namespace My\Namespace;
+
+    class ClassName
+    {
+    }
+
+Assuming the class definition above, you can get the **F**ully **Q**ualified
+**C**lass **N**ame (FQCN) by doing:
+
+    !php
+    echo ClassName::class;
+    // My\namespace\ClassName
+
+> Read more about the `class` keyword:
+[http://www.php.net/manual/en/language.oop5.basic.php](http://www.php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.class).
 
 ---
 
@@ -412,3 +436,18 @@ Other methods are not really useful but it's worth knowing them (`__get()`, `__s
 
 > Read more about **magic methods**:
 [http://php.net/manual/en/language.oop5.magic.php](http://php.net/manual/en/language.oop5.magic.php).
+
+---
+
+# Generators
+
+A **generator function** looks just like a normal function, except that instead
+of returning a value, a generator **yields** as many values as it needs to.
+
+The heart of a generator function is the `yield` keyword.
+
+> Read more about **generators**:
+>
+> * [http://www.php.net/manual/en/language.generators.php](http://www.php.net/manual/en/language.generators.php);
+> * [What Generators Can Do For
+You](http://blog.ircmaxell.com/2012/07/what-generators-can-do-for-you.html).

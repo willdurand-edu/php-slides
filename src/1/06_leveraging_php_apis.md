@@ -4,7 +4,7 @@
 
 # Built-in Interfaces
 
-## ArrayAccess
+### ArrayAccess
 
 Access properties as an array:
 
@@ -12,15 +12,19 @@ Access properties as an array:
     $tom = new MyObject();
     $tom['name'] = 'Tom';
 
-## Serializable
+### Serializable, JsonSerializable
 
 Allow the use of `serialize()` and `unserialize()`.
 
-## Traversable
+Objects implementing `JsonSerializable` can customize their JSON representation
+when encoded with `json_encode()`.
+
+### Traversable
 
 Allow the use of `foreach`.
 
-> Read more [http://fr2.php.net/manual/en/reserved.interfaces.php](http://fr2.php.net/manual/en/reserved.interfaces.php).
+> Read more:
+[http://fr2.php.net/manual/en/reserved.interfaces.php](http://fr2.php.net/manual/en/reserved.interfaces.php).
 
 ---
 
@@ -74,8 +78,8 @@ It is even possible to invoke protected methods!
     // Hello
 
 
-> Read more [http://php.net/manual/en/book.reflection.php
-](http://php.net/manual/en/book.reflection.php).
+> Read more:
+[http://php.net/manual/en/book.reflection.php](http://php.net/manual/en/book.reflection.php).
 
 ---
 
@@ -148,13 +152,14 @@ component to the rescue!
 
     $dispatcher->dispatch('event_name');
 
-> Read more: [http://symfony.com/doc/2.0/components/event_dispatcher/](http://symfony.com/doc/2.0/components/event_dispatcher/).
+> Read more:
+[http://symfony.com/doc/master/components/event_dispatcher/](http://symfony.com/doc/master/components/event_dispatcher/index.html).
 
 ---
 
-# Exceptions
+# Exceptions (1/2)
 
-`try`/`catch` block with multiple `catch` statements:
+`try`-`catch` block with multiple `catch` statements:
 
     !php
     try {
@@ -175,6 +180,39 @@ Create your own exceptions:
     class MyException extends Exception implements ExceptionInterface
     {
     }
+
+---
+
+# Exceptions (2/2)
+
+`try`-`catch` blocks also supports a `finally` block for code that should be run
+regardless of whether an exception has been thrown or not:
+
+    !php
+    try {
+        // ..
+    } catch (Exception $e) {
+        // do something
+    } finally {
+        // the code here will always be executed
+    }
+
+---
+
+# Password Hashing
+
+The password hashing API provides an easy to use wrapper around `crypt()` to
+make it easy to create and manage passwords in a secure manner, since PHP 5.5.0.
+
+`password_hash()` and `password_verify()` are your new friends!
+
+> Read more about the **Password Hashing API**:
+[http://www.php.net/manual/en/book.password.php](http://www.php.net/manual/en/book.password.php).
+
+<p></p>
+
+> A **userland implementation** exists for PHP >= 5.3.7:
+[password_compat](https://github.com/ircmaxell/password_compat).
 
 ---
 

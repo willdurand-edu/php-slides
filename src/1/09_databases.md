@@ -398,7 +398,7 @@ a map. Looks up objects using the map when referring to them.
     !php
     class Finder
     {
-        private $identityMap = array();
+        private $identityMap = [];
 
         public function findOneById($id)
         {
@@ -481,7 +481,7 @@ external behavior.
          *
          * @return bool Returns `true` on success, `false` otherwise
          */
-        public function executeQuery($query, $parameters = array())
+        public function executeQuery($query, array $parameters = [])
         {
             $stmt = $this->prepare($query);
 
@@ -510,10 +510,10 @@ external behavior.
     {
         $query = 'UPDATE bananas SET name = :name WHERE id = :id';
 
-        return $this->con->executeQuery($query, array(
+        return $this->con->executeQuery($query, [
             'id'    => $id,
             'name'  => $name,
-        ));
+        ]);
     }
 
 ---
@@ -571,7 +571,7 @@ seen above, and that eases relationships between objects.
 ### Example
 
     !php
-    $roles = array();
+    $roles = [];
     foreach ($banana->getBananaRoles() as $bananaRole) {
         $roles[] = $bananaRole->getRole();
     }
@@ -588,14 +588,10 @@ seen above, and that eases relationships between objects.
 An ORM that implements the **Table Data Gateway** and **Row Data Gateway**
 patterns, often seen as an **Active Record** approach.
 
-> Documentation: [propelorm.org](http://www.propelorm.org).
+> Documentation: [www.propelorm.org](http://www.propelorm.org).
 
 ### Doctrine2 ORM
 
 An ORM that implements the **Data Mapper** pattern.
 
-> Documentation: [doctrine-project.org](http://www.doctrine-project.org/).
-
----
-
-# Your Turn!
+> Documentation: [www.doctrine-project.org](http://www.doctrine-project.org/).
