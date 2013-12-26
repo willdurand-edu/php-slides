@@ -2,11 +2,11 @@
 
 ---
 
-# GitHub
+# ![](../images/github.png)
 
 ---
 
-# Travis-CI
+# ![](../images/travis-ci.png)
 
 ---
 

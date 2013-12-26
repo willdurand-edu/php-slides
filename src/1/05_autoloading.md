@@ -166,6 +166,7 @@ List all autoload methods.
 
 The `new` algorithm in pseudo code:
 
+    !text
     1. Does the 'Foo' class exist?
         => Yes
             Go on

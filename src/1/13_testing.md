@@ -45,7 +45,7 @@ Or as a PHAR:
 
 The tests for a class `Class` go into a class `ClassTest`.
 
-`ClassTest` inherits (most of the time) from `PHPUnit_Framework_TestCase`, but
+`ClassTest` should inherit from `PHPUnit_Framework_TestCase`, but
 a common practice is to create a `TestCase` class for a project, and to inherit
 from it:
 

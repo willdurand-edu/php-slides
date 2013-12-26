@@ -8,10 +8,10 @@ A typical **client/server** request follows this pattern:
 
 ![](../images/client-server.png)
 
-* **Client**: Hello _server_, give me the _resource_ at `URI`.
-* **Server**: Here is the resource at `URI`:<br />
+1. **Client**: Hello _server_, give me the _resource_ at _URI_;
+2. **Server**: Here is the resource at _URI_:
 
-    `> Content`
+    `Content`
 
 For HTTP, a typical client is a **web browser**, and a server is a **web
 server**.
@@ -142,8 +142,8 @@ Those resources are organized into collections:
 
 So it makes sense to use HTTP verbs to execute an action:
 
-> `GET /banana/joe` will return banana "Joe".
+`GET /banana/joe` will return banana "Joe".
 
-And:
+and:
 
-> `DELETE /bananas` will delete all bananas in the collection!
+`DELETE /bananas` will delete all bananas in the collection!

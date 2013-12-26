@@ -25,14 +25,17 @@ Typical client request process in MVC architecture:
 All **data related business logic** is embedded here.
 Using it should not require to understand internals.
 
-_Examples_:
+Examples:
 
 * Manipulate **database** records;
 * Communicate with **search engine**;
 * **API** calls;
 * etc.
 
-> More on this next week!
+<blockquote class="no-before-icon">
+    <i class="fa fa-bullhorn"></i>
+    <p>More on this next week!</p>
+</blockquote>
 
 ---
 
@@ -42,8 +45,6 @@ PHP is a templating language per se.
 
 **Never**, **ever**, **ever** mix HTML and PHP codes or kittens
 will die: you have to separate the presentation from the business logic.
-
-But creating a template engine is ok!
 
     !php
     class TemplateEngine
@@ -159,9 +160,9 @@ Routing is the process of binding `URI`s to controllers.
 
 The simplest kind of routing, but also the hardest to maintain:
 
+    !text
     web/
     ├ trees/
-    │ ├ banana.php
     │ └ pineapple.php
     └ tree.php
 

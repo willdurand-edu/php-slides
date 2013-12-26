@@ -50,12 +50,12 @@ The PHP Coding Standards Fixer tool fixes most issues in your code when
 you want to follow the PHP coding standards as defined in the PSR-1 and
 PSR-2 documents.
 
-Installation:
+### Installation
 
     !bash
     $ wget http://cs.sensiolabs.org/get/php-cs-fixer.phar
 
-Usage:
+### Usage
 
     !bash
     $ php php-cs-fixer.phar fix /path/to/dir/or/file
@@ -262,7 +262,7 @@ application.
 * **D**ependency Inversion Principle
 
 > Read more:
-[http://williamdurand.fr/2013/07/30/from-stupid-to-solid-code/#solid-to-the-rescue](http://williamdurand.fr/2013/07/30/from-stupid-to-solid-code/#solid-to-the-rescue)
+[http://williamdurand.fr/2013/07/30/from-stupid-to-solid-code/#solid-to-the-rescue](http://williamdurand.fr/2013/07/30/from-stupid-to-solid-code/#solid-to-the-rescue).
 
 ---
 

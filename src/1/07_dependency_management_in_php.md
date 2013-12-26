@@ -49,6 +49,8 @@ Require the generated autoloader in your project:
 
     require 'vendor/autoload.php';
 
+    // your PHP code
+
 ---
 
 # Example
@@ -65,6 +67,7 @@ the **Symfony2 Console** component:
 
 The structure of your application should look like:
 
+    !text
     console-app
     ├── app
     │   └── console
@@ -144,6 +147,7 @@ Your _Commands_ should extend the `Command` class:
 
 ### Usage
 
+    !bash
     $ app/console demo:greet
     Hello, World
     $ app/console demo:greet William

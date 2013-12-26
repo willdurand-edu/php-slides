@@ -115,7 +115,7 @@ Useful keyword: `instanceof`
         // do something
     }
 
-> [http://www.php.net/manual/en/language.oop5.basic.php](http://www.php.net/manual/en/language.oop5.basic.php).
+> [http://www.php.net/manual/en/language.oop5.basic.php](http://www.php.net/manual/en/language.oop5.basic.php)
 
 ---
 

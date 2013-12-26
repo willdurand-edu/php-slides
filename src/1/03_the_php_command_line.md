@@ -12,7 +12,10 @@ You can try PHP using the command line:
     $ php -r 'echo "Hello, World\n"'
     Hello, World
 
-> Help available by running: `php -h`.
+<blockquote class="no-before-icon">
+    <i class="fa fa-lightbulb-o"></i>
+    <p>Help available by running: <code>php -h</code></p>
+</blockquote>
 
 PHP also provides an interactive shell:
 
@@ -36,8 +39,11 @@ Your new best friend is the _linter_:
     $ php -l my/script.php
     No syntax errors detected in my/script.php
 
-> A **linter** is a program that looks for problems in your code (_syntax
-errors_ for instance).
+<blockquote class="no-before-icon">
+    <i class="fa fa-thumb-tack"></i>
+    <p>A <strong>linter</strong> is a program that looks for problems in your code
+    (<em>syntax errors</em> for instance).</p>
+</blockquote>
 
 Embedded web server:
 

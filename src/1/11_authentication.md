@@ -33,7 +33,6 @@ the **Observer**/**Observable** pattern.
 ### Event Dispatcher
 
 The application notifies a set of listeners to an event.
-
 The listeners can register themselves to a particular event.
 
 An **Event Dispatcher** manages both the listeners, and the events.
@@ -96,10 +95,8 @@ The **listeners** have to listen to this event:
 # The Firewall
 
 Now that we can hook into the appplication's lifecycle, we need to write a
-**Firewall**.
-
-A **Firewall** needs a **whitelist** of unsecured routes (routes which don't
-require the user to be authenticated):
+**Firewall**. This firewall needs a **whitelist** of unsecured routes (routes
+which don't require the user to be authenticated):
 
     !php
     $allowed = [

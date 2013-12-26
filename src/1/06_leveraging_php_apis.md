@@ -15,7 +15,6 @@ Access properties as an array:
 ### Serializable, JsonSerializable
 
 Allow the use of `serialize()` and `unserialize()`.
-
 Objects implementing `JsonSerializable` can customize their JSON representation
 when encoded with `json_encode()`.
 
@@ -87,15 +86,16 @@ It is even possible to invoke protected methods!
 
 Provides a collection of classes and interfaces:
 
-## Datastructures
+### Datastructures
 
 `SplStack`, `SplQueue`, [`SplObjectStorage`](http://php.net/manual/en/class.splobjectstorage.php), etc.
 
-## Named Exceptions
+### Named Exceptions
 
-`LogicException`, `InvalidArgumentException`, `OutOfRangeException`, etc.
+`LogicException`, `InvalidArgumentException`, `OutOfRangeException`,
+`RuntimeException`, etc.
 
-## SPL Functions
+### SPL Functions
 
 `class_parents()`, `spl_autoload_register()`, `spl_autoload_unregister()`, etc.
 

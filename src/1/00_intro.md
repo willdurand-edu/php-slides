@@ -25,9 +25,13 @@ Open-Source evangelist:
 projects](https://github.com/willdurand);
 * (Inactive?) Contributor on Symfony2.
 
-[twitter.com/couac](https://twitter.com/couac)
- | [github.com/willdurand](https://github.com/willdurand)
- | [williamdurand.fr](http://www.williamdurand.fr)
+<p class="center">
+    <i class="fa fa-twitter"></i> <a href="https://twitter.com/couac">twitter.com/couac</a>
+    &nbsp;|&nbsp;
+    <i class="fa fa-github"></i> <a href="https://github.com/willdurand">github.com/willdurand</a>
+    &nbsp;|&nbsp;
+    <i class="fa fa-globe"></i> <a href="http://www.williamdurand.fr">williamdurand.fr</a>
+</p>
 
 ---
 
