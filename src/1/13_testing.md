@@ -39,9 +39,7 @@ Or as a PHAR:
 
 ---
 
-# Using PHPUnit
-
-## The Rules
+# PHPUnit — The Rules
 
 The tests for a class `Class` go into a class `ClassTest`.
 
@@ -52,8 +50,8 @@ from it:
     !php
     class TestCase extends PHPUnit_Framework_TestCase {}
 
-The tests are public methods that are named `test*`.
-You can also use the `@test` annotation:
+The tests are public methods that are named `test*`, but you can also use the
+`@test` annotation:
 
     !php
     class ClassTest extends TestCase
@@ -67,7 +65,7 @@ You can also use the `@test` annotation:
 
 ---
 
-# PHPUnit Assertions
+# PHPUnit — Assertions
 
 * `assertEquals()`
 * `assertTrue()`

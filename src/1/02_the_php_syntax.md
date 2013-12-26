@@ -386,6 +386,9 @@ Horizontal Inheritance FTW!
 
 # Anonymous Functions
 
+An **anonymous function**, also known as **lambda** function, is a function
+defined, and possibly called, without being bound to an identifier.
+
     !php
     $greet = function ($name) {
         printf("Hello %s\n", $name);
@@ -400,6 +403,8 @@ Horizontal Inheritance FTW!
 ---
 
 # Closures
+
+A **closure** is an anonymous function that owns a context.
 
     !php
     $fibonacci = function ($n) use (&$fibonacci) {

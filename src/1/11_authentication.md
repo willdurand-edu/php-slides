@@ -27,14 +27,13 @@ We need a way to hook into this process before invoking the controller:
 The **Interceptor Pattern** allows you to execute some code during the default
 application's lifecyle.
 
-A way to implement this pattern is to use **events**. It's more or less like
+A way to implement this pattern is to use **events**. It is more or less like
 the **Observer**/**Observable** pattern.
 
 ### Event Dispatcher
 
 The application notifies a set of listeners to an event.
 The listeners can register themselves to a particular event.
-
 An **Event Dispatcher** manages both the listeners, and the events.
 
 ---
@@ -189,9 +188,9 @@ If authentication fails, the server should return a `401` status code.
 
 Useful for API authentication.
 
-### OAuth
+### OpenID
 
-[http://oauth.net/](http://oauth.net/)
+[http://openid.net/](http://openid.net/)
 
 ### Basic and Digest Access Authentication
 

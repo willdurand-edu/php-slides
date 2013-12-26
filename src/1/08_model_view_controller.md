@@ -5,7 +5,7 @@
 
 Typical client request process in MVC architecture:
 
-![](../images/MVC.png)
+![](../images/mvc.png)
 
 ## Presenter notes
 
@@ -180,7 +180,7 @@ This require a single entry point: the **Frontend Controller**.
 
 A controller that handles all requests for a web application:
 
-![](http://martinfowler.com/eaaCatalog/frontController-sketch.gif)
+![](../images/front-controller.png)
 
 This controller dispatches the request to the **specialized controllers**.
 

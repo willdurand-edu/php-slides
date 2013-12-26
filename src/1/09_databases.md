@@ -38,7 +38,7 @@ Don't forget his name! Read his books!
 
 ---
 
-# Row Data Gateway ![](http://martinfowler.com/eaaCatalog/dbgateRow.gif)
+# Row Data Gateway ![](../images/row-data-gateway.png)
 
 ---
 
@@ -117,7 +117,7 @@ There is one instance per row.
 
 ---
 
-# Table Data Gateway ![](http://martinfowler.com/eaaCatalog/dbgateTable.gif)
+# Table Data Gateway ![](../images/table-data-gateway.png)
 
 ---
 
@@ -268,7 +268,7 @@ A DAO implements the well-known **C**reate **R**ead **U**pdate
 
 ---
 
-# Active Record ![](http://martinfowler.com/eaaCatalog/activeRecordSketch.gif)
+# Active Record ![](../images/active-record.png)
 
 ---
 
@@ -326,7 +326,7 @@ the database access, and adds domain logic on that data.
 
 ---
 
-# Data Mapper ![](http://martinfowler.com/eaaCatalog/databaseMapperSketch.gif)
+# Data Mapper ![](../images/data-mapper.png)
 
 ---
 
@@ -386,7 +386,7 @@ But also:
 
 ---
 
-# Identity Map ![](http://martinfowler.com/eaaCatalog/idMapperSketch.gif)
+# Identity Map ![](../images/identity-map.png)
 
 ---
 
@@ -417,12 +417,11 @@ a map. Looks up objects using the map when referring to them.
 
 ---
 
-# Data Access Layer
+# Data Access Layer / Data Source Name
 
 A **D**ata **A**ccess **L**ayer (DAL) is a standard API to manipulate data,
 no matter which database server is used.
-
-The **D**ata **S**ource **N**ame (DSN) can be used to determine which database
+A **D**ata **S**ource **N**ame (DSN) can be used to determine which database
 vendor you are using.
 
 ### PHP Data Object (PDO)
@@ -539,10 +538,10 @@ seen above, and that eases relationships between objects.
 
 ### One-To-One (1-1)
 
-![](http://yuml.me/diagram/scruffy;/class///%20Cool%20Class%20Diagram,%20%5BBanana%5D%3C1---1%3E%5BProfile%5D.png)
+<img src="../images/one-to-one.png" class="no-border" />
 
 
-### Example
+### Code Snippet
 
     !php
     $profile = $banana->getProfile();
@@ -553,9 +552,9 @@ seen above, and that eases relationships between objects.
 
 ### One-To-Many (1-N)
 
-![](http://yuml.me/diagram/scruffy;/class/%5BBananaTree%5D++-0..N%5BBanana%5D.png)
+<img src="../images/one-to-many.png" class="no-border" />
 
-### Example
+### Code Snippet
 
     !php
     $bananas = $bananaTree->getBananas();
@@ -566,9 +565,9 @@ seen above, and that eases relationships between objects.
 
 ### Many-To-Many (N-N)
 
-![](http://yuml.me/diagram/scruffy;/class/%5BBanana%5D1-0..N%5BBananaRole%5D,%20%5BBananaRole%5D0..N-1%5BRole%5D.png)
+<img src="../images/many-to-many.png" class="no-border" />
 
-### Example
+### Code Snippet
 
     !php
     $roles = [];

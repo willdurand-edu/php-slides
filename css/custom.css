@@ -5,7 +5,7 @@ body {
     font-family: 'Droid Sans', sans-serif;
 }
 
-p {
+p, li {
     line-height: 1.5em;
 }
 
@@ -90,7 +90,7 @@ code {
     padding: 2px 6px 3px 6px;
     font-size: 100%;
     font-family: Courier, monospace;
-    background-color: #373637;
+    background-color: #073642;
     color: #FFF;
 }
 
@@ -103,6 +103,39 @@ li {
     padding: 5px 0;
 }
 
+ol li p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 h1 {
     margin-top: 10px;
+}
+
+h1 img {
+    margin-top: 30px;
+}
+
+h1 img.no-border {
+    margin-top: auto;
+}
+
+img {
+    border-radius: 3px;
+    box-shadow: 3px 3px 10px 5px #373637;
+}
+
+img.no-border {
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.sidebar,
+.sidebar a,
+.sidebar a:visited {
+    color: #000;
+}
+
+#toc img {
+    display: none;
 }
