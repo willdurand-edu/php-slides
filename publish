@@ -10,18 +10,18 @@ landslide part2.cfg
 rm -rf $TMP_DIR
 mkdir $TMP_DIR
 mv index* $TMP_DIR
-mv css/ $TMP_DIR
+mv themes/ $TMP_DIR
 
 git checkout gh-pages
 
-rm -rf css/ index.*
-
-mv $TMP_DIR/index* .
-mv $TMP_DIR/css/ .
-git add index* css/font-awesome/
-git commit --amend -m "Publish slides"
+mv $TMP_DIR/* .
+git add index* themes/avalanche/avalanche/css/font-awesome/
+git commit -m "Publish slides (`date`)"
 
 git push origin gh-pages -f
 
+git clean -fdx
+
 git checkout master
+
 git stash apply
