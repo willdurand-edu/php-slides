@@ -116,16 +116,16 @@ h1 img {
     margin-top: 30px;
 }
 
-h1 img.no-border {
-    margin-top: auto;
-}
-
 img {
     border-radius: 3px;
     box-shadow: 3px 3px 10px 5px #373637;
 }
 
-img.no-border {
+.no-border h1 img {
+    margin-top: auto;
+}
+
+.no-border img {
     border-radius: 0;
     box-shadow: none;
 }

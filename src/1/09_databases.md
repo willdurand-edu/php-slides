@@ -538,13 +538,14 @@ seen above, and that eases relationships between objects.
 
 ### One-To-One (1-1)
 
-<img src="../images/one-to-one.png" class="no-border" />
-
+![](../images/one-to-one.png)
 
 ### Code Snippet
 
     !php
     $profile = $banana->getProfile();
+
+.fx: no-border
 
 ---
 
@@ -552,12 +553,14 @@ seen above, and that eases relationships between objects.
 
 ### One-To-Many (1-N)
 
-<img src="../images/one-to-many.png" class="no-border" />
+![](../images/one-to-many.png)
 
 ### Code Snippet
 
     !php
     $bananas = $bananaTree->getBananas();
+
+.fx: no-border
 
 ---
 
@@ -565,7 +568,7 @@ seen above, and that eases relationships between objects.
 
 ### Many-To-Many (N-N)
 
-<img src="../images/many-to-many.png" class="no-border" />
+![](../images/many-to-many.png)
 
 ### Code Snippet
 
@@ -577,6 +580,8 @@ seen above, and that eases relationships between objects.
 
     // Or, better:
     $roles = $banana->getRoles();
+
+.fx: no-border
 
 ---
 

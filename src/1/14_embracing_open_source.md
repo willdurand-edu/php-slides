@@ -2,11 +2,15 @@
 
 ---
 
-<h1><img src="../images/github.png" class="no-border" /></h1>
+# ![](../images/github.png)
+
+.fx: no-border
 
 ---
 
-<h1><img src="../images/travis-ci.png" class="no-border" /></h1>
+# ![](../images/travis-ci.png)
+
+.fx: no-border
 
 ---
 
