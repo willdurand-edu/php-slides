@@ -1,8 +1,30 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
+
 body {
-    font-size: 24px;
+    font-size: 1.5em;
+    font-family: 'Droid Sans', sans-serif;
 }
 
-.slide.future {display:none;}
+body,
+.slides,
+.slide.current {
+    color: #FFFFFF;
+    background-color: #69A8C2;
+}
+
+div.slide h1,
+div.slide h2,
+div.slide h3,
+div.slide h4,
+div.slide h5,
+div.slide h6 {
+    color: #3E6478;
+    font-weight: bold;
+}
+
+.slide.future {
+    display:none;
+}
 
 .slide header:only-child h1 {
     font-size: 70px;
@@ -12,12 +34,24 @@ body {
     text-align: center;
 }
 
+blockquote:before {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\f02d";
+    margin-right: 10px;
+    float: left;
+}
+
 blockquote {
-    text-indent: 0;
     margin: auto;
-    border: 1px solid #DDE;
-    background: ghostWhite;
+    text-indent: 0;
+    background: #373637;
     padding: 10px;
+    clear: both;
 }
 
 blockquote p:before,
@@ -27,11 +61,28 @@ blockquote p:after {
 
 a,
 a:visited {
-    color: blue;
+    color: #FFFFFF;
+}
+
+a:hover,
+a:focus {
+    color: #3E6478;
 }
 
 pre {
-    padding: 5px;
-    font-size: 20px;
+    padding: 5px 10px 5px 10px;
+    font-size: 0.8em;
     font-family: Courier, monospace;
+}
+
+code {
+    padding: 3px 6px 3px 6px;
+    font-size: 1em;
+    font-family: Courier, monospace;
+    background-color: #373637;
+    color: #FFF;
+}
+
+strong, b {
+    font-weight: bolder;
 }
