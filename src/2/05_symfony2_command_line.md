@@ -21,7 +21,7 @@ You can get more verbose messages:
 
     !bash
     $ php app/console cmd --verbose
-    $ php app/console cmd -v
+    $ php app/console cmd -v [-vv] [-vvv]
 
 You can suppress output:
 
@@ -33,6 +33,7 @@ You can suppress output:
 
 # Built-in Commands (2/2)
 
+    !text
     assets
       assets:install          Installs bundles web assets under a public
                               web directory
@@ -70,9 +71,7 @@ with `Command.php` for each command that you want to provide:
     namespace Acme\DemoBundle\Command;
 
     use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
-    use Symfony\Component\Console\Input\InputArgument;
     use Symfony\Component\Console\Input\InputInterface;
-    use Symfony\Component\Console\Input\InputOption;
     use Symfony\Component\Console\Output\OutputInterface;
 
     class GreetCommand extends ContainerAwareCommand
@@ -82,8 +81,10 @@ with `Command.php` for each command that you want to provide:
             $this->setName('demo:greet');
         }
 
-        protected function execute(InputInterface $input,
-            OutputInterface $output) {
+        protected function execute(
+            InputInterface $input,
+            OutputInterface $output
+        ) {
             // code ...
         }
     }
@@ -179,8 +180,10 @@ setup to accept a value or simply as a boolean flag without a value.
 ### Getting Services from the Service Container
 
     !php
-    protected function execute(InputInterface $input,
-        OutputInterface $output) {
+    protected function execute(
+        InputInterface $input,
+        OutputInterface $output
+    ) {
         $translator = $this->getContainer()->get('translator');
         // ...
     }
@@ -197,5 +200,4 @@ setup to accept a value or simply as a boolean flag without a value.
 
     $returnCode = $command->run(new ArrayInput($arguments), $output);
 
-> Read more on How to create a Console Command:
-[http://symfony.com/doc/master/cookbook/console/console_command.html](http://symfony.com/doc/master/cookbook/console/console_command.html).
+> [http://symfony.com/doc/master/cookbook/console/index.html](http://symfony.com/doc/master/cookbook/console/index.html)

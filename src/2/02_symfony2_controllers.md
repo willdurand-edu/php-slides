@@ -55,7 +55,6 @@ Every route must have a `_controller` parameter, which dictates **which controll
 should be executed when that route is matched**.
 
 This parameter uses a simple string pattern called the **logical controller name**.
-
 The pattern has three parts, each separated by a colon:
 
     bundle:controller:action
@@ -71,7 +70,7 @@ Notice that Symfony adds the string `Controller` to the class name (`Blog` =>
 
 ---
 
-# Route Params as Controller Arguments
+# Route Params as Controller Args
 
 ### Routing Definition
 
@@ -199,12 +198,11 @@ maps a `pattern` (or `path` as of Symfony2.2) to a `_controller`:
 This route matches the homepage (`/`) and maps it to the
 `AcmeDemoBundle:Hello:index` controller.
 
-> Read more:
-> [http://symfony.com/doc/master/book/routing.html](http://symfony.com/doc/master/book/routing.html).
+> [http://symfony.com/doc/master/book/routing.html](http://symfony.com/doc/master/book/routing.html)
 
 ---
 
-# Routing with Placeholders
+# Routing with Placeholders (1/2)
 
 ### Required Placeholders
 
@@ -213,10 +211,16 @@ This route matches the homepage (`/`) and maps it to the
         path:      /blog/{page}
         defaults:  { _controller: AcmeBlogBundle:Blog:index }
 
-The path will match anything that looks like `/blog/*`. Even better, the value
-matching the `{page}` **placeholder** will be available inside your controller.
+The path will match anything that looks like `/blog/*`.
+
+Even better, the value matching the `{page}` **placeholder** will be available
+inside your controller.
 
 `/blog` will **not** match.
+
+---
+
+# Routing with Placeholders (2/2)
 
 ### Optional Placeholders
 
@@ -251,13 +255,8 @@ the `{page}` parameter must be a digit (i.e. a number).
     acme_demo.hello_hello:
         pattern:  /hello/{name}
         defaults: { _controller: AcmeDemoBundle:Hello:hello }
-        requirements:
-            _method: GET
-            # _methods: GET|POST
-
-        # New in Symfony2.2!
-        methods: [ GET ]
-        # methods: [ GET, POST ]
+        methods:  [ GET ]
+        # methods:  [ GET, POST ]
 
 ---
 
@@ -276,8 +275,6 @@ located in the bundle itself, and you should just require it:
 
 
 ### Prefixing Imported Routes
-
-You can eventually "prefix" all routes for a given routing configuration:
 
     !yaml
     # app/config/routing.yml
@@ -300,19 +297,19 @@ The `Router` is able to generate both relative and absolute URLs.
 ### Relative URLs
 
     !php
-    $router->generate('acme_demo.hello_hello', array('name' => 'will'));
+    $router->generate('acme_demo.hello_hello', [ 'name' => 'will' ]);
     // /hello/will
 
 ### Absolute URLs
 
     !php
-    $router->generate('acme_demo.hello_hello',
-        array('name' => 'will'), true);
+    $router->generate('acme_demo.hello_hello', [ 'name' => 'will' ], true);
     // http://example.com/hello/will
 
 ### Query String
 
     !php
-    $router->generate('acme_demo.hello_hello',
-        array('name' => 'will', 'some' => 'thing'));
+    $router->generate('acme_demo.hello_hello', [
+        'name' => 'will', 'some' => 'thing'
+    ]);
     // /hello/will?some=thing

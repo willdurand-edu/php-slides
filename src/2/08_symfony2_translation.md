@@ -132,3 +132,36 @@ Or numbers between two other numbers:
     !jinja
     [1, +Inf[
     ]-1,2[
+
+---
+
+# BazingaExposeTranslationBundle
+
+    !yaml
+    # app/Resources/translations/Hello.fr.yml
+    foo: "Bar"
+    ba:
+        bar: "Hello, World!"
+
+    place.holder: "Hello, %username%!"
+
+<p></p>
+
+    !html+jinja
+    <script src="{{ url('bazinga_exposetranslation_js',
+        { 'domain_name': 'Hello', '_locale': 'fr' }) }}"></script>
+
+A `Translator` object is now available in your JavaScript:
+
+    !javascript
+    Translator.get('Hello:foo');
+    // "bar"
+
+    Translator.get('Hello:ba.bar');
+    // "Hello, World!"
+
+    Translator.get('Hello:place.holder');
+    // "Hello, %username%!
+
+    Translator.get('Hello:place.holder', { "username" : "Will" });
+    // "Hello, Will!"

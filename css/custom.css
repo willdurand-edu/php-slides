@@ -26,6 +26,10 @@ div.slide h6 {
     font-weight: bold;
 }
 
+div.slide h3 {
+    margin: 0;
+}
+
 .slide.future {
     display:none;
 }
@@ -68,6 +72,43 @@ blockquote.no-before-icon i {
     margin-right: 10px;
     line-height: 1.5em;
     float: left;
+}
+
+blockquote.quote p,
+blockquote.info p {
+    display: inline;
+}
+
+blockquote.quote:before,
+blockquote.info:before {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.5em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+blockquote.quote:before {
+    content: "\f10d";
+}
+
+blockquote.info:before {
+    content: "\f05a";
+}
+
+blockquote.quote:after {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.5em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\f10e";
+    margin-left: 10px;
+    display: inline-block;
 }
 
 a,
@@ -138,4 +179,8 @@ img {
 
 #toc img {
     display: none;
+}
+
+.slides .color-red h1 {
+    color: #C82D26;
 }

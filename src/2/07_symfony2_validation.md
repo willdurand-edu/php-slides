@@ -62,21 +62,21 @@ You can configure a set of **constraints** on this class:
 
 If the `$name` property is empty, you will see the following error message:
 
+    !text
     Acme\DemoBundle\Author.name:
         This value should not be blank
 
 Most of the time, you won't interact directly with the validator service or need
-to worry about printing out the errors. Most of the time, you'll use validation
-indirectly when handling submitted form data.
+to worry about printing out the errors. Most of the time, you will use
+validation indirectly when handling submitted form data.
 
 ---
 
 # Constraints
 
-![](http://www.testically.org/wp-content/uploads/2010/06/constraints.jpg)
+![](../images/symfony_validation_constraints.jpg)
 
-> See all constraints:
-[http://symfony.com/doc/master/book/validation.html#constraints](http://symfony.com/doc/master/book/validation.html#constraints).
+> [http://symfony.com/doc/master/book/validation.html#constraints](http://symfony.com/doc/master/book/validation.html#constraints)
 
 ---
 
@@ -168,7 +168,7 @@ To tell the validator to use a specific group, pass one or more group names as
 the second argument to the `validate()` method:
 
     !php
-    $errors = $validator->validate($author, array('registration'));
+    $errors = $validator->validate($author, [ 'registration' ]);
 
 ---
 
@@ -178,9 +178,11 @@ If your object takes advantage of validation groups, you'll need to specify
 which validation group(s) your form should use:
 
     !php
-    $form = $this->createFormBuilder($users, array(
-        'validation_groups' => array('registration'),
-    ))->add(...);
+    $form = $this
+        ->createFormBuilder($users, [
+            'validation_groups' => [ 'registration' ],
+        ])
+        ->add(...);
 
 If you're creating **form classes**, then you'll need to add the following to
 the `setDefaultOptions()` method:
@@ -190,9 +192,9 @@ the `setDefaultOptions()` method:
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        $resolver->setDefaults(array(
-            'validation_groups' => array('registration'),
-        ));
+        $resolver->setDefaults([
+            'validation_groups' => [ 'registration' ],
+        ]);
     }
 
 ---

@@ -2,9 +2,7 @@
 
 ---
 
-# Definitions
-
-### What is a Service?
+# What Is A Service?
 
 A **Service** is a generic term for any PHP object that performs a specific task.
 
@@ -12,10 +10,14 @@ A service is usually used **globally**, such as a database connection object or 
 object that delivers email messages.
 
 In Symfony2, services are often **configured and retrieved from the service
-container**. An application that has many decoupled services is said to follow a
+container**.
+
+An application that has many decoupled services is said to follow a
 **Service-Oriented Architecture** (SOA).
 
-### What is a Service Container?
+---
+
+# What Is A Service Container?
 
 A **Service Container**, also known as a **Dependency Injection Container**
 (DIC), is a special object that **manages the instantiation of services** inside
@@ -76,11 +78,10 @@ we never configure the `$debug` argument.
     </services>
 
 In the definition above, `kernel.debug` is a parameter defined by the framework
-itself.
+itself. The `foo` service is now **parametrized**.
 
-The _class_ of the `foo` service is now **parametrized**. It becomes easy to
-change the implementation of this service by simply overriding the
-`my_bundle.foo.class` parameter.
+Also, it becomes easy to change the implementation of this service by simply
+overriding the `my_bundle.foo.class` parameter.
 
 ---
 
@@ -289,5 +290,4 @@ them as extensions.
 
     $ php app/console container:debug foo
 
-> Documentation at:
-[http://symfony.com/doc/master/book/service_container.html](http://symfony.com/doc/master/book/service_container.html).
+> [http://symfony.com/doc/master/book/service_container.html](http://symfony.com/doc/master/book/service_container.html)

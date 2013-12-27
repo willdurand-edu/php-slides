@@ -1,17 +1,23 @@
 # ![](http://symfony.com/logos/symfony_black_02.png)
 
+.fx: no-border
+
 ---
 
 # What Is Symfony2?
 
 First of all:
 
-> Symfony2 is a **reusable** set of standalone, decoupled, and cohesive PHP
-**components** that solve common web development problems.
+<blockquote class="quote">
+    <p>Symfony2 is a <strong>reusable</strong> set of standalone, decoupled, and cohesive PHP
+    <strong>components</strong> that solve common web development problems.</p>
+</blockquote>
 
 Then, based on these components:
 
-> Symfony2 is also a **full-stack web framework**.
+<blockquote class="quote">
+    <p>Symfony2 is also a <strong>full-stack web framework</strong>.</p>
+</blockquote>
 
 _Fabien Potencier,
 [http://fabien.potencier.org/article/49/what-is-symfony2](http://fabien.potencier.org/article/49/what-is-symfony2)._
@@ -23,6 +29,8 @@ _Fabien Potencier,
 ---
 
 # NO!
+
+.fx: color-red
 
 ---
 
@@ -36,7 +44,7 @@ Symfony2 is built on powerful concepts:
 
 ![](../images/symfony-github.png)
 
-It has been written by [~700 developers](http://symfony.com/contributors/code).
+It has been written by [~900 developers](http://symfony.com/contributors/code).
 
 Open Source, **MIT** licensed.
 
@@ -50,15 +58,17 @@ They are the **foundation of the Symfony full-stack framework**, but they can
 also be used **standalone** even if you don't use the framework as they don't
 have any mandatory dependencies.
 
-There are more than 21 components, including:
+There are ~26 components, including:
 
-    BrowserKit             EventDispatcher    Routing
-    ClassLoader            Finder             Security
-    Config                 Form               Serializer
-    Console                HttpFoundation     Templating
-    CssSelector            HttpKernel         Translation
-    DependencyInjection    Locale             Validator
-    DomCrawler             Process            Yaml
+    !text
+    BrowserKit              EventDispatcher     OptionsResolver     Translation
+    ClassLoader             ExpressionLanguage  Process             Yaml
+    Config                  Filesystem          PropertyAccess
+    Console                 Finder              Routing
+    CssSelector             Form                Security
+    Debug                   HttpFoundation      Serializer
+    DependencyInjection     HttpKernel          Stopwatch
+    DomCrawler              Intl                Templating
 
 ---
 
@@ -70,7 +80,7 @@ component into your `composer.json` file:
     !yaml
     {
         "require": {
-            "symfony/yaml": "~2.1"
+            "symfony/yaml": "~2.4"
         }
     }
 
@@ -83,15 +93,13 @@ Install it by running `php composer.phar install`, and use it:
 
     $yaml = Yaml::parse('/path/to/file.yml');
 
-> Read more:
-> [http://symfony.com/doc/current/components/yaml/introduction.html](http://symfony.com/doc/current/components/yaml/introduction.html).
+> [http://symfony.com/doc/current/components/yaml/introduction.html](http://symfony.com/doc/current/components/yaml/introduction.html)
 
 ---
 
 # Full-Stack Framework
 
-The **Symfony2 Framework** is a PHP library that accomplishes two distinct
-tasks:
+The **Symfony2 Framework** accomplishes two distinct tasks:
 
 * Provides a selection of components;
 * Provides sensible configuration and a "glue" library that ties all of these
@@ -104,8 +112,7 @@ a Symfony2 bundle** (i.e. a plugin) that can be configured or replaced entirely.
 Symfony2 **provides a powerful set of tools for rapidly developing web
 applications** without imposing on your application.
 
-> Documentation available at:
-> [http://symfony.com/doc/current/book/index.html](http://symfony.com/doc/current/book/index.html).
+> [http://symfony.com/doc/current/book/index.html](http://symfony.com/doc/current/book/index.html)
 
 ---
 
@@ -177,7 +184,7 @@ applications** without imposing on your application.
 
     if (in_array($path, array('', '/'))) {
         $response = new Response('Welcome to the homepage.');
-    } elseif ($path == '/hello') {
+    } elseif ('/hello' === $path) {
         $response = new Response('hello, World!');
     } else {
         $response = new Response('Page not found.', 404);
@@ -211,9 +218,13 @@ The `AcmeDemoBundle:Main:hello` string is a short syntax that points to a
 specific PHP method named `helloAction()` inside a class called
 `MainController`.
 
-> **Note:** this example uses **YAML** to define the routing configuration.
-> Routing configuration can also be written in other formats such as **XML** or
-> **PHP**.
+
+<blockquote class="info">
+    <p>
+        This example uses <strong>YAML</strong> to define the routing configuration.
+        Routing configuration can also be written in other formats such as <strong>XML</strong> or <strong>PHP</strong>.
+    </p>
+</blockquote>
 
 ---
 
@@ -244,6 +255,7 @@ Also, each controller should be suffixed with `Controller`.
 
 **Recommended** structure of a Symfony2 project:
 
+    !text
     path/to/project/
         app/
             cache/
@@ -386,7 +398,7 @@ again, a convention is just **A** way to do things, not **THE** way to do them.
 
 # The Rules (Well... My Rules)
 
-The **main configuration** has to be written in `YAML`:
+The **main configuration** MUST be written in `YAML`:
 
     !yaml
     # app/config/config.yml
@@ -395,7 +407,7 @@ The **main configuration** has to be written in `YAML`:
         debug:            "%kernel.debug%"
         strict_variables: "%kernel.debug%"
 
-The **routing definition** has to be written in `YAML`:
+The **routing definition** MUST be written in `YAML`:
 
     !yaml
     # app/config/routing.yml
@@ -403,7 +415,7 @@ The **routing definition** has to be written in `YAML`:
         pattern:  /hello
         defaults: { _controller: AcmeDemoBundle:Main:hello }
 
-The **Dependency Injection Container configuration** has to be written in `XML`.
+The **DI Container configuration** MUST be written in `XML`:
 
     !xml
     <services>
@@ -470,6 +482,7 @@ In order to use a bundle in your application, you need to register it in the
 
 Recommended structure for a bundle:
 
+    !text
     XXX/...
         DemoBundle/
             DemoBundle.php
@@ -562,7 +575,7 @@ class:
     {
     }
 
-You can register your bundle:
+Then, you can register your bundle:
 
     !php
     // app/AppKernel.php

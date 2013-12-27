@@ -83,11 +83,9 @@ up to three different types of caches:
 * **Browser Caches**: every browser comes with its own local cache that is mainly
 useful for when you hit "back" or for images and other assets. The browser cache
 is a **private cache** as cached resources aren't shared with anyone else;
-
 * **Proxy Caches**: a proxy is a shared cache as many people can be behind a
 single one. It's usually installed by large corporations and ISPs to reduce
 latency and network traffic;
-
 * **Gateway Caches**: like a **proxy**, it's also a shared cache but on the
 server side. Installed by network administrators, it makes websites more
 scalable, reliable and performant.
@@ -119,7 +117,6 @@ To handle this situation, every response may be set to be public or private:
 
 * **public**: indicates that the response may be cached by both private and
 shared caches;
-
 * **private**: indicates that all or part of the response message is intended for
 a single user and must not be cached by a shared cache.
 
@@ -131,13 +128,12 @@ a single user and must not be cached by a shared cache.
 safe means that **you never change the application's state on the server when
 serving the request**.
 
-his has two very reasonable consequences:
+This has two very reasonable consequences:
 
 * You should **never change the state of your application when responding to a
 `GET` or `HEAD` request**. Even if you don't use a gateway cache, the presence
 of proxy caches mean that any `GET` or `HEAD` request may or may not actually
 hit your server;
-
 * Don't expect `PUT`, `POST` or `DELETE` methods to cache. These methods are
 meant to be used when **mutating the state of your application**. Caching them
 would prevent certain requests from hitting and mutating your application.
@@ -166,6 +162,7 @@ various pieces of information about the cacheability of a response.
 
 Each piece of information is separated by a comma:
 
+    !text
     Cache-Control: private, max-age=0, must-revalidate
     Cache-Control: max-age=3600, must-revalidate
 
@@ -206,6 +203,7 @@ a `DateTime` instance as an argument:
 
 The resulting HTTP header will look like this:
 
+    !text
     Expires: Thu, 01 Mar 2013 10:00:00 GMT
 
 The `setExpires()` method automatically converts the date to the GMT timezone as

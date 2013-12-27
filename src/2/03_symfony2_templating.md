@@ -4,6 +4,8 @@
 
 # ![](../images/twig_homepage.png)
 
+.fx: no-border
+
 ---
 
 # Why Twig?
@@ -43,7 +45,7 @@
   loops and if statements, for example;
 * `{# ... #}`: **comments**.
 
-> Documentation: [http://twig.sensiolabs.org/](http://twig.sensiolabs.org/).
+> [http://twig.sensiolabs.org/](http://twig.sensiolabs.org/)
 
 ---
 
@@ -119,8 +121,7 @@ Filters can be parametrized:
     !jinja
     {{ post.createdAt|date('Y-m-d') }}
 
-> Documentation for all filters is available at:
-[http://twig.sensiolabs.org/doc/filters/index.html](http://twig.sensiolabs.org/doc/filters/index.html).
+> [http://twig.sensiolabs.org/doc/filters/index.html](http://twig.sensiolabs.org/doc/filters/index.html)
 
 
 ---
@@ -147,7 +148,7 @@ with `render_user.html`:
     !jinja
     <p>{{ user.username }}</p>
 
-The result with _two_ users would be:
+<p></p>
 
     !html
     <p>William D.</p>
@@ -204,7 +205,7 @@ A **child template** might look like this:
     {% endblock %}
 
 The **parent template** is identified by a special string syntax
-(`::base.html.twig`) that indicates that the template lives in
+(`::base.html.twig`) which indicates that the template lives in
 `app/Resources/views/`.
 
 If you need to get the content of a block from the **parent template**, you can
@@ -237,19 +238,19 @@ but instead in the root `app/Resources/views/` directory.
 
 ### Example
 
+    !text
     AcmeBlogBundle:Blog:index.html.twig
 
-`AcmeBlogBundle`: (bundle) the template lives inside the `AcmeBlogBundle` (e.g.
-`src/Acme/BlogBundle`).
-
-`Blog`: (controller) indicates that the template lives inside the `Blog`
-subdirectory of `Resources/views`.
-
-`index.html.twig`: (template) the actual name of the file is `index.html.twig`.
+* `AcmeBlogBundle`: (bundle) the template lives inside the `AcmeBlogBundle` (e.g.
+`src/Acme/BlogBundle`);
+* `Blog`: (controller) indicates that the template lives inside the `Blog`
+subdirectory of `Resources/views`;
+* `index.html.twig`: (template) the actual name of the file is `index.html.twig`.
 
 Assuming that the `AcmeBlogBundle` lives at `src/Acme/BlogBundle`, the final
 path to the layout would be:
 
+    !text
     src/Acme/BlogBundle/Resources/views/Blog/index.html.twig
 
 ---
@@ -265,10 +266,12 @@ looks in two different locations for the template:
 * `app/Resources/FooBarBundle/views/Bar/index.html.twig`;
 * `src/Foo/BarBundle/Resources/views/Bar/index.html.twig`.
 
-To override the bundle template, copy the `index.html.twig` template from the
-bundle to: `app/Resources/FooBarBundle/views/Bar/index.html.twig`.
+In order to  override the bundle template, copy the `index.html.twig` template
+from the bundle to: `app/Resources/FooBarBundle/views/Bar/index.html.twig`.
 
-### Overriding Core Templates
+---
+
+# Overriding Core Templates
 
 The core **TwigBundle** contains a number of different templates that can be
 overridden by copying each from the `Resources/views/` directory of the
@@ -376,6 +379,7 @@ update their cache**, for instance, JavaScript and CSS files or images.
 The `asset_version` parameter is used to **bust the cache on assets** by globally
 adding a query parameter to all rendered asset paths:
 
+    !text
     /images/logo.png?v2
 
 ---
@@ -385,7 +389,7 @@ adding a query parameter to all rendered asset paths:
 The [FOSJsRoutingBundle](https://github.com/FriendsOfSymfony/FOSJsRoutingBundle)
 allows you to **expose your routing in your JavaScript code**. That means you'll
 be able to generate URL with given parameters like you can do with the _Router_
-component provided in Symfony2.
+component provided by Symfony2.
 
     !yaml
     # app/config/routing.yml

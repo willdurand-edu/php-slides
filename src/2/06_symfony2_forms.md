@@ -70,7 +70,7 @@ being able to hit "refresh" and re-post the data.
             ->getForm();
 
         if ($request->isMethod('POST')) {
-            $form->bind($request);
+            $form->handleRequest($request);
 
             if ($form->isValid()) {
                 $data = $form->getData();
@@ -89,7 +89,7 @@ being able to hit "refresh" and re-post the data.
 
 Everything is a **Type**!
 
-![](http://webmozarts.com/wp-content/uploads/2012/03/types.png)
+![](../images/symfony_built_in_form_types.png)
 
 ---
 
@@ -102,17 +102,19 @@ Everything is a **Type**!
 
     class PersonType extends AbstractType
     {
-        public function buildForm(FormBuilderInterface $builder,
-            array $options) {
+        public function buildForm(FormBuilderInterface $builder, array $options)
+        {
             $builder
                 ->add('name')
                 ->add('bio', 'textarea')
                 ->add('birthday', 'date');
         }
 
-        public function setDefaultOptions(
-            OptionsResolverInterface $resolver) {
-            $resolver->setDefaults(array('data_class' => 'My\Person'));
+        public function setDefaultOptions(OptionsResolverInterface $resolver)
+        {
+            $resolver->setDefaults([
+                'data_class' => 'My\Person',
+            ]);
         }
 
         public function getName()
@@ -132,7 +134,7 @@ Everything is a **Type**!
         $form   = $this->createForm(new PersonType(), $person);
 
         if ($request->isMethod('POST')) {
-            $form->bind($request);
+            $form->handleRequest($request);
 
             if ($form->isValid()) {
                 $person->save(); // insert a new `person`
@@ -191,7 +193,7 @@ the `newAction()` and the `updateAction()`:
         $form = $this->createForm(new PersonType(), $person);
 
         if ($this->getRequest()->isMethod('POST')) {
-            $form->bind($this->getRequest());
+            $form->handleRequest($this->getRequest());
 
             if ($form->isValid()) {
                 $person->save();
