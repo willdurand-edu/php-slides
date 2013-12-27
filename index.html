@@ -1007,6 +1007,10 @@ div.slide h6 {
     font-weight: bold;
 }
 
+div.slide h3 {
+    margin: 0;
+}
+
 .slide.future {
     display:none;
 }
@@ -1049,6 +1053,43 @@ blockquote.no-before-icon i {
     margin-right: 10px;
     line-height: 1.5em;
     float: left;
+}
+
+blockquote.quote p,
+blockquote.info p {
+    display: inline;
+}
+
+blockquote.quote:before,
+blockquote.info:before {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.5em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+blockquote.quote:before {
+    content: "\f10d";
+}
+
+blockquote.info:before {
+    content: "\f05a";
+}
+
+blockquote.quote:after {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.5em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\f10e";
+    margin-left: 10px;
+    display: inline-block;
 }
 
 a,
@@ -1119,6 +1160,10 @@ img {
 
 #toc img {
     display: none;
+}
+
+.slides .color-red h1 {
+    color: #C82D26;
 }
 
       </style>
@@ -1543,7 +1588,7 @@ a){var b=F.exec(a);b&&(b[1]=(b[1]||"").toLowerCase(),b[3]=b[3]&&new RegExp("(?:^
             </aside>
             
             <aside class="page_number">
-              1/162
+              1/163
             </aside>
           </footer>
         </div>
@@ -1571,7 +1616,7 @@ a){var b=F.exec(a);b&&(b[1]=(b[1]||"").toLowerCase(),b[3]=b[3]&&new RegExp("(?:^
             </aside>
             
             <aside class="page_number">
-              2/162
+              2/163
             </aside>
           </footer>
         </div>
@@ -1622,7 +1667,7 @@ projects</a>;</li>
             </aside>
             
             <aside class="page_number">
-              3/162
+              3/163
             </aside>
           </footer>
         </div>
@@ -1660,7 +1705,7 @@ Controller</p>
             </aside>
             
             <aside class="page_number">
-              4/162
+              4/163
             </aside>
           </footer>
         </div>
@@ -1688,7 +1733,7 @@ Controller</p>
             </aside>
             
             <aside class="page_number">
-              5/162
+              5/163
             </aside>
           </footer>
         </div>
@@ -1723,7 +1768,7 @@ Controller</p>
             </aside>
             
             <aside class="page_number">
-              6/162
+              6/163
             </aside>
           </footer>
         </div>
@@ -1759,7 +1804,7 @@ Controller</p>
             </aside>
             
             <aside class="page_number">
-              7/162
+              7/163
             </aside>
           </footer>
         </div>
@@ -1795,7 +1840,7 @@ Controller</p>
             </aside>
             
             <aside class="page_number">
-              8/162
+              8/163
             </aside>
           </footer>
         </div>
@@ -1829,7 +1874,7 @@ Controller</p>
             </aside>
             
             <aside class="page_number">
-              9/162
+              9/163
             </aside>
           </footer>
         </div>
@@ -1857,7 +1902,7 @@ Controller</p>
             </aside>
             
             <aside class="page_number">
-              10/162
+              10/163
             </aside>
           </footer>
         </div>
@@ -1885,7 +1930,7 @@ Controller</p>
             </aside>
             
             <aside class="page_number">
-              11/162
+              11/163
             </aside>
           </footer>
         </div>
@@ -1923,7 +1968,7 @@ Controller</p>
             </aside>
             
             <aside class="page_number">
-              12/162
+              12/163
             </aside>
           </footer>
         </div>
@@ -1972,7 +2017,7 @@ Controller</p>
             </aside>
             
             <aside class="page_number">
-              13/162
+              13/163
             </aside>
           </footer>
         </div>
@@ -2023,7 +2068,7 @@ Controller</p>
             </aside>
             
             <aside class="page_number">
-              14/162
+              14/163
             </aside>
           </footer>
         </div>
@@ -2066,7 +2111,7 @@ Controller</p>
             </aside>
             
             <aside class="page_number">
-              15/162
+              15/163
             </aside>
           </footer>
         </div>
@@ -2118,7 +2163,7 @@ Controller</p>
             </aside>
             
             <aside class="page_number">
-              16/162
+              16/163
             </aside>
           </footer>
         </div>
@@ -2157,7 +2202,7 @@ Controller</p>
             </aside>
             
             <aside class="page_number">
-              17/162
+              17/163
             </aside>
           </footer>
         </div>
@@ -2210,7 +2255,7 @@ Controller</p>
             </aside>
             
             <aside class="page_number">
-              18/162
+              18/163
             </aside>
           </footer>
         </div>
@@ -2259,7 +2304,7 @@ scalar types such as <code>int</code> or <code>string</code>:</p>
             </aside>
             
             <aside class="page_number">
-              19/162
+              19/163
             </aside>
           </footer>
         </div>
@@ -2303,7 +2348,7 @@ scalar types such as <code>int</code> or <code>string</code>:</p>
             </aside>
             
             <aside class="page_number">
-              20/162
+              20/163
             </aside>
           </footer>
         </div>
@@ -2351,7 +2396,7 @@ scalar types such as <code>int</code> or <code>string</code>:</p>
             </aside>
             
             <aside class="page_number">
-              21/162
+              21/163
             </aside>
           </footer>
         </div>
@@ -2397,7 +2442,7 @@ This is different!</p></section>
             </aside>
             
             <aside class="page_number">
-              22/162
+              22/163
             </aside>
           </footer>
         </div>
@@ -2441,7 +2486,7 @@ This is different!</p></section>
             </aside>
             
             <aside class="page_number">
-              23/162
+              23/163
             </aside>
           </footer>
         </div>
@@ -2490,7 +2535,7 @@ This is different!</p></section>
             </aside>
             
             <aside class="page_number">
-              24/162
+              24/163
             </aside>
           </footer>
         </div>
@@ -2538,7 +2583,7 @@ describes a set of rules related to namespaces for autoloader interoperability.<
             </aside>
             
             <aside class="page_number">
-              25/162
+              25/163
             </aside>
           </footer>
         </div>
@@ -2585,7 +2630,7 @@ describes a set of rules related to namespaces for autoloader interoperability.<
             </aside>
             
             <aside class="page_number">
-              26/162
+              26/163
             </aside>
           </footer>
         </div>
@@ -2637,7 +2682,7 @@ describes a set of rules related to namespaces for autoloader interoperability.<
             </aside>
             
             <aside class="page_number">
-              27/162
+              27/163
             </aside>
           </footer>
         </div>
@@ -2680,7 +2725,7 @@ defined, and possibly called, without being bound to an identifier.</p>
             </aside>
             
             <aside class="page_number">
-              28/162
+              28/163
             </aside>
           </footer>
         </div>
@@ -2726,7 +2771,7 @@ defined, and possibly called, without being bound to an identifier.</p>
             </aside>
             
             <aside class="page_number">
-              29/162
+              29/163
             </aside>
           </footer>
         </div>
@@ -2769,7 +2814,7 @@ defined, and possibly called, without being bound to an identifier.</p>
             </aside>
             
             <aside class="page_number">
-              30/162
+              30/163
             </aside>
           </footer>
         </div>
@@ -2809,7 +2854,7 @@ You</a>.</li>
             </aside>
             
             <aside class="page_number">
-              31/162
+              31/163
             </aside>
           </footer>
         </div>
@@ -2837,7 +2882,7 @@ You</a>.</li>
             </aside>
             
             <aside class="page_number">
-              32/162
+              32/163
             </aside>
           </footer>
         </div>
@@ -2889,7 +2934,7 @@ Hello, World
             </aside>
             
             <aside class="page_number">
-              33/162
+              33/163
             </aside>
           </footer>
         </div>
@@ -2937,7 +2982,7 @@ No syntax errors detected in my/script.php
             </aside>
             
             <aside class="page_number">
-              34/162
+              34/163
             </aside>
           </footer>
         </div>
@@ -2989,7 +3034,7 @@ Hello, World!
             </aside>
             
             <aside class="page_number">
-              35/162
+              35/163
             </aside>
           </footer>
         </div>
@@ -3017,7 +3062,7 @@ Hello, World!
             </aside>
             
             <aside class="page_number">
-              36/162
+              36/163
             </aside>
           </footer>
         </div>
@@ -3057,7 +3102,7 @@ server</strong>.</p></section>
             </aside>
             
             <aside class="page_number">
-              37/162
+              37/163
             </aside>
           </footer>
         </div>
@@ -3102,7 +3147,7 @@ This is a content
             </aside>
             
             <aside class="page_number">
-              38/162
+              38/163
             </aside>
           </footer>
         </div>
@@ -3152,7 +3197,7 @@ Content-Length: length
             </aside>
             
             <aside class="page_number">
-              39/162
+              39/163
             </aside>
           </footer>
         </div>
@@ -3192,7 +3237,7 @@ Content-Length: length
             </aside>
             
             <aside class="page_number">
-              40/162
+              40/163
             </aside>
           </footer>
         </div>
@@ -3236,7 +3281,7 @@ parameters through global variables:</p>
             </aside>
             
             <aside class="page_number">
-              41/162
+              41/163
             </aside>
           </footer>
         </div>
@@ -3285,7 +3330,7 @@ b=3<span class="err">&amp;</span>city=paris
             </aside>
             
             <aside class="page_number">
-              42/162
+              42/163
             </aside>
           </footer>
         </div>
@@ -3328,7 +3373,7 @@ b=3<span class="err">&amp;</span>city=paris
             </aside>
             
             <aside class="page_number">
-              43/162
+              43/163
             </aside>
           </footer>
         </div>
@@ -3356,7 +3401,7 @@ b=3<span class="err">&amp;</span>city=paris
             </aside>
             
             <aside class="page_number">
-              44/162
+              44/163
             </aside>
           </footer>
         </div>
@@ -3405,7 +3450,7 @@ b=3<span class="err">&amp;</span>city=paris
             </aside>
             
             <aside class="page_number">
-              45/162
+              45/163
             </aside>
           </footer>
         </div>
@@ -3455,7 +3500,7 @@ b=3<span class="err">&amp;</span>city=paris
             </aside>
             
             <aside class="page_number">
-              46/162
+              46/163
             </aside>
           </footer>
         </div>
@@ -3502,7 +3547,7 @@ check whether the file has already been included:</p>
             </aside>
             
             <aside class="page_number">
-              47/162
+              47/163
             </aside>
           </footer>
         </div>
@@ -3551,7 +3596,7 @@ a few files:</p>
             </aside>
             
             <aside class="page_number">
-              48/162
+              48/163
             </aside>
           </footer>
         </div>
@@ -3590,7 +3635,7 @@ the use of <code>require_once()</code> thanks to the following functions:</p>
             </aside>
             
             <aside class="page_number">
-              49/162
+              49/163
             </aside>
           </footer>
         </div>
@@ -3639,7 +3684,7 @@ the use of <code>require_once()</code> thanks to the following functions:</p>
             </aside>
             
             <aside class="page_number">
-              50/162
+              50/163
             </aside>
           </footer>
         </div>
@@ -3694,7 +3739,7 @@ the use of <code>require_once()</code> thanks to the following functions:</p>
             </aside>
             
             <aside class="page_number">
-              51/162
+              51/163
             </aside>
           </footer>
         </div>
@@ -3722,7 +3767,7 @@ the use of <code>require_once()</code> thanks to the following functions:</p>
             </aside>
             
             <aside class="page_number">
-              52/162
+              52/163
             </aside>
           </footer>
         </div>
@@ -3767,7 +3812,7 @@ when encoded with <code>json_encode()</code>.</p>
             </aside>
             
             <aside class="page_number">
-              53/162
+              53/163
             </aside>
           </footer>
         </div>
@@ -3818,7 +3863,7 @@ when encoded with <code>json_encode()</code>.</p>
             </aside>
             
             <aside class="page_number">
-              54/162
+              54/163
             </aside>
           </footer>
         </div>
@@ -3869,7 +3914,7 @@ when encoded with <code>json_encode()</code>.</p>
             </aside>
             
             <aside class="page_number">
-              55/162
+              55/163
             </aside>
           </footer>
         </div>
@@ -3910,7 +3955,7 @@ when encoded with <code>json_encode()</code>.</p>
             </aside>
             
             <aside class="page_number">
-              56/162
+              56/163
             </aside>
           </footer>
         </div>
@@ -3963,7 +4008,7 @@ when encoded with <code>json_encode()</code>.</p>
             </aside>
             
             <aside class="page_number">
-              57/162
+              57/163
             </aside>
           </footer>
         </div>
@@ -4012,7 +4057,7 @@ component to the rescue!</p>
             </aside>
             
             <aside class="page_number">
-              58/162
+              58/163
             </aside>
           </footer>
         </div>
@@ -4061,7 +4106,7 @@ component to the rescue!</p>
             </aside>
             
             <aside class="page_number">
-              59/162
+              59/163
             </aside>
           </footer>
         </div>
@@ -4101,7 +4146,7 @@ regardless of whether an exception has been thrown or not:</p>
             </aside>
             
             <aside class="page_number">
-              60/162
+              60/163
             </aside>
           </footer>
         </div>
@@ -4143,7 +4188,7 @@ make it easy to create and manage passwords in a secure manner, since PHP 5.5.0.
             </aside>
             
             <aside class="page_number">
-              61/162
+              61/163
             </aside>
           </footer>
         </div>
@@ -4185,7 +4230,7 @@ the PHAR creation process.</p>
             </aside>
             
             <aside class="page_number">
-              62/162
+              62/163
             </aside>
           </footer>
         </div>
@@ -4213,7 +4258,7 @@ the PHAR creation process.</p>
             </aside>
             
             <aside class="page_number">
-              63/162
+              63/163
             </aside>
           </footer>
         </div>
@@ -4258,7 +4303,7 @@ PHP libraries.</p>
             </aside>
             
             <aside class="page_number">
-              64/162
+              64/163
             </aside>
           </footer>
         </div>
@@ -4308,7 +4353,7 @@ a <code>vendor</code> directory:</p>
             </aside>
             
             <aside class="page_number">
-              65/162
+              65/163
             </aside>
           </footer>
         </div>
@@ -4356,7 +4401,7 @@ the <strong>Symfony2 Console</strong> component:</p>
             </aside>
             
             <aside class="page_number">
-              66/162
+              66/163
             </aside>
           </footer>
         </div>
@@ -4406,7 +4451,7 @@ the <strong>Symfony2 Console</strong> component:</p>
             </aside>
             
             <aside class="page_number">
-              67/162
+              67/163
             </aside>
           </footer>
         </div>
@@ -4453,7 +4498,7 @@ the <strong>Symfony2 Console</strong> component:</p>
             </aside>
             
             <aside class="page_number">
-              68/162
+              68/163
             </aside>
           </footer>
         </div>
@@ -4506,7 +4551,7 @@ Hello, William
             </aside>
             
             <aside class="page_number">
-              69/162
+              69/163
             </aside>
           </footer>
         </div>
@@ -4534,7 +4579,7 @@ Hello, William
             </aside>
             
             <aside class="page_number">
-              70/162
+              70/163
             </aside>
           </footer>
         </div>
@@ -4577,7 +4622,7 @@ Hello, William
             </aside>
             
             <aside class="page_number">
-              71/162
+              71/163
             </aside>
           </footer>
         </div>
@@ -4620,7 +4665,7 @@ Using it should not require to understand internals.</p>
             </aside>
             
             <aside class="page_number">
-              72/162
+              72/163
             </aside>
           </footer>
         </div>
@@ -4673,7 +4718,7 @@ will die: you have to separate the presentation from the business logic.</p>
             </aside>
             
             <aside class="page_number">
-              73/162
+              73/163
             </aside>
           </footer>
         </div>
@@ -4720,7 +4765,7 @@ will die: you have to separate the presentation from the business logic.</p>
             </aside>
             
             <aside class="page_number">
-              74/162
+              74/163
             </aside>
           </footer>
         </div>
@@ -4769,7 +4814,7 @@ you and much much more! Read more:
             </aside>
             
             <aside class="page_number">
-              75/162
+              75/163
             </aside>
           </footer>
         </div>
@@ -4821,7 +4866,7 @@ you and much much more! Read more:
             </aside>
             
             <aside class="page_number">
-              76/162
+              76/163
             </aside>
           </footer>
         </div>
@@ -4864,7 +4909,7 @@ component allowing to define all routes in a centralized place and easing
             </aside>
             
             <aside class="page_number">
-              77/162
+              77/163
             </aside>
           </footer>
         </div>
@@ -4897,7 +4942,7 @@ component allowing to define all routes in a centralized place and easing
             </aside>
             
             <aside class="page_number">
-              78/162
+              78/163
             </aside>
           </footer>
         </div>
@@ -4938,7 +4983,7 @@ component allowing to define all routes in a centralized place and easing
             </aside>
             
             <aside class="page_number">
-              79/162
+              79/163
             </aside>
           </footer>
         </div>
@@ -4966,7 +5011,7 @@ component allowing to define all routes in a centralized place and easing
             </aside>
             
             <aside class="page_number">
-              80/162
+              80/163
             </aside>
           </footer>
         </div>
@@ -5001,7 +5046,7 @@ component allowing to define all routes in a centralized place and easing
             </aside>
             
             <aside class="page_number">
-              81/162
+              81/163
             </aside>
           </footer>
         </div>
@@ -5036,7 +5081,7 @@ component allowing to define all routes in a centralized place and easing
             </aside>
             
             <aside class="page_number">
-              82/162
+              82/163
             </aside>
           </footer>
         </div>
@@ -5077,7 +5122,7 @@ created by <strong>Martin Fowler</strong>.</p>
             </aside>
             
             <aside class="page_number">
-              83/162
+              83/163
             </aside>
           </footer>
         </div>
@@ -5105,7 +5150,7 @@ created by <strong>Martin Fowler</strong>.</p>
             </aside>
             
             <aside class="page_number">
-              84/162
+              84/163
             </aside>
           </footer>
         </div>
@@ -5159,7 +5204,7 @@ There is one instance per row.</p>
             </aside>
             
             <aside class="page_number">
-              85/162
+              85/163
             </aside>
           </footer>
         </div>
@@ -5205,7 +5250,7 @@ There is one instance per row.</p>
             </aside>
             
             <aside class="page_number">
-              86/162
+              86/163
             </aside>
           </footer>
         </div>
@@ -5252,7 +5297,7 @@ There is one instance per row.</p>
             </aside>
             
             <aside class="page_number">
-              87/162
+              87/163
             </aside>
           </footer>
         </div>
@@ -5280,7 +5325,7 @@ There is one instance per row.</p>
             </aside>
             
             <aside class="page_number">
-              88/162
+              88/163
             </aside>
           </footer>
         </div>
@@ -5328,7 +5373,7 @@ One instance handles all the rows in the table.</p>
             </aside>
             
             <aside class="page_number">
-              89/162
+              89/163
             </aside>
           </footer>
         </div>
@@ -5375,7 +5420,7 @@ One instance handles all the rows in the table.</p>
             </aside>
             
             <aside class="page_number">
-              90/162
+              90/163
             </aside>
           </footer>
         </div>
@@ -5423,7 +5468,7 @@ One instance handles all the rows in the table.</p>
             </aside>
             
             <aside class="page_number">
-              91/162
+              91/163
             </aside>
           </footer>
         </div>
@@ -5475,7 +5520,7 @@ One instance handles all the rows in the table.</p>
             </aside>
             
             <aside class="page_number">
-              92/162
+              92/163
             </aside>
           </footer>
         </div>
@@ -5520,7 +5565,7 @@ One instance handles all the rows in the table.</p>
             </aside>
             
             <aside class="page_number">
-              93/162
+              93/163
             </aside>
           </footer>
         </div>
@@ -5567,7 +5612,7 @@ One instance handles all the rows in the table.</p>
             </aside>
             
             <aside class="page_number">
-              94/162
+              94/163
             </aside>
           </footer>
         </div>
@@ -5595,7 +5640,7 @@ One instance handles all the rows in the table.</p>
             </aside>
             
             <aside class="page_number">
-              95/162
+              95/163
             </aside>
           </footer>
         </div>
@@ -5642,7 +5687,7 @@ the database access, and adds domain logic on that data.</p>
             </aside>
             
             <aside class="page_number">
-              96/162
+              96/163
             </aside>
           </footer>
         </div>
@@ -5697,7 +5742,7 @@ the database access, and adds domain logic on that data.</p>
             </aside>
             
             <aside class="page_number">
-              97/162
+              97/163
             </aside>
           </footer>
         </div>
@@ -5725,7 +5770,7 @@ the database access, and adds domain logic on that data.</p>
             </aside>
             
             <aside class="page_number">
-              98/162
+              98/163
             </aside>
           </footer>
         </div>
@@ -5778,7 +5823,7 @@ while keeping them independent of each other and the mapper itself.</p>
             </aside>
             
             <aside class="page_number">
-              99/162
+              99/163
             </aside>
           </footer>
         </div>
@@ -5827,7 +5872,7 @@ while keeping them independent of each other and the mapper itself.</p>
             </aside>
             
             <aside class="page_number">
-              100/162
+              100/163
             </aside>
           </footer>
         </div>
@@ -5855,7 +5900,7 @@ while keeping them independent of each other and the mapper itself.</p>
             </aside>
             
             <aside class="page_number">
-              101/162
+              101/163
             </aside>
           </footer>
         </div>
@@ -5902,7 +5947,7 @@ a map. Looks up objects using the map when referring to them.</p>
             </aside>
             
             <aside class="page_number">
-              102/162
+              102/163
             </aside>
           </footer>
         </div>
@@ -5930,7 +5975,7 @@ a map. Looks up objects using the map when referring to them.</p>
             </aside>
             
             <aside class="page_number">
-              103/162
+              103/163
             </aside>
           </footer>
         </div>
@@ -5973,7 +6018,7 @@ vendor you are using.</p>
             </aside>
             
             <aside class="page_number">
-              104/162
+              104/163
             </aside>
           </footer>
         </div>
@@ -6022,7 +6067,7 @@ vendor you are using.</p>
             </aside>
             
             <aside class="page_number">
-              105/162
+              105/163
             </aside>
           </footer>
         </div>
@@ -6076,7 +6121,7 @@ external behavior.</p>
             </aside>
             
             <aside class="page_number">
-              106/162
+              106/163
             </aside>
           </footer>
         </div>
@@ -6123,7 +6168,7 @@ external behavior.</p>
             </aside>
             
             <aside class="page_number">
-              107/162
+              107/163
             </aside>
           </footer>
         </div>
@@ -6151,7 +6196,7 @@ external behavior.</p>
             </aside>
             
             <aside class="page_number">
-              108/162
+              108/163
             </aside>
           </footer>
         </div>
@@ -6188,7 +6233,7 @@ seen above, and that eases relationships between objects.</p></section>
             </aside>
             
             <aside class="page_number">
-              109/162
+              109/163
             </aside>
           </footer>
         </div>
@@ -6224,7 +6269,7 @@ seen above, and that eases relationships between objects.</p></section>
             </aside>
             
             <aside class="page_number">
-              110/162
+              110/163
             </aside>
           </footer>
         </div>
@@ -6260,7 +6305,7 @@ seen above, and that eases relationships between objects.</p></section>
             </aside>
             
             <aside class="page_number">
-              111/162
+              111/163
             </aside>
           </footer>
         </div>
@@ -6302,7 +6347,7 @@ seen above, and that eases relationships between objects.</p></section>
             </aside>
             
             <aside class="page_number">
-              112/162
+              112/163
             </aside>
           </footer>
         </div>
@@ -6342,7 +6387,7 @@ patterns, often seen as an <strong>Active Record</strong> approach.</p>
             </aside>
             
             <aside class="page_number">
-              113/162
+              113/163
             </aside>
           </footer>
         </div>
@@ -6370,7 +6415,7 @@ patterns, often seen as an <strong>Active Record</strong> approach.</p>
             </aside>
             
             <aside class="page_number">
-              114/162
+              114/163
             </aside>
           </footer>
         </div>
@@ -6412,7 +6457,7 @@ patterns, often seen as an <strong>Active Record</strong> approach.</p>
             </aside>
             
             <aside class="page_number">
-              115/162
+              115/163
             </aside>
           </footer>
         </div>
@@ -6461,7 +6506,7 @@ patterns, often seen as an <strong>Active Record</strong> approach.</p>
             </aside>
             
             <aside class="page_number">
-              116/162
+              116/163
             </aside>
           </footer>
         </div>
@@ -6502,7 +6547,7 @@ patterns, often seen as an <strong>Active Record</strong> approach.</p>
             </aside>
             
             <aside class="page_number">
-              117/162
+              117/163
             </aside>
           </footer>
         </div>
@@ -6530,7 +6575,7 @@ patterns, often seen as an <strong>Active Record</strong> approach.</p>
             </aside>
             
             <aside class="page_number">
-              118/162
+              118/163
             </aside>
           </footer>
         </div>
@@ -6561,7 +6606,7 @@ patterns, often seen as an <strong>Active Record</strong> approach.</p>
             </aside>
             
             <aside class="page_number">
-              119/162
+              119/163
             </aside>
           </footer>
         </div>
@@ -6591,7 +6636,7 @@ patterns, often seen as an <strong>Active Record</strong> approach.</p>
             </aside>
             
             <aside class="page_number">
-              120/162
+              120/163
             </aside>
           </footer>
         </div>
@@ -6632,7 +6677,7 @@ An <strong>Event Dispatcher</strong> manages both the listeners, and the events.
             </aside>
             
             <aside class="page_number">
-              121/162
+              121/163
             </aside>
           </footer>
         </div>
@@ -6680,7 +6725,7 @@ An <strong>Event Dispatcher</strong> manages both the listeners, and the events.
             </aside>
             
             <aside class="page_number">
-              122/162
+              122/163
             </aside>
           </footer>
         </div>
@@ -6732,7 +6777,7 @@ listeners once we enter in the <code>process()</code> method by <strong>dispatch
             </aside>
             
             <aside class="page_number">
-              123/162
+              123/163
             </aside>
           </footer>
         </div>
@@ -6781,7 +6826,7 @@ authenticated:</p>
             </aside>
             
             <aside class="page_number">
-              124/162
+              124/163
             </aside>
           </footer>
         </div>
@@ -6838,7 +6883,7 @@ authenticated:</p>
             </aside>
             
             <aside class="page_number">
-              125/162
+              125/163
             </aside>
           </footer>
         </div>
@@ -6868,7 +6913,7 @@ authenticated:</p>
             </aside>
             
             <aside class="page_number">
-              126/162
+              126/163
             </aside>
           </footer>
         </div>
@@ -6921,7 +6966,7 @@ authenticated:</p>
             </aside>
             
             <aside class="page_number">
-              127/162
+              127/163
             </aside>
           </footer>
         </div>
@@ -6957,7 +7002,7 @@ authenticated:</p>
             </aside>
             
             <aside class="page_number">
-              128/162
+              128/163
             </aside>
           </footer>
         </div>
@@ -6985,7 +7030,7 @@ authenticated:</p>
             </aside>
             
             <aside class="page_number">
-              129/162
+              129/163
             </aside>
           </footer>
         </div>
@@ -7022,7 +7067,7 @@ authenticated:</p>
             </aside>
             
             <aside class="page_number">
-              130/162
+              130/163
             </aside>
           </footer>
         </div>
@@ -7079,7 +7124,7 @@ and
             </aside>
             
             <aside class="page_number">
-              131/162
+              131/163
             </aside>
           </footer>
         </div>
@@ -7123,7 +7168,7 @@ PSR-2 documents.</p>
             </aside>
             
             <aside class="page_number">
-              132/162
+              132/163
             </aside>
           </footer>
         </div>
@@ -7168,7 +7213,7 @@ as template engine thanks to the <code>TemplateEngineInterface</code>:</p>
             </aside>
             
             <aside class="page_number">
-              133/162
+              133/163
             </aside>
           </footer>
         </div>
@@ -7205,7 +7250,7 @@ Lego!</a></p>
             </aside>
             
             <aside class="page_number">
-              134/162
+              134/163
             </aside>
           </footer>
         </div>
@@ -7248,7 +7293,7 @@ built:</p>
             </aside>
             
             <aside class="page_number">
-              135/162
+              135/163
             </aside>
           </footer>
         </div>
@@ -7290,7 +7335,7 @@ built:</p>
             </aside>
             
             <aside class="page_number">
-              136/162
+              136/163
             </aside>
           </footer>
         </div>
@@ -7332,7 +7377,7 @@ built:</p>
             </aside>
             
             <aside class="page_number">
-              137/162
+              137/163
             </aside>
           </footer>
         </div>
@@ -7381,7 +7426,7 @@ built:</p>
             </aside>
             
             <aside class="page_number">
-              138/162
+              138/163
             </aside>
           </footer>
         </div>
@@ -7430,7 +7475,7 @@ It fits in a <em>tweet</em> (less than 140 characters):</p>
             </aside>
             
             <aside class="page_number">
-              139/162
+              139/163
             </aside>
           </footer>
         </div>
@@ -7473,7 +7518,7 @@ application.</p>
             </aside>
             
             <aside class="page_number">
-              140/162
+              140/163
             </aside>
           </footer>
         </div>
@@ -7515,7 +7560,7 @@ application.</p>
             </aside>
             
             <aside class="page_number">
-              141/162
+              141/163
             </aside>
           </footer>
         </div>
@@ -7556,7 +7601,7 @@ application.</p>
             </aside>
             
             <aside class="page_number">
-              142/162
+              142/163
             </aside>
           </footer>
         </div>
@@ -7602,7 +7647,7 @@ Anthology</a>:</p>
             </aside>
             
             <aside class="page_number">
-              143/162
+              143/163
             </aside>
           </footer>
         </div>
@@ -7630,7 +7675,7 @@ Anthology</a>:</p>
             </aside>
             
             <aside class="page_number">
-              144/162
+              144/163
             </aside>
           </footer>
         </div>
@@ -7664,7 +7709,7 @@ Anthology</a>:</p>
             </aside>
             
             <aside class="page_number">
-              145/162
+              145/163
             </aside>
           </footer>
         </div>
@@ -7692,7 +7737,7 @@ Anthology</a>:</p>
             </aside>
             
             <aside class="page_number">
-              146/162
+              146/163
             </aside>
           </footer>
         </div>
@@ -7738,7 +7783,7 @@ unit testing in PHP projects.</p>
             </aside>
             
             <aside class="page_number">
-              147/162
+              147/163
             </aside>
           </footer>
         </div>
@@ -7786,7 +7831,7 @@ from it:</p>
             </aside>
             
             <aside class="page_number">
-              148/162
+              148/163
             </aside>
           </footer>
         </div>
@@ -7825,7 +7870,7 @@ from it:</p>
             </aside>
             
             <aside class="page_number">
-              149/162
+              149/163
             </aside>
           </footer>
         </div>
@@ -7875,7 +7920,7 @@ OK <span class="o">(</span>1 <span class="nb">test</span>, 1 assertion<span clas
             </aside>
             
             <aside class="page_number">
-              150/162
+              150/163
             </aside>
           </footer>
         </div>
@@ -7903,7 +7948,7 @@ OK <span class="o">(</span>1 <span class="nb">test</span>, 1 assertion<span clas
             </aside>
             
             <aside class="page_number">
-              151/162
+              151/163
             </aside>
           </footer>
         </div>
@@ -7940,7 +7985,7 @@ than only verifying that individual units of code behave correctly.</p>
             </aside>
             
             <aside class="page_number">
-              152/162
+              152/163
             </aside>
           </footer>
         </div>
@@ -7968,7 +8013,7 @@ than only verifying that individual units of code behave correctly.</p>
             </aside>
             
             <aside class="page_number">
-              153/162
+              153/163
             </aside>
           </footer>
         </div>
@@ -8011,7 +8056,7 @@ than only verifying that individual units of code behave correctly.</p>
             </aside>
             
             <aside class="page_number">
-              154/162
+              154/163
             </aside>
           </footer>
         </div>
@@ -8057,7 +8102,7 @@ than only verifying that individual units of code behave correctly.</p>
             </aside>
             
             <aside class="page_number">
-              155/162
+              155/163
             </aside>
           </footer>
         </div>
@@ -8105,7 +8150,7 @@ than only verifying that individual units of code behave correctly.</p>
             </aside>
             
             <aside class="page_number">
-              156/162
+              156/163
             </aside>
           </footer>
         </div>
@@ -8158,7 +8203,7 @@ than only verifying that individual units of code behave correctly.</p>
             </aside>
             
             <aside class="page_number">
-              157/162
+              157/163
             </aside>
           </footer>
         </div>
@@ -8186,7 +8231,7 @@ than only verifying that individual units of code behave correctly.</p>
             </aside>
             
             <aside class="page_number">
-              158/162
+              158/163
             </aside>
           </footer>
         </div>
@@ -8214,7 +8259,7 @@ than only verifying that individual units of code behave correctly.</p>
             </aside>
             
             <aside class="page_number">
-              159/162
+              159/163
             </aside>
           </footer>
         </div>
@@ -8242,7 +8287,7 @@ than only verifying that individual units of code behave correctly.</p>
             </aside>
             
             <aside class="page_number">
-              160/162
+              160/163
             </aside>
           </footer>
         </div>
@@ -8282,7 +8327,7 @@ than only verifying that individual units of code behave correctly.</p>
             </aside>
             
             <aside class="page_number">
-              161/162
+              161/163
             </aside>
           </footer>
         </div>
@@ -8310,7 +8355,37 @@ than only verifying that individual units of code behave correctly.</p>
             </aside>
             
             <aside class="page_number">
-              162/162
+              162/163
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: src/1/15_end.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Well... Maybe Not.</h1></header>
+            
+            
+            <section><p><a href="index2.html"></a></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="src/1/15_end.md">src/1/15_end.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              163/163
             </aside>
           </footer>
         </div>
@@ -9294,6 +9369,12 @@ than only verifying that individual units of code behave correctly.</p>
       <tr id="toc-row-162">
         <th><a href="#slide162">The End.</a></th>
         <td><a href="#slide162">162</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-163">
+        <th><a href="#slide163">Well... Maybe Not.</a></th>
+        <td><a href="#slide163">163</a></td>
       </tr>
       
       
