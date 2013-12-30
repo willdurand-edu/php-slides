@@ -43,4 +43,16 @@
 
 ---
 
+# HHVM
+
+HipHop Virtual Machine for PHP, created by Facebook.
+
+HHVM uses a just-in-time compilation approach to achieve superior performance.
+
+![](../images/hhvm.jpg)
+
+> [http://www.hhvm.com](http://www.hhvm.com)
+
+---
+
 # RTFM: [http://www.php.net](http://www.php.net)
