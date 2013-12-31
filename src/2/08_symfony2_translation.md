@@ -135,33 +135,32 @@ Or numbers between two other numbers:
 
 ---
 
-# BazingaExposeTranslationBundle
+# BazingaJsTranslationBundle
 
     !yaml
     # app/Resources/translations/Hello.fr.yml
-    foo: "Bar"
     ba:
-        bar: "Hello, World!"
-
-    place.holder: "Hello, %username%!"
+        bar:      Bonjour.
+    place.holder: Bonjour %username%!
+    plural:       Il y a %count% pomme|Il y a %count% pommes
 
 <p></p>
 
     !html+jinja
-    <script src="{{ url('bazinga_exposetranslation_js',
-        { 'domain_name': 'Hello', '_locale': 'fr' }) }}"></script>
+    <script src="{{ url('bazinga_jstranslation_js', { 'domain': 'Hello' }) }}">
+    </script>
 
 A `Translator` object is now available in your JavaScript:
 
     !javascript
-    Translator.get('Hello:foo');
-    // "bar"
+    Translator.trans('ba.bar', {}, 'Hello', 'fr');
+    // "Bonjour."
 
-    Translator.get('Hello:ba.bar');
-    // "Hello, World!"
+    Translator.trans('place.holder', { "username" : "Will" }, 'Hello');
+    // "Bonjour Will!"
 
-    Translator.get('Hello:place.holder');
-    // "Hello, %username%!
+    Translator.transChoice('plural', 1, { "count": 1 }, 'Hello');
+    // "Il y a 1 pomme"
 
-    Translator.get('Hello:place.holder', { "username" : "Will" });
-    // "Hello, Will!"
+    Translator.transChoice('plural', 10, { "count": 10 }, 'Hello');
+    // "Il y a 10 pommes"

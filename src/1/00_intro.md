@@ -52,4 +52,4 @@ Databases
 
 ### Week #4
 
-Writing Better Code, Testing, Embracing Open Source
+Sessions, Authentication, Writing Better Code, Testing, Embracing Open Source

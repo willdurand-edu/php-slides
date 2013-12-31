@@ -8,6 +8,10 @@
 
 ---
 
+# ![](../images/gifts.jpg)
+
+---
+
 # ![](../images/travis-ci.png)
 
 .fx: no-border
