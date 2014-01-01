@@ -35,6 +35,10 @@ projects](https://github.com/willdurand);
 
 ---
 
+# ![](../images/clermontech.png)
+
+---
+
 # Agenda
 
 ### Week #1
