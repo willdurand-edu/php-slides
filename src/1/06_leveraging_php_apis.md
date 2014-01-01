@@ -206,6 +206,15 @@ make it easy to create and manage passwords in a secure manner, since PHP 5.5.0.
 
 `password_hash()` and `password_verify()` are your new friends!
 
+    !php
+    $passwordHash = password_hash('secret-password', PASSWORD_DEFAULT);
+
+    if (password_verify('bad-password', $passwordHash)) {
+        // Correct Password
+    } else {
+        // Wrong password
+    }
+
 > Read more about the **Password Hashing API**:
 [http://www.php.net/manual/en/book.password.php](http://www.php.net/manual/en/book.password.php).
 

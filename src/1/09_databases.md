@@ -449,7 +449,7 @@ A DSN in PHP looks like: `<database>:host=<host>;dbname=<dbname>` where:
     $stmt = $con->prepare($query);
     $stmt->execute();
 
-Looks like the `Connection` class we used before, right?
+Looks like the `Connection` class you used before, right?
 
     !php
     class Connection extends PDO

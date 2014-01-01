@@ -109,7 +109,7 @@ a few files:
 
 ---
 
-# Rethinking The Way We Load Classes
+# Rethinking The Way You Load Classes
 
 PHP 5.2 and upper provides a usable autoloading API with performances close to
 the use of `require_once()` thanks to the following functions:
@@ -172,7 +172,7 @@ The `new` algorithm in pseudo code:
             Go on
 
         => No
-             Do we have registered autoload functions?
+             Do you have registered autoload functions?
                 => Yes
                     Call each function with 'Foo' as parameter
                     until the class gets included

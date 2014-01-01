@@ -21,7 +21,7 @@ No **Authentication**/**Security Layer**, anyone can access everything:
 The **Security Layer**, as seen before, has to **intercept** the process of
 converting a request into a response in order to perform some checks.
 
-We need a way to hook into this process before invoking the controller:
+You need a way to hook into this process before invoking the controller:
 **Interceptor Pattern** to the rescue!
 
 The **Interceptor Pattern** allows you to execute some code during the default
@@ -64,8 +64,8 @@ Using a **trait**:
 
 # Using the EventDispatcherTrait
 
-In order to intercept the process described before, we have to **notify** some
-listeners once we enter in the `process()` method by **dispatching** the event:
+In order to intercept the process described before, you have to **notify** some
+listeners once you enter in the `process()` method by **dispatching** the event:
 
     !php
     class App
@@ -91,11 +91,14 @@ The **listeners** have to listen to this event:
 
 ---
 
-# The Firewall
+# The Firewall (1/2)
 
-Now that we can hook into the appplication's lifecycle, we need to write a
-**Firewall**. This firewall needs a **whitelist** of unsecured routes (routes
-which don't require the user to be authenticated):
+Now that you can hook into the application's lifecycle, you can to write a basic
+but powerful **Firewall**.
+
+This firewall needs a **whitelist** of unsecured routes (i.e. routes that
+don't require the user to be authenticated) associated with their allowed HTTP
+methods:
 
     !php
     $allowed = [
@@ -103,8 +106,15 @@ which don't require the user to be authenticated):
         '/locations' => [ Request::GET ],
     ];
 
+> [Never Blacklist; Only
+Whitelist](http://phpsecurity.readthedocs.org/en/latest/Input-Validation.html#never-blacklist-only-whitelist)
+
+---
+
+# The Firewall (2/2)
+
 The **Firewall** leverages the **session** to determine whether the user is
-authenticated:
+authenticated or not:
 
     !php
     session_start();
@@ -199,3 +209,20 @@ Useful for API authentication.
 ### WSSE Username Token
 
 [http://www.xml.com/pub/a/2003/12/17/dive.html](http://www.xml.com/pub/a/2003/12/17/dive.html)
+
+---
+
+# Basic Security Thinking
+
+1. Trust nobody and nothing;
+2. Assume a worse-case scenario;
+3. Apply Defense-In-Depth;
+4. Keep It Simple Stupid (KISS);
+5. Principle of Least Privilege;
+6. Attackers can smell obscurity;
+7. RTFM but never trust it;
+8. If it wasn’t tested, it doesn’t work;
+9. It’s always your fault!
+
+> [Survive The Deep End: PHP
+Security](http://phpsecurity.readthedocs.org/en/latest/index.html)

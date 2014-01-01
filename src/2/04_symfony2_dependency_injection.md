@@ -61,7 +61,7 @@ This service is now available in the container, and you can access it by
 # Service Parameters
 
 The service definition described before is not flexible enough. For instance,
-we never configure the `$debug` argument.
+`$debug` argument is never configured.
 
 **Parameters** make defining services more **organized** and **flexible**:
 
