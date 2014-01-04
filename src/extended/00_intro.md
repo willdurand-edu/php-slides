@@ -1,26 +1,3 @@
-# PHP Extended
-
----
-
-# Let's Do Professional Development Now!
-
----
-
-# Agenda
-
-* Symfony
-    * Controllers
-    * Templating
-    * Dependency Injection
-    * Command Line
-    * Forms
-    * Validation
-    * Translation
-    * HTTP Cache
-* Stack PHP
-
----
-
 # A Framework To Simplify Developments
 
 A **framework helps you work better** by structuring developments,

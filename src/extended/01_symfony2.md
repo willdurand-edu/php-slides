@@ -1,4 +1,4 @@
-# ![](http://symfony.com/logos/symfony_black_02.png)
+# ![](../images/symfony.png)
 
 .fx: no-border
 

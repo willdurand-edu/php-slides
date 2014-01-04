@@ -13,16 +13,18 @@ Get the code:
     git clone git://github.com/licpro/php-slides.git --recursive
 
 Install [landslide](https://github.com/adamzap/landslide#installation), then
-build the presentation:
+build the presentations:
 
-    landslide part1.cfg
-    landslide part2.cfg
+    landslide iut-php.cfg
+    landslide iut-extended.cfg
+    landslide isima-php.cfg
 
 
 Usage
 -----
 
-Basically, just build the presentation and open it in your favorite browser.
+Basically, build the presentation you are interested in, and open it in your
+favorite browser.
 
 
 License

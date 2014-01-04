@@ -4,18 +4,21 @@ TMP_DIR=/tmp/licpro-php-slides
 
 git stash
 
-landslide part1.cfg
-landslide part2.cfg
+landslide iut-php.cfg
+landslide iut-extended.cfg
+landslide isima-php.cfg
 
 rm -rf $TMP_DIR
 mkdir $TMP_DIR
-mv index* $TMP_DIR
+mv iut-php.html $TMP_DIR/index.html
+mv iut-extended.html $TMP_DIR/extended.html
+mv isima-php.html $TMP_DIR/isima.html
 mv themes/ $TMP_DIR
 
 git checkout gh-pages
 
 mv $TMP_DIR/* .
-git add index* themes/avalanche/avalanche/css/font-awesome/
+git add index.html extended.html isima.html themes/avalanche/avalanche/css/font-awesome/
 git commit -m "Publish slides (`date`)"
 
 git push origin gh-pages -f
