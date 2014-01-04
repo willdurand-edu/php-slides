@@ -2,7 +2,8 @@
 
 ### Week #1
 
-PHP: Hypertext Preprocessor, The PHP Syntax, The PHP Command Line, Client/Server
+PHP: Hypertext Preprocessor, The PHP Syntax, The PHP Command Line,
+Client/Server, REST
 
 ### Week #2
 

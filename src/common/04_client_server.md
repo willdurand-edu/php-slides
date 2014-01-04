@@ -148,7 +148,11 @@ Will result in:
 
 ---
 
-# REST (REpresentational State Transfer)
+# REST
+
+---
+
+# REpresentational State Transfer
 
 REST is the underlying architectural principle of the web, formalized as a set
 of **constraints**, described in Roy Fielding's dissertation.
