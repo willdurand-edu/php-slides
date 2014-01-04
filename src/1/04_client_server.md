@@ -18,6 +18,25 @@ server**.
 
 ---
 
+# Unified Resource Identifier (URI)
+
+### In A Nutshell
+
+* URIs identify resources;
+* URIs are format independent;
+* URI "file extensions" != RESTful.
+
+### Resources
+
+* `/bananas/joe`: _URI_ for banana "Joe"
+* `/bananas/henry`: _URI_ for banana "Henry"
+
+### Collections
+
+* `/bananas`: collection of all available bananas
+
+---
+
 # HTTP Request
 
 Request is made of:
@@ -131,24 +150,39 @@ Will result in:
 
 # REST (REpresentational State Transfer)
 
-REST is the underlying architectural principle of the web.
+REST is the underlying architectural principle of the web, formalized as a set
+of **constraints**, described in Roy Fielding's dissertation.
 
-An API that adheres to the principles of REST does not require the client to
-know anything about the structure of the API.
+An API (i.e. a web service) that adheres to the principles of REST does not
+require the client to know anything about the structure of this API.
 Rather, the server needs to provide whatever information the client needs to
 interact with the service.
 
+The key abstraction of information in REST is a **resource**. Any information
+that can be named can be a resource, and is identified by a **Unified Resource
+Identifier** (URI).
+
+<blockquote class="info">
+    <p>It heavily relies on the HTTP protocol: <a href="http://www.ietf.org/rfc/rfc2616.txt">RFC 2616</a>.</p>
+</blockquote>
+
 ---
 
-# Unified Resource Identifier
+# Richardson Maturity Model
 
-* URIs identify resources;
-* URIs are format independent;
-* URI "file extensions" != RESTful.
+<br>
+<br>
+![](../images/rmm.png)
+
+---
+
+# Level 3 = Content Negotiation + HATEOAS
 
 ---
 
 # Media Types
+
+### In A Nutshell
 
 * Identifies a representation format;
 * Custom types use `application/vnd.[XYZ]`;
@@ -167,11 +201,18 @@ interact with the service.
     </tbody>
 </table>
 
+### Hyper Media Types
+
+Hyper Media Types are MIME media types that contain **native hyper-linking
+semantics** that induce application flow: `application/hal+json`,
+`application/collection+json`, etc.
+
 ---
 
 # Content Type Negotiation
 
-Content Type Negotiation is the principle to find appropriate response formats.
+Content Type Negotiation is the principle of finding appropriate response
+formats based on client requirements.
 
 No standardized algorithm available, even if the Apache
 [mod_negotiation](http://httpd.apache.org/docs/2.4/content-negotiation.html)
@@ -198,18 +239,28 @@ language (`Accept-Language`) negotiation.
 
 ---
 
-# Examples
+# HATEOAS
 
-### Resources
+**HATEOAS** stands for **H**ypertext **A**s **T**he **E**ngine **O**f
+**A**pplication **S**tate. It means that hypertext should be used to find your
+way through the API.
 
-* `/bananas/joe`: _URI_ for banana "Joe"
-* `/bananas/henry`: _URI_ for banana "Henry"
+It is all about **state transitions**. Your application is just a big **state
+machine**.
+There should be a single endpoint for the resource, and **all of the other
+actions** you would need to undertake **should be able to be discovered by
+inspecting that resource**.
 
-### Collections
+    !xml
+    <?xml version="1.0" encoding="UTF-8"?>
+    <collection page="1" limit="10" pages="1">
+        <user id="123"></user>
+        <user id="456"></user>
 
-* `/bananas`: collection of all available bananas
+        <link rel="self" href="/api/users?page=1&amp;limit=10" />
+        <link rel="first" href="/api/users?page=1&amp;limit=10" />
+        <link rel="last" href="/api/users?page=1&amp;limit=10" />
+    </collection>
 
-### Actions
-
-* `GET /banana/joe` will return banana "Joe"
-* `DELETE /bananas` will delete all bananas in the collection!
+> Must read: [Haters gonna
+HATEOAS](http://timelessrepo.com/haters-gonna-hateoas).

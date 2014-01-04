@@ -185,3 +185,7 @@ img {
     color: #C82D26;
     font-size: 8em !important;
 }
+
+table {
+    margin-bottom: 3%;
+}
