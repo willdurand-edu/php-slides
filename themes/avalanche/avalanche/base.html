@@ -26,7 +26,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>{{ head_title }}</title>
-    <!-- Styles -->
+
     {% if embed %}
     <style type="text/css" media="print">
       {{ css.print.contents }}
@@ -48,25 +48,9 @@
       <link rel="stylesheet" href="{{ css.path_url }}">
       {% endif %}
     {% endfor %}
-    <!-- /Styles -->
-    <!-- Javascripts -->
-    {% if embed %}
-    <script>
-      {{ js.contents }}
-    </script>
-    {% else %}
-    <script type="text/javascript" src="{{ js.path_url }}"></script>
-    {% endif %}
-    {% for js in user_js %}
-      {% if embed %}
-      <script>
-        {{ js.contents }}
-      </script>
-      {% else %}
-      <script type="text/javascript" src="{{ js.path_url }}"></script>
-      {% endif %}
-    {% endfor %}
-    <!-- /Javascripts -->
+
+    <script src="{{ js.path_url|replace('slides.js', 'jquery.min.js') }}"></script>
+    <script src="{{ js.path_url|replace('slides.js', 'hammer.min.js') }}"></script>
 </head>
 <body>
   <div id="blank"></div>
@@ -182,6 +166,22 @@
       </tr>
     </table>
   </div>
+  {% if embed %}
+  <script>
+    {{ js.contents }}
+  </script>
+  {% else %}
+  <script src="{{ js.path_url }}"></script>
+  {% endif %}
+  {% for js in user_js %}
+  {% if embed %}
+  <script>
+    {{ js.contents }}
+  </script>
+  {% else %}
+  <script src="{{ js.path_url }}"></script>
+  {% endif %}
+  {% endfor %}
   <script>
       $().landslide();
       $('.page_number').toggle();
