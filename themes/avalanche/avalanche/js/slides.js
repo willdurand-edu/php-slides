@@ -352,12 +352,12 @@
 
         var body = document.body;
 
-        Hammer(body).on('swipeleft', function (e) {
+        Hammer(body, { drag: false }).on('swipeleft', function (event) {
             event.gesture.preventDefault();
             nextSlide();
         });
 
-        Hammer(body).on('swiperight', function (e) {
+        Hammer(body, { drag: false }).on('swiperight', function (event) {
             event.gesture.preventDefault();
             prevSlide();
         });
