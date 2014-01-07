@@ -195,11 +195,12 @@ scalar types such as `int` or `string`:
 
 # Methods (2/3)
 
-The `->` sign is used to call methods on objects.
+The `->` operator is used to call methods on objects.
 
 ### Usage
 
     !php
+    $foo = new Foo();
     $foo->doSomething();
 
     // >= PHP 5.4
@@ -210,7 +211,7 @@ The `->` sign is used to call methods on objects.
     $foo->$method();
 
     $foo->{$method . 'Else'}();
-    // will call 'doSomethingElse()'
+    // will call 'doSomethingElse()'; curly braces are required.
 
 ---
 
