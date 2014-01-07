@@ -2148,7 +2148,7 @@ This is different!</p></section>
 <span class="nv">$foo</span><span class="o">::</span><span class="nv">$value</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span>
 
 <span class="c1">// accessing the attribute directly from the class</span>
-<span class="k">echo</span> <span class="nx">Foo</span><span class="o">::</span><span class="na">value</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nx">Foo</span><span class="o">::</span><span class="nv">$value</span><span class="p">;</span>
 <span class="o">=&gt;</span> <span class="mi">123</span>
 </pre></div>
 
@@ -2894,7 +2894,7 @@ This is a content
 <ul>
 <li>Some <strong>headers</strong> to describe the content;</li>
 <li>The response's <strong>status code</strong>;</li>
-<li>The <strong>content</strong> of the request;</li>
+<li>The <strong>content</strong> of the response;</li>
 </ul>
 <p>Here is an example:</p>
 <div class="highlight"><pre>HTTP/1.1 200 OK
@@ -3306,7 +3306,7 @@ language (<code>Accept-Language</code>) negotiation.</p>
             <header><h1>HATEOAS</h1></header>
             
             
-            <section><p><strong>HATEOAS</strong> stands for <strong>H</strong>ypertext <strong>A</strong>s <strong>T</strong>he <strong>E</strong>ngine <strong>O</strong>f
+            <section><p><strong>HATEOAS</strong> stands for <strong>H</strong>ypermedia <strong>A</strong>s <strong>T</strong>he <strong>E</strong>ngine <strong>O</strong>f
 <strong>A</strong>pplication <strong>S</strong>tate. It means that hypertext should be used to find your
 way through the API.</p>
 <p>It is all about <strong>state transitions</strong>. Your application is just a big <strong>state
