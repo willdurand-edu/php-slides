@@ -1963,7 +1963,7 @@ Embracing Open Source</p></section>
 </pre></div>
 
 <h3>Type Hinting</h3>
-<p>Works with objects, interfaces, arrays or <code>callable</code>. You can't use
+<p>Works with classes, interfaces, arrays or <code>callable</code>. You can't use
 scalar types such as <code>int</code> or <code>string</code>:</p>
 <div class="highlight"><pre><span class="k">public</span> <span class="k">function</span> <span class="nf">doSomething</span><span class="p">(</span><span class="nx">Foo</span> <span class="nv">$foo</span><span class="p">);</span>
 
@@ -2003,9 +2003,10 @@ scalar types such as <code>int</code> or <code>string</code>:</p>
             <header><h1>Methods (2/3)</h1></header>
             
             
-            <section><p>The <code>-&gt;</code> sign is used to call methods on objects.</p>
+            <section><p>The <code>-&gt;</code> operator is used to call methods on objects.</p>
 <h3>Usage</h3>
-<div class="highlight"><pre><span class="nv">$foo</span><span class="o">-&gt;</span><span class="na">doSomething</span><span class="p">();</span>
+<div class="highlight"><pre><span class="nv">$foo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Foo</span><span class="p">();</span>
+<span class="nv">$foo</span><span class="o">-&gt;</span><span class="na">doSomething</span><span class="p">();</span>
 
 <span class="c1">// &gt;= PHP 5.4</span>
 <span class="p">(</span><span class="k">new</span> <span class="nx">Foo</span><span class="p">())</span><span class="o">-&gt;</span><span class="na">doSomething</span><span class="p">();</span>
@@ -2015,7 +2016,7 @@ scalar types such as <code>int</code> or <code>string</code>:</p>
 <span class="nv">$foo</span><span class="o">-&gt;</span><span class="nv">$method</span><span class="p">();</span>
 
 <span class="nv">$foo</span><span class="o">-&gt;</span><span class="p">{</span><span class="nv">$method</span> <span class="o">.</span> <span class="s1">&#39;Else&#39;</span><span class="p">}();</span>
-<span class="c1">// will call &#39;doSomethingElse()&#39;</span>
+<span class="c1">// will call &#39;doSomethingElse()&#39;; curly braces are required.</span>
 </pre></div>
 </section>
             
