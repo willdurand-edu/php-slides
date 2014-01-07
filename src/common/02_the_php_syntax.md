@@ -296,7 +296,9 @@ This is different!
 ### Inheritance
 
     !php
-    interface MyTraversable extends Traversable
+    // Interface may extend several other interfaces.
+    // This is not possible with class though!
+    interface MyTraversable extends Traversable, Countable
     {
     }
 
