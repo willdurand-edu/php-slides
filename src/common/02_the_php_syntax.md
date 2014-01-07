@@ -178,7 +178,7 @@ Methods without any explicit visibility keyword are defined as `public`.
 
 ### Type Hinting
 
-Works with objects, interfaces, arrays or `callable`. You can't use
+Works with classes, interfaces, arrays or `callable`. You can't use
 scalar types such as `int` or `string`:
 
     !php
