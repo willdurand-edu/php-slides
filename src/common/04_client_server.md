@@ -64,7 +64,7 @@ Response is made of:
 
 * Some **headers** to describe the content;
 * The response's **status code**;
-* The **content** of the request;
+* The **content** of the response;
 
 Here is an example:
 
@@ -245,7 +245,7 @@ language (`Accept-Language`) negotiation.
 
 # HATEOAS
 
-**HATEOAS** stands for **H**ypertext **A**s **T**he **E**ngine **O**f
+**HATEOAS** stands for **H**ypermedia **A**s **T**he **E**ngine **O**f
 **A**pplication **S**tate. It means that hypertext should be used to find your
 way through the API.
 

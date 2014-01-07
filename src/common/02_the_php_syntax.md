@@ -271,7 +271,7 @@ This is different!
     $foo::$value = 123;
 
     // accessing the attribute directly from the class
-    echo Foo::value;
+    echo Foo::$value;
     => 123
 
 > Read more:
