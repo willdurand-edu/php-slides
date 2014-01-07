@@ -52,7 +52,7 @@ Here is an example:
     GET /my/simple/uri?with-query-string HTTP/1.1
     Host: example.org
     Content-Type: text/plain; charset=utf-8
-    Content-Length: length
+    Content-Length: 17
 
     This is a content
 
@@ -71,7 +71,7 @@ Here is an example:
     !html
     HTTP/1.1 200 OK
     Content-Type: text/html; charset=utf-8
-    Content-Length: length
+    Content-Length: 76
 
     <!DOCTYPE HTML>
     <html>
@@ -126,7 +126,7 @@ You can always use the following, but you need to parse them by yourself:
     GET /my/simple/uri?a=1&id=2 HTTP/1.1
     Host: example.org
     Content-Type: text/plain; charset=utf-8
-    Content-Length: length
+    Content-Length: 14
 
     b=3&city=paris
 
