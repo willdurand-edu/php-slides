@@ -303,6 +303,7 @@ This is different!
 ### Usage
 
     !php
+    // a class may implement several interfaces, but may extend only one class!
     class Foo implements Fooable, MyTraversable {}
 
 ---
