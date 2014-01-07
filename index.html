@@ -2860,7 +2860,7 @@ server</strong>.</p></section>
 <div class="highlight"><pre>GET /my/simple/uri?with-query-string HTTP/1.1
 Host: example.org
 Content-Type: text/plain; charset=utf-8
-Content-Length: length
+Content-Length: 17
 
 This is a content
 </pre></div>
@@ -2903,7 +2903,7 @@ This is a content
 <p>Here is an example:</p>
 <div class="highlight"><pre>HTTP/1.1 200 OK
 Content-Type: text/html; charset=utf-8
-Content-Length: length
+Content-Length: 76
 
 <span class="cp">&lt;!DOCTYPE HTML&gt;</span>
 <span class="nt">&lt;html&gt;</span>
@@ -3030,7 +3030,7 @@ parameters through global variables:</p>
             <section><div class="highlight"><pre>GET /my/simple/uri?a=1<span class="err">&amp;</span>id=2 HTTP/1.1
 Host: example.org
 Content-Type: text/plain; charset=utf-8
-Content-Length: length
+Content-Length: 14
 
 b=3<span class="err">&amp;</span>city=paris
 </pre></div>
