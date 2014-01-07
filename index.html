@@ -2197,13 +2197,16 @@ This is different!</p></section>
 </pre></div>
 
 <h3>Inheritance</h3>
-<div class="highlight"><pre><span class="k">interface</span> <span class="nx">MyTraversable</span> <span class="k">extends</span> <span class="nx">Traversable</span>
+<div class="highlight"><pre><span class="c1">// Interface may extend several other interfaces.</span>
+<span class="c1">// This is not possible with class though!</span>
+<span class="k">interface</span> <span class="nx">MyTraversable</span> <span class="k">extends</span> <span class="nx">Traversable</span><span class="p">,</span> <span class="nx">Countable</span>
 <span class="p">{</span>
 <span class="p">}</span>
 </pre></div>
 
 <h3>Usage</h3>
-<div class="highlight"><pre><span class="k">class</span> <span class="nc">Foo</span> <span class="k">implements</span> <span class="nx">Fooable</span><span class="p">,</span> <span class="nx">MyTraversable</span> <span class="p">{}</span>
+<div class="highlight"><pre><span class="c1">// a class may implement several interfaces, but may extend only one class!</span>
+<span class="k">class</span> <span class="nc">Foo</span> <span class="k">implements</span> <span class="nx">Fooable</span><span class="p">,</span> <span class="nx">MyTraversable</span> <span class="p">{}</span>
 </pre></div>
 </section>
             
