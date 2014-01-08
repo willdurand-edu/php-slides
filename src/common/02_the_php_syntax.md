@@ -459,4 +459,5 @@ The heart of a generator function is the `yield` keyword.
 >
 > * [http://www.php.net/manual/en/language.generators.php](http://www.php.net/manual/en/language.generators.php);
 > * [What Generators Can Do For
-You](http://blog.ircmaxell.com/2012/07/what-generators-can-do-for-you.html).
+You](http://blog.ircmaxell.com/2012/07/what-generators-can-do-for-you.html);
+> * [https://github.com/nikic/iter](https://github.com/nikic/iter) (exemples).
