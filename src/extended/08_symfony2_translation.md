@@ -117,7 +117,7 @@ can use explicit math intervals:
 
     !jinja
     '{0} There are no apples|{1} There is one apple|]1,19] There are
-    %count% apples|[20,Inf] There are many apples'
+    %count% apples|[20,Inf[ There are many apples'
 
 The intervals follow the [ISO 31-11](http://en.wikipedia.org/wiki/Interval_(mathematics)#Notations_for_intervals)
 notation.
