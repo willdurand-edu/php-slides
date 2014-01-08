@@ -6,8 +6,11 @@
 
 * Coding Standards
 * Programming To The Interface
+* Dependency Inversion Principle (DIP)
+* Dependency Injection (DI)
+* Inversion of Control (IoC)
+* Dependency Injection Container (DIC)
 * Component Driven Development
-* Dependency Injection
 * From STUPID to SOLID code!
 * Object Calisthenics
 
@@ -88,43 +91,76 @@ You should think about interfaces, not about internal implementation details.
 
 ---
 
-# Component Driven Development
+# Dependency Inversion Principle (DIP)
 
-It’s all about **Separation of Concerns** (SoC).
+The **D**ependency **I**nversion **P**rinciple has two parts:
 
-You design components with their own logic, each component does **one thing
-well**, and **only one thing**.
+* High-level modules should not depend on low-level modules. Both should depend
+  on abstractions;
+*  Abstractions should not depend upon details. Details should depend upon
+  abstractions.
 
-How to manage these components in your application?
-
-> Read more: [Component Driven Development: it's like
-Lego!](http://williamdurand.fr/2012/02/01/component-driven-development-it-s-like-lego/)
+DIP is about the level of the abstraction in the messages sent from your code to
+the thing it is calling.
 
 ---
 
-# Dependency Injection
+# Dependency Injection (DI)
 
-Design Pattern that allows a choice of component to be made at **runtime**
-rather than compile time.
-
-Most of the time, you rely on configuration files to describe your **classes**
-and their **dependencies**.
-
-A **class** in this context is also known as a **service**, and all services live
-in a **service container** or **dependency injection container**.
-
-You ask this container to retrieve a service, and it is **lazy loaded** and dynamically
-built:
+**D**ependency **I**njection is about how one object acquires a dependency.
 
     !php
-    // It's an instance of TemplateEngineInterface, but you don't know
-    // anything about its internal implementation.
-    // Is it the raw PHP implementation or Twig?
-    $engine = $container->get('template_engine');
+    class Foo
+    {
+        private $bar;
+
+        // **NOT** DI
+        public function __construct()
+        {
+            $this->bar = new Bar();
+        }
+    }
+
+When a dependency is provided externally, then the system is using DI:
+
+    !php
+    // DI!
+    public function __construct(Bar $bar)
+    {
+        $this->bar = $bar;
+    }
 
 ---
 
-# Dependency Injection
+# Dependency Injection (Anti) Pattern
+
+### ServiceLocator
+
+The basic idea behind a service locator is to have an object that knows how to
+get hold of all of the services that an application might need.
+
+    !php
+    class ServiceLocator
+    {
+        public static function getBar()
+        {
+            return new Bar();
+        }
+    }
+
+    class Foo
+    {
+        private $bar;
+
+        public function __construct()
+        {
+            $this->bar = ServiceLocator::getBar();
+        }
+    }
+
+---
+
+# Dependency Injection Patterns
 
 ### Constructor Injection
 
@@ -143,7 +179,7 @@ All dependencies are **injected** using a **constructor**:
 
 ---
 
-# Dependency Injection
+# Dependency Injection Patterns
 
 ### Setter Injection
 
@@ -162,7 +198,7 @@ Dependencies are **injected** through **setters**:
 
 ---
 
-# Dependency Injection
+# Dependency Injection Patterns
 
 ### Interface Injection
 
@@ -186,6 +222,37 @@ It needs to be implemented by the class that wants to use a `BarInterface`:
             $this->bar = $bar;
         }
     }
+
+---
+
+# Inversion of Control (IoC)
+
+**I**nversion **o**f **C**ontrol is about who initiates the call. If your code
+initiates a call, it is not IoC, if the container/system/library calls back
+into code that you provided it, is it IoC.
+
+Hollywood Principle: _Don't call us, we'll call you_.
+
+---
+
+# Dependency Injection Container (DIC)
+
+A framework or library for building graphs of objects by passing in (injecting)
+each object's dependencies. Object lifetimes are handled by the container
+instead of by the consuming object.
+
+Most of the time, you rely on configuration files to describe your **classes**
+and their **dependencies**. A **class** in this context is also known as a
+**service**.
+
+You ask this container to retrieve a service, and it is **lazy loaded** and
+dynamically built:
+
+    !php
+    // It's an instance of TemplateEngineInterface, but you don't know
+    // anything about its internal implementation.
+    // Is it the raw PHP implementation or Twig?
+    $engine = $container->get('template_engine');
 
 ---
 
@@ -232,6 +299,20 @@ application.
 >
 > * [http://symfony.com/doc/current/book/service_container.html](http://symfony.com/doc/current/book/service_container.html);
 > * [http://symfony.com/doc/current/components/dependency_injection/](http://symfony.com/doc/current/components/dependency_injection/).
+
+---
+
+# Component Driven Development
+
+It’s all about **Separation of Concerns** (SoC).
+
+You design components with their own logic, each component does **one thing
+well**, and **only one thing**.
+
+How to manage these components in your application?
+
+> Read more: [Component Driven Development: it's like
+Lego!](http://williamdurand.fr/2012/02/01/component-driven-development-it-s-like-lego/)
 
 ---
 
