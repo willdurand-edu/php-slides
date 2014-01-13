@@ -57,7 +57,7 @@ Enable code introspection:
 
 # The Reflection API (2/2)
 
-It is even possible to invoke protected methods!
+It is even possible to invoke protected/private methods!
 
     !php
     class MyClass
@@ -88,7 +88,8 @@ Provides a collection of classes and interfaces:
 
 ### Datastructures
 
-`SplStack`, `SplQueue`, [`SplObjectStorage`](http://php.net/manual/en/class.splobjectstorage.php), etc.
+`SplStack`, `SplQueue`,
+[`SplObjectStorage`](http://php.net/manual/en/class.splobjectstorage.php), etc.
 
 ### Named Exceptions
 
