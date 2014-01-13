@@ -3853,7 +3853,7 @@ when encoded with <code>json_encode()</code>.</p>
             <header><h1>The Reflection API (2/2)</h1></header>
             
             
-            <section><p>It is even possible to invoke protected methods!</p>
+            <section><p>It is even possible to invoke protected/private methods!</p>
 <div class="highlight"><pre><span class="k">class</span> <span class="nc">MyClass</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">hello</span><span class="p">()</span> <span class="p">{</span> <span class="nb">printf</span><span class="p">(</span><span class="s2">&quot;Hello %s&quot;</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getName</span><span class="p">());</span> <span class="p">}</span>
@@ -3906,7 +3906,8 @@ when encoded with <code>json_encode()</code>.</p>
             
             <section><p>Provides a collection of classes and interfaces:</p>
 <h3>Datastructures</h3>
-<p><code>SplStack</code>, <code>SplQueue</code>, <a href="http://php.net/manual/en/class.splobjectstorage.php"><code>SplObjectStorage</code></a>, etc.</p>
+<p><code>SplStack</code>, <code>SplQueue</code>,
+<a href="http://php.net/manual/en/class.splobjectstorage.php"><code>SplObjectStorage</code></a>, etc.</p>
 <h3>Named Exceptions</h3>
 <p><code>LogicException</code>, <code>InvalidArgumentException</code>, <code>OutOfRangeException</code>,
 <code>RuntimeException</code>, etc.</p>
