@@ -57,7 +57,7 @@ Enable code introspection:
 
 # The Reflection API (2/2)
 
-It is even possible to invoke protected/private methods!
+It is even possible to invoke private methods!
 
     !php
     class MyClass
@@ -105,7 +105,7 @@ Provides a collection of classes and interfaces:
 
 ---
 
-# Observer/Observable (1/2)
+# Observer Pattern (1/2)
 
 The `SplObserver` interface is used alongside `SplSubject` to implement the
 **Observer** Design Pattern.
@@ -133,10 +133,10 @@ The `SplObserver` interface is used alongside `SplSubject` to implement the
 
 ---
 
-# Observer/Observable (2/2)
+# Observer Pattern (2/2)
 
-Those interfaces are **never** used as default **channel** has to be specified for the
-`notify()` method.
+Those interfaces are **never** used as there is only one default **channel** for
+the `notify()` method.
 
 Symfony2 [EventDispatcher](https://github.com/symfony/EventDispatcher)
 component to the rescue!

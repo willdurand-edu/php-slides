@@ -158,7 +158,7 @@ Routing is the process of binding `URI`s to controllers.
 
 ## Folder organization
 
-The simplest kind of routing, but also the hardest to maintain:
+The simplest kind of routing, but also the hardest one to maintain:
 
     !text
     web/
@@ -166,11 +166,11 @@ The simplest kind of routing, but also the hardest to maintain:
     │ └ pineapple.php
     └ tree.php
 
-## Centralized declaration
+## Centralized Declaration
 
-Modern frameworks all provide a routing component such as **Symfony2 Routing**
-component allowing to define all routes in a centralized place and easing
-`URI` generation.
+Modern frameworks provide a routing component such as the **Symfony2 Routing**
+component allowing to define routes in a centralized place, and easing `URI`
+generation.
 
 This require a single entry point: the **Frontend Controller**.
 
@@ -193,11 +193,11 @@ It is usually tied to `URL rewriting`.
 Web applications become **more and more complex** and interact with
 **multiple services** such as:
 
-* [Relational database](http://en.wikipedia.org/wiki/Relational_database) to store consistent data;
-* Search engine to index and retrieve documents;
+* [Relational databases](http://en.wikipedia.org/wiki/Relational_database) to store consistent data;
+* Search engines to index and retrieve documents;
 * [Message queues](http://en.wikipedia.org/wiki/Message_queue) to postpone executions or as event brokers;
-* External APIs (geocoding, payment, social, ...);
-* Mail server to send or receive emails;
-* Text message gateway;
-* HTTP cache server to reduce resources needs and speed up responses;
+* External APIs (geocoding, payment, social);
+* Mail servers to send or receive emails;
+* Text message gateways;
+* HTTP cache servers to reduce resources needs and speed up responses;
 * and much much more.
