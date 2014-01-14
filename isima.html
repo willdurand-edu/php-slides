@@ -3852,7 +3852,7 @@ when encoded with <code>json_encode()</code>.</p>
             <header><h1>The Reflection API (2/2)</h1></header>
             
             
-            <section><p>It is even possible to invoke protected/private methods!</p>
+            <section><p>It is even possible to invoke private methods!</p>
 <div class="highlight"><pre><span class="k">class</span> <span class="nc">MyClass</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">hello</span><span class="p">()</span> <span class="p">{</span> <span class="nb">printf</span><span class="p">(</span><span class="s2">&quot;Hello %s&quot;</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getName</span><span class="p">());</span> <span class="p">}</span>
@@ -3942,7 +3942,7 @@ when encoded with <code>json_encode()</code>.</p>
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h1>Observer/Observable (1/2)</h1></header>
+            <header><h1>Observer Pattern (1/2)</h1></header>
             
             
             <section><p>The <code>SplObserver</code> interface is used alongside <code>SplSubject</code> to implement the
@@ -3995,11 +3995,11 @@ when encoded with <code>json_encode()</code>.</p>
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h1>Observer/Observable (2/2)</h1></header>
+            <header><h1>Observer Pattern (2/2)</h1></header>
             
             
-            <section><p>Those interfaces are <strong>never</strong> used as default <strong>channel</strong> has to be specified for the
-<code>notify()</code> method.</p>
+            <section><p>Those interfaces are <strong>never</strong> used as there is only one default <strong>channel</strong> for
+the <code>notify()</code> method.</p>
 <p>Symfony2 <a href="https://github.com/symfony/EventDispatcher">EventDispatcher</a>
 component to the rescue!</p>
 <div class="highlight"><pre><span class="k">use</span> <span class="nx">Symfony\Component\EventDispatcher\EventDispatcher</span><span class="p">;</span>
@@ -4909,17 +4909,17 @@ you and much much more! Read more:
             
             <section><p>Routing is the process of binding <code>URI</code>s to controllers.</p>
 <h2>Folder organization</h2>
-<p>The simplest kind of routing, but also the hardest to maintain:</p>
+<p>The simplest kind of routing, but also the hardest one to maintain:</p>
 <div class="highlight"><pre>web/
 ├ trees/
 │ └ pineapple.php
 └ tree.php
 </pre></div>
 
-<h2>Centralized declaration</h2>
-<p>Modern frameworks all provide a routing component such as <strong>Symfony2 Routing</strong>
-component allowing to define all routes in a centralized place and easing
-<code>URI</code> generation.</p>
+<h2>Centralized Declaration</h2>
+<p>Modern frameworks provide a routing component such as the <strong>Symfony2 Routing</strong>
+component allowing to define routes in a centralized place, and easing <code>URI</code>
+generation.</p>
 <p>This require a single entry point: the <strong>Frontend Controller</strong>.</p></section>
             
           </div>
@@ -4986,13 +4986,13 @@ component allowing to define all routes in a centralized place and easing
             <section><p>Web applications become <strong>more and more complex</strong> and interact with
 <strong>multiple services</strong> such as:</p>
 <ul>
-<li><a href="http://en.wikipedia.org/wiki/Relational_database">Relational database</a> to store consistent data;</li>
-<li>Search engine to index and retrieve documents;</li>
+<li><a href="http://en.wikipedia.org/wiki/Relational_database">Relational databases</a> to store consistent data;</li>
+<li>Search engines to index and retrieve documents;</li>
 <li><a href="http://en.wikipedia.org/wiki/Message_queue">Message queues</a> to postpone executions or as event brokers;</li>
-<li>External APIs (geocoding, payment, social, ...);</li>
-<li>Mail server to send or receive emails;</li>
-<li>Text message gateway;</li>
-<li>HTTP cache server to reduce resources needs and speed up responses;</li>
+<li>External APIs (geocoding, payment, social);</li>
+<li>Mail servers to send or receive emails;</li>
+<li>Text message gateways;</li>
+<li>HTTP cache servers to reduce resources needs and speed up responses;</li>
 <li>and much much more.</li>
 </ul></section>
             
@@ -6876,13 +6876,13 @@ patterns, often seen as an <strong>Active Record</strong> approach.</p>
       
       
       <tr id="toc-row-66">
-        <th><a href="#slide66">Observer/Observable (1/2)</a></th>
+        <th><a href="#slide66">Observer Pattern (1/2)</a></th>
         <td><a href="#slide66">66</a></td>
       </tr>
       
       
       <tr id="toc-row-67">
-        <th><a href="#slide67">Observer/Observable (2/2)</a></th>
+        <th><a href="#slide67">Observer Pattern (2/2)</a></th>
         <td><a href="#slide67">67</a></td>
       </tr>
       
