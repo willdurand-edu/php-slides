@@ -8,6 +8,7 @@
 * Data Access Layer
 * Object Relational Mapping
 * Existing Components
+* A Note About Domain-Driven Design
 
 ---
 
@@ -102,7 +103,7 @@ There is one instance per row.
     public function insert(Connection $con)
     {
         // Prepared statement
-        $stmt = $this->con->prepare('INSERT INTO bananas VALUES (:name)');
+        $stmt = $this->con->prepare('INSERT INTO bananas ValueS (:name)');
 
         $stmt->bindValue(':name', $name);
 
@@ -186,7 +187,7 @@ A DAO implements the well-known **C**reate **R**ead **U**pdate
     public function insert($name)
     {
         // Prepared statement
-        $stmt = $this->con->prepare('INSERT INTO bananas VALUES (:name)');
+        $stmt = $this->con->prepare('INSERT INTO bananas ValueS (:name)');
 
         $stmt->bindValue(':name', $name);
 
@@ -599,3 +600,174 @@ patterns, often seen as an **Active Record** approach.
 An ORM that implements the **Data Mapper** pattern.
 
 > Documentation: [www.doctrine-project.org](http://www.doctrine-project.org/).
+
+---
+
+# A Note About<br>Domain-Driven Design
+
+---
+
+# Entities
+
+An object defined primarily by its identity is called an **entity**:
+
+    !php
+    class Customer
+    {
+        private $id;
+
+        private $name;
+
+        public function __construct($id, Name $name)
+        {
+            $this->id   = $id;
+            $this->name = $name;
+        }
+
+        public function getId()
+        {
+            return $this->id;
+        }
+
+        public function getName()
+        {
+            return $this->name;
+        }
+    }
+
+---
+
+# Value Objects
+
+An object that represents a descriptive aspect of the domain with no conceptual
+identity is called a **Value Object**:
+
+    !php
+    class Name
+    {
+        private $firstName;
+
+        private $lastName;
+
+        public function __construct($firstName, $lastName)
+        {
+            $this->firstName = $firstName;
+            $this->lastName  = $lastName;
+        }
+
+        public function getFirstName()
+        {
+            return $this->firstName;
+        }
+
+        public function getLastName()
+        {
+            return $this->lastName;
+        }
+    }
+
+---
+
+# The Repository Pattern ![](../images/repository.gif)
+
+---
+
+# The Repository Pattern
+
+A Repository **mediates between the domain and data mapping layers**, acting
+like an **in-memory domain object collection**.
+
+    !php
+    interface CustomerRepository
+    {
+        /**
+         * @return Customer
+         */
+        public function find($customerId);
+
+        /**
+         * @return Customer[]
+         */
+        public function findAll();
+
+        public function add(Customer $user);
+
+        public function remove(Customer $user);
+    }
+
+---
+
+# The Repository Pattern
+
+Client objects construct **query specifications** declaratively and submit them
+to Repository for satisfaction.
+
+**Objects can be added to and removed** from the Repository, **as they can from
+a simple collection of objects**, and the mapping code encapsulated by the
+Repository will carry out the appropriate operations behind the scenes.
+
+Conceptually, a Repository encapsulates the set of objects persisted in a data
+store and the operations performed over them, providing a more object-oriented
+view of the persistence layer.
+
+Repository also supports the objective of achieving a **clean separation and
+one-way dependency between the domain and data mapping layers**.
+
+---
+
+# The Specification Pattern ![](../images/specification.png)
+
+---
+
+# The Specification Pattern
+
+The Specification pattern is a way to model business rules as individual
+objects. The idea is that a question about an object, is answered by a
+`isSatisfiedBy()` method:
+
+    !php
+    interface CustomerSpecification
+    {
+        /**
+         * @return boolean
+         */
+        public function isSatisfiedBy(Customer $customer);
+    }
+
+<p></p>
+
+    !php
+    class CustomerIsPremium implements CustomerSpecification
+    {
+        /**
+         * {@inheritDoc}
+         */
+        public function isSatisfiedBy(Customer $customer)
+        {
+            // figure out if the customer is indeed premium,
+            // and return true or false.
+        }
+    }
+
+---
+
+# Combine Them!
+
+A `findSatisfying()` method can be added to the `CustomerRepository`:
+
+    !php
+    interface CustomerRepository
+    {
+        ...
+
+        /**
+         * @return Customer[]
+         */
+        public function findSatisfying(CustomerSpecification $specification);
+    }
+
+### Usage
+
+    !php
+    $specification = new CustomerIsPremium();
+    $customers     = $repository->findSatisfying($specification);
