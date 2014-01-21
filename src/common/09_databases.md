@@ -103,7 +103,7 @@ There is one instance per row.
     public function insert(Connection $con)
     {
         // Prepared statement
-        $stmt = $this->con->prepare('INSERT INTO bananas ValueS (:name)');
+        $stmt = $this->con->prepare('INSERT INTO bananas VALUES (:name)');
 
         $stmt->bindValue(':name', $name);
 
@@ -187,7 +187,7 @@ A DAO implements the well-known **C**reate **R**ead **U**pdate
     public function insert($name)
     {
         // Prepared statement
-        $stmt = $this->con->prepare('INSERT INTO bananas ValueS (:name)');
+        $stmt = $this->con->prepare('INSERT INTO bananas VALUES (:name)');
 
         $stmt->bindValue(':name', $name);
 
@@ -401,7 +401,7 @@ a map. Looks up objects using the map when referring to them.
     {
         private $identityMap = [];
 
-        public function findOneById($id)
+        public function find($id)
         {
             if (!isset($this->identityMap[$id])) {
                 // fetch the object for the given id
