@@ -751,7 +751,7 @@ objects. The idea is that a question about an object, is answered by a
 
 ---
 
-# Combine Them!
+# Repository &hearts; Specification
 
 A `findSatisfying()` method can be added to the `CustomerRepository`:
 
@@ -771,3 +771,67 @@ A `findSatisfying()` method can be added to the `CustomerRepository`:
     !php
     $specification = new CustomerIsPremium();
     $customers     = $repository->findSatisfying($specification);
+
+---
+
+# Combine Them!
+
+    !php
+    class OrSpecification implements CustomerSpecification
+    {
+        public function __construct(
+            CustomerSpecification $s1,
+            CustomerSpecification $s2
+        ) {
+            $this->s1 = $s1;
+            $this->s2 = $s2;
+        }
+
+        public function isSatisfiedBy(Customer $c)
+        {
+            return $this->s1->isSatisfiedBy($c) || $this->s2->isSatisfiedBy($c);
+        }
+    }
+
+<p></p>
+
+    !php
+    class AndSpecification implements CustomerSpecification
+    {
+        ...
+
+        public function isSatisfiedBy(Customer $c)
+        {
+            return $this->s1->isSatisfiedBy($c) && $this->s2->isSatisfiedBy($c);
+        }
+    }
+
+---
+
+# Combine Them!
+
+    !php
+    class NotSpecification implements CustomerSpecification
+    {
+        public function __construct(CustomerSpecification $s)
+        {
+            $this->s = $s;
+        }
+
+        public function isSatisfiedBy(Customer $c)
+        {
+            return !$this->s->isSatisfiedBy($c);
+        }
+    }
+
+### Usage
+
+    !php
+    $specification = new AndSpecification(
+        new CustomerHasOrderedThreeTimes(),
+        new NotSpecification(
+            new CustomerIsPremium()
+        )
+    );
+
+    $customers = $repository->findSatisfying($specification);
