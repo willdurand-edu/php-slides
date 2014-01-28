@@ -138,7 +138,7 @@ Methods without any explicit visibility keyword are defined as `public`.
 
 ---
 
-# Attributes
+# Properties
 
     !php
     class Foo
