@@ -1632,7 +1632,7 @@ Embracing Open Source</p></section>
             <section><p>4 <strong>scalar</strong> types: <code>boolean</code>, <code>integer</code>, <code>float</code>, <code>string</code>;</p>
 <p>2 <strong>compound</strong> types: <code>array</code>, <code>object</code>;</p>
 <p>2 <strong>special</strong> types: <code>resource</code>, <code>null</code>;</p>
-<p>And 3 <strong>pseudo</strong> types: <code>mixed</code>, <code>number</code>, <code>callable</code>.</p>
+<p>And 3 <strong>pseudo</strong> types: <code>mixed</code>, <code>number</code>, <code>callback</code>.</p>
 <p><strong>Note:</strong> most of these types have aliases. E.g. <code>double</code> for <code>float</code>.</p>
 <blockquote>
 <p>Read more about the <strong>PHP primitive types</strong>:
@@ -1963,7 +1963,7 @@ Embracing Open Source</p></section>
 </pre></div>
 
 <h3>Type Hinting</h3>
-<p>Works with classes, interfaces, arrays or <code>callable</code>. You can't use
+<p>Works with classes, interfaces, arrays, <code>callable</code>, and <code>Closure</code>. You can't use
 scalar types such as <code>int</code> or <code>string</code>:</p>
 <div class="highlight"><pre><span class="k">public</span> <span class="k">function</span> <span class="nf">doSomething</span><span class="p">(</span><span class="nx">Foo</span> <span class="nv">$foo</span><span class="p">);</span>
 
@@ -1972,6 +1972,8 @@ scalar types such as <code>int</code> or <code>string</code>:</p>
 <span class="k">public</span> <span class="k">function</span> <span class="nf">doSomething</span><span class="p">(</span><span class="k">array</span> <span class="nv">$values</span><span class="p">);</span>
 
 <span class="k">public</span> <span class="k">function</span> <span class="nf">doSomething</span><span class="p">(</span><span class="nx">callable</span> <span class="nv">$callback</span><span class="p">);</span>
+
+<span class="k">public</span> <span class="k">function</span> <span class="nf">doSomething</span><span class="p">(</span><span class="nx">Closure</span> <span class="nv">$closure</span><span class="p">);</span>
 </pre></div>
 </section>
             
@@ -2914,7 +2916,7 @@ server</strong>.</p></section>
             <section><p>Request is made of:</p>
 <ul>
 <li>A <strong>Unique Resource Identifier</strong> (URI);</li>
-<li>An <strong>HTTP verb</strong> describing the action;</li>
+<li>An <strong>HTTP verb</strong> (method) describing the action;</li>
 <li>Some <strong>headers</strong> describing requirements;</li>
 <li>A <strong>request body</strong> to send data.</li>
 </ul>
