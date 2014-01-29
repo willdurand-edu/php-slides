@@ -238,7 +238,7 @@ The `->` operator is used to call methods on objects.
 
 ---
 
-# Static Keyword (1/2)
+# Static Keyword
 
 Attributes/Methods can be defined as `static`:
 
@@ -255,13 +255,49 @@ Attributes/Methods can be defined as `static`:
         }
     }
 
-**Warning:** the `static` keyword can also be used to
-[define static variables](http://www.php.net/manual/en/language.variables.scope.php#language.variables.scope.static) and for [late static bindings](http://www.php.net/manual/en/language.oop5.late-static-bindings.php).
+**Warning:** the `static` keyword can also be used to [define static
+variables](http://www.php.net/manual/en/language.variables.scope.php#language.variables.scope.static)
+and for [late static
+bindings](http://www.php.net/manual/en/language.oop5.late-static-bindings.php).
 This is different!
 
 ---
 
-# Static Keyword (2/2)
+# Late State Bindings
+
+    !php
+    class A
+    {
+        public static function who() { echo __CLASS__; }
+
+        public static function testSelf()
+        {
+            self::who();
+        }
+
+        public static function testStatic()
+        {
+            static::who();
+        }
+    }
+
+    class B extends A
+    {
+        public static function who() { echo __CLASS__; }
+    }
+
+<p></p>
+
+    !php
+    B::testSelf();
+    // A
+
+    B::testStatic();
+    // B
+
+---
+
+# Static Keyword
 
 ### Usage
 
