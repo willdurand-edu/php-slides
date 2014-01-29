@@ -10,7 +10,7 @@
 
 2 **special** types: `resource`, `null`;
 
-And 3 **pseudo** types: `mixed`, `number`, `callable`.
+And 3 **pseudo** types: `mixed`, `number`, `callback`.
 
 **Note:** most of these types have aliases. E.g. `double` for `float`.
 
@@ -178,7 +178,7 @@ Methods without any explicit visibility keyword are defined as `public`.
 
 ### Type Hinting
 
-Works with classes, interfaces, arrays or `callable`. You can't use
+Works with classes, interfaces, arrays, `callable`, and `Closure`. You can't use
 scalar types such as `int` or `string`:
 
     !php
@@ -190,6 +190,7 @@ scalar types such as `int` or `string`:
 
     public function doSomething(callable $callback);
 
+    public function doSomething(Closure $closure);
 
 ---
 

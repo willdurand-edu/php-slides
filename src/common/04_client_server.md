@@ -42,7 +42,7 @@ server**.
 Request is made of:
 
 * A **Unique Resource Identifier** (URI);
-* An **HTTP verb** describing the action;
+* An **HTTP verb** (method) describing the action;
 * Some **headers** describing requirements;
 * A **request body** to send data.
 
