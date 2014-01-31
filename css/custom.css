@@ -26,8 +26,8 @@ div.slide h6 {
     font-weight: bold;
 }
 
-div.slide h3 {
-    margin: 0;
+div.slide h1 {
+    margin: auto;
 }
 
 .slide.future {
@@ -188,4 +188,8 @@ img {
 
 table {
     margin-bottom: 3%;
+}
+
+.more-on-this-later {
+    display: none;
 }

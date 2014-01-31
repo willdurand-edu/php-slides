@@ -49,8 +49,7 @@
 * Man in the Middle;
 * Predicatable session token.
 
-Workarounds
------------
+### Workarounds
 
 * Regenerate ids when authentication changes;
 * Validate client informations (user agent);

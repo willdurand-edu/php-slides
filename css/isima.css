@@ -5,3 +5,20 @@ code {
 code, pre {
     color: #000;
 }
+
+div.slide h1,
+div.slide h2,
+div.slide h3,
+div.slide h4,
+div.slide h5,
+div.slide h6 {
+    color: #fff;
+}
+
+.more-on-this-next-week {
+    display: none;
+}
+
+.more-on-this-later {
+    display: block;
+}

@@ -827,6 +827,8 @@ A `findSatisfying()` method can be added to the `CustomerRepository`:
 ### Usage
 
     !php
+    // Find customers who have ordered exactly three times,
+    // but who are not premium customers (yet?)
     $specification = new AndSpecification(
         new CustomerHasOrderedThreeTimes(),
         new NotSpecification(

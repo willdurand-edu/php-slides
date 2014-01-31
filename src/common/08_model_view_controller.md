@@ -32,9 +32,14 @@ Examples:
 * **API** calls;
 * etc.
 
-<blockquote class="no-before-icon">
+<blockquote class="no-before-icon more-on-this-next-week">
     <i class="fa fa-bullhorn"></i>
     <p>More on this next week!</p>
+</blockquote>
+
+<blockquote class="no-before-icon more-on-this-later">
+    <i class="fa fa-bullhorn"></i>
+    <p>More on this in a few minutes!</p>
 </blockquote>
 
 ---
@@ -185,19 +190,3 @@ A controller that handles all requests for a web application:
 This controller dispatches the request to the **specialized controllers**.
 
 It is usually tied to `URL rewriting`.
-
----
-
-# Interact With Multiple Services
-
-Web applications become **more and more complex** and interact with
-**multiple services** such as:
-
-* [Relational databases](http://en.wikipedia.org/wiki/Relational_database) to store consistent data;
-* Search engines to index and retrieve documents;
-* [Message queues](http://en.wikipedia.org/wiki/Message_queue) to postpone executions or as event brokers;
-* External APIs (geocoding, payment, social);
-* Mail servers to send or receive emails;
-* Text message gateways;
-* HTTP cache servers to reduce resources needs and speed up responses;
-* and much much more.

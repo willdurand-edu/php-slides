@@ -364,3 +364,7 @@ Anthology](http://pragprog.com/book/twa/thoughtworks-anthology):
 
 > Read more:
 [http://williamdurand.fr/2013/06/03/object-calisthenics/](http://williamdurand.fr/2013/06/03/object-calisthenics/).
+
+---
+
+<br><br>![](../images/11-steps.png)

@@ -7,12 +7,12 @@ Client/Server, REST
 
 ### Week #2
 
-Autoloading, Leveraging PHP APIs, Dependency Management in PHP, Model View
-Controller
+Autoloading, Leveraging PHP APIs, Dependency Management, Model View Controller,
+Databases
 
 ### Week #3
 
-Databases
+A Note About Domain-Driven Design, Sessions, Authentication, Writing Better Code
 
 ### Week #4
 
