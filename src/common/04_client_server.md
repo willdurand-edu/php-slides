@@ -48,39 +48,13 @@ Request is made of:
 
 Here is an example:
 
-    !html
+    !http
     GET /my/simple/uri?with-query-string HTTP/1.1
     Host: example.org
     Content-Type: text/plain; charset=utf-8
     Content-Length: 17
 
     This is a content
-
----
-
-# HTTP Response
-
-Response is made of:
-
-* Some **headers** to describe the content;
-* The response's **status code**;
-* The **content** of the response;
-
-Here is an example:
-
-    !html
-    HTTP/1.1 200 OK
-    Content-Type: text/html; charset=utf-8
-    Content-Length: 76
-
-    <!DOCTYPE HTML>
-    <html>
-        <head>
-        </head>
-        <body>
-            <h1>Hello world !</h1>
-        </body>
-    </html>
 
 ---
 
@@ -97,6 +71,69 @@ An HTTP verb is an action to perform on a **resource** located at a given
 * `PATCH`: partial update of a given **resource**.
 
 **Important:** this list is not exhaustive.
+
+---
+
+# HTTP Response
+
+Response is made of:
+
+* Some **headers** to describe the content;
+* The response's **status code**;
+* The **content** of the response;
+
+Here is an example:
+
+    !http
+    HTTP/1.1 200 OK
+    Content-Type: text/html; charset=utf-8
+    Content-Length: 76
+
+    <!DOCTYPE HTML>
+    <html>
+        <head>
+        </head>
+        <body>
+            <h1>Hello world !</h1>
+        </body>
+    </html>
+
+---
+
+# Status Codes (1/2)
+
+### `1xx` Informational
+
+### `2xx` Successful
+
+* `200` OK
+* `201` Created
+* `204` Not Content
+
+### `3xx` Redirections
+
+* `301` Moved Permanently
+* `302` Found
+* `304` Not Modified
+
+---
+
+# Status Codes (2/2)
+
+### `4xx` Client Error
+
+* `400` Bad Request
+* `401` Unauthorized
+* `403` Forbidden
+* `404` Not Found
+* `405` Method Not Allowed
+* `406` Not Acceptable
+* `409` Conflict
+* `415` Unsupported Media Type
+
+### `5xx` Server Error
+
+* `500` Internal Server Error
 
 ---
 
@@ -122,7 +159,7 @@ You can always use the following, but you need to parse them by yourself:
 
 # HTTP Parameters (2/2)
 
-    !html
+    !http
     GET /my/simple/uri?a=1&id=2 HTTP/1.1
     Host: example.org
     Content-Type: text/plain; charset=utf-8
@@ -177,6 +214,45 @@ Identifier** (URI).
 <br>
 <br>
 ![](../images/rmm.png)
+
+---
+
+# Level 0 - The Swamp of POX
+
+### In A Nutshell
+
+* HTTP as a tunneling mechanism
+* RPC style system (SOAP, XML-RPC)
+
+<br>
+<br>
+![](../images/rmm0.png)
+
+---
+
+# Level 1 - Resources
+
+### In A Nutshell
+
+* Individual resources (URIs)
+* Notion of object identity
+
+<br>
+<br>
+![](../images/rmm1.png)
+
+---
+
+# Level 2 - HTTP Verbs
+
+### In A Nutshell
+
+* Client uses specific HTTP verbs
+* Server uses HTTP status codes
+
+<br>
+<br>
+![](../images/rmm2.png)
 
 ---
 

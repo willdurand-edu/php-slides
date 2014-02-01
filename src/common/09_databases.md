@@ -837,3 +837,27 @@ A `findSatisfying()` method can be added to the `CustomerRepository`:
     );
 
     $customers = $repository->findSatisfying($specification);
+
+---
+
+# Specification For Business Rules
+
+Reuse your specifications in your business layer:
+
+    !php
+    class AwesomeOfferSender
+    {
+        private $specification;
+
+        public function __construct(CustomerIsPremium $specification)
+        {
+            $this->specification = $specification;
+        }
+
+        public function sendOffersTo(Customer $customer)
+        {
+            if ($this->specification->isSatisfiedBy($customer)) {
+                // send offers
+            }
+        }
+    }
