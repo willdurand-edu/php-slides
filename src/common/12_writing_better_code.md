@@ -148,6 +148,9 @@ get hold of all of the services that an application might need.
         }
     }
 
+<p></p>
+
+    !php
     class Foo
     {
         private $bar;
