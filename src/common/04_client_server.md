@@ -221,8 +221,8 @@ Identifier** (URI).
 
 ### In A Nutshell
 
-* HTTP as a tunneling mechanism
-* RPC style system (SOAP, XML-RPC)
+* HTTP as a tunneling mechanism;
+* RPC style system (SOAP, XML-RPC).
 
 <br>
 <br>
@@ -234,8 +234,8 @@ Identifier** (URI).
 
 ### In A Nutshell
 
-* Individual resources (URIs)
-* Notion of object identity
+* Individual resources (URIs);
+* Notion of object identity.
 
 <br>
 <br>
@@ -247,8 +247,8 @@ Identifier** (URI).
 
 ### In A Nutshell
 
-* Client uses specific HTTP verbs
-* Server uses HTTP status codes
+* Client uses specific HTTP verbs;
+* Server uses HTTP status codes.
 
 <br>
 <br>

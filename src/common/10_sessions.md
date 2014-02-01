@@ -4,37 +4,39 @@
 
 # Overview
 
-### A way to persist browsing data accross client calls:
+Sessions are a way to preserve certain data across subsequent accesses.
 
-* unique identifier;
-* stored server side;
-* easy to use;
-* built-in.
+### In A Nutshell
+
+* Unique identifier (session id);
+* Server side;
+* Easy to use;
+* Built-in.
 
 ### A few use cases:
 
-* Keep user authentication and roles;
-* Store cart;
-* Store a flash message between redirections.
+* Keeping user authentication and roles;
+* Storing items into a cart;
+* Storing a flash message between redirections.
 
 ---
 
 # Code Please
 
     !php
-    // initalize session
+    // Initalize session
     session_start();
 
-    // regenerate identifier
+    // Regenerate identifier
     session_regenerate_id();
 
-    // affect "key"
+    // Assign "key" to `$value`
     $_SESSION['key'] = $value;
 
-    // retrieve key
+    // Retrieve "key"
     $_SESSION['key'];
 
-    // terminate session
+    // Terminate session
     session_destroy();
 
 
@@ -45,8 +47,9 @@
 
 # Security Concerns
 
-* Cookie hijacking/XSS;
-* Man in the Middle;
+* Session fixation;
+* Session hijacking;
+* Man in the Middle (capture);
 * Predicatable session token.
 
 ### Workarounds
