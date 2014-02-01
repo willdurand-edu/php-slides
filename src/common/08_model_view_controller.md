@@ -189,4 +189,4 @@ A controller that handles all requests for a web application:
 
 This controller dispatches the request to the **specialized controllers**.
 
-It is usually tied to `URL rewriting`.
+It is usually tied to URL rewriting.
