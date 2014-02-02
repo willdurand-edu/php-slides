@@ -235,6 +235,39 @@ Event-driven, non-blocking I/O with PHP:
 
 ---
 
+# Swiftmailer
+
+Comprehensive mailing tools for PHP.
+
+    !php
+    // Create the message
+    $message = Swift_Message::newInstance()
+        // Give the message a subject
+        ->setSubject('Your subject')
+        // Set the From address with an associative array
+        ->setFrom([ 'john@doe.com' => 'John Doe' ])
+        // Set the To addresses with an associative array
+        ->setTo([ 'receiver@domain.org', 'other@domain.org' => 'A name' ])
+        // Give it a body
+        ->setBody('Here is the message itself')
+        ;
+
+    // Create the Transport
+    $transport = Swift_SmtpTransport::newInstance('smtp.example.org', 25);
+
+    // Create the Mailer using your created Transport
+    $mailer = Swift_Mailer::newInstance($transport);
+
+    // Send the message
+    $result = $mailer->send($message);
+
+<blockquote class="no-before-icon">
+    <i class="fa fa-github"></i>
+    <p><a href="https://github.com/swiftmailer/swiftmailer">swiftmailer/swiftmailer</a></p>
+</blockquote>
+
+---
+
 # Whoops
 
 PHP errors for cool kids.
