@@ -63,7 +63,37 @@ Freezing time:
 
 ---
 
-# Gaufrette
+# Flysystem
+
+Filesystem abstraction layer.
+
+    !php
+    use League\Flysystem\Filesystem;
+    use League\Flysystem\Adapter\Local as LocalAdapter;
+
+    // Adapters: Local, Amazon Web Services - S3, Rackspace Cloud Files,
+    //           Dropbox, Ftp, Sftp, Zip, WebDAV
+    $filesystem = new Filesystem(new LocalAdapter(__DIR__ . '/path/to/root'));
+
+    // Create a file
+    $filesystem->write('path/to/file.txt', 'contents');
+
+    // Update a file
+    $filesystem->update('file/to/update.ext', 'new contents');
+
+    // Write or update a file
+    $filesystem->put('filename.txt', 'contents');
+
+    // Delete a file
+    $filesyste->delete('delete/this/file.md');
+
+    // Check if a file exists
+    $exists = $filesystem->has('filename.txt');
+
+<blockquote class="no-before-icon">
+    <i class="fa fa-github"></i>
+    <p><a href="https://github.com/thephpleague/flysystem">thephpleague/flysystem</a></p>
+</blockquote>
 
 ---
 
