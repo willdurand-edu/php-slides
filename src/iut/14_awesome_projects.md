@@ -159,6 +159,36 @@ Filesystem abstraction layer.
 
 # PHP-Parser
 
+A PHP parser written in PHP, producing Abstract Syntax Trees (AST).
+
+    !php
+    <?php
+
+    echo 'Hi', 'World';
+
+<p></p>
+
+    !text
+    array(
+        0: Stmt_Echo(
+            exprs: array(
+                0: Scalar_String(
+                    value: Hi
+                )
+                1:
+                Scalar_String(
+                    value:
+                    World
+                )
+            )
+        )
+    )
+
+<blockquote class="no-before-icon">
+    <i class="fa fa-github"></i>
+    <p><a href="https://github.com/nikic/PHP-Parser">nikic/PHP-Parser</a></p>
+</blockquote>
+
 ---
 
 #<br>![React](../images/react.png)
