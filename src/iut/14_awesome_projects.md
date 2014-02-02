@@ -61,6 +61,34 @@ Freezing time:
 
 # Faker
 
+Fake data generator.
+
+    !php
+    // use the factory to create a `Faker\Generator` instance
+    $faker = Faker\Factory::create();
+
+    // generate data by accessing properties
+    echo $faker->name;
+    // 'Lucy Cechtelar';
+    echo $faker->address;
+    // "426 Jordy Lodge
+    // Cartwrightshire, SC 88120-6700"
+    echo $faker->text;
+    // Sint velit eveniet. Rerum atque repellat voluptatem quia rerum. Numquam
+    // beatae sint laudantium consequatur. Magni occaecati itaque sint et sit
+    // tempore. Nesciunt amet quidem. Iusto deleniti cum autem ad quia aperiam.
+    echo $faker->email;
+    // 'tkshlerin@collins.com'
+    echo $faker->ipv4;
+    // '109.133.32.252'
+    echo $faker->creditCardNumber;
+    // '4485480221084675'
+
+<blockquote class="no-before-icon">
+    <i class="fa fa-github"></i>
+    <p><a href="https://github.com/fzaninotto/Faker">fzaninotto/Faker</a></p>
+</blockquote>
+
 ---
 
 # Flysystem
