@@ -21,11 +21,13 @@
 # Option Type for PHP
 
     !php
+    use PhpOption\Option;
+
     class MyRepository
     {
         public function findSomeEntity($criteria)
         {
-            return \PhpOption\Option::fromValue($this->em->find(...));
+            return Option::fromValue($this->em->find(...));
         }
     }
 
@@ -43,7 +45,7 @@
 
 <blockquote class="no-before-icon">
     <i class="fa fa-github"></i>
-    <p><a href="https://github.com/schmittjoh/php-option">phpoption/phpoption</a></p>
+    <p><a href="https://github.com/schmittjoh/php-option">schmittjoh/phpoption</a></p>
 </blockquote>
 
 ---
