@@ -158,7 +158,6 @@ Filesystem abstraction layer.
     !php
     $entity = $repository->findSomeEntity(...)->getOrElse(new Entity());
 
-
 <blockquote class="no-before-icon">
     <i class="fa fa-github"></i>
     <p><a href="https://github.com/schmittjoh/php-option">schmittjoh/phpoption</a></p>
@@ -206,7 +205,3 @@ Event-driven, non-blocking I/O with PHP:
 [http://reactphp.org/](http://reactphp.org/).
 
 .fx: center
-
----
-
-# Snappy
