@@ -47,14 +47,44 @@ Sessions are a way to preserve certain data across subsequent accesses.
 
 # Security Concerns
 
-* Session fixation;
-* Session hijacking;
-* Man in the Middle (capture);
-* Predicatable session token.
+* Prediction (guessing a valid session identifier);
+* Man in the Middle (capturing a valid session identifier);
+* Session Fixation (attacker chooses the session identifier);
+* Session Hijacking (all attacks that attempt to gain access to another user's
+  session).
 
 ### Workarounds
 
 * Regenerate ids when authentication changes;
-* Validate client informations (user agent);
-* Maximum lifetime;
+* Bind sessions to IP addresses;
+* Define expiration/timeout;
+* Don't rely on the default settings;
 * Use HTTPS.
+
+---
+
+# Session Configuration
+
+An example of PHP session configuration that is more secure:
+
+    !ini
+    ; Helps mitigate XSS by telling the browser not to expose the cookie to
+    ; client side scripting such as JavaScrip
+    session.cookie_httponly = 1
+
+    ; Prevents session fixation by making sure that PHP only uses cookies for
+    ; sessions and disallow session ID passing as a GET parameter
+    session.session.use_only_cookies = 1
+
+    ; Better entropy source
+    ; Evades insufficient entropy vulnerabilities
+    session.entropy_file = "/dev/urandom"
+    ; `session.entropy_length` might help too!
+
+    ; Smaller exploitation window for XSS/CSRF/Clickjacking...
+    session.cookie_lifetime = 0
+
+    ; Ensures session cookies are only sent over secure connections (it requires
+    ; a valid SSL certificate)
+    ; Related to OWASP 2013-A6-Sensitive Data Exposure
+    session.cookie_secure = 1

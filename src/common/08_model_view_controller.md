@@ -52,7 +52,7 @@ PHP is a templating language per se.
 will die: you have to separate the presentation from the business logic.
 
     !php
-    class TemplateEngine
+    class PhpTemplateEngine implements TemplateEngine
     {
         private $templateDir;
 
@@ -91,7 +91,7 @@ Even better with PHP 5.4+:
 ### Usage
 
     !php
-    $engine = new TemplateEngine('/path/to/templates');
+    $engine = new PhpTemplateEngine('/path/to/templates');
 
     echo $engine->render('my_template.html', [
         'name' => 'World',
@@ -139,7 +139,7 @@ It **should not** contain any business logic.
     {
         public function __construct(
             BananaMapper $mapper,
-            TemplateEngineInterface $engine
+            TemplateEngine $engine
         ) {
             $this->mapper = $mapper;
             $this->engine = $engine;

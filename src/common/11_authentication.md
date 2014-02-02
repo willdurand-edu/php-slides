@@ -4,14 +4,17 @@
 
 # What You Have Right Now
 
-No **Authentication**/**Security Layer**, anyone can access everything:
+No **Authentication**/**Security Layer**, anyone can access everything.
 
+<br>
+<br>
 ![](../images/client_server_without_auth.png)
 
 ---
 
 # The Big Picture
 
+<br>
 ![](../images/client_server_with_auth.png)
 
 ---
@@ -40,7 +43,7 @@ An **Event Dispatcher** manages both the listeners, and the events.
 
 # Introducing the Event Dispatcher
 
-Using a **trait**:
+Simple event dispatcher using a **trait**:
 
     !php
     trait EventDispatcherTrait
@@ -162,6 +165,7 @@ If authentication fails, the server should return a `401` status code.
 
 # Authentication Mechanism
 
+<br>
 ![](../images/authentication_mechanism.png)
 
 ---
@@ -192,13 +196,16 @@ If authentication fails, the server should return a `401` status code.
         return $app->redirect('/');
     });
 
+> [UI Terminology: Logon vs
+Login](http://stackoverflow.com/questions/406016/ui-terminology-logon-vs-login).
+
 ---
 
 # Stateless Authentication
 
 Useful for API authentication.
 
-### OpenID
+### OpenID (in stateless mode)
 
 [http://openid.net/](http://openid.net/)
 

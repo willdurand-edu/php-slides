@@ -73,10 +73,10 @@ PSR-2 documents.
 Reduces dependency on implementation specifics and makes code more reusable.
 
 The `BananaController` can use either **Twig** or the raw PHP implementation
-as template engine thanks to the `TemplateEngineInterface`:
+as template engine thanks to the `TemplateEngine` interface:
 
     !php
-    interface TemplateEngineInterface
+    interface TemplateEngine
     {
         /**
          * @param string $template
@@ -252,7 +252,7 @@ You ask this container to retrieve a service, and it is **lazy loaded** and
 dynamically built:
 
     !php
-    // It's an instance of TemplateEngineInterface, but you don't know
+    // It's an instance of `TemplateEngine`, but you don't know
     // anything about its internal implementation.
     // Is it the raw PHP implementation or Twig?
     $engine = $container->get('template_engine');

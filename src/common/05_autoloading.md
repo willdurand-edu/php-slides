@@ -96,13 +96,13 @@ a few files:
      * lib/Model/Location.php
      */
     require_once __DIR__ . '/../../common.php';
-    require_once DOCROOT . '/lib/Model/ModelInterface.php';
+    require_once DOCROOT . '/lib/Model/ModelRepresentation.php';
     require_once DOCROOT . '/lib/Model/User.php';
     require_once DOCROOT . '/lib/Validator/Email.php';
     require_once DOCROOT . '/lib/Validator/Username.php';
     require_once DOCROOT . '/lib/Validator/Url.php';
 
-    class Location implements ModelInterface
+    class Location implements ModelRepresentation
     {
         /* ... */
     }
