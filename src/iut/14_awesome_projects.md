@@ -205,3 +205,16 @@ Event-driven, non-blocking I/O with PHP:
 [http://reactphp.org/](http://reactphp.org/).
 
 .fx: center
+
+---
+
+# Whoops
+
+PHP errors for cool kids.
+
+![](../images/whoops.png)
+
+<blockquote class="no-before-icon">
+    <i class="fa fa-github"></i>
+    <p><a href="https://github.com/filp/whoops">filp/whoops</a></p>
+</blockquote>
