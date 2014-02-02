@@ -28,6 +28,35 @@ business-model, libraries and application low-level code.
 
 # Carbon
 
+A simple API extension for `DateTime`.
+
+    !php
+    $tomorrow            = Carbon::now()->addDay();
+    $lastWeek            = (new Carbon())->subWeek();
+    $noonTodayLondonTime = Carbon::createFromTime(12, 0, 0, 'Europe/London');
+
+    if (Carbon::now()->isWeekend()) {
+        echo 'Party!';
+    }
+
+    Carbon::now()->subDays(5)->diffForHumans();    // 5 days ago
+
+Freezing time:
+
+    !php
+    Carbon::setTestNow(Carbon::create(2001, 5, 21, 12));
+
+    echo Carbon::now();   // 2001-05-21 12:00:00
+                          // test, test, test!
+
+    Carbon::setTestNow(); // clear the mock
+    echo Carbon::now();   // 2014-02-02 21:00:00
+
+<blockquote class="no-before-icon">
+    <i class="fa fa-github"></i>
+    <p><a href="https://github.com/briannesbitt/Carbon">briannesbitt/Carbon</a></p>
+</blockquote>
+
 ---
 
 # Faker
