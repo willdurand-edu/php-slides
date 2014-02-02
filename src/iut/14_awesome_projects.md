@@ -4,6 +4,26 @@
 
 # Assert
 
+Assertions and guard methods for input validation (not filtering!) in
+business-model, libraries and application low-level code.
+
+    !php
+    use Assert\Assertion;
+    use Assert\AssertionFailedException;
+
+    try {
+        \Assert\that($identifier)->notEmpty()->integer();
+        Assertion::notEmpty($message, 'Message is not specified');
+    } catch(AssertionFailedException $e) {
+        $e->getValue();         // the value that caused the failure
+        $e->getConstraints();   // the additional constraints of the assertion
+    }
+
+<blockquote class="no-before-icon">
+    <i class="fa fa-github"></i>
+    <p><a href="https://github.com/beberlei/assert">beberlei/assert</a></p>
+</blockquote>
+
 ---
 
 # Carbon
