@@ -127,6 +127,33 @@ Filesystem abstraction layer.
 
 # Mockery
 
+
+
+    !php
+    // The PHPUnit Way
+    $mock = $this->getMock('SomeClass');
+    $mock->expects($this->once())
+        ->method('getName')
+        ->will($this->returnValue('John Doe'));
+
+    $mock2 = $this->getMock('AnotherClass');
+    $mock2->expects($this->any())
+        ->method('getNumber')
+        ->with(2)
+        ->will($this->returnValue(2));
+    $mock2->expects($this->any())
+        ->method('getNumber')
+        ->with(3)
+        ->will($this->returnValue(3));
+
+    // The Mockery Way
+    $mock = \Mockery::mock('SomeClass');
+    $mock->shouldReceive('getName')->once()->andReturn('John Doe');
+
+    $mock2 = \Mockery::mock('AnotherClass');
+    $mock2->shouldReceive('getNumber')->with(2)->andReturn(2);
+    $mock2->shouldReceive('getNumber')->with(3)->andReturn(3);
+
 <blockquote class="no-before-icon">
     <i class="fa fa-github"></i>
     <p><a href="https://github.com/padraic/mockery">padraic/mockery</a></p>
