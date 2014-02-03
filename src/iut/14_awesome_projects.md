@@ -96,12 +96,11 @@ Fake data generator.
 Filesystem abstraction layer.
 
     !php
-    use League\Flysystem\Filesystem;
-    use League\Flysystem\Adapter\Local as LocalAdapter;
+    use League\Flysystem as F
 
     // Adapters: Local, Amazon Web Services - S3, Rackspace Cloud Files,
     //           Dropbox, Ftp, Sftp, Zip, WebDAV
-    $filesystem = new Filesystem(new LocalAdapter(__DIR__ . '/path/to/root'));
+    $filesystem = new F\Filesystem(new F\Adapter\Local(__DIR__.'/path/to/dir'));
 
     // Create a file
     $filesystem->write('path/to/file.txt', 'contents');
