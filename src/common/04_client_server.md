@@ -264,7 +264,6 @@ Identifier** (URI).
 * Hypermedia formats
 
 <br>
-<br>
 ![](../images/rmm3.png)
 
 ---
