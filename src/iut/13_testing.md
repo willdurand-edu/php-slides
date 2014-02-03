@@ -2,6 +2,18 @@
 
 ---
 
+<h1>
+<center>
+<blockquote class="no-before-icon twitter-tweet" lang="en"><p>I don&#39;t need tests: tests are
+for people who write bugs.</p>&mdash; Hipster Hacker (@hipsterhacker) <a
+href="https://twitter.com/hipsterhacker/statuses/396352411754717184">November 1,
+2013</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</center>
+</h1>
+
+---
+
 # Agenda
 
 * Unit Testing
