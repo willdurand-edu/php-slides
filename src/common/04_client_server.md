@@ -256,6 +256,19 @@ Identifier** (URI).
 
 ---
 
+# Level 3 - Hypermedia Controls
+
+### In A Nutshell
+
+* Service discovery via link relations
+* Hypermedia formats
+
+<br>
+<br>
+![](../images/rmm3.png)
+
+---
+
 # Level 3 = Content Negotiation + HATEOAS
 
 ---
