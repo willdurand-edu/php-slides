@@ -9590,12 +9590,11 @@ business-model, libraries and application low-level code.</p>
             
             
             <section><p>Filesystem abstraction layer.</p>
-<div class="highlight"><pre><span class="k">use</span> <span class="nx">League\Flysystem\Filesystem</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">League\Flysystem\Adapter\Local</span> <span class="k">as</span> <span class="nx">LocalAdapter</span><span class="p">;</span>
+<div class="highlight"><pre><span class="k">use</span> <span class="nx">League\Flysystem</span> <span class="k">as</span> <span class="nx">F</span>
 
 <span class="c1">// Adapters: Local, Amazon Web Services - S3, Rackspace Cloud Files,</span>
 <span class="c1">//           Dropbox, Ftp, Sftp, Zip, WebDAV</span>
-<span class="nv">$filesystem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Filesystem</span><span class="p">(</span><span class="k">new</span> <span class="nx">LocalAdapter</span><span class="p">(</span><span class="nx">__DIR__</span> <span class="o">.</span> <span class="s1">&#39;/path/to/root&#39;</span><span class="p">));</span>
+<span class="nv">$filesystem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">F\Filesystem</span><span class="p">(</span><span class="k">new</span> <span class="nx">F\Adapter\Local</span><span class="p">(</span><span class="nx">__DIR__</span><span class="o">.</span><span class="s1">&#39;/path/to/dir&#39;</span><span class="p">));</span>
 
 <span class="c1">// Create a file</span>
 <span class="nv">$filesystem</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span><span class="s1">&#39;path/to/file.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;contents&#39;</span><span class="p">);</span>
