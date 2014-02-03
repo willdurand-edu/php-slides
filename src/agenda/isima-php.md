@@ -14,6 +14,6 @@ Databases
 
 A Note About Domain-Driven Design, Sessions, Authentication, Writing Better Code
 
-### [Week #4](#slide171)
+### [Week #4](#slide178)
 
 Security 101
