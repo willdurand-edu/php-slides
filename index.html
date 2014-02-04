@@ -7405,12 +7405,12 @@ objects. The idea is that a question about an object, is answered by a
             
             <section><p>An example of PHP session configuration that is more secure:</p>
 <div class="highlight"><pre><span class="c1">; Helps mitigate XSS by telling the browser not to expose the cookie to</span>
-<span class="c1">; client side scripting such as JavaScrip</span>
+<span class="c1">; client side scripting such as JavaScript</span>
 <span class="na">session.cookie_httponly</span> <span class="o">=</span> <span class="s">1</span>
 
 <span class="c1">; Prevents session fixation by making sure that PHP only uses cookies for</span>
 <span class="c1">; sessions and disallow session ID passing as a GET parameter</span>
-<span class="na">session.session.use_only_cookies</span> <span class="o">=</span> <span class="s">1</span>
+<span class="na">session.use_only_cookies</span> <span class="o">=</span> <span class="s">1</span>
 
 <span class="c1">; Better entropy source</span>
 <span class="c1">; Evades insufficient entropy vulnerabilities</span>
