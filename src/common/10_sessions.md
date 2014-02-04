@@ -69,12 +69,12 @@ An example of PHP session configuration that is more secure:
 
     !ini
     ; Helps mitigate XSS by telling the browser not to expose the cookie to
-    ; client side scripting such as JavaScrip
+    ; client side scripting such as JavaScript
     session.cookie_httponly = 1
 
     ; Prevents session fixation by making sure that PHP only uses cookies for
     ; sessions and disallow session ID passing as a GET parameter
-    session.session.use_only_cookies = 1
+    session.use_only_cookies = 1
 
     ; Better entropy source
     ; Evades insufficient entropy vulnerabilities
