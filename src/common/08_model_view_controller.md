@@ -137,10 +137,8 @@ It **should not** contain any business logic.
     !php
     class BananaController
     {
-        public function __construct(
-            BananaMapper $mapper,
-            TemplateEngine $engine
-        ) {
+        public function __construct(BananaMapper $mapper, TemplateEngine $engine)
+        {
             $this->mapper = $mapper;
             $this->engine = $engine;
         }
