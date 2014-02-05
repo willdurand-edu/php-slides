@@ -5164,10 +5164,8 @@ you and much much more! Read more:
 <p>It <strong>should not</strong> contain any business logic.</p>
 <div class="highlight"><pre><span class="k">class</span> <span class="nc">BananaController</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
-        <span class="nx">BananaMapper</span> <span class="nv">$mapper</span><span class="p">,</span>
-        <span class="nx">TemplateEngine</span> <span class="nv">$engine</span>
-    <span class="p">)</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">BananaMapper</span> <span class="nv">$mapper</span><span class="p">,</span> <span class="nx">TemplateEngine</span> <span class="nv">$engine</span><span class="p">)</span>
+    <span class="p">{</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">mapper</span> <span class="o">=</span> <span class="nv">$mapper</span><span class="p">;</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">engine</span> <span class="o">=</span> <span class="nv">$engine</span><span class="p">;</span>
     <span class="p">}</span>
