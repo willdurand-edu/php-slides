@@ -175,7 +175,7 @@ Modern frameworks provide a routing component such as the **Symfony2 Routing**
 component allowing to define routes in a centralized place, and easing `URI`
 generation.
 
-This require a single entry point: the **Frontend Controller**.
+This require a single entry point: the **Front Controller**.
 
 ---
 
