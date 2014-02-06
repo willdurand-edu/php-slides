@@ -44,6 +44,7 @@ Your _Commands_ should extend the `Command` class:
             InputInterface $input,
             OutputInterface $output
         ) {
+            // do greet
         }
     }
 
