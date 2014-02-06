@@ -2764,7 +2764,7 @@ of returning a value, a generator <strong>yields</strong> as many values as it n
 <li><a href="http://www.php.net/manual/en/language.generators.php">http://www.php.net/manual/en/language.generators.php</a>;</li>
 <li><a href="http://blog.ircmaxell.com/2012/07/what-generators-can-do-for-you.html">What Generators Can Do For
 You</a>;</li>
-<li><a href="https://github.com/nikic/iter">https://github.com/nikic/iter</a> (exemples).</li>
+<li><a href="https://github.com/nikic/iter">https://github.com/nikic/iter</a> (examples).</li>
 </ul>
 </blockquote></section>
             
@@ -3320,7 +3320,9 @@ parameters through global variables:</p>
 <p>You can always use the following, but you need to parse them by yourself:</p>
 <ul>
 <li><strong>query string</strong>: <code>$_SERVER['QUERY_STRING']</code>;</li>
-<li><strong>request body</strong>: <code>$HTTP_RAW_POST_DATA</code>.</li>
+<li><strong>request body</strong>: <code>$HTTP_RAW_POST_DATA</code>
+  (<a href="https://github.com/php/php-src/blob/8648f76bac2f78391a1539253f21d62f53d83022/NEWS#L19-L22">deprecated</a>,
+  do not use).</li>
 </ul>
 <p><strong>Note</strong>: Don't use <code>$_REQUEST</code>, as there is a collision risk!</p></section>
             
