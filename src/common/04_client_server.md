@@ -151,7 +151,6 @@ parameters through global variables:
 You can always use the following, but you need to parse them by yourself:
 
 * **query string**: `$_SERVER['QUERY_STRING']`;
-* **request body**: `$HTTP_RAW_POST_DATA`.
 
 **Note**: Don't use `$_REQUEST`, as there is a collision risk!
 
