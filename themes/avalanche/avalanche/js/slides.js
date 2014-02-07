@@ -238,8 +238,13 @@ a){var b=F.exec(a);b&&(b[1]=(b[1]||"").toLowerCase(),b[3]=b[3]&&new RegExp("(?:^
 
                 // Toggle page numbers
                 case 78: // n
-                    if (state.modifierKeyDown || state.exposeActive) return
+                    if (state.modifierKeyDown || state.exposeActive) return;
                     $('.page_number').toggle();
+                    break;
+
+                case 83: // s
+                    if (state.modifierKeyDown || state.exposeActive) return;
+                    $('.source').toggle();
                     break;
 
                 case 50: // 2
