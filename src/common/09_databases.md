@@ -428,7 +428,7 @@ vendor you are using.
 A DSN in PHP looks like: `<database>:host=<host>;dbname=<dbname>` where:
 
 * `<database>` can be: `mysql`, `sqlite`, `pgsql`, etc;
-* `<host>` is the IP address of the database server (most of the time `localhost`);
+* `<host>` is the IP address of the database server (e.g. `localhost`);
 * `<dbname>` is your database name.
 
 > [http://www.php.net/manual/en/intro.pdo.php](http://www.php.net/manual/en/intro.pdo.php)
