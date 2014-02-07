@@ -18,7 +18,7 @@ mv themes/ $TMP_DIR
 git checkout gh-pages
 
 mv $TMP_DIR/* .
-git add index.html extended.html isima.html themes/avalanche/avalanche/css/font-awesome/
+git add index.html extended.html isima.html themes/avalanche/avalanche/
 git commit -m "Publish slides (`date`)"
 
 git push origin gh-pages -f
