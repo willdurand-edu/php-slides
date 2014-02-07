@@ -372,18 +372,15 @@ Sort of _"Man in the Middle"_.
     $con    = new Connection('...');
     $mapper = new BananaMapper($con);
 
-    $mapper->persist($banana);
-
-    $mapper->remove($banana);
-
-But also:
+### Persist = Save or Update
 
     !php
-    // Retrieve a collection
-    $bananas = $mapper->findAll();
+    $mapper->persist($banana);
 
-    // or a single record
-    $banana = $mapper->find(123);
+### Remove
+
+    !php
+    $mapper->remove($banana);
 
 ---
 

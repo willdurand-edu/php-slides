@@ -137,15 +137,17 @@ It **should not** contain any business logic.
     !php
     class BananaController
     {
-        public function __construct(BananaMapper $mapper, TemplateEngine $engine)
-        {
-            $this->mapper = $mapper;
-            $this->engine = $engine;
+        public function __construct(
+            BananaRepository $repository,
+            TemplateEngine $engine
+        ) {
+            $this->repository = $repository;
+            $this->engine     = $engine;
         }
 
         public function listAction()
         {
-            $bananas = $this->mapper->findAll();
+            $bananas = $this->repository->findAll();
 
             return $this->engine->render('list.html', [
                 'bananas' => $bananas,
