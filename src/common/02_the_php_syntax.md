@@ -143,6 +143,8 @@ Methods without any explicit visibility keyword are defined as `public`.
     !php
     class Foo
     {
+        const VALUE = 123;
+
         /**
          * @var int
          */
@@ -264,7 +266,7 @@ This is different!
 
 ---
 
-# Late State Bindings
+# Late Static Bindings
 
     !php
     class A
