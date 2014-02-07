@@ -49,6 +49,7 @@ An object that acts as a Gateway to a single record (row) in a database.
 There is one instance per row.
 
     !php
+    // This is the implementation of `BananaGateway`
     class Banana
     {
         private $id;
