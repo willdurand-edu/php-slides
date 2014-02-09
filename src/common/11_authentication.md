@@ -96,7 +96,7 @@ The **listeners** have to listen to this event:
 
 # The Firewall (1/2)
 
-Now that you can hook into the application's lifecycle, you can to write a basic
+Now that you can hook into the application's lifecycle, you can write a basic
 but powerful **Firewall**.
 
 This firewall needs a **whitelist** of unsecured routes (i.e. routes that
