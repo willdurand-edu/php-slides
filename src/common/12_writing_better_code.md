@@ -232,7 +232,7 @@ It needs to be implemented by the class that wants to use a `BarInterface`:
 
 **I**nversion **o**f **C**ontrol is about who initiates the call. If your code
 initiates a call, it is not IoC, if the container/system/library calls back
-into code that you provided it, is it IoC.
+into code that you provided it, it is IoC.
 
 Hollywood Principle: _Don't call us, we'll call you_.
 
