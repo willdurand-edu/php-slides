@@ -13,7 +13,7 @@ mkdir $TMP_DIR
 mv iut-php.html $TMP_DIR/index.html
 mv iut-extended.html $TMP_DIR/extended.html
 mv isima-php.html $TMP_DIR/isima.html
-mv themes/ $TMP_DIR
+cp -R themes/ $TMP_DIR
 
 git checkout gh-pages
 
