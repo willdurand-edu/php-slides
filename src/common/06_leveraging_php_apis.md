@@ -74,7 +74,7 @@ It is even possible to invoke private methods!
     $method->setAccessible(true);
 
     $method->invoke(new MyClass());
-    // Hello
+    // 'foo'
 
 
 > Read more:
