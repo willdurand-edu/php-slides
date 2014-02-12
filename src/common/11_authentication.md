@@ -228,8 +228,8 @@ Useful for API authentication.
 5. Principle of Least Privilege;
 6. Attackers can smell obscurity;
 7. RTFM but never trust it;
-8. If it wasn’t tested, it doesn’t work;
-9. It’s always your fault!
+8. If it is not tested, it does not work;
+9. It is always your fault!
 
 > [Survive The Deep End: PHP
 Security](http://phpsecurity.readthedocs.org/en/latest/index.html)
