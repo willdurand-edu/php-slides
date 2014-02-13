@@ -7,8 +7,7 @@
     !php
     public function newAction(Request $request)
     {
-        $form = $formFactory
-            ->createFormBuilder()
+        $form = $this->createFormBuilder()
             ->add('name')
             ->add('bio', 'textarea')
             ->add('birthday', 'date')
@@ -62,22 +61,17 @@ being able to hit "refresh" and re-post the data.
     !php
     public function newAction(Request $request)
     {
-        $form = $formFactory
-            ->createFormBuilder()
+        $form = $this->createFormBuilder()
             ->add('name')
             ->add('bio', 'textarea')
             ->add('birthday', 'date')
             ->getForm();
 
-        if ($request->isMethod('POST')) {
-            $form->handleRequest($request);
+        if ($form->handleRequest($request)->isValid()) {
+            $data = $form->getData();
+            // do something ...
 
-            if ($form->isValid()) {
-                $data = $form->getData();
-                // do something ...
-
-                return $this->redirect($this->generateUrl('success'));
-            }
+            return $this->redirect($this->generateUrl('success'));
         }
 
         // ...
@@ -133,14 +127,10 @@ Everything is a **Type**!
         $person = new Person();
         $form   = $this->createForm(new PersonType(), $person);
 
-        if ($request->isMethod('POST')) {
-            $form->handleRequest($request);
+        if ($form->handleRequest($request)->isValid()) {
+            $person->save(); // insert a new `person`
 
-            if ($form->isValid()) {
-                $person->save(); // insert a new `person`
-
-                return $this->redirect($this->generateUrl('success'));
-            }
+            return $this->redirect($this->generateUrl('success'));
         }
 
         // ...
@@ -163,19 +153,19 @@ the `newAction()` and the `updateAction()`:
     /**
      * Create a new Person
      */
-    public function newAction()
+    public function newAction(Request $request)
     {
-        return $this->processForm(new Person());
+        return $this->processForm($request, new Person());
     }
 
     /**
      * Update an existing Person
      */
-    public function updateAction($id)
+    public function updateAction(Request $request, $id)
     {
-        $person = ...; // get a `Person` by its $id
+        $person = ...; // get a `Person` by its $idea
 
-        return $this->processForm($person);
+        return $this->processForm($request, $person);
     }
 
 ---
@@ -184,22 +174,19 @@ the `newAction()` and the `updateAction()`:
 
     !php
     /**
-     * @param Person $person
+     * @param Request $request
+     * @param Person  $person
      *
      * @return Response
      */
-    private function processForm(Person $person)
+    private function processForm(Request $request, Person $person)
     {
         $form = $this->createForm(new PersonType(), $person);
 
-        if ($this->getRequest()->isMethod('POST')) {
-            $form->handleRequest($this->getRequest());
+        if ($form->handleRequest($request)->isValid()) {
+            $person->save();
 
-            if ($form->isValid()) {
-                $person->save();
-
-                return $this->redirect($this->generateUrl('success'));
-            }
+            return $this->redirect($this->generateUrl('success'));
         }
 
         return $this->render('AcmeDemoBundle:Default:new.html.twig', [
@@ -261,5 +248,5 @@ un-rendered fields are output.
    for the given field inside, by default, a div element;
 
 * `form_rest(form)`: renders any fields that have not yet been rendered. It's
-  usually a good idea to place a call to this helper at the bottom of each form
+  usually a good idea to place a call to this helper at the bottom of each form.
   This helper is also useful for taking advantage of the automatic CSRF Protection.
