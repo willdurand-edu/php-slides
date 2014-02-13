@@ -163,7 +163,7 @@ the `newAction()` and the `updateAction()`:
      */
     public function updateAction(Request $request, $id)
     {
-        $person = ...; // get a `Person` by its $idea
+        $person = ...; // get a `Person` by its $id
 
         return $this->processForm($request, $person);
     }
