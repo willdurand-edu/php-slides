@@ -233,8 +233,8 @@ The `ETag` header is a **string header** called **entity-tag** that uniquely
 **identifies one representation of the target resource**. It's entirely
 **generated and set by your application**.
 
-An `ETag` is like a **fingerprint** and is used to quickly compare if two
-unique across all representations of the same resource.
+`ETag`s are similar to **fingerprints** and they can be quickly compared to
+determine if two versions of a resource are the same or not.
 
     !php
     public function indexAction()

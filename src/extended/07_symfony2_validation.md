@@ -101,7 +101,7 @@ Validating class properties is the most basic validation technique. Symfony2
 ### Classes
 
 Some constraints apply to the entire class being validated. For example, the
-`Callback` constraint is a generic constraint that's applied to the clas
+`Callback` constraint is a generic constraint that's applied to the class
 itself.
 
 ---
