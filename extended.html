@@ -5521,8 +5521,7 @@ setup to accept a value or simply as a boolean flag without a value.</p>
             
             <section><div class="highlight"><pre><span class="k">public</span> <span class="k">function</span> <span class="nf">newAction</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nv">$form</span> <span class="o">=</span> <span class="nv">$formFactory</span>
-        <span class="o">-&gt;</span><span class="na">createFormBuilder</span><span class="p">()</span>
+    <span class="nv">$form</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">createFormBuilder</span><span class="p">()</span>
         <span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
         <span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="s1">&#39;bio&#39;</span><span class="p">,</span> <span class="s1">&#39;textarea&#39;</span><span class="p">)</span>
         <span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="s1">&#39;birthday&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">)</span>
@@ -5659,22 +5658,17 @@ being able to hit "refresh" and re-post the data.</p></section>
             
             <section><div class="highlight"><pre><span class="k">public</span> <span class="k">function</span> <span class="nf">newAction</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nv">$form</span> <span class="o">=</span> <span class="nv">$formFactory</span>
-        <span class="o">-&gt;</span><span class="na">createFormBuilder</span><span class="p">()</span>
+    <span class="nv">$form</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">createFormBuilder</span><span class="p">()</span>
         <span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
         <span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="s1">&#39;bio&#39;</span><span class="p">,</span> <span class="s1">&#39;textarea&#39;</span><span class="p">)</span>
         <span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="s1">&#39;birthday&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">)</span>
         <span class="o">-&gt;</span><span class="na">getForm</span><span class="p">();</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">isMethod</span><span class="p">(</span><span class="s1">&#39;POST&#39;</span><span class="p">))</span> <span class="p">{</span>
-        <span class="nv">$form</span><span class="o">-&gt;</span><span class="na">handleRequest</span><span class="p">(</span><span class="nv">$request</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$form</span><span class="o">-&gt;</span><span class="na">handleRequest</span><span class="p">(</span><span class="nv">$request</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">isValid</span><span class="p">())</span> <span class="p">{</span>
+        <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$form</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">();</span>
+        <span class="c1">// do something ...</span>
 
-        <span class="k">if</span> <span class="p">(</span><span class="nv">$form</span><span class="o">-&gt;</span><span class="na">isValid</span><span class="p">())</span> <span class="p">{</span>
-            <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$form</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">();</span>
-            <span class="c1">// do something ...</span>
-
-            <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">redirect</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">generateUrl</span><span class="p">(</span><span class="s1">&#39;success&#39;</span><span class="p">));</span>
-        <span class="p">}</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">redirect</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">generateUrl</span><span class="p">(</span><span class="s1">&#39;success&#39;</span><span class="p">));</span>
     <span class="p">}</span>
 
     <span class="c1">// ...</span>
@@ -5809,14 +5803,10 @@ being able to hit "refresh" and re-post the data.</p></section>
     <span class="nv">$person</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">();</span>
     <span class="nv">$form</span>   <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">createForm</span><span class="p">(</span><span class="k">new</span> <span class="nx">PersonType</span><span class="p">(),</span> <span class="nv">$person</span><span class="p">);</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">isMethod</span><span class="p">(</span><span class="s1">&#39;POST&#39;</span><span class="p">))</span> <span class="p">{</span>
-        <span class="nv">$form</span><span class="o">-&gt;</span><span class="na">handleRequest</span><span class="p">(</span><span class="nv">$request</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$form</span><span class="o">-&gt;</span><span class="na">handleRequest</span><span class="p">(</span><span class="nv">$request</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">isValid</span><span class="p">())</span> <span class="p">{</span>
+        <span class="nv">$person</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span> <span class="c1">// insert a new `person`</span>
 
-        <span class="k">if</span> <span class="p">(</span><span class="nv">$form</span><span class="o">-&gt;</span><span class="na">isValid</span><span class="p">())</span> <span class="p">{</span>
-            <span class="nv">$person</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span> <span class="c1">// insert a new `person`</span>
-
-            <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">redirect</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">generateUrl</span><span class="p">(</span><span class="s1">&#39;success&#39;</span><span class="p">));</span>
-        <span class="p">}</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">redirect</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">generateUrl</span><span class="p">(</span><span class="s1">&#39;success&#39;</span><span class="p">));</span>
     <span class="p">}</span>
 
     <span class="c1">// ...</span>
@@ -5863,19 +5853,19 @@ the <code>newAction()</code> and the <code>updateAction()</code>:</p>
 <div class="highlight"><pre><span class="sd">/**</span>
 <span class="sd"> * Create a new Person</span>
 <span class="sd"> */</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">newAction</span><span class="p">()</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">newAction</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">processForm</span><span class="p">(</span><span class="k">new</span> <span class="nx">Person</span><span class="p">());</span>
+    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">processForm</span><span class="p">(</span><span class="nv">$request</span><span class="p">,</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">());</span>
 <span class="p">}</span>
 
 <span class="sd">/**</span>
 <span class="sd"> * Update an existing Person</span>
 <span class="sd"> */</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">updateAction</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">updateAction</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">,</span> <span class="nv">$id</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nv">$person</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span> <span class="c1">// get a `Person` by its $id</span>
 
-    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">processForm</span><span class="p">(</span><span class="nv">$person</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">processForm</span><span class="p">(</span><span class="nv">$request</span><span class="p">,</span> <span class="nv">$person</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </section>
@@ -5911,22 +5901,19 @@ the <code>newAction()</code> and the <code>updateAction()</code>:</p>
             
             
             <section><div class="highlight"><pre><span class="sd">/**</span>
-<span class="sd"> * @param Person $person</span>
+<span class="sd"> * @param Request $request</span>
+<span class="sd"> * @param Person  $person</span>
 <span class="sd"> *</span>
 <span class="sd"> * @return Response</span>
 <span class="sd"> */</span>
-<span class="k">private</span> <span class="k">function</span> <span class="nf">processForm</span><span class="p">(</span><span class="nx">Person</span> <span class="nv">$person</span><span class="p">)</span>
+<span class="k">private</span> <span class="k">function</span> <span class="nf">processForm</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">,</span> <span class="nx">Person</span> <span class="nv">$person</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nv">$form</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">createForm</span><span class="p">(</span><span class="k">new</span> <span class="nx">PersonType</span><span class="p">(),</span> <span class="nv">$person</span><span class="p">);</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getRequest</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">isMethod</span><span class="p">(</span><span class="s1">&#39;POST&#39;</span><span class="p">))</span> <span class="p">{</span>
-        <span class="nv">$form</span><span class="o">-&gt;</span><span class="na">handleRequest</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getRequest</span><span class="p">());</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$form</span><span class="o">-&gt;</span><span class="na">handleRequest</span><span class="p">(</span><span class="nv">$request</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">isValid</span><span class="p">())</span> <span class="p">{</span>
+        <span class="nv">$person</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
 
-        <span class="k">if</span> <span class="p">(</span><span class="nv">$form</span><span class="o">-&gt;</span><span class="na">isValid</span><span class="p">())</span> <span class="p">{</span>
-            <span class="nv">$person</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
-
-            <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">redirect</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">generateUrl</span><span class="p">(</span><span class="s1">&#39;success&#39;</span><span class="p">));</span>
-        <span class="p">}</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">redirect</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">generateUrl</span><span class="p">(</span><span class="s1">&#39;success&#39;</span><span class="p">));</span>
     <span class="p">}</span>
 
     <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;AcmeDemoBundle:Default:new.html.twig&#39;</span><span class="p">,</span> <span class="p">[</span>
@@ -6072,7 +6059,7 @@ un-rendered fields are output.</p></section>
 </li>
 <li>
 <p><code>form_rest(form)</code>: renders any fields that have not yet been rendered. It's
-  usually a good idea to place a call to this helper at the bottom of each form
+  usually a good idea to place a call to this helper at the bottom of each form.
   This helper is also useful for taking advantage of the automatic CSRF Protection.</p>
 </li>
 </ul></section>
@@ -6328,7 +6315,7 @@ second allows you to specify more complex validation rules.</p>
 
 <h3>Classes</h3>
 <p>Some constraints apply to the entire class being validated. For example, the
-<code>Callback</code> constraint is a generic constraint that's applied to the clas
+<code>Callback</code> constraint is a generic constraint that's applied to the class
 itself.</p></section>
             
           </div>
@@ -7552,8 +7539,8 @@ and no content. This tells the cache that it's ok to return the cached response.
             <section><p>The <code>ETag</code> header is a <strong>string header</strong> called <strong>entity-tag</strong> that uniquely
 <strong>identifies one representation of the target resource</strong>. It's entirely
 <strong>generated and set by your application</strong>.</p>
-<p>An <code>ETag</code> is like a <strong>fingerprint</strong> and is used to quickly compare if two
-unique across all representations of the same resource.</p>
+<p><code>ETag</code>s are similar to <strong>fingerprints</strong> and they can be quickly compared to
+determine if two versions of a resource are the same or not.</p>
 <div class="highlight"><pre><span class="k">public</span> <span class="k">function</span> <span class="nf">indexAction</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;MyBundle:Main:index.html.twig&#39;</span><span class="p">);</span>
