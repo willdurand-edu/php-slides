@@ -108,7 +108,7 @@ Here is an example:
 
 * `200` OK
 * `201` Created
-* `204` Not Content
+* `204` No Content
 
 ### `3xx` Redirections
 
