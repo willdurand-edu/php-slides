@@ -16,9 +16,9 @@ Worked at:
 
 Open-Source evangelist:
 
-* Lead developer of the [Propel ORM](http://propelorm.org),
-[Geocoder](http://geocoder-php.org/), and [several other
-projects](https://github.com/willdurand);
+* Lead developer of [Geocoder](http://geocoder-php.org/), and [several other
+  projects](https://github.com/willdurand);
+* Previous lead of the Propel ORM project;
 * (Inactive?) Contributor on Symfony2.
 
 <p class="center">
