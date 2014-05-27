@@ -7,11 +7,11 @@
 In the previous section, you learned how a form can be submitted with valid or
 invalid data. In Symfony2, **validation is applied to the underlying object**.
 
-In other words, the question isn't whether the "form" is valid, but whether or
-not the object is valid after the form has applied the submitted data to it.
+In other words, the question isn't whether the "form" is valid, but whether the
+object is valid after the form has applied the submitted data to it.
 
-Calling `$form->isValid()` is a shortcut that **asks the object whether or not
-it has valid data**.
+Calling `$form->isValid()` is a shortcut that **asks the object whether it has
+valid data** using a Validation layer.
 
 Validation is done by adding a set of rules (called **constraints**) to a class.
 
@@ -34,7 +34,7 @@ Given the following class:
         public $name;
     }
 
-You can configure a set of **constraints** on this class:
+You can configure a set of **constraints** on it:
 
     !yaml
     # src/Acme/DemoBundle/Resources/config/validation.yml
@@ -67,8 +67,8 @@ If the `$name` property is empty, you will see the following error message:
         This value should not be blank
 
 Most of the time, you won't interact directly with the validator service or need
-to worry about printing out the errors. Most of the time, you will use
-validation indirectly when handling submitted form data.
+to worry about printing out the errors. You will rather use validation
+indirectly when handling submitted form data.
 
 ---
 
