@@ -1214,7 +1214,7 @@ table {
             </aside>
             
             <aside class="page_number">
-              1/213
+              1/215
             </aside>
           </footer>
         </div>
@@ -1244,7 +1244,7 @@ table {
             </aside>
             
             <aside class="page_number">
-              2/213
+              2/215
             </aside>
           </footer>
         </div>
@@ -1270,7 +1270,7 @@ table {
 <ul>
 <li>Lead developer of <a href="http://geocoder-php.org/">Geocoder</a>, and <a href="https://github.com/willdurand">several other
   projects</a>;</li>
-<li>(Inactive?) Contributor on Symfony2.</li>
+<li>(Inactive?) Contributor on Symfony.</li>
 </ul>
 <p class="center">
     <i class="fa fa-twitter"></i> <a href="https://twitter.com/couac">twitter.com/couac</a>
@@ -1296,7 +1296,37 @@ table {
             </aside>
             
             <aside class="page_number">
-              3/213
+              3/215
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: src/me.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1><a href="mailto:edu@drnd.me">edu@drnd.me</a></h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              <a href="http://github.com/willdurand-edu/php-slides/edit/master/src/me.md" title="Fork and edit this slide">
+                <i class="fa fa-pencil"></i>
+              </a>
+            </aside>
+            
+            <aside class="page_number">
+              4/215
             </aside>
           </footer>
         </div>
@@ -1326,7 +1356,7 @@ table {
             </aside>
             
             <aside class="page_number">
-              4/213
+              5/215
             </aside>
           </footer>
         </div>
@@ -1367,7 +1397,7 @@ Embracing Open Source</p></section>
             </aside>
             
             <aside class="page_number">
-              5/213
+              6/215
             </aside>
           </footer>
         </div>
@@ -1397,7 +1427,7 @@ Embracing Open Source</p></section>
             </aside>
             
             <aside class="page_number">
-              6/213
+              7/215
             </aside>
           </footer>
         </div>
@@ -1434,7 +1464,7 @@ Embracing Open Source</p></section>
             </aside>
             
             <aside class="page_number">
-              7/213
+              8/215
             </aside>
           </footer>
         </div>
@@ -1472,7 +1502,7 @@ Embracing Open Source</p></section>
             </aside>
             
             <aside class="page_number">
-              8/213
+              9/215
             </aside>
           </footer>
         </div>
@@ -1510,7 +1540,7 @@ Embracing Open Source</p></section>
             </aside>
             
             <aside class="page_number">
-              9/213
+              10/215
             </aside>
           </footer>
         </div>
@@ -1546,7 +1576,7 @@ Embracing Open Source</p></section>
             </aside>
             
             <aside class="page_number">
-              10/213
+              11/215
             </aside>
           </footer>
         </div>
@@ -1583,7 +1613,7 @@ Embracing Open Source</p></section>
             </aside>
             
             <aside class="page_number">
-              11/213
+              12/215
             </aside>
           </footer>
         </div>
@@ -1613,7 +1643,7 @@ Embracing Open Source</p></section>
             </aside>
             
             <aside class="page_number">
-              12/213
+              13/215
             </aside>
           </footer>
         </div>
@@ -1643,7 +1673,7 @@ Embracing Open Source</p></section>
             </aside>
             
             <aside class="page_number">
-              13/213
+              14/215
             </aside>
           </footer>
         </div>
@@ -1683,7 +1713,7 @@ Embracing Open Source</p></section>
             </aside>
             
             <aside class="page_number">
-              14/213
+              15/215
             </aside>
           </footer>
         </div>
@@ -1716,7 +1746,10 @@ Embracing Open Source</p></section>
 <blockquote>
 <p>Read more about <strong>comparison operators</strong>:
 <a href="http://php.net/manual/en/language.operators.comparison.php">http://php.net/manual/en/language.operators.comparison.php</a>.</p>
-</blockquote></section>
+</blockquote>
+<h3>Timing Attack Safe String Comparison</h3>
+<p>The <a href="http://php.net/manual/en/function.hash-equals.php"><code>hash_equals()</code></a>
+function has been added in PHP 5.6 to compare two strings in constant time.</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1734,7 +1767,7 @@ Embracing Open Source</p></section>
             </aside>
             
             <aside class="page_number">
-              15/213
+              16/215
             </aside>
           </footer>
         </div>
@@ -1758,6 +1791,8 @@ Embracing Open Source</p></section>
 <span class="o">!</span> <span class="nv">$a</span><span class="p">;</span>       <span class="c1">// `true` if $a is not `true`</span>
 
 <span class="nv">$a</span> <span class="o">.</span> <span class="s1">&#39;foo&#39;</span><span class="p">;</span> <span class="c1">// concatenation</span>
+
+<span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">=</span> <span class="mi">8</span> <span class="c1">// exponentiation (PHP 5.6+)</span>
 </pre></div>
 
 <p>But also:</p>
@@ -1768,6 +1803,9 @@ Embracing Open Source</p></section>
 <span class="nv">$b</span>  <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="nv">$b</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>    <span class="c1">// $b = 1</span>
 <span class="nv">$b</span> <span class="o">-=</span> <span class="mi">1</span><span class="p">;</span>    <span class="c1">// $b = 0</span>
+
+<span class="nv">$c</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nv">$c</span> <span class="o">**=</span> <span class="mi">3</span><span class="p">;</span>   <span class="c1">// $c = 8</span>
 </pre></div>
 </section>
             
@@ -1787,7 +1825,7 @@ Embracing Open Source</p></section>
             </aside>
             
             <aside class="page_number">
-              16/213
+              17/215
             </aside>
           </footer>
         </div>
@@ -1832,7 +1870,7 @@ Embracing Open Source</p></section>
             </aside>
             
             <aside class="page_number">
-              17/213
+              18/215
             </aside>
           </footer>
         </div>
@@ -1886,7 +1924,7 @@ Embracing Open Source</p></section>
             </aside>
             
             <aside class="page_number">
-              18/213
+              19/215
             </aside>
           </footer>
         </div>
@@ -1927,7 +1965,7 @@ Embracing Open Source</p></section>
             </aside>
             
             <aside class="page_number">
-              19/213
+              20/215
             </aside>
           </footer>
         </div>
@@ -1944,6 +1982,9 @@ Embracing Open Source</p></section>
             <section><div class="highlight"><pre><span class="k">class</span> <span class="nc">Foo</span>
 <span class="p">{</span>
     <span class="k">const</span> <span class="no">VALUE</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span>
+    <span class="c1">// PHP 5.6+</span>
+    <span class="k">const</span> <span class="no">SENTENCE</span>        <span class="o">=</span> <span class="s1">&#39;The value of VALUE is &#39;</span> <span class="o">.</span> <span class="nx">self</span><span class="o">::</span><span class="na">VALUE</span><span class="p">;</span>
+    <span class="k">const</span> <span class="no">ARRAY_OF_VALUES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">];</span>
 
     <span class="sd">/**</span>
 <span class="sd">     * @var int</span>
@@ -1984,7 +2025,7 @@ Embracing Open Source</p></section>
             </aside>
             
             <aside class="page_number">
-              20/213
+              21/215
             </aside>
           </footer>
         </div>
@@ -2037,7 +2078,7 @@ scalar types such as <code>int</code> or <code>string</code>:</p>
             </aside>
             
             <aside class="page_number">
-              21/213
+              22/215
             </aside>
           </footer>
         </div>
@@ -2084,7 +2125,7 @@ scalar types such as <code>int</code> or <code>string</code>:</p>
             </aside>
             
             <aside class="page_number">
-              22/213
+              23/215
             </aside>
           </footer>
         </div>
@@ -2134,7 +2175,7 @@ scalar types such as <code>int</code> or <code>string</code>:</p>
             </aside>
             
             <aside class="page_number">
-              23/213
+              24/215
             </aside>
           </footer>
         </div>
@@ -2184,7 +2225,7 @@ This is different!</p></section>
             </aside>
             
             <aside class="page_number">
-              24/213
+              25/215
             </aside>
           </footer>
         </div>
@@ -2245,7 +2286,7 @@ This is different!</p></section>
             </aside>
             
             <aside class="page_number">
-              25/213
+              26/215
             </aside>
           </footer>
         </div>
@@ -2291,7 +2332,54 @@ This is different!</p></section>
             </aside>
             
             <aside class="page_number">
-              26/213
+              27/215
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: src/common/02_the_php_syntax.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Variadic Functions</h1></header>
+            
+            
+            <section><p>New operator <code>...</code> as of PHP 5.6:</p>
+<div class="highlight"><pre><span class="k">function</span> <span class="nf">sum</span><span class="p">(</span><span class="o">...</span><span class="nv">$numbers</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nb">array_sum</span><span class="p">(</span><span class="nv">$numbers</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">echo</span> <span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+<span class="c1">// 3</span>
+</pre></div>
+
+<h3>Argument Unpacking</h3>
+<div class="highlight"><pre><span class="nv">$numbers</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">];</span>
+<span class="k">echo</span> <span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">...</span><span class="nv">$numbers</span><span class="p">);</span>
+<span class="c1">// 6</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              <a href="http://github.com/willdurand-edu/php-slides/edit/master/src/common/02_the_php_syntax.md" title="Fork and edit this slide">
+                <i class="fa fa-pencil"></i>
+              </a>
+            </aside>
+            
+            <aside class="page_number">
+              28/215
             </aside>
           </footer>
         </div>
@@ -2345,7 +2433,7 @@ This is different!</p></section>
             </aside>
             
             <aside class="page_number">
-              27/213
+              29/215
             </aside>
           </footer>
         </div>
@@ -2395,7 +2483,7 @@ describes a set of rules related to namespaces for autoloader interoperability.<
             </aside>
             
             <aside class="page_number">
-              28/213
+              30/215
             </aside>
           </footer>
         </div>
@@ -2444,7 +2532,7 @@ describes a set of rules related to namespaces for autoloader interoperability.<
             </aside>
             
             <aside class="page_number">
-              29/213
+              31/215
             </aside>
           </footer>
         </div>
@@ -2498,7 +2586,7 @@ describes a set of rules related to namespaces for autoloader interoperability.<
             </aside>
             
             <aside class="page_number">
-              30/213
+              32/215
             </aside>
           </footer>
         </div>
@@ -2543,7 +2631,7 @@ defined, and possibly called, without being bound to an identifier.</p>
             </aside>
             
             <aside class="page_number">
-              31/213
+              33/215
             </aside>
           </footer>
         </div>
@@ -2591,7 +2679,7 @@ defined, and possibly called, without being bound to an identifier.</p>
             </aside>
             
             <aside class="page_number">
-              32/213
+              34/215
             </aside>
           </footer>
         </div>
@@ -2636,7 +2724,7 @@ defined, and possibly called, without being bound to an identifier.</p>
             </aside>
             
             <aside class="page_number">
-              33/213
+              35/215
             </aside>
           </footer>
         </div>
@@ -2679,7 +2767,7 @@ You</a>;</li>
             </aside>
             
             <aside class="page_number">
-              34/213
+              36/215
             </aside>
           </footer>
         </div>
@@ -2709,7 +2797,7 @@ You</a>;</li>
             </aside>
             
             <aside class="page_number">
-              35/213
+              37/215
             </aside>
           </footer>
         </div>
@@ -2763,7 +2851,7 @@ Hello, World
             </aside>
             
             <aside class="page_number">
-              36/213
+              38/215
             </aside>
           </footer>
         </div>
@@ -2813,7 +2901,7 @@ No syntax errors detected in my/script.php
             </aside>
             
             <aside class="page_number">
-              37/213
+              39/215
             </aside>
           </footer>
         </div>
@@ -2867,7 +2955,7 @@ Hello, World!
             </aside>
             
             <aside class="page_number">
-              38/213
+              40/215
             </aside>
           </footer>
         </div>
@@ -2897,7 +2985,7 @@ Hello, World!
             </aside>
             
             <aside class="page_number">
-              39/213
+              41/215
             </aside>
           </footer>
         </div>
@@ -2939,7 +3027,7 @@ server</strong>.</p></section>
             </aside>
             
             <aside class="page_number">
-              40/213
+              42/215
             </aside>
           </footer>
         </div>
@@ -2985,7 +3073,7 @@ server</strong>.</p></section>
             </aside>
             
             <aside class="page_number">
-              41/213
+              43/215
             </aside>
           </footer>
         </div>
@@ -3032,7 +3120,7 @@ This is a content
             </aside>
             
             <aside class="page_number">
-              42/213
+              44/215
             </aside>
           </footer>
         </div>
@@ -3074,7 +3162,7 @@ This is a content
             </aside>
             
             <aside class="page_number">
-              43/213
+              45/215
             </aside>
           </footer>
         </div>
@@ -3126,7 +3214,7 @@ This is a content
             </aside>
             
             <aside class="page_number">
-              44/213
+              46/215
             </aside>
           </footer>
         </div>
@@ -3170,7 +3258,7 @@ This is a content
             </aside>
             
             <aside class="page_number">
-              45/213
+              47/215
             </aside>
           </footer>
         </div>
@@ -3216,7 +3304,7 @@ This is a content
             </aside>
             
             <aside class="page_number">
-              46/213
+              48/215
             </aside>
           </footer>
         </div>
@@ -3263,7 +3351,7 @@ parameters through global variables:</p>
             </aside>
             
             <aside class="page_number">
-              47/213
+              49/215
             </aside>
           </footer>
         </div>
@@ -3315,7 +3403,7 @@ b=3&amp;city=paris
             </aside>
             
             <aside class="page_number">
-              48/213
+              50/215
             </aside>
           </footer>
         </div>
@@ -3345,7 +3433,7 @@ b=3&amp;city=paris
             </aside>
             
             <aside class="page_number">
-              49/213
+              51/215
             </aside>
           </footer>
         </div>
@@ -3388,7 +3476,7 @@ Identifier</strong> (URI).</p>
             </aside>
             
             <aside class="page_number">
-              50/213
+              52/215
             </aside>
           </footer>
         </div>
@@ -3422,7 +3510,7 @@ Identifier</strong> (URI).</p>
             </aside>
             
             <aside class="page_number">
-              51/213
+              53/215
             </aside>
           </footer>
         </div>
@@ -3461,7 +3549,7 @@ Identifier</strong> (URI).</p>
             </aside>
             
             <aside class="page_number">
-              52/213
+              54/215
             </aside>
           </footer>
         </div>
@@ -3500,7 +3588,7 @@ Identifier</strong> (URI).</p>
             </aside>
             
             <aside class="page_number">
-              53/213
+              55/215
             </aside>
           </footer>
         </div>
@@ -3539,7 +3627,7 @@ Identifier</strong> (URI).</p>
             </aside>
             
             <aside class="page_number">
-              54/213
+              56/215
             </aside>
           </footer>
         </div>
@@ -3577,7 +3665,7 @@ Identifier</strong> (URI).</p>
             </aside>
             
             <aside class="page_number">
-              55/213
+              57/215
             </aside>
           </footer>
         </div>
@@ -3607,7 +3695,7 @@ Identifier</strong> (URI).</p>
             </aside>
             
             <aside class="page_number">
-              56/213
+              58/215
             </aside>
           </footer>
         </div>
@@ -3661,7 +3749,7 @@ semantics</strong> that induce application flow: <code>application/hal+json</cod
             </aside>
             
             <aside class="page_number">
-              57/213
+              59/215
             </aside>
           </footer>
         </div>
@@ -3715,7 +3803,7 @@ language (<code>Accept-Language</code>) negotiation.</p>
             </aside>
             
             <aside class="page_number">
-              58/213
+              60/215
             </aside>
           </footer>
         </div>
@@ -3769,7 +3857,7 @@ HATEOAS</a>.</p>
             </aside>
             
             <aside class="page_number">
-              59/213
+              61/215
             </aside>
           </footer>
         </div>
@@ -3799,7 +3887,7 @@ HATEOAS</a>.</p>
             </aside>
             
             <aside class="page_number">
-              60/213
+              62/215
             </aside>
           </footer>
         </div>
@@ -3850,7 +3938,7 @@ HATEOAS</a>.</p>
             </aside>
             
             <aside class="page_number">
-              61/213
+              63/215
             </aside>
           </footer>
         </div>
@@ -3902,7 +3990,7 @@ HATEOAS</a>.</p>
             </aside>
             
             <aside class="page_number">
-              62/213
+              64/215
             </aside>
           </footer>
         </div>
@@ -3951,7 +4039,7 @@ check whether the file has already been included:</p>
             </aside>
             
             <aside class="page_number">
-              63/213
+              65/215
             </aside>
           </footer>
         </div>
@@ -4002,7 +4090,7 @@ a few files:</p>
             </aside>
             
             <aside class="page_number">
-              64/213
+              66/215
             </aside>
           </footer>
         </div>
@@ -4043,7 +4131,7 @@ the use of <code>require_once()</code> thanks to the following functions:</p>
             </aside>
             
             <aside class="page_number">
-              65/213
+              67/215
             </aside>
           </footer>
         </div>
@@ -4094,7 +4182,7 @@ the use of <code>require_once()</code> thanks to the following functions:</p>
             </aside>
             
             <aside class="page_number">
-              66/213
+              68/215
             </aside>
           </footer>
         </div>
@@ -4151,7 +4239,7 @@ the use of <code>require_once()</code> thanks to the following functions:</p>
             </aside>
             
             <aside class="page_number">
-              67/213
+              69/215
             </aside>
           </footer>
         </div>
@@ -4181,7 +4269,7 @@ the use of <code>require_once()</code> thanks to the following functions:</p>
             </aside>
             
             <aside class="page_number">
-              68/213
+              70/215
             </aside>
           </footer>
         </div>
@@ -4228,7 +4316,7 @@ when encoded with <code>json_encode()</code>.</p>
             </aside>
             
             <aside class="page_number">
-              69/213
+              71/215
             </aside>
           </footer>
         </div>
@@ -4281,7 +4369,7 @@ when encoded with <code>json_encode()</code>.</p>
             </aside>
             
             <aside class="page_number">
-              70/213
+              72/215
             </aside>
           </footer>
         </div>
@@ -4334,7 +4422,7 @@ when encoded with <code>json_encode()</code>.</p>
             </aside>
             
             <aside class="page_number">
-              71/213
+              73/215
             </aside>
           </footer>
         </div>
@@ -4378,7 +4466,7 @@ when encoded with <code>json_encode()</code>.</p>
             </aside>
             
             <aside class="page_number">
-              72/213
+              74/215
             </aside>
           </footer>
         </div>
@@ -4433,7 +4521,7 @@ when encoded with <code>json_encode()</code>.</p>
             </aside>
             
             <aside class="page_number">
-              73/213
+              75/215
             </aside>
           </footer>
         </div>
@@ -4484,7 +4572,7 @@ component to the rescue!</p>
             </aside>
             
             <aside class="page_number">
-              74/213
+              76/215
             </aside>
           </footer>
         </div>
@@ -4535,7 +4623,7 @@ component to the rescue!</p>
             </aside>
             
             <aside class="page_number">
-              75/213
+              77/215
             </aside>
           </footer>
         </div>
@@ -4577,7 +4665,7 @@ regardless of whether an exception has been thrown or not:</p>
             </aside>
             
             <aside class="page_number">
-              76/213
+              78/215
             </aside>
           </footer>
         </div>
@@ -4630,7 +4718,7 @@ make it easy to create and manage passwords in a secure manner, since PHP 5.5.0.
             </aside>
             
             <aside class="page_number">
-              77/213
+              79/215
             </aside>
           </footer>
         </div>
@@ -4674,7 +4762,7 @@ the PHAR creation process.</p>
             </aside>
             
             <aside class="page_number">
-              78/213
+              80/215
             </aside>
           </footer>
         </div>
@@ -4704,7 +4792,7 @@ the PHAR creation process.</p>
             </aside>
             
             <aside class="page_number">
-              79/213
+              81/215
             </aside>
           </footer>
         </div>
@@ -4750,7 +4838,7 @@ official repository for Composer-compatible PHP libraries.</p>
             </aside>
             
             <aside class="page_number">
-              80/213
+              82/215
             </aside>
           </footer>
         </div>
@@ -4802,7 +4890,7 @@ Constraints</a></p>
             </aside>
             
             <aside class="page_number">
-              81/213
+              83/215
             </aside>
           </footer>
         </div>
@@ -4847,7 +4935,7 @@ how to autoload classes/functions anymore.</p>
             </aside>
             
             <aside class="page_number">
-              82/213
+              84/215
             </aside>
           </footer>
         </div>
@@ -4897,7 +4985,7 @@ the <strong>Symfony2 Console</strong> component:</p>
             </aside>
             
             <aside class="page_number">
-              83/213
+              85/215
             </aside>
           </footer>
         </div>
@@ -4950,7 +5038,7 @@ the <strong>Symfony2 Console</strong> component:</p>
             </aside>
             
             <aside class="page_number">
-              84/213
+              86/215
             </aside>
           </footer>
         </div>
@@ -4999,7 +5087,7 @@ the <strong>Symfony2 Console</strong> component:</p>
             </aside>
             
             <aside class="page_number">
-              85/213
+              87/215
             </aside>
           </footer>
         </div>
@@ -5054,7 +5142,7 @@ Hello, William
             </aside>
             
             <aside class="page_number">
-              86/213
+              88/215
             </aside>
           </footer>
         </div>
@@ -5084,7 +5172,7 @@ Hello, William
             </aside>
             
             <aside class="page_number">
-              87/213
+              89/215
             </aside>
           </footer>
         </div>
@@ -5129,7 +5217,7 @@ Hello, William
             </aside>
             
             <aside class="page_number">
-              88/213
+              90/215
             </aside>
           </footer>
         </div>
@@ -5179,7 +5267,7 @@ Using it should not require to understand internals.</p>
             </aside>
             
             <aside class="page_number">
-              89/213
+              91/215
             </aside>
           </footer>
         </div>
@@ -5234,7 +5322,7 @@ will die: you have to separate the presentation from the business logic.</p>
             </aside>
             
             <aside class="page_number">
-              90/213
+              92/215
             </aside>
           </footer>
         </div>
@@ -5283,7 +5371,7 @@ will die: you have to separate the presentation from the business logic.</p>
             </aside>
             
             <aside class="page_number">
-              91/213
+              93/215
             </aside>
           </footer>
         </div>
@@ -5334,7 +5422,7 @@ you and much much more! Read more:
             </aside>
             
             <aside class="page_number">
-              92/213
+              94/215
             </aside>
           </footer>
         </div>
@@ -5388,7 +5476,7 @@ you and much much more! Read more:
             </aside>
             
             <aside class="page_number">
-              93/213
+              95/215
             </aside>
           </footer>
         </div>
@@ -5433,7 +5521,7 @@ generation.</p>
             </aside>
             
             <aside class="page_number">
-              94/213
+              96/215
             </aside>
           </footer>
         </div>
@@ -5468,7 +5556,7 @@ generation.</p>
             </aside>
             
             <aside class="page_number">
-              95/213
+              97/215
             </aside>
           </footer>
         </div>
@@ -5498,7 +5586,7 @@ generation.</p>
             </aside>
             
             <aside class="page_number">
-              96/213
+              98/215
             </aside>
           </footer>
         </div>
@@ -5536,7 +5624,7 @@ generation.</p>
             </aside>
             
             <aside class="page_number">
-              97/213
+              99/215
             </aside>
           </footer>
         </div>
@@ -5573,7 +5661,7 @@ generation.</p>
             </aside>
             
             <aside class="page_number">
-              98/213
+              100/215
             </aside>
           </footer>
         </div>
@@ -5616,7 +5704,7 @@ created by <strong>Martin Fowler</strong>.</p>
             </aside>
             
             <aside class="page_number">
-              99/213
+              101/215
             </aside>
           </footer>
         </div>
@@ -5646,7 +5734,7 @@ created by <strong>Martin Fowler</strong>.</p>
             </aside>
             
             <aside class="page_number">
-              100/213
+              102/215
             </aside>
           </footer>
         </div>
@@ -5703,7 +5791,7 @@ There is one instance per row.</p>
             </aside>
             
             <aside class="page_number">
-              101/213
+              103/215
             </aside>
           </footer>
         </div>
@@ -5751,7 +5839,7 @@ There is one instance per row.</p>
             </aside>
             
             <aside class="page_number">
-              102/213
+              104/215
             </aside>
           </footer>
         </div>
@@ -5800,7 +5888,7 @@ There is one instance per row.</p>
             </aside>
             
             <aside class="page_number">
-              103/213
+              105/215
             </aside>
           </footer>
         </div>
@@ -5830,7 +5918,7 @@ There is one instance per row.</p>
             </aside>
             
             <aside class="page_number">
-              104/213
+              106/215
             </aside>
           </footer>
         </div>
@@ -5880,7 +5968,7 @@ One instance handles all the rows in the table.</p>
             </aside>
             
             <aside class="page_number">
-              105/213
+              107/215
             </aside>
           </footer>
         </div>
@@ -5929,7 +6017,7 @@ One instance handles all the rows in the table.</p>
             </aside>
             
             <aside class="page_number">
-              106/213
+              108/215
             </aside>
           </footer>
         </div>
@@ -5979,7 +6067,7 @@ One instance handles all the rows in the table.</p>
             </aside>
             
             <aside class="page_number">
-              107/213
+              109/215
             </aside>
           </footer>
         </div>
@@ -6033,7 +6121,7 @@ One instance handles all the rows in the table.</p>
             </aside>
             
             <aside class="page_number">
-              108/213
+              110/215
             </aside>
           </footer>
         </div>
@@ -6080,7 +6168,7 @@ One instance handles all the rows in the table.</p>
             </aside>
             
             <aside class="page_number">
-              109/213
+              111/215
             </aside>
           </footer>
         </div>
@@ -6129,7 +6217,7 @@ One instance handles all the rows in the table.</p>
             </aside>
             
             <aside class="page_number">
-              110/213
+              112/215
             </aside>
           </footer>
         </div>
@@ -6159,7 +6247,7 @@ One instance handles all the rows in the table.</p>
             </aside>
             
             <aside class="page_number">
-              111/213
+              113/215
             </aside>
           </footer>
         </div>
@@ -6208,7 +6296,7 @@ the database access, and adds domain logic on that data.</p>
             </aside>
             
             <aside class="page_number">
-              112/213
+              114/215
             </aside>
           </footer>
         </div>
@@ -6265,7 +6353,7 @@ the database access, and adds domain logic on that data.</p>
             </aside>
             
             <aside class="page_number">
-              113/213
+              115/215
             </aside>
           </footer>
         </div>
@@ -6295,7 +6383,7 @@ the database access, and adds domain logic on that data.</p>
             </aside>
             
             <aside class="page_number">
-              114/213
+              116/215
             </aside>
           </footer>
         </div>
@@ -6350,7 +6438,7 @@ while keeping them independent of each other and the mapper itself.</p>
             </aside>
             
             <aside class="page_number">
-              115/213
+              117/215
             </aside>
           </footer>
         </div>
@@ -6397,7 +6485,7 @@ while keeping them independent of each other and the mapper itself.</p>
             </aside>
             
             <aside class="page_number">
-              116/213
+              118/215
             </aside>
           </footer>
         </div>
@@ -6427,7 +6515,7 @@ while keeping them independent of each other and the mapper itself.</p>
             </aside>
             
             <aside class="page_number">
-              117/213
+              119/215
             </aside>
           </footer>
         </div>
@@ -6476,7 +6564,7 @@ a map. Looks up objects using the map when referring to them.</p>
             </aside>
             
             <aside class="page_number">
-              118/213
+              120/215
             </aside>
           </footer>
         </div>
@@ -6506,7 +6594,7 @@ a map. Looks up objects using the map when referring to them.</p>
             </aside>
             
             <aside class="page_number">
-              119/213
+              121/215
             </aside>
           </footer>
         </div>
@@ -6551,7 +6639,7 @@ vendor you are using.</p>
             </aside>
             
             <aside class="page_number">
-              120/213
+              122/215
             </aside>
           </footer>
         </div>
@@ -6602,7 +6690,7 @@ vendor you are using.</p>
             </aside>
             
             <aside class="page_number">
-              121/213
+              123/215
             </aside>
           </footer>
         </div>
@@ -6658,7 +6746,7 @@ external behavior.</p>
             </aside>
             
             <aside class="page_number">
-              122/213
+              124/215
             </aside>
           </footer>
         </div>
@@ -6707,7 +6795,7 @@ external behavior.</p>
             </aside>
             
             <aside class="page_number">
-              123/213
+              125/215
             </aside>
           </footer>
         </div>
@@ -6737,7 +6825,7 @@ external behavior.</p>
             </aside>
             
             <aside class="page_number">
-              124/213
+              126/215
             </aside>
           </footer>
         </div>
@@ -6776,7 +6864,7 @@ seen above, and that eases relationships between objects.</p></section>
             </aside>
             
             <aside class="page_number">
-              125/213
+              127/215
             </aside>
           </footer>
         </div>
@@ -6814,7 +6902,7 @@ seen above, and that eases relationships between objects.</p></section>
             </aside>
             
             <aside class="page_number">
-              126/213
+              128/215
             </aside>
           </footer>
         </div>
@@ -6852,7 +6940,7 @@ seen above, and that eases relationships between objects.</p></section>
             </aside>
             
             <aside class="page_number">
-              127/213
+              129/215
             </aside>
           </footer>
         </div>
@@ -6896,7 +6984,7 @@ seen above, and that eases relationships between objects.</p></section>
             </aside>
             
             <aside class="page_number">
-              128/213
+              130/215
             </aside>
           </footer>
         </div>
@@ -6938,7 +7026,7 @@ patterns, often seen as an <strong>Active Record</strong> approach.</p>
             </aside>
             
             <aside class="page_number">
-              129/213
+              131/215
             </aside>
           </footer>
         </div>
@@ -6968,7 +7056,7 @@ patterns, often seen as an <strong>Active Record</strong> approach.</p>
             </aside>
             
             <aside class="page_number">
-              130/213
+              132/215
             </aside>
           </footer>
         </div>
@@ -7024,7 +7112,7 @@ patterns, often seen as an <strong>Active Record</strong> approach.</p>
             </aside>
             
             <aside class="page_number">
-              131/213
+              133/215
             </aside>
           </footer>
         </div>
@@ -7081,7 +7169,7 @@ identity is called a <strong>Value Object</strong>:</p>
             </aside>
             
             <aside class="page_number">
-              132/213
+              134/215
             </aside>
           </footer>
         </div>
@@ -7111,7 +7199,7 @@ identity is called a <strong>Value Object</strong>:</p>
             </aside>
             
             <aside class="page_number">
-              133/213
+              135/215
             </aside>
           </footer>
         </div>
@@ -7162,7 +7250,7 @@ like an <strong>in-memory domain object collection</strong>.</p>
             </aside>
             
             <aside class="page_number">
-              134/213
+              136/215
             </aside>
           </footer>
         </div>
@@ -7203,7 +7291,7 @@ one-way dependency between the domain and data mapping layers</strong>.</p></sec
             </aside>
             
             <aside class="page_number">
-              135/213
+              137/215
             </aside>
           </footer>
         </div>
@@ -7233,7 +7321,7 @@ one-way dependency between the domain and data mapping layers</strong>.</p></sec
             </aside>
             
             <aside class="page_number">
-              136/213
+              138/215
             </aside>
           </footer>
         </div>
@@ -7291,7 +7379,7 @@ objects. The idea is that a question about an object, is answered by a
             </aside>
             
             <aside class="page_number">
-              137/213
+              139/215
             </aside>
           </footer>
         </div>
@@ -7339,7 +7427,7 @@ objects. The idea is that a question about an object, is answered by a
             </aside>
             
             <aside class="page_number">
-              138/213
+              140/215
             </aside>
           </footer>
         </div>
@@ -7400,7 +7488,7 @@ objects. The idea is that a question about an object, is answered by a
             </aside>
             
             <aside class="page_number">
-              139/213
+              141/215
             </aside>
           </footer>
         </div>
@@ -7458,7 +7546,7 @@ objects. The idea is that a question about an object, is answered by a
             </aside>
             
             <aside class="page_number">
-              140/213
+              142/215
             </aside>
           </footer>
         </div>
@@ -7508,7 +7596,7 @@ objects. The idea is that a question about an object, is answered by a
             </aside>
             
             <aside class="page_number">
-              141/213
+              143/215
             </aside>
           </footer>
         </div>
@@ -7538,7 +7626,7 @@ objects. The idea is that a question about an object, is answered by a
             </aside>
             
             <aside class="page_number">
-              142/213
+              144/215
             </aside>
           </footer>
         </div>
@@ -7583,7 +7671,7 @@ objects. The idea is that a question about an object, is answered by a
             </aside>
             
             <aside class="page_number">
-              143/213
+              145/215
             </aside>
           </footer>
         </div>
@@ -7634,7 +7722,7 @@ objects. The idea is that a question about an object, is answered by a
             </aside>
             
             <aside class="page_number">
-              144/213
+              146/215
             </aside>
           </footer>
         </div>
@@ -7680,7 +7768,7 @@ objects. The idea is that a question about an object, is answered by a
             </aside>
             
             <aside class="page_number">
-              145/213
+              147/215
             </aside>
           </footer>
         </div>
@@ -7734,7 +7822,7 @@ objects. The idea is that a question about an object, is answered by a
             </aside>
             
             <aside class="page_number">
-              146/213
+              148/215
             </aside>
           </footer>
         </div>
@@ -7764,7 +7852,7 @@ objects. The idea is that a question about an object, is answered by a
             </aside>
             
             <aside class="page_number">
-              147/213
+              149/215
             </aside>
           </footer>
         </div>
@@ -7799,7 +7887,7 @@ objects. The idea is that a question about an object, is answered by a
             </aside>
             
             <aside class="page_number">
-              148/213
+              150/215
             </aside>
           </footer>
         </div>
@@ -7832,7 +7920,7 @@ objects. The idea is that a question about an object, is answered by a
             </aside>
             
             <aside class="page_number">
-              149/213
+              151/215
             </aside>
           </footer>
         </div>
@@ -7875,7 +7963,7 @@ An <strong>Event Dispatcher</strong> manages both the listeners, and the events.
             </aside>
             
             <aside class="page_number">
-              150/213
+              152/215
             </aside>
           </footer>
         </div>
@@ -7925,7 +8013,7 @@ An <strong>Event Dispatcher</strong> manages both the listeners, and the events.
             </aside>
             
             <aside class="page_number">
-              151/213
+              153/215
             </aside>
           </footer>
         </div>
@@ -7979,7 +8067,7 @@ listeners once you enter in the <code>process()</code> method by <strong>dispatc
             </aside>
             
             <aside class="page_number">
-              152/213
+              154/215
             </aside>
           </footer>
         </div>
@@ -8025,7 +8113,7 @@ Whitelist</a></p>
             </aside>
             
             <aside class="page_number">
-              153/213
+              155/215
             </aside>
           </footer>
         </div>
@@ -8067,7 +8155,7 @@ authenticated or not:</p>
             </aside>
             
             <aside class="page_number">
-              154/213
+              156/215
             </aside>
           </footer>
         </div>
@@ -8126,7 +8214,7 @@ authenticated or not:</p>
             </aside>
             
             <aside class="page_number">
-              155/213
+              157/215
             </aside>
           </footer>
         </div>
@@ -8159,7 +8247,7 @@ authenticated or not:</p>
             </aside>
             
             <aside class="page_number">
-              156/213
+              158/215
             </aside>
           </footer>
         </div>
@@ -8218,7 +8306,7 @@ Login</a>.</p>
             </aside>
             
             <aside class="page_number">
-              157/213
+              159/215
             </aside>
           </footer>
         </div>
@@ -8256,7 +8344,7 @@ Login</a>.</p>
             </aside>
             
             <aside class="page_number">
-              158/213
+              160/215
             </aside>
           </footer>
         </div>
@@ -8302,7 +8390,7 @@ Security</a></p>
             </aside>
             
             <aside class="page_number">
-              159/213
+              161/215
             </aside>
           </footer>
         </div>
@@ -8332,7 +8420,7 @@ Security</a></p>
             </aside>
             
             <aside class="page_number">
-              160/213
+              162/215
             </aside>
           </footer>
         </div>
@@ -8374,7 +8462,7 @@ Security</a></p>
             </aside>
             
             <aside class="page_number">
-              161/213
+              163/215
             </aside>
           </footer>
         </div>
@@ -8433,7 +8521,7 @@ and
             </aside>
             
             <aside class="page_number">
-              162/213
+              164/215
             </aside>
           </footer>
         </div>
@@ -8479,7 +8567,7 @@ PSR-2 documents.</p>
             </aside>
             
             <aside class="page_number">
-              163/213
+              165/215
             </aside>
           </footer>
         </div>
@@ -8526,7 +8614,7 @@ as template engine thanks to the <code>TemplateEngine</code> interface:</p>
             </aside>
             
             <aside class="page_number">
-              164/213
+              166/215
             </aside>
           </footer>
         </div>
@@ -8566,7 +8654,7 @@ the thing it is calling.</p></section>
             </aside>
             
             <aside class="page_number">
-              165/213
+              167/215
             </aside>
           </footer>
         </div>
@@ -8618,7 +8706,7 @@ the thing it is calling.</p></section>
             </aside>
             
             <aside class="page_number">
-              166/213
+              168/215
             </aside>
           </footer>
         </div>
@@ -8674,7 +8762,7 @@ get hold of all of the services that an application might need.</p>
             </aside>
             
             <aside class="page_number">
-              167/213
+              169/215
             </aside>
           </footer>
         </div>
@@ -8718,7 +8806,7 @@ get hold of all of the services that an application might need.</p>
             </aside>
             
             <aside class="page_number">
-              168/213
+              170/215
             </aside>
           </footer>
         </div>
@@ -8762,7 +8850,7 @@ get hold of all of the services that an application might need.</p>
             </aside>
             
             <aside class="page_number">
-              169/213
+              171/215
             </aside>
           </footer>
         </div>
@@ -8813,7 +8901,7 @@ get hold of all of the services that an application might need.</p>
             </aside>
             
             <aside class="page_number">
-              170/213
+              172/215
             </aside>
           </footer>
         </div>
@@ -8848,7 +8936,7 @@ into code that you provided it, it is IoC.</p>
             </aside>
             
             <aside class="page_number">
-              171/213
+              173/215
             </aside>
           </footer>
         </div>
@@ -8893,7 +8981,7 @@ dynamically built:</p>
             </aside>
             
             <aside class="page_number">
-              172/213
+              174/215
             </aside>
           </footer>
         </div>
@@ -8944,7 +9032,7 @@ It fits in a <em>tweet</em> (less than 140 characters):</p>
             </aside>
             
             <aside class="page_number">
-              173/213
+              175/215
             </aside>
           </footer>
         </div>
@@ -8989,7 +9077,7 @@ application.</p>
             </aside>
             
             <aside class="page_number">
-              174/213
+              176/215
             </aside>
           </footer>
         </div>
@@ -9028,7 +9116,7 @@ Lego!</a></p>
             </aside>
             
             <aside class="page_number">
-              175/213
+              177/215
             </aside>
           </footer>
         </div>
@@ -9072,7 +9160,7 @@ Lego!</a></p>
             </aside>
             
             <aside class="page_number">
-              176/213
+              178/215
             </aside>
           </footer>
         </div>
@@ -9115,7 +9203,7 @@ Lego!</a></p>
             </aside>
             
             <aside class="page_number">
-              177/213
+              179/215
             </aside>
           </footer>
         </div>
@@ -9163,7 +9251,7 @@ Anthology</a>:</p>
             </aside>
             
             <aside class="page_number">
-              178/213
+              180/215
             </aside>
           </footer>
         </div>
@@ -9193,7 +9281,7 @@ Anthology</a>:</p>
             </aside>
             
             <aside class="page_number">
-              179/213
+              181/215
             </aside>
           </footer>
         </div>
@@ -9223,7 +9311,7 @@ Anthology</a>:</p>
             </aside>
             
             <aside class="page_number">
-              180/213
+              182/215
             </aside>
           </footer>
         </div>
@@ -9261,7 +9349,7 @@ href="https://twitter.com/hipsterhacker/statuses/396352411754717184">November 1,
             </aside>
             
             <aside class="page_number">
-              181/213
+              183/215
             </aside>
           </footer>
         </div>
@@ -9297,7 +9385,7 @@ href="https://twitter.com/hipsterhacker/statuses/396352411754717184">November 1,
             </aside>
             
             <aside class="page_number">
-              182/213
+              184/215
             </aside>
           </footer>
         </div>
@@ -9327,7 +9415,7 @@ href="https://twitter.com/hipsterhacker/statuses/396352411754717184">November 1,
             </aside>
             
             <aside class="page_number">
-              183/213
+              185/215
             </aside>
           </footer>
         </div>
@@ -9375,7 +9463,7 @@ unit testing in PHP projects.</p>
             </aside>
             
             <aside class="page_number">
-              184/213
+              186/215
             </aside>
           </footer>
         </div>
@@ -9425,7 +9513,7 @@ from it:</p>
             </aside>
             
             <aside class="page_number">
-              185/213
+              187/215
             </aside>
           </footer>
         </div>
@@ -9466,7 +9554,7 @@ from it:</p>
             </aside>
             
             <aside class="page_number">
-              186/213
+              188/215
             </aside>
           </footer>
         </div>
@@ -9518,7 +9606,7 @@ OK <span class="o">(</span>1 <span class="nb">test</span>, 1 assertion<span clas
             </aside>
             
             <aside class="page_number">
-              187/213
+              189/215
             </aside>
           </footer>
         </div>
@@ -9564,7 +9652,7 @@ OK <span class="o">(</span>1 <span class="nb">test</span>, 1 assertion<span clas
             </aside>
             
             <aside class="page_number">
-              188/213
+              190/215
             </aside>
           </footer>
         </div>
@@ -9594,7 +9682,7 @@ OK <span class="o">(</span>1 <span class="nb">test</span>, 1 assertion<span clas
             </aside>
             
             <aside class="page_number">
-              189/213
+              191/215
             </aside>
           </footer>
         </div>
@@ -9633,7 +9721,7 @@ than only verifying that individual units of code behave correctly.</p>
             </aside>
             
             <aside class="page_number">
-              190/213
+              192/215
             </aside>
           </footer>
         </div>
@@ -9663,7 +9751,7 @@ than only verifying that individual units of code behave correctly.</p>
             </aside>
             
             <aside class="page_number">
-              191/213
+              193/215
             </aside>
           </footer>
         </div>
@@ -9708,7 +9796,7 @@ than only verifying that individual units of code behave correctly.</p>
             </aside>
             
             <aside class="page_number">
-              192/213
+              194/215
             </aside>
           </footer>
         </div>
@@ -9756,7 +9844,7 @@ than only verifying that individual units of code behave correctly.</p>
             </aside>
             
             <aside class="page_number">
-              193/213
+              195/215
             </aside>
           </footer>
         </div>
@@ -9806,7 +9894,7 @@ than only verifying that individual units of code behave correctly.</p>
             </aside>
             
             <aside class="page_number">
-              194/213
+              196/215
             </aside>
           </footer>
         </div>
@@ -9861,7 +9949,7 @@ than only verifying that individual units of code behave correctly.</p>
             </aside>
             
             <aside class="page_number">
-              195/213
+              197/215
             </aside>
           </footer>
         </div>
@@ -9891,7 +9979,7 @@ than only verifying that individual units of code behave correctly.</p>
             </aside>
             
             <aside class="page_number">
-              196/213
+              198/215
             </aside>
           </footer>
         </div>
@@ -9940,7 +10028,7 @@ business-model, libraries and application low-level code.</p>
             </aside>
             
             <aside class="page_number">
-              197/213
+              199/215
             </aside>
           </footer>
         </div>
@@ -9997,7 +10085,7 @@ business-model, libraries and application low-level code.</p>
             </aside>
             
             <aside class="page_number">
-              198/213
+              200/215
             </aside>
           </footer>
         </div>
@@ -10054,7 +10142,7 @@ business-model, libraries and application low-level code.</p>
             </aside>
             
             <aside class="page_number">
-              199/213
+              201/215
             </aside>
           </footer>
         </div>
@@ -10112,7 +10200,7 @@ business-model, libraries and application low-level code.</p>
             </aside>
             
             <aside class="page_number">
-              200/213
+              202/215
             </aside>
           </footer>
         </div>
@@ -10172,7 +10260,7 @@ business-model, libraries and application low-level code.</p>
             </aside>
             
             <aside class="page_number">
-              201/213
+              203/215
             </aside>
           </footer>
         </div>
@@ -10227,7 +10315,7 @@ business-model, libraries and application low-level code.</p>
             </aside>
             
             <aside class="page_number">
-              202/213
+              204/215
             </aside>
           </footer>
         </div>
@@ -10286,7 +10374,7 @@ business-model, libraries and application low-level code.</p>
             </aside>
             
             <aside class="page_number">
-              203/213
+              205/215
             </aside>
           </footer>
         </div>
@@ -10320,7 +10408,7 @@ business-model, libraries and application low-level code.</p>
             </aside>
             
             <aside class="page_number">
-              204/213
+              206/215
             </aside>
           </footer>
         </div>
@@ -10378,7 +10466,7 @@ business-model, libraries and application low-level code.</p>
             </aside>
             
             <aside class="page_number">
-              205/213
+              207/215
             </aside>
           </footer>
         </div>
@@ -10415,7 +10503,7 @@ business-model, libraries and application low-level code.</p>
             </aside>
             
             <aside class="page_number">
-              206/213
+              208/215
             </aside>
           </footer>
         </div>
@@ -10445,7 +10533,7 @@ business-model, libraries and application low-level code.</p>
             </aside>
             
             <aside class="page_number">
-              207/213
+              209/215
             </aside>
           </footer>
         </div>
@@ -10475,7 +10563,7 @@ business-model, libraries and application low-level code.</p>
             </aside>
             
             <aside class="page_number">
-              208/213
+              210/215
             </aside>
           </footer>
         </div>
@@ -10505,7 +10593,7 @@ business-model, libraries and application low-level code.</p>
             </aside>
             
             <aside class="page_number">
-              209/213
+              211/215
             </aside>
           </footer>
         </div>
@@ -10535,7 +10623,7 @@ business-model, libraries and application low-level code.</p>
             </aside>
             
             <aside class="page_number">
-              210/213
+              212/215
             </aside>
           </footer>
         </div>
@@ -10577,7 +10665,7 @@ business-model, libraries and application low-level code.</p>
             </aside>
             
             <aside class="page_number">
-              211/213
+              213/215
             </aside>
           </footer>
         </div>
@@ -10607,7 +10695,7 @@ business-model, libraries and application low-level code.</p>
             </aside>
             
             <aside class="page_number">
-              212/213
+              214/215
             </aside>
           </footer>
         </div>
@@ -10637,7 +10725,7 @@ business-model, libraries and application low-level code.</p>
             </aside>
             
             <aside class="page_number">
-              213/213
+              215/215
             </aside>
           </footer>
         </div>
@@ -10671,31 +10759,31 @@ business-model, libraries and application low-level code.</p>
       
       
       <tr id="toc-row-4">
-        <th><a href="#slide4"><img alt="" src="images/clermontech.png" /></a></th>
+        <th><a href="#slide4"><a href="mailto:edu@drnd.me">edu@drnd.me</a></a></th>
         <td><a href="#slide4">4</a></td>
       </tr>
       
       
       <tr id="toc-row-5">
-        <th><a href="#slide5">Agenda</a></th>
+        <th><a href="#slide5"><img alt="" src="images/clermontech.png" /></a></th>
         <td><a href="#slide5">5</a></td>
       </tr>
       
       
       <tr id="toc-row-6">
-        <th><a href="#slide6">PHP: Hypertext Preprocessor</a></th>
+        <th><a href="#slide6">Agenda</a></th>
         <td><a href="#slide6">6</a></td>
       </tr>
       
       
       <tr id="toc-row-7">
-        <th><a href="#slide7">History &amp; Numbers</a></th>
+        <th><a href="#slide7">PHP: Hypertext Preprocessor</a></th>
         <td><a href="#slide7">7</a></td>
       </tr>
       
       
       <tr id="toc-row-8">
-        <th><a href="#slide8">Getting Started</a></th>
+        <th><a href="#slide8">History &amp; Numbers</a></th>
         <td><a href="#slide8">8</a></td>
       </tr>
       
@@ -10713,487 +10801,487 @@ business-model, libraries and application low-level code.</p>
       
       
       <tr id="toc-row-11">
-        <th><a href="#slide11">HHVM</a></th>
+        <th><a href="#slide11">Getting Started</a></th>
         <td><a href="#slide11">11</a></td>
       </tr>
       
       
       <tr id="toc-row-12">
-        <th><a href="#slide12">RTFM: <a href="http://www.php.net">http://www.php.net</a></a></th>
+        <th><a href="#slide12">HHVM</a></th>
         <td><a href="#slide12">12</a></td>
       </tr>
       
       
       <tr id="toc-row-13">
-        <th><a href="#slide13">The PHP Syntax</a></th>
+        <th><a href="#slide13">RTFM: <a href="http://www.php.net">http://www.php.net</a></a></th>
         <td><a href="#slide13">13</a></td>
       </tr>
       
       
       <tr id="toc-row-14">
-        <th><a href="#slide14">Primitive Types</a></th>
+        <th><a href="#slide14">The PHP Syntax</a></th>
         <td><a href="#slide14">14</a></td>
       </tr>
       
       
       <tr id="toc-row-15">
-        <th><a href="#slide15">Comparison Operators</a></th>
+        <th><a href="#slide15">Primitive Types</a></th>
         <td><a href="#slide15">15</a></td>
       </tr>
       
       
       <tr id="toc-row-16">
-        <th><a href="#slide16">Operators</a></th>
+        <th><a href="#slide16">Comparison Operators</a></th>
         <td><a href="#slide16">16</a></td>
       </tr>
       
       
       <tr id="toc-row-17">
-        <th><a href="#slide17">Classes (1/2)</a></th>
+        <th><a href="#slide17">Operators</a></th>
         <td><a href="#slide17">17</a></td>
       </tr>
       
       
       <tr id="toc-row-18">
-        <th><a href="#slide18">Classes (2/2)</a></th>
+        <th><a href="#slide18">Classes (1/2)</a></th>
         <td><a href="#slide18">18</a></td>
       </tr>
       
       
       <tr id="toc-row-19">
-        <th><a href="#slide19">Visibility</a></th>
+        <th><a href="#slide19">Classes (2/2)</a></th>
         <td><a href="#slide19">19</a></td>
       </tr>
       
       
       <tr id="toc-row-20">
-        <th><a href="#slide20">Properties</a></th>
+        <th><a href="#slide20">Visibility</a></th>
         <td><a href="#slide20">20</a></td>
       </tr>
       
       
       <tr id="toc-row-21">
-        <th><a href="#slide21">Methods (1/3)</a></th>
+        <th><a href="#slide21">Properties</a></th>
         <td><a href="#slide21">21</a></td>
       </tr>
       
       
       <tr id="toc-row-22">
-        <th><a href="#slide22">Methods (2/3)</a></th>
+        <th><a href="#slide22">Methods (1/3)</a></th>
         <td><a href="#slide22">22</a></td>
       </tr>
       
       
       <tr id="toc-row-23">
-        <th><a href="#slide23">Methods (3/3)</a></th>
+        <th><a href="#slide23">Methods (2/3)</a></th>
         <td><a href="#slide23">23</a></td>
       </tr>
       
       
       <tr id="toc-row-24">
-        <th><a href="#slide24">Static Keyword</a></th>
+        <th><a href="#slide24">Methods (3/3)</a></th>
         <td><a href="#slide24">24</a></td>
       </tr>
       
       
       <tr id="toc-row-25">
-        <th><a href="#slide25">Late Static Bindings</a></th>
+        <th><a href="#slide25">Static Keyword</a></th>
         <td><a href="#slide25">25</a></td>
       </tr>
       
       
       <tr id="toc-row-26">
-        <th><a href="#slide26">Static Keyword</a></th>
+        <th><a href="#slide26">Late Static Bindings</a></th>
         <td><a href="#slide26">26</a></td>
       </tr>
       
       
       <tr id="toc-row-27">
-        <th><a href="#slide27">Interfaces</a></th>
+        <th><a href="#slide27">Static Keyword</a></th>
         <td><a href="#slide27">27</a></td>
       </tr>
       
       
       <tr id="toc-row-28">
-        <th><a href="#slide28">Namespaces</a></th>
+        <th><a href="#slide28">Variadic Functions</a></th>
         <td><a href="#slide28">28</a></td>
       </tr>
       
       
       <tr id="toc-row-29">
-        <th><a href="#slide29">The <code>class</code> Keyword</a></th>
+        <th><a href="#slide29">Interfaces</a></th>
         <td><a href="#slide29">29</a></td>
       </tr>
       
       
       <tr id="toc-row-30">
-        <th><a href="#slide30">Traits</a></th>
+        <th><a href="#slide30">Namespaces</a></th>
         <td><a href="#slide30">30</a></td>
       </tr>
       
       
       <tr id="toc-row-31">
-        <th><a href="#slide31">Anonymous Functions</a></th>
+        <th><a href="#slide31">The <code>class</code> Keyword</a></th>
         <td><a href="#slide31">31</a></td>
       </tr>
       
       
       <tr id="toc-row-32">
-        <th><a href="#slide32">Closures</a></th>
+        <th><a href="#slide32">Traits</a></th>
         <td><a href="#slide32">32</a></td>
       </tr>
       
       
       <tr id="toc-row-33">
-        <th><a href="#slide33">Magic Methods</a></th>
+        <th><a href="#slide33">Anonymous Functions</a></th>
         <td><a href="#slide33">33</a></td>
       </tr>
       
       
       <tr id="toc-row-34">
-        <th><a href="#slide34">Generators</a></th>
+        <th><a href="#slide34">Closures</a></th>
         <td><a href="#slide34">34</a></td>
       </tr>
       
       
       <tr id="toc-row-35">
-        <th><a href="#slide35">The PHP Command Line</a></th>
+        <th><a href="#slide35">Magic Methods</a></th>
         <td><a href="#slide35">35</a></td>
       </tr>
       
       
       <tr id="toc-row-36">
-        <th><a href="#slide36">The PHP Command Line (1/2)</a></th>
+        <th><a href="#slide36">Generators</a></th>
         <td><a href="#slide36">36</a></td>
       </tr>
       
       
       <tr id="toc-row-37">
-        <th><a href="#slide37">The PHP Command Line (2/2)</a></th>
+        <th><a href="#slide37">The PHP Command Line</a></th>
         <td><a href="#slide37">37</a></td>
       </tr>
       
       
       <tr id="toc-row-38">
-        <th><a href="#slide38">Writing a CLI program</a></th>
+        <th><a href="#slide38">The PHP Command Line (1/2)</a></th>
         <td><a href="#slide38">38</a></td>
       </tr>
       
       
       <tr id="toc-row-39">
-        <th><a href="#slide39">Client/Server</a></th>
+        <th><a href="#slide39">The PHP Command Line (2/2)</a></th>
         <td><a href="#slide39">39</a></td>
       </tr>
       
       
       <tr id="toc-row-40">
-        <th><a href="#slide40">Client/Server Basics</a></th>
+        <th><a href="#slide40">Writing a CLI program</a></th>
         <td><a href="#slide40">40</a></td>
       </tr>
       
       
       <tr id="toc-row-41">
-        <th><a href="#slide41">Unified Resource Identifier (URI)</a></th>
+        <th><a href="#slide41">Client/Server</a></th>
         <td><a href="#slide41">41</a></td>
       </tr>
       
       
       <tr id="toc-row-42">
-        <th><a href="#slide42">HTTP Request</a></th>
+        <th><a href="#slide42">Client/Server Basics</a></th>
         <td><a href="#slide42">42</a></td>
       </tr>
       
       
       <tr id="toc-row-43">
-        <th><a href="#slide43">HTTP Verbs</a></th>
+        <th><a href="#slide43">Unified Resource Identifier (URI)</a></th>
         <td><a href="#slide43">43</a></td>
       </tr>
       
       
       <tr id="toc-row-44">
-        <th><a href="#slide44">HTTP Response</a></th>
+        <th><a href="#slide44">HTTP Request</a></th>
         <td><a href="#slide44">44</a></td>
       </tr>
       
       
       <tr id="toc-row-45">
-        <th><a href="#slide45">Status Codes (1/2)</a></th>
+        <th><a href="#slide45">HTTP Verbs</a></th>
         <td><a href="#slide45">45</a></td>
       </tr>
       
       
       <tr id="toc-row-46">
-        <th><a href="#slide46">Status Codes (2/2)</a></th>
+        <th><a href="#slide46">HTTP Response</a></th>
         <td><a href="#slide46">46</a></td>
       </tr>
       
       
       <tr id="toc-row-47">
-        <th><a href="#slide47">HTTP Parameters (1/2)</a></th>
+        <th><a href="#slide47">Status Codes (1/2)</a></th>
         <td><a href="#slide47">47</a></td>
       </tr>
       
       
       <tr id="toc-row-48">
-        <th><a href="#slide48">HTTP Parameters (2/2)</a></th>
+        <th><a href="#slide48">Status Codes (2/2)</a></th>
         <td><a href="#slide48">48</a></td>
       </tr>
       
       
       <tr id="toc-row-49">
-        <th><a href="#slide49">REST</a></th>
+        <th><a href="#slide49">HTTP Parameters (1/2)</a></th>
         <td><a href="#slide49">49</a></td>
       </tr>
       
       
       <tr id="toc-row-50">
-        <th><a href="#slide50">REpresentational State Transfer</a></th>
+        <th><a href="#slide50">HTTP Parameters (2/2)</a></th>
         <td><a href="#slide50">50</a></td>
       </tr>
       
       
       <tr id="toc-row-51">
-        <th><a href="#slide51">Richardson Maturity Model</a></th>
+        <th><a href="#slide51">REST</a></th>
         <td><a href="#slide51">51</a></td>
       </tr>
       
       
       <tr id="toc-row-52">
-        <th><a href="#slide52">Level 0 - The Swamp of POX</a></th>
+        <th><a href="#slide52">REpresentational State Transfer</a></th>
         <td><a href="#slide52">52</a></td>
       </tr>
       
       
       <tr id="toc-row-53">
-        <th><a href="#slide53">Level 1 - Resources</a></th>
+        <th><a href="#slide53">Richardson Maturity Model</a></th>
         <td><a href="#slide53">53</a></td>
       </tr>
       
       
       <tr id="toc-row-54">
-        <th><a href="#slide54">Level 2 - HTTP Verbs</a></th>
+        <th><a href="#slide54">Level 0 - The Swamp of POX</a></th>
         <td><a href="#slide54">54</a></td>
       </tr>
       
       
       <tr id="toc-row-55">
-        <th><a href="#slide55">Level 3 - Hypermedia Controls</a></th>
+        <th><a href="#slide55">Level 1 - Resources</a></th>
         <td><a href="#slide55">55</a></td>
       </tr>
       
       
       <tr id="toc-row-56">
-        <th><a href="#slide56">Level 3 = Content Negotiation + HATEOAS</a></th>
+        <th><a href="#slide56">Level 2 - HTTP Verbs</a></th>
         <td><a href="#slide56">56</a></td>
       </tr>
       
       
       <tr id="toc-row-57">
-        <th><a href="#slide57">Media Types</a></th>
+        <th><a href="#slide57">Level 3 - Hypermedia Controls</a></th>
         <td><a href="#slide57">57</a></td>
       </tr>
       
       
       <tr id="toc-row-58">
-        <th><a href="#slide58">Content Type Negotiation</a></th>
+        <th><a href="#slide58">Level 3 = Content Negotiation + HATEOAS</a></th>
         <td><a href="#slide58">58</a></td>
       </tr>
       
       
       <tr id="toc-row-59">
-        <th><a href="#slide59">HATEOAS</a></th>
+        <th><a href="#slide59">Media Types</a></th>
         <td><a href="#slide59">59</a></td>
       </tr>
       
       
       <tr id="toc-row-60">
-        <th><a href="#slide60">PHP Autoloading</a></th>
+        <th><a href="#slide60">Content Type Negotiation</a></th>
         <td><a href="#slide60">60</a></td>
       </tr>
       
       
       <tr id="toc-row-61">
-        <th><a href="#slide61">Why Is It Necessary?</a></th>
+        <th><a href="#slide61">HATEOAS</a></th>
         <td><a href="#slide61">61</a></td>
       </tr>
       
       
       <tr id="toc-row-62">
-        <th><a href="#slide62">The <code>require()</code> Way</a></th>
+        <th><a href="#slide62">PHP Autoloading</a></th>
         <td><a href="#slide62">62</a></td>
       </tr>
       
       
       <tr id="toc-row-63">
-        <th><a href="#slide63">The <code>require_once()</code> Way</a></th>
+        <th><a href="#slide63">Why Is It Necessary?</a></th>
         <td><a href="#slide63">63</a></td>
       </tr>
       
       
       <tr id="toc-row-64">
-        <th><a href="#slide64">Working With Multiple Files</a></th>
+        <th><a href="#slide64">The <code>require()</code> Way</a></th>
         <td><a href="#slide64">64</a></td>
       </tr>
       
       
       <tr id="toc-row-65">
-        <th><a href="#slide65">Rethinking The Way You Load Classes</a></th>
+        <th><a href="#slide65">The <code>require_once()</code> Way</a></th>
         <td><a href="#slide65">65</a></td>
       </tr>
       
       
       <tr id="toc-row-66">
-        <th><a href="#slide66">Examples</a></th>
+        <th><a href="#slide66">Working With Multiple Files</a></th>
         <td><a href="#slide66">66</a></td>
       </tr>
       
       
       <tr id="toc-row-67">
-        <th><a href="#slide67">Under The Hood</a></th>
+        <th><a href="#slide67">Rethinking The Way You Load Classes</a></th>
         <td><a href="#slide67">67</a></td>
       </tr>
       
       
       <tr id="toc-row-68">
-        <th><a href="#slide68">Leveraging PHP APIs</a></th>
+        <th><a href="#slide68">Examples</a></th>
         <td><a href="#slide68">68</a></td>
       </tr>
       
       
       <tr id="toc-row-69">
-        <th><a href="#slide69">Built-in Interfaces</a></th>
+        <th><a href="#slide69">Under The Hood</a></th>
         <td><a href="#slide69">69</a></td>
       </tr>
       
       
       <tr id="toc-row-70">
-        <th><a href="#slide70">The Reflection API (1/2)</a></th>
+        <th><a href="#slide70">Leveraging PHP APIs</a></th>
         <td><a href="#slide70">70</a></td>
       </tr>
       
       
       <tr id="toc-row-71">
-        <th><a href="#slide71">The Reflection API (2/2)</a></th>
+        <th><a href="#slide71">Built-in Interfaces</a></th>
         <td><a href="#slide71">71</a></td>
       </tr>
       
       
       <tr id="toc-row-72">
-        <th><a href="#slide72">The Standard PHP Library (SPL)</a></th>
+        <th><a href="#slide72">The Reflection API (1/2)</a></th>
         <td><a href="#slide72">72</a></td>
       </tr>
       
       
       <tr id="toc-row-73">
-        <th><a href="#slide73">Observer Pattern (1/2)</a></th>
+        <th><a href="#slide73">The Reflection API (2/2)</a></th>
         <td><a href="#slide73">73</a></td>
       </tr>
       
       
       <tr id="toc-row-74">
-        <th><a href="#slide74">Observer Pattern (2/2)</a></th>
+        <th><a href="#slide74">The Standard PHP Library (SPL)</a></th>
         <td><a href="#slide74">74</a></td>
       </tr>
       
       
       <tr id="toc-row-75">
-        <th><a href="#slide75">Exceptions (1/2)</a></th>
+        <th><a href="#slide75">Observer Pattern (1/2)</a></th>
         <td><a href="#slide75">75</a></td>
       </tr>
       
       
       <tr id="toc-row-76">
-        <th><a href="#slide76">Exceptions (2/2)</a></th>
+        <th><a href="#slide76">Observer Pattern (2/2)</a></th>
         <td><a href="#slide76">76</a></td>
       </tr>
       
       
       <tr id="toc-row-77">
-        <th><a href="#slide77">Password Hashing</a></th>
+        <th><a href="#slide77">Exceptions (1/2)</a></th>
         <td><a href="#slide77">77</a></td>
       </tr>
       
       
       <tr id="toc-row-78">
-        <th><a href="#slide78">PHP Archive (PHAR)</a></th>
+        <th><a href="#slide78">Exceptions (2/2)</a></th>
         <td><a href="#slide78">78</a></td>
       </tr>
       
       
       <tr id="toc-row-79">
-        <th><a href="#slide79">Dependency Management</a></th>
+        <th><a href="#slide79">Password Hashing</a></th>
         <td><a href="#slide79">79</a></td>
       </tr>
       
       
       <tr id="toc-row-80">
-        <th><a href="#slide80">Composer</a></th>
+        <th><a href="#slide80">PHP Archive (PHAR)</a></th>
         <td><a href="#slide80">80</a></td>
       </tr>
       
       
       <tr id="toc-row-81">
-        <th><a href="#slide81"><code>composer install</code></a></th>
+        <th><a href="#slide81">Dependency Management</a></th>
         <td><a href="#slide81">81</a></td>
       </tr>
       
       
       <tr id="toc-row-82">
-        <th><a href="#slide82">Composer Autoloader</a></th>
+        <th><a href="#slide82">Composer</a></th>
         <td><a href="#slide82">82</a></td>
       </tr>
       
       
       <tr id="toc-row-83">
-        <th><a href="#slide83">Example</a></th>
+        <th><a href="#slide83"><code>composer install</code></a></th>
         <td><a href="#slide83">83</a></td>
       </tr>
       
       
       <tr id="toc-row-84">
-        <th><a href="#slide84">The Symfony2 Console Component</a></th>
+        <th><a href="#slide84">Composer Autoloader</a></th>
         <td><a href="#slide84">84</a></td>
       </tr>
       
       
       <tr id="toc-row-85">
-        <th><a href="#slide85">A Basic Command (1/2)</a></th>
+        <th><a href="#slide85">Example</a></th>
         <td><a href="#slide85">85</a></td>
       </tr>
       
       
       <tr id="toc-row-86">
-        <th><a href="#slide86">A Basic Command (2/2)</a></th>
+        <th><a href="#slide86">The Symfony2 Console Component</a></th>
         <td><a href="#slide86">86</a></td>
       </tr>
       
       
       <tr id="toc-row-87">
-        <th><a href="#slide87">Model View Controller</a></th>
+        <th><a href="#slide87">A Basic Command (1/2)</a></th>
         <td><a href="#slide87">87</a></td>
       </tr>
       
       
       <tr id="toc-row-88">
-        <th><a href="#slide88">MVC Overview</a></th>
+        <th><a href="#slide88">A Basic Command (2/2)</a></th>
         <td><a href="#slide88">88</a></td>
       </tr>
       
       
       <tr id="toc-row-89">
-        <th><a href="#slide89">The Model</a></th>
+        <th><a href="#slide89">Model View Controller</a></th>
         <td><a href="#slide89">89</a></td>
       </tr>
       
       
       <tr id="toc-row-90">
-        <th><a href="#slide90">The View</a></th>
+        <th><a href="#slide90">MVC Overview</a></th>
         <td><a href="#slide90">90</a></td>
       </tr>
       
       
       <tr id="toc-row-91">
-        <th><a href="#slide91">The View</a></th>
+        <th><a href="#slide91">The Model</a></th>
         <td><a href="#slide91">91</a></td>
       </tr>
       
@@ -11205,61 +11293,61 @@ business-model, libraries and application low-level code.</p>
       
       
       <tr id="toc-row-93">
-        <th><a href="#slide93">The Controller</a></th>
+        <th><a href="#slide93">The View</a></th>
         <td><a href="#slide93">93</a></td>
       </tr>
       
       
       <tr id="toc-row-94">
-        <th><a href="#slide94">Routing</a></th>
+        <th><a href="#slide94">The View</a></th>
         <td><a href="#slide94">94</a></td>
       </tr>
       
       
       <tr id="toc-row-95">
-        <th><a href="#slide95">Front Controller Pattern</a></th>
+        <th><a href="#slide95">The Controller</a></th>
         <td><a href="#slide95">95</a></td>
       </tr>
       
       
       <tr id="toc-row-96">
-        <th><a href="#slide96">Databases</a></th>
+        <th><a href="#slide96">Routing</a></th>
         <td><a href="#slide96">96</a></td>
       </tr>
       
       
       <tr id="toc-row-97">
-        <th><a href="#slide97">Agenda</a></th>
+        <th><a href="#slide97">Front Controller Pattern</a></th>
         <td><a href="#slide97">97</a></td>
       </tr>
       
       
       <tr id="toc-row-98">
-        <th><a href="#slide98">Quick note</a></th>
+        <th><a href="#slide98">Databases</a></th>
         <td><a href="#slide98">98</a></td>
       </tr>
       
       
       <tr id="toc-row-99">
-        <th><a href="#slide99">Database Design Patterns</a></th>
+        <th><a href="#slide99">Agenda</a></th>
         <td><a href="#slide99">99</a></td>
       </tr>
       
       
       <tr id="toc-row-100">
-        <th><a href="#slide100">Row Data Gateway <img alt="" src="../images/row-data-gateway.png" /></a></th>
+        <th><a href="#slide100">Quick note</a></th>
         <td><a href="#slide100">100</a></td>
       </tr>
       
       
       <tr id="toc-row-101">
-        <th><a href="#slide101">Row Data Gateway</a></th>
+        <th><a href="#slide101">Database Design Patterns</a></th>
         <td><a href="#slide101">101</a></td>
       </tr>
       
       
       <tr id="toc-row-102">
-        <th><a href="#slide102">Row Data Gateway</a></th>
+        <th><a href="#slide102">Row Data Gateway <img alt="" src="../images/row-data-gateway.png" /></a></th>
         <td><a href="#slide102">102</a></td>
       </tr>
       
@@ -11271,19 +11359,19 @@ business-model, libraries and application low-level code.</p>
       
       
       <tr id="toc-row-104">
-        <th><a href="#slide104">Table Data Gateway <img alt="" src="../images/table-data-gateway.png" /></a></th>
+        <th><a href="#slide104">Row Data Gateway</a></th>
         <td><a href="#slide104">104</a></td>
       </tr>
       
       
       <tr id="toc-row-105">
-        <th><a href="#slide105">Table Data Gateway</a></th>
+        <th><a href="#slide105">Row Data Gateway</a></th>
         <td><a href="#slide105">105</a></td>
       </tr>
       
       
       <tr id="toc-row-106">
-        <th><a href="#slide106">Table Data Gateway</a></th>
+        <th><a href="#slide106">Table Data Gateway <img alt="" src="../images/table-data-gateway.png" /></a></th>
         <td><a href="#slide106">106</a></td>
       </tr>
       
@@ -11313,61 +11401,61 @@ business-model, libraries and application low-level code.</p>
       
       
       <tr id="toc-row-111">
-        <th><a href="#slide111">Active Record <img alt="" src="../images/active-record.png" /></a></th>
+        <th><a href="#slide111">Table Data Gateway</a></th>
         <td><a href="#slide111">111</a></td>
       </tr>
       
       
       <tr id="toc-row-112">
-        <th><a href="#slide112">Active Record</a></th>
+        <th><a href="#slide112">Table Data Gateway</a></th>
         <td><a href="#slide112">112</a></td>
       </tr>
       
       
       <tr id="toc-row-113">
-        <th><a href="#slide113">Active Record</a></th>
+        <th><a href="#slide113">Active Record <img alt="" src="../images/active-record.png" /></a></th>
         <td><a href="#slide113">113</a></td>
       </tr>
       
       
       <tr id="toc-row-114">
-        <th><a href="#slide114">Data Mapper <img alt="" src="../images/data-mapper.png" /></a></th>
+        <th><a href="#slide114">Active Record</a></th>
         <td><a href="#slide114">114</a></td>
       </tr>
       
       
       <tr id="toc-row-115">
-        <th><a href="#slide115">Data Mapper</a></th>
+        <th><a href="#slide115">Active Record</a></th>
         <td><a href="#slide115">115</a></td>
       </tr>
       
       
       <tr id="toc-row-116">
-        <th><a href="#slide116">Data Mapper</a></th>
+        <th><a href="#slide116">Data Mapper <img alt="" src="../images/data-mapper.png" /></a></th>
         <td><a href="#slide116">116</a></td>
       </tr>
       
       
       <tr id="toc-row-117">
-        <th><a href="#slide117">Identity Map <img alt="" src="../images/identity-map.png" /></a></th>
+        <th><a href="#slide117">Data Mapper</a></th>
         <td><a href="#slide117">117</a></td>
       </tr>
       
       
       <tr id="toc-row-118">
-        <th><a href="#slide118">Identity Map</a></th>
+        <th><a href="#slide118">Data Mapper</a></th>
         <td><a href="#slide118">118</a></td>
       </tr>
       
       
       <tr id="toc-row-119">
-        <th><a href="#slide119">Data Access Layer</a></th>
+        <th><a href="#slide119">Identity Map <img alt="" src="../images/identity-map.png" /></a></th>
         <td><a href="#slide119">119</a></td>
       </tr>
       
       
       <tr id="toc-row-120">
-        <th><a href="#slide120">Data Access Layer / Data Source Name</a></th>
+        <th><a href="#slide120">Identity Map</a></th>
         <td><a href="#slide120">120</a></td>
       </tr>
       
@@ -11379,7 +11467,7 @@ business-model, libraries and application low-level code.</p>
       
       
       <tr id="toc-row-122">
-        <th><a href="#slide122">Data Access Layer</a></th>
+        <th><a href="#slide122">Data Access Layer / Data Source Name</a></th>
         <td><a href="#slide122">122</a></td>
       </tr>
       
@@ -11391,277 +11479,277 @@ business-model, libraries and application low-level code.</p>
       
       
       <tr id="toc-row-124">
-        <th><a href="#slide124">Object Relational Mapping</a></th>
+        <th><a href="#slide124">Data Access Layer</a></th>
         <td><a href="#slide124">124</a></td>
       </tr>
       
       
       <tr id="toc-row-125">
-        <th><a href="#slide125">Object Relational Mapping (1/4)</a></th>
+        <th><a href="#slide125">Data Access Layer</a></th>
         <td><a href="#slide125">125</a></td>
       </tr>
       
       
       <tr id="toc-row-126">
-        <th><a href="#slide126">Object Relational Mapping (2/4)</a></th>
+        <th><a href="#slide126">Object Relational Mapping</a></th>
         <td><a href="#slide126">126</a></td>
       </tr>
       
       
       <tr id="toc-row-127">
-        <th><a href="#slide127">Object Relational Mapping (3/4)</a></th>
+        <th><a href="#slide127">Object Relational Mapping (1/4)</a></th>
         <td><a href="#slide127">127</a></td>
       </tr>
       
       
       <tr id="toc-row-128">
-        <th><a href="#slide128">Object Relational Mapping (4/4)</a></th>
+        <th><a href="#slide128">Object Relational Mapping (2/4)</a></th>
         <td><a href="#slide128">128</a></td>
       </tr>
       
       
       <tr id="toc-row-129">
-        <th><a href="#slide129">Existing Components</a></th>
+        <th><a href="#slide129">Object Relational Mapping (3/4)</a></th>
         <td><a href="#slide129">129</a></td>
       </tr>
       
       
       <tr id="toc-row-130">
-        <th><a href="#slide130">A Note About<br>Domain-Driven Design</a></th>
+        <th><a href="#slide130">Object Relational Mapping (4/4)</a></th>
         <td><a href="#slide130">130</a></td>
       </tr>
       
       
       <tr id="toc-row-131">
-        <th><a href="#slide131">Entities</a></th>
+        <th><a href="#slide131">Existing Components</a></th>
         <td><a href="#slide131">131</a></td>
       </tr>
       
       
       <tr id="toc-row-132">
-        <th><a href="#slide132">Value Objects</a></th>
+        <th><a href="#slide132">A Note About<br>Domain-Driven Design</a></th>
         <td><a href="#slide132">132</a></td>
       </tr>
       
       
       <tr id="toc-row-133">
-        <th><a href="#slide133">The Repository Pattern <img alt="" src="../images/repository.gif" /></a></th>
+        <th><a href="#slide133">Entities</a></th>
         <td><a href="#slide133">133</a></td>
       </tr>
       
       
       <tr id="toc-row-134">
-        <th><a href="#slide134">The Repository Pattern</a></th>
+        <th><a href="#slide134">Value Objects</a></th>
         <td><a href="#slide134">134</a></td>
       </tr>
       
       
       <tr id="toc-row-135">
-        <th><a href="#slide135">The Repository Pattern</a></th>
+        <th><a href="#slide135">The Repository Pattern <img alt="" src="../images/repository.gif" /></a></th>
         <td><a href="#slide135">135</a></td>
       </tr>
       
       
       <tr id="toc-row-136">
-        <th><a href="#slide136">The Specification Pattern <img alt="" src="../images/specification.png" /></a></th>
+        <th><a href="#slide136">The Repository Pattern</a></th>
         <td><a href="#slide136">136</a></td>
       </tr>
       
       
       <tr id="toc-row-137">
-        <th><a href="#slide137">The Specification Pattern</a></th>
+        <th><a href="#slide137">The Repository Pattern</a></th>
         <td><a href="#slide137">137</a></td>
       </tr>
       
       
       <tr id="toc-row-138">
-        <th><a href="#slide138">Repository &hearts; Specification</a></th>
+        <th><a href="#slide138">The Specification Pattern <img alt="" src="../images/specification.png" /></a></th>
         <td><a href="#slide138">138</a></td>
       </tr>
       
       
       <tr id="toc-row-139">
-        <th><a href="#slide139">Combine Them!</a></th>
+        <th><a href="#slide139">The Specification Pattern</a></th>
         <td><a href="#slide139">139</a></td>
       </tr>
       
       
       <tr id="toc-row-140">
-        <th><a href="#slide140">Combine Them!</a></th>
+        <th><a href="#slide140">Repository &hearts; Specification</a></th>
         <td><a href="#slide140">140</a></td>
       </tr>
       
       
       <tr id="toc-row-141">
-        <th><a href="#slide141">Specification For Business Rules</a></th>
+        <th><a href="#slide141">Combine Them!</a></th>
         <td><a href="#slide141">141</a></td>
       </tr>
       
       
       <tr id="toc-row-142">
-        <th><a href="#slide142">Sessions</a></th>
+        <th><a href="#slide142">Combine Them!</a></th>
         <td><a href="#slide142">142</a></td>
       </tr>
       
       
       <tr id="toc-row-143">
-        <th><a href="#slide143">Overview</a></th>
+        <th><a href="#slide143">Specification For Business Rules</a></th>
         <td><a href="#slide143">143</a></td>
       </tr>
       
       
       <tr id="toc-row-144">
-        <th><a href="#slide144">Code Please</a></th>
+        <th><a href="#slide144">Sessions</a></th>
         <td><a href="#slide144">144</a></td>
       </tr>
       
       
       <tr id="toc-row-145">
-        <th><a href="#slide145">Security Concerns</a></th>
+        <th><a href="#slide145">Overview</a></th>
         <td><a href="#slide145">145</a></td>
       </tr>
       
       
       <tr id="toc-row-146">
-        <th><a href="#slide146">Session Configuration</a></th>
+        <th><a href="#slide146">Code Please</a></th>
         <td><a href="#slide146">146</a></td>
       </tr>
       
       
       <tr id="toc-row-147">
-        <th><a href="#slide147">Authentication</a></th>
+        <th><a href="#slide147">Security Concerns</a></th>
         <td><a href="#slide147">147</a></td>
       </tr>
       
       
       <tr id="toc-row-148">
-        <th><a href="#slide148">What You Have Right Now</a></th>
+        <th><a href="#slide148">Session Configuration</a></th>
         <td><a href="#slide148">148</a></td>
       </tr>
       
       
       <tr id="toc-row-149">
-        <th><a href="#slide149">The Big Picture</a></th>
+        <th><a href="#slide149">Authentication</a></th>
         <td><a href="#slide149">149</a></td>
       </tr>
       
       
       <tr id="toc-row-150">
-        <th><a href="#slide150">The Interceptor Pattern</a></th>
+        <th><a href="#slide150">What You Have Right Now</a></th>
         <td><a href="#slide150">150</a></td>
       </tr>
       
       
       <tr id="toc-row-151">
-        <th><a href="#slide151">Introducing the Event Dispatcher</a></th>
+        <th><a href="#slide151">The Big Picture</a></th>
         <td><a href="#slide151">151</a></td>
       </tr>
       
       
       <tr id="toc-row-152">
-        <th><a href="#slide152">Using the EventDispatcherTrait</a></th>
+        <th><a href="#slide152">The Interceptor Pattern</a></th>
         <td><a href="#slide152">152</a></td>
       </tr>
       
       
       <tr id="toc-row-153">
-        <th><a href="#slide153">The Firewall (1/2)</a></th>
+        <th><a href="#slide153">Introducing the Event Dispatcher</a></th>
         <td><a href="#slide153">153</a></td>
       </tr>
       
       
       <tr id="toc-row-154">
-        <th><a href="#slide154">The Firewall (2/2)</a></th>
+        <th><a href="#slide154">Using the EventDispatcherTrait</a></th>
         <td><a href="#slide154">154</a></td>
       </tr>
       
       
       <tr id="toc-row-155">
-        <th><a href="#slide155">Implementing The Firewall</a></th>
+        <th><a href="#slide155">The Firewall (1/2)</a></th>
         <td><a href="#slide155">155</a></td>
       </tr>
       
       
       <tr id="toc-row-156">
-        <th><a href="#slide156">Authentication Mechanism</a></th>
+        <th><a href="#slide156">The Firewall (2/2)</a></th>
         <td><a href="#slide156">156</a></td>
       </tr>
       
       
       <tr id="toc-row-157">
-        <th><a href="#slide157">Adding New Routes</a></th>
+        <th><a href="#slide157">Implementing The Firewall</a></th>
         <td><a href="#slide157">157</a></td>
       </tr>
       
       
       <tr id="toc-row-158">
-        <th><a href="#slide158">Stateless Authentication</a></th>
+        <th><a href="#slide158">Authentication Mechanism</a></th>
         <td><a href="#slide158">158</a></td>
       </tr>
       
       
       <tr id="toc-row-159">
-        <th><a href="#slide159">Basic Security Thinking</a></th>
+        <th><a href="#slide159">Adding New Routes</a></th>
         <td><a href="#slide159">159</a></td>
       </tr>
       
       
       <tr id="toc-row-160">
-        <th><a href="#slide160">Writing Better Code</a></th>
+        <th><a href="#slide160">Stateless Authentication</a></th>
         <td><a href="#slide160">160</a></td>
       </tr>
       
       
       <tr id="toc-row-161">
-        <th><a href="#slide161">Agenda</a></th>
+        <th><a href="#slide161">Basic Security Thinking</a></th>
         <td><a href="#slide161">161</a></td>
       </tr>
       
       
       <tr id="toc-row-162">
-        <th><a href="#slide162">Coding Standards</a></th>
+        <th><a href="#slide162">Writing Better Code</a></th>
         <td><a href="#slide162">162</a></td>
       </tr>
       
       
       <tr id="toc-row-163">
-        <th><a href="#slide163">PHP Coding Standards Fixer</a></th>
+        <th><a href="#slide163">Agenda</a></th>
         <td><a href="#slide163">163</a></td>
       </tr>
       
       
       <tr id="toc-row-164">
-        <th><a href="#slide164">Programming To The Interface</a></th>
+        <th><a href="#slide164">Coding Standards</a></th>
         <td><a href="#slide164">164</a></td>
       </tr>
       
       
       <tr id="toc-row-165">
-        <th><a href="#slide165">Dependency Inversion Principle (DIP)</a></th>
+        <th><a href="#slide165">PHP Coding Standards Fixer</a></th>
         <td><a href="#slide165">165</a></td>
       </tr>
       
       
       <tr id="toc-row-166">
-        <th><a href="#slide166">Dependency Injection (DI)</a></th>
+        <th><a href="#slide166">Programming To The Interface</a></th>
         <td><a href="#slide166">166</a></td>
       </tr>
       
       
       <tr id="toc-row-167">
-        <th><a href="#slide167">Dependency Injection (Anti) Pattern</a></th>
+        <th><a href="#slide167">Dependency Inversion Principle (DIP)</a></th>
         <td><a href="#slide167">167</a></td>
       </tr>
       
       
       <tr id="toc-row-168">
-        <th><a href="#slide168">Dependency Injection Patterns</a></th>
+        <th><a href="#slide168">Dependency Injection (DI)</a></th>
         <td><a href="#slide168">168</a></td>
       </tr>
       
       
       <tr id="toc-row-169">
-        <th><a href="#slide169">Dependency Injection Patterns</a></th>
+        <th><a href="#slide169">Dependency Injection (Anti) Pattern</a></th>
         <td><a href="#slide169">169</a></td>
       </tr>
       
@@ -11673,67 +11761,79 @@ business-model, libraries and application low-level code.</p>
       
       
       <tr id="toc-row-171">
-        <th><a href="#slide171">Inversion of Control (IoC)</a></th>
+        <th><a href="#slide171">Dependency Injection Patterns</a></th>
         <td><a href="#slide171">171</a></td>
       </tr>
       
       
       <tr id="toc-row-172">
-        <th><a href="#slide172">Dependency Injection Container (DIC)</a></th>
+        <th><a href="#slide172">Dependency Injection Patterns</a></th>
         <td><a href="#slide172">172</a></td>
       </tr>
       
       
       <tr id="toc-row-173">
-        <th><a href="#slide173">PHP Implementations</a></th>
+        <th><a href="#slide173">Inversion of Control (IoC)</a></th>
         <td><a href="#slide173">173</a></td>
       </tr>
       
       
       <tr id="toc-row-174">
-        <th><a href="#slide174">PHP Implementations</a></th>
+        <th><a href="#slide174">Dependency Injection Container (DIC)</a></th>
         <td><a href="#slide174">174</a></td>
       </tr>
       
       
       <tr id="toc-row-175">
-        <th><a href="#slide175">Component Driven Development</a></th>
+        <th><a href="#slide175">PHP Implementations</a></th>
         <td><a href="#slide175">175</a></td>
       </tr>
       
       
       <tr id="toc-row-176">
-        <th><a href="#slide176">From STUPID to SOLID code! (1/2)</a></th>
+        <th><a href="#slide176">PHP Implementations</a></th>
         <td><a href="#slide176">176</a></td>
       </tr>
       
       
       <tr id="toc-row-177">
-        <th><a href="#slide177">From STUPID to SOLID code! (2/2)</a></th>
+        <th><a href="#slide177">Component Driven Development</a></th>
         <td><a href="#slide177">177</a></td>
       </tr>
       
       
       <tr id="toc-row-178">
-        <th><a href="#slide178">Object Calisthenics</a></th>
+        <th><a href="#slide178">From STUPID to SOLID code! (1/2)</a></th>
         <td><a href="#slide178">178</a></td>
       </tr>
       
       
       <tr id="toc-row-179">
-        <th><a href="#slide179">-</a></th>
+        <th><a href="#slide179">From STUPID to SOLID code! (2/2)</a></th>
         <td><a href="#slide179">179</a></td>
       </tr>
       
       
       <tr id="toc-row-180">
-        <th><a href="#slide180">Testing</a></th>
+        <th><a href="#slide180">Object Calisthenics</a></th>
         <td><a href="#slide180">180</a></td>
       </tr>
       
       
       <tr id="toc-row-181">
-        <th><a href="#slide181">
+        <th><a href="#slide181">-</a></th>
+        <td><a href="#slide181">181</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-182">
+        <th><a href="#slide182">Testing</a></th>
+        <td><a href="#slide182">182</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-183">
+        <th><a href="#slide183">
 <center>
 <blockquote class="no-before-icon twitter-tweet" lang="en"><p>I don&#39;t need tests: tests are
 for people who write bugs.</p>&mdash; Hipster Hacker (@hipsterhacker) <a
@@ -11742,199 +11842,199 @@ href="https://twitter.com/hipsterhacker/statuses/396352411754717184">November 1,
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 </center>
 </a></th>
-        <td><a href="#slide181">181</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-182">
-        <th><a href="#slide182">Agenda</a></th>
-        <td><a href="#slide182">182</a></td>
-      </tr>
-      
-      
-      <tr id="toc-row-183">
-        <th><a href="#slide183">Unit Testing</a></th>
         <td><a href="#slide183">183</a></td>
       </tr>
       
       
       <tr id="toc-row-184">
-        <th><a href="#slide184">Unit Testing</a></th>
+        <th><a href="#slide184">Agenda</a></th>
         <td><a href="#slide184">184</a></td>
       </tr>
       
       
       <tr id="toc-row-185">
-        <th><a href="#slide185">PHPUnit — The Rules</a></th>
+        <th><a href="#slide185">Unit Testing</a></th>
         <td><a href="#slide185">185</a></td>
       </tr>
       
       
       <tr id="toc-row-186">
-        <th><a href="#slide186">PHPUnit — Assertions</a></th>
+        <th><a href="#slide186">Unit Testing</a></th>
         <td><a href="#slide186">186</a></td>
       </tr>
       
       
       <tr id="toc-row-187">
-        <th><a href="#slide187">Running PHPUnit</a></th>
+        <th><a href="#slide187">PHPUnit — The Rules</a></th>
         <td><a href="#slide187">187</a></td>
       </tr>
       
       
       <tr id="toc-row-188">
-        <th><a href="#slide188">Test Double</a></th>
+        <th><a href="#slide188">PHPUnit — Assertions</a></th>
         <td><a href="#slide188">188</a></td>
       </tr>
       
       
       <tr id="toc-row-189">
-        <th><a href="#slide189">Functional Testing</a></th>
+        <th><a href="#slide189">Running PHPUnit</a></th>
         <td><a href="#slide189">189</a></td>
       </tr>
       
       
       <tr id="toc-row-190">
-        <th><a href="#slide190">Functional Testing</a></th>
+        <th><a href="#slide190">Test Double</a></th>
         <td><a href="#slide190">190</a></td>
       </tr>
       
       
       <tr id="toc-row-191">
-        <th><a href="#slide191">Behavior Driven Development</a></th>
+        <th><a href="#slide191">Functional Testing</a></th>
         <td><a href="#slide191">191</a></td>
       </tr>
       
       
       <tr id="toc-row-192">
-        <th><a href="#slide192">Behavior Driven Development</a></th>
+        <th><a href="#slide192">Functional Testing</a></th>
         <td><a href="#slide192">192</a></td>
       </tr>
       
       
       <tr id="toc-row-193">
-        <th><a href="#slide193">Behat</a></th>
+        <th><a href="#slide193">Behavior Driven Development</a></th>
         <td><a href="#slide193">193</a></td>
       </tr>
       
       
       <tr id="toc-row-194">
-        <th><a href="#slide194">Using Behat (1/2)</a></th>
+        <th><a href="#slide194">Behavior Driven Development</a></th>
         <td><a href="#slide194">194</a></td>
       </tr>
       
       
       <tr id="toc-row-195">
-        <th><a href="#slide195">Using Behat (2/2)</a></th>
+        <th><a href="#slide195">Behat</a></th>
         <td><a href="#slide195">195</a></td>
       </tr>
       
       
       <tr id="toc-row-196">
-        <th><a href="#slide196">Awesome Projects</a></th>
+        <th><a href="#slide196">Using Behat (1/2)</a></th>
         <td><a href="#slide196">196</a></td>
       </tr>
       
       
       <tr id="toc-row-197">
-        <th><a href="#slide197">Assert</a></th>
+        <th><a href="#slide197">Using Behat (2/2)</a></th>
         <td><a href="#slide197">197</a></td>
       </tr>
       
       
       <tr id="toc-row-198">
-        <th><a href="#slide198">Carbon</a></th>
+        <th><a href="#slide198">Awesome Projects</a></th>
         <td><a href="#slide198">198</a></td>
       </tr>
       
       
       <tr id="toc-row-199">
-        <th><a href="#slide199">Faker</a></th>
+        <th><a href="#slide199">Assert</a></th>
         <td><a href="#slide199">199</a></td>
       </tr>
       
       
       <tr id="toc-row-200">
-        <th><a href="#slide200">Flysystem</a></th>
+        <th><a href="#slide200">Carbon</a></th>
         <td><a href="#slide200">200</a></td>
       </tr>
       
       
       <tr id="toc-row-201">
-        <th><a href="#slide201">Mockery</a></th>
+        <th><a href="#slide201">Faker</a></th>
         <td><a href="#slide201">201</a></td>
       </tr>
       
       
       <tr id="toc-row-202">
-        <th><a href="#slide202">Option Type for PHP</a></th>
+        <th><a href="#slide202">Flysystem</a></th>
         <td><a href="#slide202">202</a></td>
       </tr>
       
       
       <tr id="toc-row-203">
-        <th><a href="#slide203">PHP-Parser</a></th>
+        <th><a href="#slide203">Mockery</a></th>
         <td><a href="#slide203">203</a></td>
       </tr>
       
       
       <tr id="toc-row-204">
-        <th><a href="#slide204"><br><img alt="React" src="../images/react.png" /></a></th>
+        <th><a href="#slide204">Option Type for PHP</a></th>
         <td><a href="#slide204">204</a></td>
       </tr>
       
       
       <tr id="toc-row-205">
-        <th><a href="#slide205">Swiftmailer</a></th>
+        <th><a href="#slide205">PHP-Parser</a></th>
         <td><a href="#slide205">205</a></td>
       </tr>
       
       
       <tr id="toc-row-206">
-        <th><a href="#slide206">Whoops</a></th>
+        <th><a href="#slide206"><br><img alt="React" src="../images/react.png" /></a></th>
         <td><a href="#slide206">206</a></td>
       </tr>
       
       
       <tr id="toc-row-207">
-        <th><a href="#slide207">Embracing Open Source</a></th>
+        <th><a href="#slide207">Swiftmailer</a></th>
         <td><a href="#slide207">207</a></td>
       </tr>
       
       
       <tr id="toc-row-208">
-        <th><a href="#slide208"><img alt="" src="../images/github.png" /></a></th>
+        <th><a href="#slide208">Whoops</a></th>
         <td><a href="#slide208">208</a></td>
       </tr>
       
       
       <tr id="toc-row-209">
-        <th><a href="#slide209"><img alt="" src="../images/gifts.jpg" /></a></th>
+        <th><a href="#slide209">Embracing Open Source</a></th>
         <td><a href="#slide209">209</a></td>
       </tr>
       
       
       <tr id="toc-row-210">
-        <th><a href="#slide210"><img alt="" src="../images/travis-ci.png" /></a></th>
+        <th><a href="#slide210"><img alt="" src="../images/github.png" /></a></th>
         <td><a href="#slide210">210</a></td>
       </tr>
       
       
       <tr id="toc-row-211">
-        <th><a href="#slide211">Golden Rules</a></th>
+        <th><a href="#slide211"><img alt="" src="../images/gifts.jpg" /></a></th>
         <td><a href="#slide211">211</a></td>
       </tr>
       
       
       <tr id="toc-row-212">
-        <th><a href="#slide212">The End.</a></th>
+        <th><a href="#slide212"><img alt="" src="../images/travis-ci.png" /></a></th>
         <td><a href="#slide212">212</a></td>
       </tr>
       
       
       <tr id="toc-row-213">
-        <th><a href="#slide213">Well... Maybe Not.<br><a href="extended.html">PHP Extended</a></a></th>
+        <th><a href="#slide213">Golden Rules</a></th>
         <td><a href="#slide213">213</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-214">
+        <th><a href="#slide214">The End.</a></th>
+        <td><a href="#slide214">214</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-215">
+        <th><a href="#slide215">Well... Maybe Not.<br><a href="extended.html">PHP Extended</a></a></th>
+        <td><a href="#slide215">215</a></td>
       </tr>
       
       
