@@ -40,6 +40,11 @@ And 3 **pseudo** types: `mixed`, `number`, `callback`.
 > Read more about **comparison operators**:
 [http://php.net/manual/en/language.operators.comparison.php](http://php.net/manual/en/language.operators.comparison.php).
 
+### Timing Attack Safe String Comparison
+
+The [`hash_equals()`](http://php.net/manual/en/function.hash-equals.php)
+function has been added in PHP 5.6 to compare two strings in constant time.
+
 ---
 
 # Operators
@@ -56,6 +61,8 @@ And 3 **pseudo** types: `mixed`, `number`, `callback`.
 
     $a . 'foo'; // concatenation
 
+    2 ** 3 = 8 // exponentiation (PHP 5.6+)
+
 But also:
 
     !php
@@ -66,6 +73,9 @@ But also:
     $b  = 0;
     $b += 1;    // $b = 1
     $b -= 1;    // $b = 0
+
+    $c = 2;
+    $c **= 3;   // $c = 8
 
 ---
 
@@ -144,6 +154,9 @@ Methods without any explicit visibility keyword are defined as `public`.
     class Foo
     {
         const VALUE = 123;
+        // PHP 5.6+
+        const SENTENCE        = 'The value of VALUE is ' . self::VALUE;
+        const ARRAY_OF_VALUES = ['a', 'b'];
 
         /**
          * @var int
@@ -316,6 +329,28 @@ This is different!
 
 > Read more:
 [http://php.net/manual/en/language.oop5.static.php](http://php.net/manual/en/language.oop5.static.php).
+
+---
+
+# Variadic Functions
+
+New operator `...` as of PHP 5.6:
+
+    !php
+    function sum(...$numbers)
+    {
+        return array_sum($numbers);
+    }
+
+    echo sum(1, 2);
+    // 3
+
+### Argument Unpacking
+
+    !php
+    $numbers = [ 2, 3 ];
+    echo sum(1, ...$numbers);
+    // 6
 
 ---
 
