@@ -19,6 +19,7 @@ href="https://twitter.com/hipsterhacker/statuses/396352411754717184">November 1,
 * Unit Testing
 * Functional Testing
 * Behavior Driven Development
+* Testing Tweet Frameworks
 
 ---
 
@@ -251,3 +252,25 @@ Writing your Step definitions:
 
 > Read more about Behat:
 [http://docs.behat.org/](http://docs.behat.org/).
+
+---
+
+# Testing Tweet Frameworks
+
+### [Tweetest](http://adambrett.github.io/tweetest/)
+
+    !php
+    function tweetest($c,$m) {$c=is_callable($c)?$c():$c;echo($c)?'.':"F[{$m}]";}
+
+    tweetest($testValue !== 'bar', '$testValue should never equal bar');
+
+
+### [TestFrameworkInATweet.php](https://gist.github.com//mathiasverraes/9046427)
+
+    !php
+    function it($m,$p){echo ($p?'✔︎':'✘')." It $m\n";if(!$p){$GLOBALS['f']=1;}}
+    function done(){if(@$GLOBALS['f'])die(1);}
+
+    it("should sum two numbers", 1 + 1 == 2);
+    it("should display an X for a failing test", 1 + 1 == 3);
+    done();
