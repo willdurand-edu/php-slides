@@ -18,7 +18,7 @@ Open-Source evangelist:
 
 * Lead developer of [Geocoder](http://geocoder-php.org/), and [several other
   projects](https://github.com/willdurand);
-* (Inactive?) Contributor on Symfony2.
+* (Inactive?) Contributor on Symfony.
 
 <p class="center">
     <i class="fa fa-twitter"></i> <a href="https://twitter.com/couac">twitter.com/couac</a>
@@ -27,6 +27,10 @@ Open-Source evangelist:
     &nbsp;|&nbsp;
     <i class="fa fa-globe"></i> <a href="http://www.williamdurand.fr">williamdurand.fr</a>
 </p>
+
+---
+
+# [edu@drnd.me](mailto:edu@drnd.me)
 
 ---
 
