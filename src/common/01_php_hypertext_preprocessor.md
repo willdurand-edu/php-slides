@@ -27,7 +27,7 @@
 ## Mac OS X
 
     !bash
-    $ curl -s http://php-osx.liip.ch/install.sh | bash -s 5.5
+    $ curl -s http://php-osx.liip.ch/install.sh | bash -s 5.6
 
 > [http://php-osx.liip.ch/](http://php-osx.liip.ch/)
 
