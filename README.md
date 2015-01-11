@@ -1,8 +1,7 @@
 PHP
 ===
 
-PHP lectures by [Julien Muetton](http://github.com/themouette) and
-[William Durand](http://github.com/willdurand).
+PHP lectures by [William Durand](http://github.com/willdurand).
 
 
 Installation
@@ -25,6 +24,15 @@ Usage
 
 Basically, build the presentation you are interested in, and open it in your
 favorite browser.
+
+
+Credits
+-------
+
+* [Julien Muetton](http://github.com/themouette) as co-author of the very first
+  version of these slides
+* [All
+  contributors](https://github.com/willdurand-edu/php-slides/graphs/contributors)
 
 
 License
