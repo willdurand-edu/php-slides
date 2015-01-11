@@ -402,8 +402,8 @@ Or:
 
 ### PSR-0
 
-[PSR-0](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md)
-describes a set of rules related to namespaces for autoloader interoperability.
+[PSR-0](http://www.php-fig.org/psr/psr-0/) describes a set of rules related to
+namespaces for autoloader interoperability:
 
     !php
     \ns\package\Class_Name      => vendor/ns/package/Class/Name.php

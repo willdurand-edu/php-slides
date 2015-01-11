@@ -187,3 +187,28 @@ The `new` algorithm in pseudo code:
             Continue
         => No
             Fatal Error
+
+---
+
+# PSR-0 vs PSR-4
+
+
+### PSR-0
+
+    !php
+    \Zend\Mail\Message
+
+    // => /path/to/project/lib/vendor/Zend/Mail/Message.php
+
+    Zend_Mail_Message
+
+    // => /path/to/project/lib/vendor/Zend/Mail/Message.php
+
+**Important:** as of 2014-10-21 PSR-0 has been marked as deprecated.
+
+### PSR-4
+
+Like [PSR-0](http://www.php-fig.org/psr/psr-0/), but **better**:
+
+* more concise folder structure;
+* remove the remnants of PSR-0 (e.g. PEAR support).

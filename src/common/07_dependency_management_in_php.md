@@ -53,9 +53,10 @@ Constraints](https://igor.io/2013/01/07/composer-versioning.html)
 
 # Composer Autoloader
 
-Composer automatically generates a PSR-0 compliant and optimized autoloader for
-your entire application. Thanks to Composer, you don't have to take care about
-how to autoload classes/functions anymore.
+Composer automatically generates a [PSR-4](http://www.php-fig.org/psr/psr-4/)
+compliant and optimized autoloader for your entire application. Thanks to
+Composer, you don't have to take care about how to autoload classes/functions
+anymore.
 
 Require the generated autoloader in your project as follows:
 

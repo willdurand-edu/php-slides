@@ -7,15 +7,6 @@ Typical client request process in MVC architecture:
 
 ![](../images/mvc.png)
 
-## Presenter notes
-
-1. Client makes a request
-1. Controller handles request:
-    * interactions with model
-    * data preparation
-    * send data to view
-1. View format data
-
 ---
 
 # The Model
