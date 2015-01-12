@@ -40,10 +40,7 @@ Your _Commands_ should extend the `Command` class:
             // configure the name, arguments, options, etc.
         }
 
-        protected function execute(
-            InputInterface $input,
-            OutputInterface $output
-        ) {
+        protected function execute(InputInterface $in, OutputInterface $out) {
             // do greet
         }
     }

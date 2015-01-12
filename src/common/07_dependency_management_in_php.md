@@ -35,10 +35,10 @@ Create a `composer.json` file in your project's root directory:
         }
     }
 
-You can also require a library by using the `composer` command:
+You can also require a library by using the `require` command:
 
     !bash
-    $ php composer.phar require "willdurand/geocoder:~2.0"
+    $ php composer.phar require willdurand/geocoder
 
 Run the following command to download and install the project dependencies into
 a `vendor` directory:

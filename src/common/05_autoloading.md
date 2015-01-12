@@ -197,11 +197,12 @@ The `new` algorithm in pseudo code:
 
     !php
     \Zend\Mail\Message
-
     // => /path/to/project/lib/vendor/Zend/Mail/Message.php
 
-    Zend_Mail_Message
+<p></p>
 
+    !php
+    Zend_Mail_Message
     // => /path/to/project/lib/vendor/Zend/Mail/Message.php
 
 **Important:** as of 2014-10-21 PSR-0 has been marked as deprecated.

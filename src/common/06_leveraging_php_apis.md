@@ -174,13 +174,15 @@ component to the rescue!
 Create your own exceptions:
 
     !php
-    class MyException extends RuntimeException
+    class SomethingWentWrong extends RuntimeException
     {
     }
 
-    class MyException extends Exception implements ExceptionInterface
+    class ErrorWhileDoingSomething extends Exception implements ExceptionInterface
     {
     }
+
+**Name** your named exceptions!
 
 ---
 
