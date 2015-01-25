@@ -2648,14 +2648,14 @@ defined, and possibly called, without being bound to an identifier.</p>
             <section><p>A <strong>closure</strong> is an anonymous function that owns a context.</p>
 <div class="highlight"><pre><span class="nv">$fibonacci</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$n</span><span class="p">)</span> <span class="k">use</span> <span class="p">(</span><span class="o">&amp;</span><span class="nv">$fibonacci</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">===</span> <span class="nv">$n</span> <span class="o">||</span> <span class="mi">1</span> <span class="o">===</span> <span class="nv">$n</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nv">$n</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="k">return</span> <span class="nv">$fibonacci</span><span class="p">(</span><span class="nv">$n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nv">$fibonacci</span><span class="p">(</span><span class="nv">$n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
 <span class="p">};</span>
 
 <span class="k">echo</span> <span class="p">(</span><span class="nx">int</span><span class="p">)</span> <span class="nv">$fibonacci</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
-<span class="o">=&gt;</span> <span class="mi">13</span>
+<span class="o">=&gt;</span> <span class="mi">8</span>
 </pre></div>
 
 <blockquote>
