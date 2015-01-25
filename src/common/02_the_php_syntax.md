@@ -487,14 +487,14 @@ A **closure** is an anonymous function that owns a context.
     !php
     $fibonacci = function ($n) use (&$fibonacci) {
         if (0 === $n || 1 === $n) {
-            return 1;
+            return $n;
         }
 
         return $fibonacci($n - 1) + $fibonacci($n - 2);
     };
 
     echo (int) $fibonacci(6);
-    => 13
+    => 8
 
 > Read more about **closures**:
 [http://php.net/manual/en/class.closure.php](http://php.net/manual/en/class.closure.php).
