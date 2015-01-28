@@ -1,19 +1,18 @@
 # Agenda
 
-### [Week #1](#slide9)
+### [Week #1](#slide10)
 
 PHP: Hypertext Preprocessor, The PHP Syntax, The PHP Command Line,
 Client/Server, REST
 
-### [Week #2](#slide63)
+### [Week #2](#slide65)
 
-Autoloading, Leveraging PHP APIs, Dependency Management, Model View Controller,
-Databases
+Autoloading, Leveraging PHP APIs, Dependency Management, Model View Controller
 
-### [Week #3](#slide129)
+### [Week #3](#slide98)
 
-A Note About Domain-Driven Design, Sessions, Authentication, Writing Better Code
+Databases, Sessions, Authentication
 
-### [Week #4](#slide179)
+### [Week #4](#slide162)
 
 Security 101
