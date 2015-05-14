@@ -31,6 +31,9 @@ programming languages such as
 [**collections**](http://docs.hhvm.com/manual/en/hack.collections.php), and
 [**nullable**](http://docs.hhvm.com/manual/en/hack.nullable.php).
 
+It also provides built-in [asynchronous
+programming](http://docs.hhvm.com/manual/en/hack.async.php).
+
 > Official website: [hacklang.org](http://hacklang.org/)
 
 ---
@@ -64,7 +67,23 @@ other extension that you use).
 
 # Type Annotations
 
-...
+    !php
+    <?hh
+
+    class AnnotatedClass {
+        public int $x;
+        private string $s;
+        protected array $arr;
+        public AnotherClass $ac;
+
+        public function bar(string $str, bool $b): float {
+            if ($b && $str === "Hi") {
+                return 3.2;
+            }
+
+            return 0.3;
+        }
+    }
 
 > [http://docs.hhvm.com/manual/en/hack.annotations.php](http://docs.hhvm.com/manual/en/hack.annotations.php)
 
@@ -72,7 +91,16 @@ other extension that you use).
 
 # Generics
 
-...
+    !php
+    <?hh
+
+    class Box<T> {
+        public T $value;
+
+        public function __construct(T $v) {
+            $this->value = $v;
+        }
+    }
 
 > [http://docs.hhvm.com/manual/en/hack.generics.php](http://docs.hhvm.com/manual/en/hack.generics.php)
 
@@ -80,7 +108,7 @@ other extension that you use).
 
 # Collections
 
-...
+Hack provides a unified collections framework including: `Vector`, `Map`, `Set`, `Pair`.
 
 > [http://docs.hhvm.com/manual/en/hack.collections.php](http://docs.hhvm.com/manual/en/hack.collections.php)
 
@@ -88,6 +116,17 @@ other extension that you use).
 
 # Nullable Types
 
-...
+`Nullable` allows any type to have `null` assigned and checked on it:
+
+    !php
+    <?hh
+
+    function check_not_null(?int $x): int {
+        if ($x === null) {
+            return -1;
+        } else {
+            return $x;
+        }
+    }
 
 > [http://docs.hhvm.com/manual/en/hack.nullable.php](http://docs.hhvm.com/manual/en/hack.nullable.php)

@@ -44,7 +44,7 @@ Symfony2 is built on powerful concepts:
 
 ![](../images/symfony-github.png)
 
-It has been written by [~900 developers](http://symfony.com/contributors/code).
+It has been written by [~1290 developers](http://symfony.com/contributors/code).
 
 Open Source, **MIT** licensed.
 
@@ -58,12 +58,12 @@ They are the **foundation of the Symfony full-stack framework**, but they can
 also be used **standalone** even if you don't use the framework as they don't
 have any mandatory dependencies.
 
-There are ~26 components, including:
+There are ~30 components, including:
 
     !text
     BrowserKit              EventDispatcher     OptionsResolver     Translation
-    ClassLoader             ExpressionLanguage  Process             Yaml
-    Config                  Filesystem          PropertyAccess
+    ClassLoader             ExpressionLanguage  Process             VarDumper
+    Config                  Filesystem          PropertyAccess      Yaml
     Console                 Finder              Routing
     CssSelector             Form                Security
     Debug                   HttpFoundation      Serializer
@@ -74,13 +74,13 @@ There are ~26 components, including:
 
 # Getting Ready With Components
 
-Assuming you want to play with YAML files, start by requiring the `symfony/yaml`
+Say you want to play with YAML files, start by requiring the `symfony/yaml`
 component into your `composer.json` file:
 
     !yaml
     {
         "require": {
-            "symfony/yaml": "~2.4"
+            "symfony/yaml": "~2.6"
         }
     }
 
@@ -634,3 +634,7 @@ The global application configuration lives in the `app/config/` directory.
 
 Each environment is accessible via a different front controller (e.g. `app.php`
 and `app_dev.php`) and loads a different configuration file.
+
+---
+
+# Read The [Best Practices](http://symfony.com/doc/current/best_practices/index.html)!
