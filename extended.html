@@ -1517,18 +1517,18 @@ Developer</a>.</p>
         <div class="slide">
           <div class="inner">
             
-            <header><h1>What Is Symfony2?</h1></header>
+            <header><h1>What Is Symfony?</h1></header>
             
             
             <section><p>First of all:</p>
 <blockquote class="quote">
-    <p>Symfony2 is a <strong>reusable</strong> set of standalone, decoupled, and cohesive PHP
+    <p>Symfony is a <strong>reusable</strong> set of standalone, decoupled, and cohesive PHP
     <strong>components</strong> that solve common web development problems.</p>
 </blockquote>
 
 <p>Then, based on these components:</p>
 <blockquote class="quote">
-    <p>Symfony2 is also a <strong>full-stack web framework</strong>.</p>
+    <p>Symfony is also a <strong>full-stack web framework</strong>.</p>
 </blockquote>
 
 <p><em>Fabien Potencier,
@@ -1561,7 +1561,7 @@ Developer</a>.</p>
         <div class="slide">
           <div class="inner">
             
-            <header><h1>Is Symfony2 A MVC Framework?</h1></header>
+            <header><h1>Is Symfony A MVC Framework?</h1></header>
             
             
           </div>
@@ -1621,10 +1621,10 @@ Developer</a>.</p>
         <div class="slide">
           <div class="inner">
             
-            <header><h1>Why You Should Use Symfony2</h1></header>
+            <header><h1>Why You Should Use Symfony</h1></header>
             
             
-            <section><p>Symfony2 is built on powerful concepts:</p>
+            <section><p>Symfony is built on powerful concepts:</p>
 <ul>
 <li><strong>Separation of Concerns</strong>;</li>
 <li><strong>Pragmatism</strong>;</li>
@@ -1661,7 +1661,7 @@ Developer</a>.</p>
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h1>The Symfony2 Components</h1></header>
+            <header><h1>The Symfony Components</h1></header>
             
             
             <section><p>The Components implement <strong>common features</strong> needed to develop websites.</p>
@@ -1761,7 +1761,7 @@ component into your <code>composer.json</code> file:</p>
             <header><h1>Full-Stack Framework</h1></header>
             
             
-            <section><p>The <strong>Symfony2 Framework</strong> accomplishes two distinct tasks:</p>
+            <section><p>The <strong>Symfony Framework</strong> accomplishes two distinct tasks:</p>
 <ul>
 <li>Provides a selection of components;</li>
 <li>Provides sensible configuration and a "glue" library that ties all of these
@@ -1769,8 +1769,8 @@ component into your <code>composer.json</code> file:</p>
 </ul>
 <p>The goal of the framework is <strong>to integrate many independent tools</strong> in order to
 provide a consistent experience for the developer. Even <strong>the framework itself is
-a Symfony2 bundle</strong> (i.e. a plugin) that can be configured or replaced entirely.</p>
-<p>Symfony2 <strong>provides a powerful set of tools for rapidly developing web
+a Symfony bundle</strong> (i.e. a plugin) that can be configured or replaced entirely.</p>
+<p>Symfony <strong>provides a powerful set of tools for rapidly developing web
 applications</strong> without imposing on your application.</p>
 <blockquote>
 <p><a href="http://symfony.com/doc/current/book/index.html">http://symfony.com/doc/current/book/index.html</a></p>
@@ -1833,7 +1833,7 @@ applications</strong> without imposing on your application.</p>
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h1>The Symfony2 Request</h1></header>
+            <header><h1>The Symfony Request</h1></header>
             
             
             <section><div class="highlight"><pre><span class="k">use</span> <span class="nx">Symfony\Component\HttpFoundation\Request</span><span class="p">;</span>
@@ -1887,7 +1887,7 @@ applications</strong> without imposing on your application.</p>
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h1>The Symfony2 Response</h1></header>
+            <header><h1>The Symfony Response</h1></header>
             
             
             <section><div class="highlight"><pre><span class="k">use</span> <span class="nx">Symfony\Component\HttpFoundation\Response</span><span class="p">;</span>
@@ -2073,7 +2073,7 @@ specific PHP method named <code>helloAction()</code> inside a class called
             <header><h1>Your First Controller</h1></header>
             
             
-            <section><p>In Symfony2, a method in a controller is called an <strong>action</strong>. The convention is
+            <section><p>In Symfony, a method in a controller is called an <strong>action</strong>. The convention is
 to suffix each method with <code>Action</code>.</p>
 <p>Also, each controller should be suffixed with <code>Controller</code>.</p>
 <div class="highlight"><pre><span class="c1">// src/Acme/DemoBundle/Controller/MainController.php</span>
@@ -2118,10 +2118,10 @@ to suffix each method with <code>Action</code>.</p>
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h1>A Symfony2 Project</h1></header>
+            <header><h1>A Symfony Project</h1></header>
             
             
-            <section><p><strong>Recommended</strong> structure of a Symfony2 project:</p>
+            <section><p><strong>Recommended</strong> structure of a Symfony project:</p>
 <div class="highlight"><pre>path/to/project/
     app/
         cache/
@@ -2235,7 +2235,7 @@ or <code>PHP</code>.</p>
 <p>By default, the main configuration file lives in the <code>app/config/</code>
 directory and is called either <code>config.yml</code>, <code>config.xml</code> or <code>config.php</code>
 depending on which format you prefer.</p>
-<p>Symfony2 is all about configuring everything, and you can do pretty much
+<p>Symfony is all about configuring everything, and you can do pretty much
 everything you want. That's why people agreed on some conventions, but then
 again, a convention is just <strong>A</strong> way to do things, not <strong>THE</strong> way to do them.</p></section>
             
@@ -2475,7 +2475,7 @@ again, a convention is just <strong>A</strong> way to do things, not <strong>THE
             
             <section><p>An application can run in various environments. The different environments
 <strong>share the same PHP code</strong>, but use different configuration.</p>
-<p>A Symfony2 project generally uses three environments: <code>dev</code>, <code>test</code> and <code>prod</code>.</p>
+<p>A Symfony project generally uses three environments: <code>dev</code>, <code>test</code> and <code>prod</code>.</p>
 <div class="highlight"><pre><span class="c1">// web/app.php</span>
 
 <span class="c1">// ...</span>
@@ -2528,7 +2528,7 @@ of your choice:</p>
 JavaScripts, images, ...) that implement a <strong>single feature</strong> (a blog, a forum,
 etc).</em></p>
 <p>It should be <strong>reusable</strong>, so that you don't reinvent the wheel each time you
-need a common feature. In Symfony2, (almost) everything lives inside a bundle.</p>
+need a common feature. In Symfony, (almost) everything lives inside a bundle.</p>
 <p>In order to use a bundle in your application, you need to register it in the
 <code>AppKernel</code>, using the <code>registerBundles()</code> method:</p>
 <div class="highlight"><pre><span class="k">public</span> <span class="k">function</span> <span class="nf">registerBundles</span><span class="p">()</span>
@@ -2777,7 +2777,7 @@ controller lives:</p>
 </pre></div>
 
 <p>The front controller file (<code>app.php</code> in this example) is the actual PHP file
-that's executed when using a Symfony2 application and its job is to <strong>use a
+that's executed when using a Symfony application and its job is to <strong>use a
 Kernel</strong> class, <code>AppKernel</code>, to <strong>bootstrap the application</strong>, for a given
 <strong>environment</strong>.</p></section>
             
@@ -2816,7 +2816,7 @@ Kernel</strong> class, <code>AppKernel</code>, to <strong>bootstrap the applicat
 <p>Each project contains just a few main directories: <code>web/</code> (web assets and the
 front controllers), <code>app/</code> (configuration), <code>src/</code> (your bundles), and <code>vendor/</code>
 (third-party code).</p>
-<p>Each feature in Symfony2 (including the Symfony2 framework core) is organized
+<p>Each feature in Symfony (including the Symfony framework core) is organized
 into a <strong>bundle</strong>, which is a structured set of files for that feature.</p>
 <p>The configuration for each bundle lives in the <code>Resources/config</code> directory of the
 bundle and can be specified in <code>YAML</code>, <code>XML</code> or <code>PHP</code>.</p>
@@ -2916,7 +2916,7 @@ and <code>app_dev.php</code>) and loads a different configuration file.</p></sec
             
             <section><p>A controller is a <strong>PHP function</strong> you create that takes information from the
 <strong>HTTP request</strong> and constructs and returns an <strong>HTTP response</strong>.</p>
-<p>Every request handled by a Symfony2 project goes through the same lifecycle:</p>
+<p>Every request handled by a Symfony project goes through the same lifecycle:</p>
 <ol>
 <li>Each request is handled by a single front controller file (e.g. <code>app.php</code> or
 <code>app_dev.php</code>) that bootstraps the application;</li>
@@ -3158,7 +3158,7 @@ argument to your controller:</p>
             <header><h1>The Base Controller Class</h1></header>
             
             
-            <section><p>Symfony2 comes with a base <code>Controller</code> class that assists with some of the most
+            <section><p>Symfony comes with a base <code>Controller</code> class that assists with some of the most
 common controller tasks and gives your controller class access to any resource
 it might need:</p>
 <div class="highlight"><pre><span class="k">use</span> <span class="nx">Symfony\Bundle\FrameworkBundle\Controller\Controller</span>
@@ -3289,10 +3289,10 @@ it might need:</p>
             <header><h1>Basic Route Configuration</h1></header>
             
             
-            <section><p>The Symfony2 router lets you define URLs that you map to different areas of
+            <section><p>The Symfony router lets you define URLs that you map to different areas of
 your application.</p>
 <p>A <em>route</em> is a map from a URL path to a controller. Each route is named, and
-maps a <code>pattern</code> (or <code>path</code> as of Symfony2.2) to a <code>_controller</code>:</p>
+maps a <code>pattern</code> (or <code>path</code> as of Symfony.2) to a <code>_controller</code>:</p>
 <div class="highlight"><pre><span class="c1"># app/config/routing.yml</span>
 <span class="l-Scalar-Plain">homepage</span><span class="p-Indicator">:</span>
     <span class="l-Scalar-Plain">pattern</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">/</span>
@@ -4038,7 +4038,7 @@ use the <code>{{ parent() }}</code> function.</p></section>
 <li><code>path/to/bundle/Resources/views/</code>: Each <strong>bundle houses its templates</strong> in its
   <code>Resources/views</code> directory (and subdirectories).</li>
 </ul>
-<p>Symfony2 uses a <code>bundle:controller:template</code> string syntax for templates.</p>
+<p>Symfony uses a <code>bundle:controller:template</code> string syntax for templates.</p>
 <p>You can skip the <code>controller</code> string: <code>bundle::template</code>. The <code>template</code>
 file would live in <code>Resources/views/</code>.</p>
 <p>You can also skip the <code>bundle</code> string. It refers to an application-wide base
@@ -4124,7 +4124,7 @@ path to the layout would be:</p>
             
             <section><p>Once you use a third-party bundle, you'll likely need to override and customize
 one or more of its templates.</p>
-<p>When the <code>FooBarBundle:Bar:index.html.twig</code> is rendered, Symfony2 actually
+<p>When the <code>FooBarBundle:Bar:index.html.twig</code> is rendered, Symfony actually
 looks in two different locations for the template:</p>
 <ul>
 <li><code>app/Resources/FooBarBundle/views/Bar/index.html.twig</code>;</li>
@@ -4243,7 +4243,7 @@ blog posts.</p>
         <div class="slide">
           <div class="inner">
             
-            <header><h1>Twig Into Symfony2</h1></header>
+            <header><h1>Twig Into Symfony</h1></header>
             
             
           </div>
@@ -4435,7 +4435,7 @@ adding a query parameter to all rendered asset paths:</p>
             <section><p>The <a href="https://github.com/FriendsOfSymfony/FOSJsRoutingBundle">FOSJsRoutingBundle</a>
 allows you to <strong>expose your routing in your JavaScript code</strong>. That means you'll
 be able to generate URL with given parameters like you can do with the <em>Router</em>
-component provided by Symfony2.</p>
+component provided by Symfony.</p>
 <div class="highlight"><pre><span class="c1"># app/config/routing.yml</span>
 <span class="l-Scalar-Plain">my_route_to_expose</span><span class="p-Indicator">:</span>
     <span class="l-Scalar-Plain">pattern</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">/foo/{id}/bar</span>
@@ -4556,7 +4556,7 @@ JavaScript code to generate URLs:</p>
             <section><p>A <strong>Service</strong> is a generic term for any PHP object that performs a specific task.</p>
 <p>A service is usually used <strong>globally</strong>, such as a database connection object or an
 object that delivers email messages.</p>
-<p>In Symfony2, services are often <strong>configured and retrieved from the service
+<p>In Symfony, services are often <strong>configured and retrieved from the service
 container</strong>.</p>
 <p>An application that has many decoupled services is said to follow a
 <strong>Service-Oriented Architecture</strong> (SOA).</p></section>
@@ -5137,7 +5137,7 @@ them as extensions.</p>
         <div class="slide">
           <div class="inner">
             
-            <header><h1>Symfony2 Commands</h1></header>
+            <header><h1>Symfony Commands</h1></header>
             
             
           </div>
@@ -6185,7 +6185,7 @@ un-rendered fields are output.</p></section>
             
             
             <section><p>In the previous section, you learned how a form can be submitted with valid or
-invalid data. In Symfony2, <strong>validation is applied to the underlying object</strong>.</p>
+invalid data. In Symfony, <strong>validation is applied to the underlying object</strong>.</p>
 <p>In other words, the question isn't whether the "form" is valid, but whether the
 object is valid after the form has applied the submitted data to it.</p>
 <p>Calling <code>$form-&gt;isValid()</code> is a shortcut that <strong>asks the object whether it has
@@ -6364,7 +6364,7 @@ indirectly when handling submitted form data.</p></section>
 (e.g. <code>getFullName()</code>). The first is the most common and easy to use, but the
 second allows you to specify more complex validation rules.</p>
 <h3>Properties</h3>
-<p>Validating class properties is the most basic validation technique. Symfony2
+<p>Validating class properties is the most basic validation technique. Symfony
 <strong>allows you to validate private, protected or public properties</strong>.</p>
 <div class="highlight"><pre><span class="c1"># src/Acme/DemoBundle/Resources/config/validation.yml</span>
 <span class="l-Scalar-Plain">Acme\DemoBundle\Entity\Author</span><span class="p-Indicator">:</span>
@@ -6409,7 +6409,7 @@ itself.</p></section>
             
             
             <section><h3>Getters</h3>
-<p>Constraints <strong>can also be applied to the return value of a method</strong>. Symfony2
+<p>Constraints <strong>can also be applied to the return value of a method</strong>. Symfony
 allows you to add a constraint to any public method whose name starts with
 <code>get</code> or <code>is</code>.</p>
 <div class="highlight"><pre><span class="c1"># src/Acme/DemoBundle/Resources/config/validation.yml</span>
@@ -6724,17 +6724,17 @@ service to a particular language</strong>, <strong>culture</strong>, and desired
             
             
             <section><div class="highlight"><pre><span class="c1"># messages.fr.yml</span>
-<span class="l-Scalar-Plain">Symfony2 is great</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">J&#39;aime Symfony2</span>
+<span class="l-Scalar-Plain">Symfony is great</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">J&#39;aime Symfony</span>
 <span class="s">&#39;Hello</span><span class="nv"> </span><span class="s">%name%&#39;</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Bonjour %name%</span>
 </pre></div>
 
-<p>When the following code is executed, Symfony2 will attempt to translate the
-message <code>Symfony2 is great</code> based on the locale of the user:</p>
-<div class="highlight"><pre><span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;translator&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">trans</span><span class="p">(</span><span class="s1">&#39;Symfony2 is great&#39;</span><span class="p">);</span>
+<p>When the following code is executed, Symfony will attempt to translate the
+message <code>Symfony is great</code> based on the locale of the user:</p>
+<div class="highlight"><pre><span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;translator&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">trans</span><span class="p">(</span><span class="s1">&#39;Symfony is great&#39;</span><span class="p">);</span>
 </pre></div>
 
 <p>Now, if the language of the user's locale is French (e.g. <code>fr_FR</code> or <code>fr_BE</code>),
-the message will be translated into <code>J'aime Symfony2</code>.</p>
+the message will be translated into <code>J'aime Symfony</code>.</p>
 <h3>Message Placeholders</h3>
 <div class="highlight"><pre><span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;translator&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">trans</span><span class="p">(</span><span class="s1">&#39;Hello %name%&#39;</span><span class="p">,</span> <span class="p">[</span>
     <span class="s1">&#39;%name%&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Will&#39;</span>
@@ -6775,7 +6775,7 @@ the message will be translated into <code>J'aime Symfony2</code>.</p>
             <header><h1>The Translation Process</h1></header>
             
             
-            <section><p>To translate the message, Symfony2 uses a simple process:</p>
+            <section><p>To translate the message, Symfony uses a simple process:</p>
 <ol>
 <li>
 <p>The locale of the current user, which is stored on the request (or stored as
@@ -6792,7 +6792,7 @@ and added to the catalog if they don't already exist. The end result is a large
 the translator returns the original message.</p>
 </li>
 </ol>
-<p>When using the <code>trans()</code> method, Symfony2 looks for the exact string inside the
+<p>When using the <code>trans()</code> method, Symfony looks for the exact string inside the
 appropriate message catalog and returns it (if it exists).</p></section>
             
           </div>
@@ -6825,19 +6825,19 @@ appropriate message catalog and returns it (if it exists).</p></section>
             <header><h1>Locations and Naming Conventions</h1></header>
             
             
-            <section><p>Symfony2 looks for message files (i.e. translations) in the following locations:</p>
+            <section><p>Symfony looks for message files (i.e. translations) in the following locations:</p>
 <ul>
 <li>the <code>&lt;kernel root directory&gt;/Resources/translations</code> directory;</li>
 <li>the <code>&lt;kernel root directory&gt;/Resources/&lt;bundle name&gt;/translations</code> directory;</li>
 <li>the <code>Resources/translations/</code> directory of the bundle.</li>
 </ul>
-<p>The filename of the translations is also important as Symfony2 uses a convention
+<p>The filename of the translations is also important as Symfony uses a convention
 to determine details about the translations. Each message file must be named
 according to the following path: <code>domain.locale.loader</code>:</p>
 <ul>
 <li><code>domain</code>: an optional way to organize messages into groups;</li>
 <li><code>locale</code>: the locale that the translations are for (<code>en_GB</code>, <code>en</code>, etc);</li>
-<li><code>loader</code>: how Symfony2 should load and parse the file (<code>xliff</code>, <code>php</code> or <code>yml</code>).</li>
+<li><code>loader</code>: how Symfony should load and parse the file (<code>xliff</code>, <code>php</code> or <code>yml</code>).</li>
 </ul></section>
             
           </div>
@@ -7096,11 +7096,11 @@ that's normally performed on every request should be done only once.</p>
 front of your application.</p>
 <p>The <strong>reverse proxy</strong> caches responses as they are returned from your application
 and answers requests with cached responses before they hit your application.</p>
-<p>Symfony2 provides its own reverse proxy, but any reverse proxy can be used.</p>
+<p>Symfony provides its own reverse proxy, but any reverse proxy can be used.</p>
 <h3>HTTP Cache</h3>
 <p><strong>HTTP cache headers</strong> are used to communicate with the gateway cache and any
 other caches between your application and the client.</p>
-<p>Symfony2 provides sensible defaults and a powerful interface for interacting
+<p>Symfony provides sensible defaults and a powerful interface for interacting
 with the cache headers.</p></section>
             
           </div>
@@ -7183,7 +7183,7 @@ communication between the client and your application.</p>
 If the same resource is requested again, the cache sends the cached response to
 the client, ignoring your application entirely.</p>
 <p>This type of cache is known as a <strong>HTTP gateway cache</strong> and many exist such as
-<strong>Varnish</strong>, <strong>Squid</strong> in reverse proxy mode, and the <strong>Symfony2 reverse
+<strong>Varnish</strong>, <strong>Squid</strong> in reverse proxy mode, and the <strong>Symfony reverse
 proxy</strong>.</p></section>
             
           </div>
@@ -8369,13 +8369,13 @@ other extension that you use).</p>
       
       
       <tr id="toc-row-10">
-        <th><a href="#slide10">What Is Symfony2?</a></th>
+        <th><a href="#slide10">What Is Symfony?</a></th>
         <td><a href="#slide10">10</a></td>
       </tr>
       
       
       <tr id="toc-row-11">
-        <th><a href="#slide11">Is Symfony2 A MVC Framework?</a></th>
+        <th><a href="#slide11">Is Symfony A MVC Framework?</a></th>
         <td><a href="#slide11">11</a></td>
       </tr>
       
@@ -8387,13 +8387,13 @@ other extension that you use).</p>
       
       
       <tr id="toc-row-13">
-        <th><a href="#slide13">Why You Should Use Symfony2</a></th>
+        <th><a href="#slide13">Why You Should Use Symfony</a></th>
         <td><a href="#slide13">13</a></td>
       </tr>
       
       
       <tr id="toc-row-14">
-        <th><a href="#slide14">The Symfony2 Components</a></th>
+        <th><a href="#slide14">The Symfony Components</a></th>
         <td><a href="#slide14">14</a></td>
       </tr>
       
@@ -8417,13 +8417,13 @@ other extension that you use).</p>
       
       
       <tr id="toc-row-18">
-        <th><a href="#slide18">The Symfony2 Request</a></th>
+        <th><a href="#slide18">The Symfony Request</a></th>
         <td><a href="#slide18">18</a></td>
       </tr>
       
       
       <tr id="toc-row-19">
-        <th><a href="#slide19">The Symfony2 Response</a></th>
+        <th><a href="#slide19">The Symfony Response</a></th>
         <td><a href="#slide19">19</a></td>
       </tr>
       
@@ -8453,7 +8453,7 @@ other extension that you use).</p>
       
       
       <tr id="toc-row-24">
-        <th><a href="#slide24">A Symfony2 Project</a></th>
+        <th><a href="#slide24">A Symfony Project</a></th>
         <td><a href="#slide24">24</a></td>
       </tr>
       
@@ -8723,7 +8723,7 @@ other extension that you use).</p>
       
       
       <tr id="toc-row-69">
-        <th><a href="#slide69">Twig Into Symfony2</a></th>
+        <th><a href="#slide69">Twig Into Symfony</a></th>
         <td><a href="#slide69">69</a></td>
       </tr>
       
@@ -8837,7 +8837,7 @@ other extension that you use).</p>
       
       
       <tr id="toc-row-88">
-        <th><a href="#slide88">Symfony2 Commands</a></th>
+        <th><a href="#slide88">Symfony Commands</a></th>
         <td><a href="#slide88">88</a></td>
       </tr>
       
