@@ -24,17 +24,17 @@ service to a particular language**, **culture**, and desired local
 
     !yaml
     # messages.fr.yml
-    Symfony2 is great: J'aime Symfony2
+    Symfony is great: J'aime Symfony
     'Hello %name%': Bonjour %name%
 
-When the following code is executed, Symfony2 will attempt to translate the
-message `Symfony2 is great` based on the locale of the user:
+When the following code is executed, Symfony will attempt to translate the
+message `Symfony is great` based on the locale of the user:
 
     !php
-    echo $this->get('translator')->trans('Symfony2 is great');
+    echo $this->get('translator')->trans('Symfony is great');
 
 Now, if the language of the user's locale is French (e.g. `fr_FR` or `fr_BE`),
-the message will be translated into `J'aime Symfony2`.
+the message will be translated into `J'aime Symfony`.
 
 ### Message Placeholders
 
@@ -50,7 +50,7 @@ the message will be translated into `J'aime Symfony2`.
 
 # The Translation Process
 
-To translate the message, Symfony2 uses a simple process:
+To translate the message, Symfony uses a simple process:
 
 1. The locale of the current user, which is stored on the request (or stored as
 `_locale` on the session), is determined;
@@ -63,26 +63,26 @@ and added to the catalog if they don't already exist. The end result is a large
 3. If the message is located in the catalog, the translation is returned. If not,
 the translator returns the original message.
 
-When using the `trans()` method, Symfony2 looks for the exact string inside the
+When using the `trans()` method, Symfony looks for the exact string inside the
 appropriate message catalog and returns it (if it exists).
 
 ---
 
 # Locations and Naming Conventions
 
-Symfony2 looks for message files (i.e. translations) in the following locations:
+Symfony looks for message files (i.e. translations) in the following locations:
 
 * the `<kernel root directory>/Resources/translations` directory;
 * the `<kernel root directory>/Resources/<bundle name>/translations` directory;
 * the `Resources/translations/` directory of the bundle.
 
-The filename of the translations is also important as Symfony2 uses a convention
+The filename of the translations is also important as Symfony uses a convention
 to determine details about the translations. Each message file must be named
 according to the following path: `domain.locale.loader`:
 
 * `domain`: an optional way to organize messages into groups;
 * `locale`: the locale that the translations are for (`en_GB`, `en`, etc);
-* `loader`: how Symfony2 should load and parse the file (`xliff`, `php` or `yml`).
+* `loader`: how Symfony should load and parse the file (`xliff`, `php` or `yml`).
 
 ---
 

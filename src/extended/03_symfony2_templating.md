@@ -223,7 +223,7 @@ By default, templates can live in two different locations:
 * `path/to/bundle/Resources/views/`: Each **bundle houses its templates** in its
   `Resources/views` directory (and subdirectories).
 
-Symfony2 uses a `bundle:controller:template` string syntax for templates.
+Symfony uses a `bundle:controller:template` string syntax for templates.
 
 You can skip the `controller` string: `bundle::template`. The `template`
 file would live in `Resources/views/`.
@@ -260,7 +260,7 @@ path to the layout would be:
 Once you use a third-party bundle, you'll likely need to override and customize
 one or more of its templates.
 
-When the `FooBarBundle:Bar:index.html.twig` is rendered, Symfony2 actually
+When the `FooBarBundle:Bar:index.html.twig` is rendered, Symfony actually
 looks in two different locations for the template:
 
 * `app/Resources/FooBarBundle/views/Bar/index.html.twig`;
@@ -296,7 +296,7 @@ blog posts.
 
 ---
 
-# Twig Into Symfony2
+# Twig Into Symfony
 
 ---
 
@@ -389,7 +389,7 @@ adding a query parameter to all rendered asset paths:
 The [FOSJsRoutingBundle](https://github.com/FriendsOfSymfony/FOSJsRoutingBundle)
 allows you to **expose your routing in your JavaScript code**. That means you'll
 be able to generate URL with given parameters like you can do with the _Router_
-component provided by Symfony2.
+component provided by Symfony.
 
     !yaml
     # app/config/routing.yml

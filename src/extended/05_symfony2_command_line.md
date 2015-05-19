@@ -1,4 +1,4 @@
-# Symfony2 Commands
+# Symfony Commands
 
 ---
 

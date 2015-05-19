@@ -4,19 +4,19 @@
 
 ---
 
-# What Is Symfony2?
+# What Is Symfony?
 
 First of all:
 
 <blockquote class="quote">
-    <p>Symfony2 is a <strong>reusable</strong> set of standalone, decoupled, and cohesive PHP
+    <p>Symfony is a <strong>reusable</strong> set of standalone, decoupled, and cohesive PHP
     <strong>components</strong> that solve common web development problems.</p>
 </blockquote>
 
 Then, based on these components:
 
 <blockquote class="quote">
-    <p>Symfony2 is also a <strong>full-stack web framework</strong>.</p>
+    <p>Symfony is also a <strong>full-stack web framework</strong>.</p>
 </blockquote>
 
 _Fabien Potencier,
@@ -24,7 +24,7 @@ _Fabien Potencier,
 
 ---
 
-# Is Symfony2 A MVC Framework?
+# Is Symfony A MVC Framework?
 
 ---
 
@@ -34,9 +34,9 @@ _Fabien Potencier,
 
 ---
 
-# Why You Should Use Symfony2
+# Why You Should Use Symfony
 
-Symfony2 is built on powerful concepts:
+Symfony is built on powerful concepts:
 
 * **Separation of Concerns**;
 * **Pragmatism**;
@@ -50,7 +50,7 @@ Open Source, **MIT** licensed.
 
 ---
 
-# The Symfony2 Components
+# The Symfony Components
 
 The Components implement **common features** needed to develop websites.
 
@@ -99,7 +99,7 @@ Install it by running `php composer.phar install`, and use it:
 
 # Full-Stack Framework
 
-The **Symfony2 Framework** accomplishes two distinct tasks:
+The **Symfony Framework** accomplishes two distinct tasks:
 
 * Provides a selection of components;
 * Provides sensible configuration and a "glue" library that ties all of these
@@ -107,9 +107,9 @@ The **Symfony2 Framework** accomplishes two distinct tasks:
 
 The goal of the framework is **to integrate many independent tools** in order to
 provide a consistent experience for the developer. Even **the framework itself is
-a Symfony2 bundle** (i.e. a plugin) that can be configured or replaced entirely.
+a Symfony bundle** (i.e. a plugin) that can be configured or replaced entirely.
 
-Symfony2 **provides a powerful set of tools for rapidly developing web
+Symfony **provides a powerful set of tools for rapidly developing web
 applications** without imposing on your application.
 
 > [http://symfony.com/doc/current/book/index.html](http://symfony.com/doc/current/book/index.html)
@@ -120,7 +120,7 @@ applications** without imposing on your application.
 
 ---
 
-# The Symfony2 Request
+# The Symfony Request
 
     !php
     use Symfony\Component\HttpFoundation\Request;
@@ -147,7 +147,7 @@ applications** without imposing on your application.
 
 ---
 
-# The Symfony2 Response
+# The Symfony Response
 
     !php
     use Symfony\Component\HttpFoundation\Response;
@@ -230,7 +230,7 @@ specific PHP method named `helloAction()` inside a class called
 
 # Your First Controller
 
-In Symfony2, a method in a controller is called an **action**. The convention is
+In Symfony, a method in a controller is called an **action**. The convention is
 to suffix each method with `Action`.
 
 Also, each controller should be suffixed with `Controller`.
@@ -251,9 +251,9 @@ Also, each controller should be suffixed with `Controller`.
 
 ---
 
-# A Symfony2 Project
+# A Symfony Project
 
-**Recommended** structure of a Symfony2 project:
+**Recommended** structure of a Symfony project:
 
     !text
     path/to/project/
@@ -317,7 +317,7 @@ By default, the main configuration file lives in the `app/config/`
 directory and is called either `config.yml`, `config.xml` or `config.php`
 depending on which format you prefer.
 
-Symfony2 is all about configuring everything, and you can do pretty much
+Symfony is all about configuring everything, and you can do pretty much
 everything you want. That's why people agreed on some conventions, but then
 again, a convention is just **A** way to do things, not **THE** way to do them.
 
@@ -430,7 +430,7 @@ The **DI Container configuration** MUST be written in `XML`:
 An application can run in various environments. The different environments
 **share the same PHP code**, but use different configuration.
 
-A Symfony2 project generally uses three environments: `dev`, `test` and `prod`.
+A Symfony project generally uses three environments: `dev`, `test` and `prod`.
 
     !php
     // web/app.php
@@ -459,7 +459,7 @@ JavaScripts, images, ...) that implement a **single feature** (a blog, a forum,
 etc)._
 
 It should be **reusable**, so that you don't reinvent the wheel each time you
-need a common feature. In Symfony2, (almost) everything lives inside a bundle.
+need a common feature. In Symfony, (almost) everything lives inside a bundle.
 
 In order to use a bundle in your application, you need to register it in the
 `AppKernel`, using the `registerBundles()` method:
@@ -609,7 +609,7 @@ controller lives:
     $response->send();
 
 The front controller file (`app.php` in this example) is the actual PHP file
-that's executed when using a Symfony2 application and its job is to **use a
+that's executed when using a Symfony application and its job is to **use a
 Kernel** class, `AppKernel`, to **bootstrap the application**, for a given
 **environment**.
 
@@ -624,7 +624,7 @@ Each project contains just a few main directories: `web/` (web assets and the
 front controllers), `app/` (configuration), `src/` (your bundles), and `vendor/`
 (third-party code).
 
-Each feature in Symfony2 (including the Symfony2 framework core) is organized
+Each feature in Symfony (including the Symfony framework core) is organized
 into a **bundle**, which is a structured set of files for that feature.
 
 The configuration for each bundle lives in the `Resources/config` directory of the

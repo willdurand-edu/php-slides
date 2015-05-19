@@ -7,7 +7,7 @@
 A controller is a **PHP function** you create that takes information from the
 **HTTP request** and constructs and returns an **HTTP response**.
 
-Every request handled by a Symfony2 project goes through the same lifecycle:
+Every request handled by a Symfony project goes through the same lifecycle:
 
 1. Each request is handled by a single front controller file (e.g. `app.php` or
 `app_dev.php`) that bootstraps the application;
@@ -124,7 +124,7 @@ This is useful when you are working with forms.
 
 # The Base Controller Class
 
-Symfony2 comes with a base `Controller` class that assists with some of the most
+Symfony comes with a base `Controller` class that assists with some of the most
 common controller tasks and gives your controller class access to any resource
 it might need:
 
@@ -183,11 +183,11 @@ Or:
 
 # Basic Route Configuration
 
-The Symfony2 router lets you define URLs that you map to different areas of
+The Symfony router lets you define URLs that you map to different areas of
 your application.
 
 A _route_ is a map from a URL path to a controller. Each route is named, and
-maps a `pattern` (or `path` as of Symfony2.2) to a `_controller`:
+maps a `pattern` (or `path` as of Symfony.2) to a `_controller`:
 
     !yaml
     # app/config/routing.yml

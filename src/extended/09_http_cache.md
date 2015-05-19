@@ -25,14 +25,14 @@ front of your application.
 The **reverse proxy** caches responses as they are returned from your application
 and answers requests with cached responses before they hit your application.
 
-Symfony2 provides its own reverse proxy, but any reverse proxy can be used.
+Symfony provides its own reverse proxy, but any reverse proxy can be used.
 
 ### HTTP Cache
 
 **HTTP cache headers** are used to communicate with the gateway cache and any
 other caches between your application and the client.
 
-Symfony2 provides sensible defaults and a powerful interface for interacting
+Symfony provides sensible defaults and a powerful interface for interacting
 with the cache headers.
 
 ---
@@ -70,7 +70,7 @@ If the same resource is requested again, the cache sends the cached response to
 the client, ignoring your application entirely.
 
 This type of cache is known as a **HTTP gateway cache** and many exist such as
-**Varnish**, **Squid** in reverse proxy mode, and the **Symfony2 reverse
+**Varnish**, **Squid** in reverse proxy mode, and the **Symfony reverse
 proxy**.
 
 ---

@@ -5,7 +5,7 @@
 # About Form Validation
 
 In the previous section, you learned how a form can be submitted with valid or
-invalid data. In Symfony2, **validation is applied to the underlying object**.
+invalid data. In Symfony, **validation is applied to the underlying object**.
 
 In other words, the question isn't whether the "form" is valid, but whether the
 object is valid after the form has applied the submitted data to it.
@@ -88,7 +88,7 @@ second allows you to specify more complex validation rules.
 
 ### Properties
 
-Validating class properties is the most basic validation technique. Symfony2
+Validating class properties is the most basic validation technique. Symfony
 **allows you to validate private, protected or public properties**.
 
     !yaml
@@ -110,7 +110,7 @@ itself.
 
 ### Getters
 
-Constraints **can also be applied to the return value of a method**. Symfony2
+Constraints **can also be applied to the return value of a method**. Symfony
 allows you to add a constraint to any public method whose name starts with
 `get` or `is`.
 
