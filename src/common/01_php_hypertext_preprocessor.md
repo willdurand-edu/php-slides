@@ -5,10 +5,17 @@
 # History & Numbers
 
 * Created by Rasmus Lerdorf
+* 4th language on GitHub
+([August 2015](https://github.com/blog/2047-language-trends-on-github))
 * 6th language in the world
 ([TIOBE](http://tiobe.com/index.php/content/paperinfo/tpci/index.html) January 2016)
 * 1st language for web development
 * Running on +75% of all web servers
+* 20 years old in 2015!
+
+---
+
+# ![](../images/core-team.jpg)
 
 ---
 
