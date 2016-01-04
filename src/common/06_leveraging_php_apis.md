@@ -23,7 +23,7 @@ when encoded with `json_encode()`.
 Allow the use of `foreach`.
 
 > Read more:
-[http://fr2.php.net/manual/en/reserved.interfaces.php](http://fr2.php.net/manual/en/reserved.interfaces.php).
+[http://php.net/manual/en/reserved.interfaces.php](http://php.net/manual/en/reserved.interfaces.php).
 
 ---
 
@@ -219,7 +219,7 @@ make it easy to create and manage passwords in a secure manner, since PHP 5.5.0.
     }
 
 > Read more about the **Password Hashing API**:
-[http://www.php.net/manual/en/book.password.php](http://www.php.net/manual/en/book.password.php).
+[http://php.net/manual/en/book.password.php](http://php.net/manual/en/book.password.php).
 
 <p></p>
 
@@ -241,5 +241,5 @@ the PHAR creation process.
 
 > Read more about **PHAR**:
 >
-> * [http://www.php.net/manual/en/intro.phar.php](http://www.php.net/manual/en/intro.phar.php);
+> * [http://php.net/manual/en/intro.phar.php](http://php.net/manual/en/intro.phar.php);
 > * [http://blog.pascal-martin.fr/post/php-5.3-phar-php-archive](http://blog.pascal-martin.fr/post/php-5.3-phar-php-archive).

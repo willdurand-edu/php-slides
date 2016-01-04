@@ -51,7 +51,7 @@ Embedded web server:
     $ php -S localhost:8000
 
 > Learn more about the built-in, command line web server:
-[http://www.php.net/manual/en/features.commandline.webserver.php](http://www.php.net/manual/en/features.commandline.webserver.php).
+[http://php.net/manual/en/features.commandline.webserver.php](http://php.net/manual/en/features.commandline.webserver.php).
 
 ---
 
