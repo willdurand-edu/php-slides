@@ -242,4 +242,5 @@ the PHAR creation process.
 > Read more about **PHAR**:
 >
 > * [http://php.net/manual/en/intro.phar.php](http://php.net/manual/en/intro.phar.php);
-> * [http://blog.pascal-martin.fr/post/php-5.3-phar-php-archive](http://blog.pascal-martin.fr/post/php-5.3-phar-php-archive).
+> * [http://blog.pascal-martin.fr/post/php-5.3-phar-php-archive](http://blog.pascal-martin.fr/post/php-5.3-phar-php-archive)
+> * [https://mwop.net/blog/2015-12-14-secure-phar-automation.html](https://mwop.net/blog/2015-12-14-secure-phar-automation.html).
