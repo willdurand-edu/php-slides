@@ -4,12 +4,11 @@
 
 # William DURAND
 
-PhD student at Michelin / LIMOS
+PhD student / **CTO TailorDev**
 
-Graduated from IUT and ISIMA
+Graduated from IUT and ISIMA. Worked at:
 
-Worked at:
-
+* [Michelin](http://www.michelin.fr/) (Clermont-Fd, France);
 * [Nelmio](http://nelm.io) (Zürich, Switzerland);
 * [e-TF1](http://www.tf1.fr/) (Paris, France);
 * [Prizee.com](http://prizee.com) (Clermont-Fd, France).
