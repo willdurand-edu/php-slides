@@ -136,7 +136,7 @@ Creating an instance:
     $class = 'Foo';
     $foo   = new $class();
 
-Getting the classname of an instance:
+Getting the class name of an instance:
 
     !php
     echo get_class($foo);
