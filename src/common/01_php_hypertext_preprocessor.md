@@ -5,9 +5,10 @@
 # History & Numbers
 
 * Created by Rasmus Lerdorf
-* 6th language in the world (TIOBE December 2013)
+* 6th language in the world
+([TIOBE](http://tiobe.com/index.php/content/paperinfo/tpci/index.html) January 2016)
 * 1st language for web development
-* Running on 75% of all web servers
+* Running on +75% of all web servers
 
 ---
 
@@ -27,6 +28,11 @@
 ## Mac OS X
 
     !bash
+    $ curl -s http://php-osx.liip.ch/install.sh | bash -s 7.0
+
+<p></p>
+
+    !bash
     $ curl -s http://php-osx.liip.ch/install.sh | bash -s 5.6
 
 > [http://php-osx.liip.ch/](http://php-osx.liip.ch/)
@@ -39,7 +45,7 @@
 
 ![](../images/y-u-no-use-linux.jpg)
 
-> [http://www.php.net/manual/en/install.windows.installer.msi.php](http://www.php.net/manual/en/install.windows.installer.msi.php)
+> [http://php.net/manual/en/install.windows.installer.msi.php](http://php.net/manual/en/install.windows.installer.msi.php)
 
 ---
 
@@ -51,8 +57,8 @@ HHVM uses a just-in-time compilation approach to achieve superior performance.
 
 ![](../images/hhvm.jpg)
 
-> [http://www.hhvm.com](http://www.hhvm.com)
+> [http://hhvm.com](http://hhvm.com)
 
 ---
 
-# RTFM: [http://www.php.net](http://www.php.net)
+# RTFM: [http://php.net](http://php.net)

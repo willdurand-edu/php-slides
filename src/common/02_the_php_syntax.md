@@ -15,7 +15,7 @@ And 3 **pseudo** types: `mixed`, `number`, `callback`.
 **Note:** most of these types have aliases. E.g. `double` for `float`.
 
 > Read more about the **PHP primitive types**:
-[http://www.php.net/manual/en/language.types.intro.php](http://www.php.net/manual/en/language.types.intro.php).
+[http://php.net/manual/en/language.types.intro.php](http://php.net/manual/en/language.types.intro.php).
 
 ---
 
@@ -79,7 +79,31 @@ But also:
 
 ---
 
-# Classes (1/2)
+# New Operators in PHP 7.0
+
+### Null Coalescing Operator: `??`
+
+    !php
+    // Fetches the value of $_GET['user'] and returns 'nobody'
+    // if it does not exist.
+    $username = $_GET['user'] ?? 'nobody';
+
+    // This is equivalent to:
+    $username = isset($_GET['user']) ? $_GET['user'] : 'nobody';
+
+### Spaceship Operator: `<=>`
+
+Returns `-1`, `0` or `1` when `$a` is respectively less than, equal to, or
+greater than `$b`:
+
+    !php
+    echo 1 <=> 1; // 0
+    echo 1 <=> 2; // -1
+    echo 2 <=> 1; // 1
+
+---
+
+# Classes (1/3)
 
 ### Simple class definition
 
@@ -100,7 +124,7 @@ But also:
 
 ---
 
-# Classes (2/2)
+# Classes (2/3)
 
 Creating an instance:
 
@@ -125,7 +149,35 @@ Useful keyword: `instanceof`
         // do something
     }
 
-> [http://www.php.net/manual/en/language.oop5.basic.php](http://www.php.net/manual/en/language.oop5.basic.php)
+> [http://php.net/manual/en/language.oop5.basic.php](http://php.net/manual/en/language.oop5.basic.php)
+
+---
+
+# Classes (3/3)
+
+### Anonymous Classes (PHP >= 7.0)
+
+    !php
+    new class {
+        public function foo() {
+            return 'foo';
+        }
+    }
+
+Anonymous classes behave as traditional classes:
+
+    !php
+    interface Logger {
+        public function log($msg);
+    }
+
+    $logger = new class implements Logger {
+        public function log($msg) {
+            // ...
+        }
+    }
+
+    $logger->log('Hello, Anonymous Class');
 
 ---
 
@@ -181,7 +233,7 @@ Methods without any explicit visibility keyword are defined as `public`.
 
 ---
 
-# Methods (1/3)
+# Methods (1/4)
 
     !php
     class Foo
@@ -193,8 +245,8 @@ Methods without any explicit visibility keyword are defined as `public`.
 
 ### Type Hinting
 
-Works with classes, interfaces, arrays, `callable`, and `Closure`. You can't use
-scalar types such as `int` or `string`:
+Works with classes, interfaces, arrays, `callable`, and `Closure`. You cannot
+use scalar types such as `int` or `string` with PHP < 7.0:
 
     !php
     public function doSomething(Foo $foo);
@@ -209,7 +261,29 @@ scalar types such as `int` or `string`:
 
 ---
 
-# Methods (2/3)
+# Methods (2/4)
+
+[PHP 7](https://secure.php.net/manual/en/migration70.new-features.php) \o/
+
+### Scalar Type Declarations
+
+Works with `int`, `float`, `string`, and `bool`:
+
+    !php
+    function sumOfInts(int ...$ints) {
+        return array_sum($ints);
+    }
+
+### Return Type Declarations
+
+    !php
+    function sumOfInts(int ...$ints) : int {
+        return array_sum($ints);
+    }
+
+---
+
+# Methods (3/4)
 
 The `->` operator is used to call methods on objects.
 
@@ -231,7 +305,7 @@ The `->` operator is used to call methods on objects.
 
 ---
 
-# Methods (3/3)
+# Methods (4/4)
 
     !php
     public function doSomething()
@@ -272,9 +346,9 @@ Attributes/Methods can be defined as `static`:
     }
 
 **Warning:** the `static` keyword can also be used to [define static
-variables](http://www.php.net/manual/en/language.variables.scope.php#language.variables.scope.static)
+variables](http://php.net/manual/en/language.variables.scope.php#language.variables.scope.static)
 and for [late static
-bindings](http://www.php.net/manual/en/language.oop5.late-static-bindings.php).
+bindings](http://php.net/manual/en/language.oop5.late-static-bindings.php).
 This is different!
 
 ---
@@ -384,7 +458,7 @@ New operator `...` as of PHP 5.6:
 
 ---
 
-# Namespaces
+# Namespaces (1/2)
 
 Namespaces prevent naming collisions with identifiers such as function, class,
 and interface names:
@@ -402,12 +476,41 @@ Or:
 
 ### PSR-0
 
-[PSR-0](http://www.php-fig.org/psr/psr-0/) describes a set of rules related to
+[PSR-0](http://php-fig.org/psr/psr-0/) describes a set of rules related to
 namespaces for autoloader interoperability:
 
     !php
     \ns\package\Class_Name      => vendor/ns/package/Class/Name.php
     \ns\package_name\Class_Name => vendor/ns/package_name/Class/Name.php
+
+---
+
+# Namespaces (2/2)
+
+Classes, functions, and constants have to be **imported** with the `use`
+statement:
+
+    !php
+    namespace My\Namespace;
+
+    // Pre PHP 7 code
+    use some\namespace\ClassA;
+    use some\namespace\ClassB;
+
+    use function some\namespace\fn_a;
+    use function some\namespace\fn_b;
+
+    // PHP 7+ code
+    use some\namespace\{ClassA, ClassB};
+
+    use function some\namespace\{fn_a, fn_b};
+
+    class MyClass
+    {
+        public function __construct(ClassA $a, ClassB $b) {
+            // ...
+        }
+    }
 
 ---
 
@@ -430,7 +533,7 @@ Assuming the class definition above, you can get the **F**ully **Q**ualified
     // My\namespace\ClassName
 
 > Read more about the `class` keyword:
-[http://www.php.net/manual/en/language.oop5.basic.php](http://www.php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.class).
+[http://php.net/manual/en/language.oop5.basic.php](http://php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.class).
 
 ---
 
@@ -458,7 +561,7 @@ Horizontal Inheritance FTW!
 
 
 > Read more about **traits**:
-[http://www.php.net/manual/en/language.oop5.traits.php](http://www.php.net/manual/en/language.oop5.traits.php).
+[http://php.net/manual/en/language.oop5.traits.php](http://php.net/manual/en/language.oop5.traits.php).
 
 ---
 
@@ -476,7 +579,7 @@ defined, and possibly called, without being bound to an identifier.
     => Hello World
 
 > Read more about **anonymous functions**:
-[http://www.php.net/manual/en/functions.anonymous.php](http://www.php.net/manual/en/functions.anonymous.php).
+[http://php.net/manual/en/functions.anonymous.php](http://php.net/manual/en/functions.anonymous.php).
 
 ---
 
@@ -531,7 +634,20 @@ The heart of a generator function is the `yield` keyword.
 
 > Read more about **generators**:
 >
-> * [http://www.php.net/manual/en/language.generators.php](http://www.php.net/manual/en/language.generators.php);
+> * [http://php.net/manual/en/language.generators.php](http://php.net/manual/en/language.generators.php);
 > * [What Generators Can Do For
 You](http://blog.ircmaxell.com/2012/07/what-generators-can-do-for-you.html);
 > * [https://github.com/nikic/iter](https://github.com/nikic/iter) (examples).
+
+---
+
+# Errors in PHP 7
+
+No more **Fatal Errors** \o/
+
+Many fatal and recoverable fatal errors have been converted to exceptions
+inheriting from the new `Error` class, which itself implements the `Throwable`
+interface, i.e. the new base interface all exceptions inherit.
+
+>
+[https://secure.php.net/manual/en/language.errors.php7.php](https://secure.php.net/manual/en/language.errors.php7.php)
