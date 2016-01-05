@@ -175,7 +175,7 @@ Anonymous classes behave as traditional classes:
         public function log($msg) {
             // ...
         }
-    }
+    };
 
     $logger->log('Hello, Anonymous Class');
 
