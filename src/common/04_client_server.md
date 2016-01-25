@@ -132,6 +132,7 @@ Here is an example:
 * `406` Not Acceptable
 * `409` Conflict
 * `415` Unsupported Media Type
+* `451` Unavailable For Legal Reasons
 
 ### `5xx` Server Error
 
