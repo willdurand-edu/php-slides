@@ -859,3 +859,7 @@ Reuse your specifications in your business layer:
             }
         }
     }
+
+---
+
+# Checkout: [RulerZ](https://github.com/K-Phoen/rulerz)
