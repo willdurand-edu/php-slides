@@ -191,7 +191,7 @@ the `newAction()` and the `updateAction()`:
             return $this->redirect($this->generateUrl('success'));
         }
 
-        return $this->render('AcmeDemoBundle:Default:new.html.twig', [
+        return $this->render('default/new.html.twig', [
             'form' => $form->createView(),
         ]);
     }
