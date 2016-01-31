@@ -295,6 +295,8 @@ Structure of a Symfony 3 project using the standard edition:
             app.php
             ...
 
+---
+
 * `app/` contains the application kernel, views, and the configuration;
 * `src/` contains your **code**;
 * `tests/` contains your tests;
@@ -356,9 +358,9 @@ again, a convention is just **A** way to do things, not **THE** way to do them.
 
 # Where to put the code
 
-`src/AppBundle`: code specific to your application (only application bundle per app)
-`src/MyLib` or `vendor/mynamespace/my-lib` (through Composer): library not coupled to Symfony
-`src/FeatureBundle` or `vendor/mynamespace/feature-bundle` (through Composer): reusable bundles
+* `src/AppBundle`: code specific to your application (only application bundle per app)
+* `src/MyLib` or `vendor/mynamespace/my-lib` (through Composer): library not coupled to Symfony
+* `src/FeatureBundle` or `vendor/mynamespace/feature-bundle` (through Composer): reusable bundles
 
 ---
 
