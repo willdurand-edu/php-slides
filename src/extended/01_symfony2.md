@@ -112,7 +112,7 @@ a Symfony bundle** (i.e. a plugin) that can be configured or replaced entirely.
 Symfony **provides a powerful set of tools for rapidly developing web
 applications** without imposing on your application.
 
-The Symfony standard edition also install some popular libraries playing well with Symfony including
+The Symfony standard edition installs some popular libraries playing well with Symfony including
 the Doctrine ORM, the Monolog logging library and the Swift Mailer library.
 
 > [http://symfony.com/doc/current/book/index.html](http://symfony.com/doc/current/book/index.html)
@@ -208,6 +208,7 @@ It's all about transforming a **Request** into a **Response**:
 
 # Installing the Symfony Standard Edition
 
+    !text
     # Download the Symfony installer
     curl -LsS http://symfony.com/installer -o symfony
     # Create a new project
@@ -227,7 +228,7 @@ Also, each controller should be suffixed with `Controller`.
     namespace AppBundle\Controller;
 
     use Symfony\Component\HttpFoundation\Response;
-    use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+    use Symfony\Component\Routing\Annotation\Route;
 
     class MainController
     {
@@ -395,10 +396,10 @@ The **main configuration** MUST be written in `YAML`:
     # app/config/config.yml
     # ...
     twig:
-        debug:            "%kernel.debug%"
-        strict_variables: "%kernel.debug%"
+        debug:            '%kernel.debug%'
+        strict_variables: '%kernel.debug%'
 
-The **routing definition** MUST be written using annotations:
+The **routing definition** should be written using annotations:
 
     !php
     /**
@@ -409,7 +410,7 @@ The **routing definition** MUST be written using annotations:
     // ...
 
 
-The **DI Container configuration** MUST be written in `YAML`:
+The **DI Container configuration** should be written in `YAML`:
 
     !xml
     # app/config/services.yml
