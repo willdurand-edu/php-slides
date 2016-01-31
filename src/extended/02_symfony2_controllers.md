@@ -146,7 +146,7 @@ it might need:
 
     !php
     return $this->render(
-        'AcmeDemoBundle:Hello:hello.html.twig', array('name' => $name)
+        'hello/hello.html.twig', ['name' => $name]
     );
 
 ---
@@ -160,12 +160,12 @@ Create a simple `Response` with a `200` status code:
     !php
     use Symfony\Component\HttpFoundation\Response;
 
-    $response = new Response('Hello, ' . $name, 200);
+    $response = new Response('Hello, '.$name, 200);
 
 Create a JSON response with a `200` status code:
 
     !php
-    $response = new Response(json_encode(array('name' => $name)));
+    $response = new Response(json_encode(['name' => $name]));
     $response->headers->set('Content-Type', 'application/json');
 
 Or:
@@ -173,7 +173,7 @@ Or:
     !php
     use Symfony\Component\HttpFoundation\JsonResponse;
 
-    $response = new JsonResponse(array('name' => $name));
+    $response = new JsonResponse(['name' => $name]);
 
 ---
 
@@ -271,7 +271,7 @@ located in the bundle itself, and you should just require it:
     !yaml
     # app/config/routing.yml
     acme_demo:
-        resource: "@AcmeDemoBundle/Resources/config/routing.yml"
+        resource: '@AcmeDemoBundle/Resources/config/routing.yml'
 
 
 ### Prefixing Imported Routes
@@ -279,8 +279,8 @@ located in the bundle itself, and you should just require it:
     !yaml
     # app/config/routing.yml
     acme_demo:
-        resource: "@AcmeDemoBundle/Resources/config/routing.yml"
-        prefix: /demo
+        resource: '@AcmeDemoBundle/Resources/config/routing.yml'
+        prefix:   /demo
 
 The string `/demo` now be prepended to the path of each route loaded from
 the new routing resource.

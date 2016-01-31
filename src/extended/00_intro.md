@@ -1,4 +1,4 @@
-# A Framework To Simplify Developments
+# Symfony: A Framework To Simplify Developments
 
 A **framework helps you work better** by structuring developments,
 and **faster** by reusing generic modules.
@@ -15,4 +15,4 @@ easier and more productive.
 Most of the time, a framework implements many kinds of **design patterns**.
 
 > Read more: [Symfony explained to a
-> Developer](http://symfony.com/symfony-explained-to-a-developer).
+> Developer](https://symfony.com/symfony-explained-to-a-developer).

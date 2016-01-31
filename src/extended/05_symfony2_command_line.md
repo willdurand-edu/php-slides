@@ -31,7 +31,7 @@ You can suppress output:
 
 ---
 
-# Built-in Commands (2/2)
+# Some built-in Commands (2/2)
 
     !text
     assets
@@ -40,23 +40,18 @@ You can suppress output:
     cache
       cache:clear             Clears the cache
       cache:warmup            Warms up an empty cache
-    config
-      config:dump-reference   Dumps default configuration for an extension
-    container
-      container:debug         Displays current services for an application
-    init
-      init:acl                Mounts ACL tables in the database
+    debug
+       debug:container        Displays current services for an application
+       debug:router           Displays current routes for an application
     router
-      router:debug            Displays current routes for an application
-      router:dump-apache      Dumps all routes as Apache rewrite rules
       router:match            Helps debug routes by simulating a path info
                               match
     server
       server:run              Runs PHP built-in web server
     translation
       translation:update      Updates the translation file
-    twig
-      twig:lint               Lints a template and outputs encountered
+    lint
+      lint:twig               Lints a template and outputs encountered
                               errors
 
 ---
@@ -68,7 +63,7 @@ with `Command.php` for each command that you want to provide:
 
     !php
     // src/Acme/DemoBundle/Command/GreetCommand.php
-    namespace Acme\DemoBundle\Command;
+    namespace AppBundle\Command;
 
     use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
     use Symfony\Component\Console\Input\InputInterface;

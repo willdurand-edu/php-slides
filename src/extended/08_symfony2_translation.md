@@ -100,7 +100,7 @@ To translate pluralized messages, use the `transChoice()` method:
     $t = $this->get('translator')->transChoice(
         'There is one apple|There are %count% apples',
         10,
-        array('%count%' => 10)
+        ['%count%' => 10]
     );
 
 The second argument (`10` in this example), is the **number of objects being
@@ -132,35 +132,3 @@ Or numbers between two other numbers:
     !jinja
     [1, +Inf[
     ]-1,2[
-
----
-
-# BazingaJsTranslationBundle
-
-    !yaml
-    # app/Resources/translations/Hello.fr.yml
-    ba:
-        bar:      Bonjour.
-    place.holder: Bonjour %username%!
-    plural:       Il y a %count% pomme|Il y a %count% pommes
-
-<p></p>
-
-    !html+jinja
-    <script src="{{ url('bazinga_jstranslation_js', { 'domain': 'Hello' }) }}">
-    </script>
-
-A `Translator` object is now available in your JavaScript:
-
-    !javascript
-    Translator.trans('ba.bar', {}, 'Hello', 'fr');
-    // "Bonjour."
-
-    Translator.trans('place.holder', { "username" : "Will" }, 'Hello');
-    // "Bonjour Will!"
-
-    Translator.transChoice('plural', 1, { "count": 1 }, 'Hello');
-    // "Il y a 1 pomme"
-
-    Translator.transChoice('plural', 10, { "count": 10 }, 'Hello');
-    // "Il y a 10 pommes"

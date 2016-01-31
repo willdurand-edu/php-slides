@@ -27,21 +27,20 @@ specification](http://jcp.org/en/jsr/detail?id=303).
 Given the following class:
 
     !php
-    namespace Acme\DemoBundle\Entity;
+    namespace AppBundle\Entity;
+    
+    use Symfony\Component\Validator\Constraints as Assert;
 
     class Author
     {
+        /**
+          * @Assert\NotBlank
+          */
         public $name;
     }
+    
+    Note: Constraints can also be wrote using `XML`, `YAML` and `PHP` formats.
 
-You can configure a set of **constraints** on it:
-
-    !yaml
-    # src/Acme/DemoBundle/Resources/config/validation.yml
-    Acme\DemoBundle\Entity\Author:
-        properties:
-            name:
-                - NotBlank: ~
 
 ---
 
@@ -52,7 +51,7 @@ You can configure a set of **constraints** on it:
     // ... do something to the $author object
 
     $validator = $this->get('validator');
-    $errors    = $validator->validate($author);
+    $errors = $validator->validate($author);
 
     if (count($errors) > 0) {
         // Ooops, errors!
@@ -63,7 +62,7 @@ You can configure a set of **constraints** on it:
 If the `$name` property is empty, you will see the following error message:
 
     !text
-    Acme\DemoBundle\Author.name:
+    AppBundle\Author.name:
         This value should not be blank
 
 Most of the time, you won't interact directly with the validator service or need
@@ -91,12 +90,18 @@ second allows you to specify more complex validation rules.
 Validating class properties is the most basic validation technique. Symfony
 **allows you to validate private, protected or public properties**.
 
-    !yaml
-    # src/Acme/DemoBundle/Resources/config/validation.yml
-    Acme\DemoBundle\Entity\Author:
-        properties:
-            firstName:
-                - NotBlank: ~
+    !php
+    namespace AppBundle\Entity;
+    
+    use Symfony\Component\Validator\Constraints as Assert;
+
+    class Author
+    {
+        /**
+         * @Assert\NotBlank
+         */
+        public $name;
+    }
 
 ### Classes
 
@@ -114,20 +119,31 @@ Constraints **can also be applied to the return value of a method**. Symfony
 allows you to add a constraint to any public method whose name starts with
 `get` or `is`.
 
-    !yaml
-    # src/Acme/DemoBundle/Resources/config/validation.yml
-    Acme\DemoBundle\Entity\Author:
-        getters:
-            passwordLegal:
-                - "False":
-                    message: "The password cannot match your first name"
-
-With the following code in the `Author` class:
-
     !php
-    public function isPasswordLegal()
+    namespace AppBundle\Entity;
+    
+    use Symfony\Component\Validator\Constraints as Assert;
+
+    class Author
     {
-        return ($this->firstName !== $this->password);
+        private $firstName;
+        private $password;
+        
+        /**
+         * @Assert\NotBlank
+         */
+        public function getName()
+        {
+            return $this->name;
+        }
+        
+        /**
+         * @Assert\False(message='The password cannot match your first name')
+         */
+        public function isPasswordLegal()
+        {
+            return ($this->firstName !== $this->password);
+        }
     }
 
 ---
@@ -142,18 +158,29 @@ then apply validation against just one group of constraints.
 
 ### Example
 
-    !yaml
-    # src/Acme/DemoBundle/Resources/config/validation.yml
-    Acme\DemoBundle\Entity\User:
-        properties:
-            email:
-                - Email:    { groups: [ registration ] }
-            password:
-                - NotBlank: { groups: [ registration ] }
-                - Length:   { groups: [ registration ], min: 7 }
-            city:
-                - Length:
-                    min: 2
+    !php
+    namespace AppBundle\Entity;
+    
+    use Symfony\Component\Validator\Constraints as Assert;
+
+    class Author
+    {
+        /**
+         * @Assert\Email(groups={"registration"})
+         */
+        private $email;
+
+        /**
+         * @Assert\NotBlank(groups={"registration"})
+         * @Assert\Length(min=7, groups={"registration"})
+         */
+        private $password;
+
+        /**
+         * @Assert\Length(min=2)
+         */
+        private $city;
+    }
 
 ---
 
@@ -168,7 +195,7 @@ To tell the validator to use a specific group, pass one or more group names as
 the second argument to the `validate()` method:
 
     !php
-    $errors = $validator->validate($author, [ 'registration' ]);
+    $errors = $validator->validate($author, ['registration']);
 
 ---
 
@@ -180,7 +207,7 @@ which validation group(s) your form should use:
     !php
     $form = $this
         ->createFormBuilder($users, [
-            'validation_groups' => [ 'registration' ],
+            'validation_groups' => ['registration'],
         ])
         ->add(...);
 
@@ -193,7 +220,7 @@ the `setDefaultOptions()` method:
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults([
-            'validation_groups' => [ 'registration' ],
+            'validation_groups' => ['registration'],
         ]);
     }
 

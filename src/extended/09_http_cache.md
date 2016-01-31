@@ -239,7 +239,7 @@ determine if two versions of a resource are the same or not.
     !php
     public function indexAction()
     {
-        $response = $this->render('MyBundle:Main:index.html.twig');
+        $response = $this->render('main/index.html.twig');
         $response->setETag(md5($response->getContent()));
         $response->setPublic(); // make sure the response is public/cacheable
         $response->isNotModified($this->getRequest());

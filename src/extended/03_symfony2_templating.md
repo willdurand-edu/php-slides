@@ -52,16 +52,16 @@
 # Accessing Variables
 
     !jinja
-    {# array('name' => 'Fabien') #}
+    {# ['name' => 'Fabien'] #}
     {{ name }}
 
-    {# array('user' => array('name' => 'Fabien')) #}
+    {# ['user' => ['name' => 'Fabien']] #}
     {{ user.name }}
 
     {# force array lookup #}
     {{ user['name'] }}
 
-    {# array('user' => new User('Fabien')) #}
+    {# ['user' => new User('Fabien')] #}
     {{ user.name }}
     {{ user.getName }}
 
@@ -192,8 +192,8 @@ The key to template inheritance is the `{% extends %}` tag.
 A **child template** might look like this:
 
     !jinja
-    {# src/Acme/BlogBundle/Resources/views/Blog/index.html.twig #}
-    {% extends '::base.html.twig' %}
+    {# app/Resources/views/Blog/index.html.twig #}
+    {% extends 'base.html.twig' %}
 
     {% block title %}My cool blog posts{% endblock %}
 
@@ -203,10 +203,6 @@ A **child template** might look like this:
             <p>{{ entry.body }}</p>
         {% endfor %}
     {% endblock %}
-
-The **parent template** is identified by a special string syntax
-(`::base.html.twig`) which indicates that the template lives in
-`app/Resources/views/`.
 
 If you need to get the content of a block from the **parent template**, you can
 use the `{{ parent() }}` function.
@@ -218,9 +214,9 @@ use the `{{ parent() }}` function.
 By default, templates can live in two different locations:
 
 * `app/Resources/views/`: The applications views directory can contain
-  application-wide **base templates** (i.e. your application's layouts) as well as
-  **templates that override bundle templates**;
-* `path/to/bundle/Resources/views/`: Each **bundle houses its templates** in its
+  application-wide **base templates** (i.e. your application's layouts), templates specific to your
+  app as well as  **templates that override bundle templates**;
+* `path/to/bundle/Resources/views/`: Each **public** bundle houses its templates in its
   `Resources/views` directory (and subdirectories).
 
 Symfony uses a `bundle:controller:template` string syntax for templates.
@@ -279,23 +275,6 @@ overridden by copying each from the `Resources/views/` directory of the
 
 ---
 
-# The Three-Level Approach
-
-1. Create a `app/Resources/views/base.html.twig` file that contains the **main
-layout** for your application (like in the previous example). Internally, this
-template is called `::base.html.twig`.
-
-2. Create a template for each **section** of your site. The _AcmeBlogBundle_
-would have a template called `AcmeBlogBundle::layout.html.twig` that contains
-only blog section-specific elements.
-
-3. Create **individual templates for each page** and make each extend the
-appropriate section template. For example, the "index" page would be called
-something close to `AcmeBlogBundle:Blog:index.html.twig` and list the actual
-blog posts.
-
----
-
 # Twig Into Symfony
 
 ---
@@ -309,18 +288,18 @@ blog posts.
     {
         // ...
 
-        return $this->render('AcmeBlogBundle:Blog:index.html.twig', array(
+        return $this->render('blog/index.html.twig', [
             'posts' => $posts,
-        ));
+        ]);
     }
 
 ### Using the Templating Service
 
     !php
     $engine  = $this->container->get('templating');
-    $content = $engine->render('AcmeBlogBundle:Blog:index.html.twig', array(
+    $content = $engine->render('blog/index.html.twig', [
         'posts' => $posts,
-    ));
+    ]);
 
     return new Response($content);
 
@@ -381,33 +360,6 @@ adding a query parameter to all rendered asset paths:
 
     !text
     /images/logo.png?v2
-
----
-
-# Linking To Pages In JavaScript
-
-The [FOSJsRoutingBundle](https://github.com/FriendsOfSymfony/FOSJsRoutingBundle)
-allows you to **expose your routing in your JavaScript code**. That means you'll
-be able to generate URL with given parameters like you can do with the _Router_
-component provided by Symfony.
-
-    !yaml
-    # app/config/routing.yml
-    my_route_to_expose:
-        pattern:  /foo/{id}/bar
-        defaults: { _controller: FooBarBundle:Foo:bar }
-        options:
-            expose: true
-
-According to the routing definition above, you can write the following
-JavaScript code to generate URLs:
-
-    !javascript
-    Routing.generate('my_route_to_expose', { id: 10 });
-    // /foo/10/bar
-
-    Routing.generate('my_route_to_expose', { id: 10 }, true);
-    // http://example.org/foo/10/bar
 
 ---
 

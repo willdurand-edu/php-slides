@@ -171,7 +171,7 @@ Methods without any explicit visibility keyword are defined as `public`.
         /**
          * @var array
          */
-        protected $values = array();
+        protected $values = []; // or array()
 
         /**
          * @var string|null

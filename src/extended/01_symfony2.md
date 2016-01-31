@@ -61,14 +61,14 @@ have any mandatory dependencies.
 There are ~30 components, including:
 
     !text
-    BrowserKit              EventDispatcher     OptionsResolver     Translation
-    ClassLoader             ExpressionLanguage  Process             VarDumper
-    Config                  Filesystem          PropertyAccess      Yaml
-    Console                 Finder              Routing
-    CssSelector             Form                Security
-    Debug                   HttpFoundation      Serializer
-    DependencyInjection     HttpKernel          Stopwatch
-    DomCrawler              Intl                Templating
+    BrowserKit              EventDispatcher     OptionsResolver     Templating
+    ClassLoader             ExpressionLanguage  Process             Translation
+    Config                  Filesystem          PropertyAccess      VarDumper
+    Console                 Finder              PropertyInfo        Yaml
+    CssSelector             Form                Routing
+    Debug                   HttpFoundation      Security
+    DependencyInjection     HttpKernel          Serializer
+    DomCrawler              Intl                Stopwatch
 
 ---
 
@@ -111,6 +111,9 @@ a Symfony bundle** (i.e. a plugin) that can be configured or replaced entirely.
 
 Symfony **provides a powerful set of tools for rapidly developing web
 applications** without imposing on your application.
+
+The Symfony standard edition also install some popular libraries playing well with Symfony including
+the Doctrine ORM, the Monolog logging library and the Swift Mailer library.
 
 > [http://symfony.com/doc/current/book/index.html](http://symfony.com/doc/current/book/index.html)
 
@@ -182,7 +185,7 @@ applications** without imposing on your application.
     $request = Request::createFromGlobals();
     $path    = $request->getPathInfo();
 
-    if (in_array($path, array('', '/'))) {
+    if (in_array($path, ['', '/'])) {
         $response = new Response('Welcome to the homepage.');
     } elseif ('/hello' === $path) {
         $response = new Response('hello, World!');
@@ -203,28 +206,12 @@ It's all about transforming a **Request** into a **Response**:
 
 ---
 
-# Routing Definition
+# Installing the Symfony Standard Edition
 
-The routing system determines which PHP function should be executed based on
-information from the request and routing configuration you've created.
-
-    !yaml
-    # app/config/routing.yml
-    hello:
-        pattern:  /hello
-        defaults: { _controller: AcmeDemoBundle:Main:hello }
-
-The `AcmeDemoBundle:Main:hello` string is a short syntax that points to a
-specific PHP method named `helloAction()` inside a class called
-`MainController`.
-
-
-<blockquote class="info">
-    <p>
-        This example uses <strong>YAML</strong> to define the routing configuration.
-        Routing configuration can also be written in other formats such as <strong>XML</strong> or <strong>PHP</strong>.
-    </p>
-</blockquote>
+    # Download the Symfony installer
+    curl -LsS http://symfony.com/installer -o symfony
+    # Create a new project
+    php symfony new my_project
 
 ---
 
@@ -236,13 +223,17 @@ to suffix each method with `Action`.
 Also, each controller should be suffixed with `Controller`.
 
     !php
-    // src/Acme/DemoBundle/Controller/MainController.php
-    namespace Acme\DemoBundle\Controller;
+    // src/AppBundle/Controller/MainController.php
+    namespace AppBundle\Controller;
 
     use Symfony\Component\HttpFoundation\Response;
+    use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
     class MainController
     {
+        /**
+         * @Route("/hello", name="hello")
+         */
         public function helloAction()
         {
             return new Response('<h1>Hello, World!</h1>');
@@ -251,26 +242,62 @@ Also, each controller should be suffixed with `Controller`.
 
 ---
 
+# Routing Definition
+
+The routing system determines which PHP function should be executed based on
+information from the request and routing configuration you've created.
+
+The previous definition uses annotations. Other formats are available, here is an example using YAML:
+
+    !yaml
+    # app/config/routing.yml
+    hello:
+        pattern:  /hello
+        defaults: { _controller: AppBundle:Main:hello }
+
+The `AppBundle:Main:hello` string is a short syntax that points to a
+specific PHP method named `helloAction()` inside a class called
+`MainController`.
+
+
+<blockquote class="info">
+    <p>
+        Those examples use <strong>annotations</strong> and <strong>YAML</strong> to define the routing configuration.
+        Routing configuration can also be written in other formats such as <strong>XML</strong> or <strong>PHP</strong>.
+    </p>
+</blockquote>
+
+---
+
 # A Symfony Project
 
-**Recommended** structure of a Symfony project:
+Structure of a Symfony 3 project using the standard edition:
 
     !text
     path/to/project/
         app/
-            cache/
             config/
-            logs/
+            Resources/
+                views/
+        bin/
+            console
         src/
             ...
+        tests/
+        var/
+            cache/
+            logs/
+            sessions/
         vendor/
             ...
         web/
             app.php
             ...
 
-* `app/` contains the application kernel, and the configuration;
-* `src/` contains your **bundles**;
+* `app/` contains the application kernel, views, and the configuration;
+* `src/` contains your **code**;
+* `tests/` contains your tests;
+* `var/` contains files that change often (like in Unix systems);
 * `vendor/` contains your dependencies;
 * `web/` contains your front controllers and your assets.
 
@@ -288,12 +315,12 @@ This is the **central part** of your application:
     {
         public function registerBundles()
         {
-            $bundles = array(
+            $bundles = [
                 new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
                 // ...
-            );
+            ];
 
-            if (in_array($this->getEnvironment(), array('dev', 'test'))) {
+            if (in_array($this->getEnvironment(), ['dev', 'test'])) {
                 $bundles[] = // dev bundle;
             }
 
@@ -305,21 +332,32 @@ This is the **central part** of your application:
 
 ---
 
-# Application Configuration
+# Bundles and Application Configuration
 
 An application consists of a collection of "bundles" representing all of the
 features and capabilities of your application.
+
+Bundles can be provided by Symfony, wrote in your own application or installed
+with Composer (community bundles).
 
 Each "bundle" can be customized via configuration files written in `YAML`, `XML`
 or `PHP`.
 
 By default, the main configuration file lives in the `app/config/`
 directory and is called either `config.yml`, `config.xml` or `config.php`
-depending on which format you prefer.
+depending on which format you prefer (YAML is the preferred one according to best practices).
 
 Symfony is all about configuring everything, and you can do pretty much
 everything you want. That's why people agreed on some conventions, but then
 again, a convention is just **A** way to do things, not **THE** way to do them.
+
+---
+
+# Where to put the code
+
+`src/AppBundle`: code specific to your application (only application bundle per app)
+`src/MyLib` or `vendor/mynamespace/my-lib` (through Composer): library not coupled to Symfony
+`src/FeatureBundle` or `vendor/mynamespace/feature-bundle` (through Composer): reusable bundles
 
 ---
 
@@ -344,59 +382,12 @@ again, a convention is just **A** way to do things, not **THE** way to do them.
         strict_variables: "%kernel.debug%"
 
     # ...
+    
+    Note: Symfony also support `XML` and `PHP` configuration formats.
 
 ---
 
-# XML Configuration
-
-### Example:
-
-    !xml
-    <!-- app/config/config.xml -->
-    <imports>
-        <import resource="parameters.yml"/>
-        <import resource="security.yml"/>
-    </imports>
-
-    <framework:config secret="%secret%">
-        <framework:router resource="%kernel.root_dir%/config/routing.xml"/>
-        <!-- ... -->
-    </framework:config>
-
-    <!-- Twig Configuration -->
-    <twig:config debug="%kernel.debug%" strict-variables="%kernel.debug%"/>
-
-    <!-- ... -->
-
----
-
-# PHP Configuration
-
-### Example:
-
-    !php
-    $this->import('parameters.yml');
-    $this->import('security.yml');
-
-    $container->loadFromExtension('framework', array(
-        'secret' => '%secret%',
-        'router' => array(
-            'resource' => '%kernel.root_dir%/config/routing.php'
-        ),
-        // ...
-    ));
-
-    // Twig Configuration
-    $container->loadFromExtension('twig', array(
-        'debug'            => '%kernel.debug%',
-        'strict_variables' => '%kernel.debug%',
-    ));
-
-    // ...
-
----
-
-# The Rules (Well... My Rules)
+# The Rules (Symfony Best Practices)
 
 The **main configuration** MUST be written in `YAML`:
 
@@ -407,21 +398,25 @@ The **main configuration** MUST be written in `YAML`:
         debug:            "%kernel.debug%"
         strict_variables: "%kernel.debug%"
 
-The **routing definition** MUST be written in `YAML`:
+The **routing definition** MUST be written using annotations:
 
-    !yaml
-    # app/config/routing.yml
-    hello:
-        pattern:  /hello
-        defaults: { _controller: AcmeDemoBundle:Main:hello }
+    !php
+    /**
+     * @Route("/lucky/number")
+     */
+    public function numberAction()
+    {
+    // ...
 
-The **DI Container configuration** MUST be written in `XML`:
+
+The **DI Container configuration** MUST be written in `YAML`:
 
     !xml
-    <services>
-        <service id="acme_demo.controllers.main"
-            class="Acme\DemoBundle\MainController" />
-    </services>
+    # app/config/services.yml
+    # ...
+    services:
+        my_service:
+            class: 'AppBundle\MyService'
 
 ---
 
@@ -467,11 +462,11 @@ In order to use a bundle in your application, you need to register it in the
     !php
     public function registerBundles()
     {
-        $bundles = array(
+        $bundles = [
             // ...
 
             new My\AwesomeBundle\MyAwesomeBundle(),
-        );
+        ];
 
         // ...
     }
@@ -480,7 +475,7 @@ In order to use a bundle in your application, you need to register it in the
 
 # Bundle: Directory Structure
 
-Recommended structure for a bundle:
+Recommended structure for a **public** bundle:
 
     !text
     XXX/...
@@ -488,8 +483,6 @@ Recommended structure for a bundle:
             DemoBundle.php
             Controller/
             Resources/
-                meta/
-                    LICENSE
                 config/
                 doc/
                     index.rst
@@ -497,8 +490,9 @@ Recommended structure for a bundle:
                 views/
                 public/
             Tests/
+        LICENSE
 
-The `DemoBundle` class is mandatory, and both `Resources/meta/LICENSE` and
+The `DemoBundle` class is mandatory, and both `LICENSE` and
 `Resources/doc/index.rst` files should be present.
 
 The `XXX` directory(ies) reflects the namespace structure of the bundle.
@@ -581,9 +575,9 @@ Then, you can register your bundle:
     // app/AppKernel.php
     public function registerBundles()
     {
-        $bundles = array(
+        $bundles = [
             new Acme\MyFirstBundle\AcmeMyFirstBundle(),
-        );
+        ];
 
         return $bundles;
     }
@@ -621,16 +615,18 @@ Creating a page is a three-step process involving a _route_, a _controller_, and
 (optionally) a _template_.
 
 Each project contains just a few main directories: `web/` (web assets and the
-front controllers), `app/` (configuration), `src/` (your bundles), and `vendor/`
-(third-party code).
+front controllers), `app/` (configuration and non PHP code), `src/` (your PHP code),
+and `vendor/` (third-party code).
 
 Each feature in Symfony (including the Symfony framework core) is organized
 into a **bundle**, which is a structured set of files for that feature.
+An app should have only one main bundle stored in the directory `src/AppBundle`.
 
-The configuration for each bundle lives in the `Resources/config` directory of the
-bundle and can be specified in `YAML`, `XML` or `PHP`.
+The global application configuration lives in the `app/config/` directory and can be
+specified in `YAML` (preferred), `XML` or `PHP`
 
-The global application configuration lives in the `app/config/` directory.
+The configuration for each bundle lives in the `Resources/config/` directory of the
+bundle.
 
 Each environment is accessible via a different front controller (e.g. `app.php`
 and `app_dev.php`) and loads a different configuration file.

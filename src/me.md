@@ -2,36 +2,22 @@
 
 ---
 
-# William DURAND
+# Kévin Dunglas
 
-PhD student at Michelin / LIMOS
-
-Graduated from IUT and ISIMA
-
-Worked at:
-
-* [Nelmio](http://nelm.io) (Zürich, Switzerland);
-* [e-TF1](http://www.tf1.fr/) (Paris, France);
-* [Prizee.com](http://prizee.com) (Clermont-Fd, France).
-
-Open-Source evangelist:
-
-* Lead developer of [Geocoder](http://geocoder-php.org/), and [several other
-  projects](https://github.com/willdurand);
-* (Inactive?) Contributor on Symfony.
+* Founder of [Les-Tilleuls.coop](https://les-tilleuls.coop)
+* [Symfony](https://symfony.com) core-team
+* [API Platform](https://api-platform.com) creator
 
 <p class="center">
-    <i class="fa fa-twitter"></i> <a href="https://twitter.com/couac">twitter.com/couac</a>
+    <i class="fa fa-twitter"></i> <a href="https://twitter.com/dunglas">twitter.com/dunglas</a>
     &nbsp;|&nbsp;
-    <i class="fa fa-github"></i> <a href="https://github.com/willdurand">github.com/willdurand</a>
+    <i class="fa fa-github"></i> <a href="https://github.com/dunglas">github.com/dunglas</a>
     &nbsp;|&nbsp;
-    <i class="fa fa-globe"></i> <a href="http://www.williamdurand.fr">williamdurand.fr</a>
+    <i class="fa fa-globe"></i> <a href="https://dunglas.fr">dunglas.fr</a>
 </p>
 
 ---
 
-# [edu@drnd.me](mailto:edu@drnd.me)
+# [kevin@les-tilleuls.coop](mailto:kevin@les-tilleuls.coop)
 
 ---
-
-# ![](images/clermontech.png)
