@@ -4,9 +4,9 @@
 
 # William DURAND
 
-PhD student / **CTO TailorDev**
+PhD / **CTO TailorDev**
 
-Graduated from IUT and ISIMA. Worked at:
+Graduated from IUT, ISIMA, Blaise Pascal University. Worked at:
 
 * [Michelin](http://www.michelin.fr/) (Clermont-Fd, France);
 * [Nelmio](http://nelm.io) (Zürich, Switzerland);
