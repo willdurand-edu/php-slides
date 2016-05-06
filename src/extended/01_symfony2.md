@@ -44,7 +44,7 @@ Symfony is built on powerful concepts:
 
 ![](../images/symfony-github.png)
 
-It has been written by [~1290 developers](http://symfony.com/contributors/code).
+It has been written by [~1502 developers](http://symfony.com/contributors/code).
 
 Open Source, **MIT** licensed.
 
