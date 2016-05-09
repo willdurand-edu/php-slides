@@ -300,7 +300,7 @@ web content assembly at the reverse proxy level. The reverse proxy analyses the
 HTML code, parses ESI specific markup and assembles the final result before
 flushing it to the client.
 
-![](https://www.varnish-software.com/static/book/_images/esi.png)
+![](../images/esi.png)
 
     !html
     <esi:include src="user.php" />

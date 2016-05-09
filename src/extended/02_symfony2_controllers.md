@@ -55,9 +55,7 @@ Every route must have a `_controller` parameter, which dictates **which controll
 should be executed when that route is matched**.
 
 This parameter uses a simple string pattern called the **logical controller name**.
-The pattern has three parts, each separated by a colon:
-
-    bundle:controller:action
+The pattern has three parts, each separated by a colon: `bundle:controller:action`.
 
 For example, a `_controller` value of `AcmeBlogBundle:Blog:show` means:
 
