@@ -61,14 +61,14 @@ have any mandatory dependencies.
 There are ~30 components, including:
 
     !text
-    BrowserKit              EventDispatcher     OptionsResolver     Translation
-    ClassLoader             ExpressionLanguage  Process             VarDumper
-    Config                  Filesystem          PropertyAccess      Yaml
-    Console                 Finder              Routing
-    CssSelector             Form                Security
-    Debug                   HttpFoundation      Serializer
-    DependencyInjection     HttpKernel          Stopwatch
-    DomCrawler              Intl                Templating
+	BrowserKit              EventDispatcher     OptionsResolver     Templating
+	ClassLoader             ExpressionLanguage  Process             Translation
+	Config                  Filesystem          PropertyAccess      VarDumper
+	Console                 Finder              PropertyInfo        Yaml
+	CssSelector             Form                Routing
+	Debug                   HttpFoundation      Security
+	DependencyInjection     HttpKernel          Serializer
+	DomCrawler              Intl                Stopwatch
 
 ---
 
@@ -80,7 +80,7 @@ component into your `composer.json` file:
     !yaml
     {
         "require": {
-            "symfony/yaml": "~2.6"
+            "symfony/yaml": "~3.0"
         }
     }
 
@@ -182,7 +182,7 @@ applications** without imposing on your application.
     $request = Request::createFromGlobals();
     $path    = $request->getPathInfo();
 
-    if (in_array($path, array('', '/'))) {
+    if (in_array($path, ['', '/'])) {
         $response = new Response('Welcome to the homepage.');
     } elseif ('/hello' === $path) {
         $response = new Response('hello, World!');
@@ -212,9 +212,9 @@ information from the request and routing configuration you've created.
     # app/config/routing.yml
     hello:
         pattern:  /hello
-        defaults: { _controller: AcmeDemoBundle:Main:hello }
+        defaults: { _controller: AppBundle:Main:hello }
 
-The `AcmeDemoBundle:Main:hello` string is a short syntax that points to a
+The `AppBundle:Main:hello` string is a short syntax that points to a
 specific PHP method named `helloAction()` inside a class called
 `MainController`.
 
@@ -236,8 +236,8 @@ to suffix each method with `Action`.
 Also, each controller should be suffixed with `Controller`.
 
     !php
-    // src/Acme/DemoBundle/Controller/MainController.php
-    namespace Acme\DemoBundle\Controller;
+    // src/AppBundle/Controller/MainController.php
+    namespace AppBundle\Controller;
 
     use Symfony\Component\HttpFoundation\Response;
 
@@ -251,26 +251,42 @@ Also, each controller should be suffixed with `Controller`.
 
 ---
 
-# A Symfony Project
+# A Symfony Project (1/2)
 
-**Recommended** structure of a Symfony project:
+**Recommended** structure of a Symfony (3.x) project:
 
     !text
     path/to/project/
         app/
-            cache/
             config/
-            logs/
+			Resources/
+				views/
+		bin/
+			console
         src/
             ...
+		tests/
+            ...
+		var/
+			cache/
+			logs/
+			sessions/
         vendor/
             ...
         web/
             app.php
             ...
 
-* `app/` contains the application kernel, and the configuration;
+---
+
+# A Symfony Project (2/2)
+
+Each directory has its own purpose (and set of files):
+
+* `app/` contains the application kernel, views, and the configuration;
 * `src/` contains your **bundles**;
+* `tests/` contains your tests;
+* `var/` contains files that change often (like in Unix systems);
 * `vendor/` contains your dependencies;
 * `web/` contains your front controllers and your assets.
 
@@ -288,12 +304,12 @@ This is the **central part** of your application:
     {
         public function registerBundles()
         {
-            $bundles = array(
+            $bundles = [
                 new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
                 // ...
-            );
+            ];
 
-            if (in_array($this->getEnvironment(), array('dev', 'test'))) {
+            if (in_array($this->getEnvironment(), ['dev', 'test'])) {
                 $bundles[] = // dev bundle;
             }
 
@@ -334,14 +350,14 @@ again, a convention is just **A** way to do things, not **THE** way to do them.
         - { resource: security.yml }
 
     framework:
-        secret: "%secret%"
-        router: { resource: "%kernel.root_dir%/config/routing.yml" }
+        secret: '%secret%'
+        router: { resource: '%kernel.root_dir%/config/routing.yml' }
         # ...
 
     # Twig Configuration
     twig:
-        debug:            "%kernel.debug%"
-        strict_variables: "%kernel.debug%"
+        debug:            '%kernel.debug%'
+        strict_variables: '%kernel.debug%'
 
     # ...
 
@@ -378,19 +394,19 @@ again, a convention is just **A** way to do things, not **THE** way to do them.
     $this->import('parameters.yml');
     $this->import('security.yml');
 
-    $container->loadFromExtension('framework', array(
+    $container->loadFromExtension('framework', [
         'secret' => '%secret%',
-        'router' => array(
+        'router' => [
             'resource' => '%kernel.root_dir%/config/routing.php'
-        ),
+        ],
         // ...
-    ));
+    ]);
 
     // Twig Configuration
-    $container->loadFromExtension('twig', array(
+    $container->loadFromExtension('twig', [
         'debug'            => '%kernel.debug%',
         'strict_variables' => '%kernel.debug%',
-    ));
+    ]);
 
     // ...
 
@@ -404,8 +420,8 @@ The **main configuration** MUST be written in `YAML`:
     # app/config/config.yml
     # ...
     twig:
-        debug:            "%kernel.debug%"
-        strict_variables: "%kernel.debug%"
+        debug:            '%kernel.debug%'
+		strict_variables: '%kernel.debug%'
 
 The **routing definition** MUST be written in `YAML`:
 
@@ -413,14 +429,14 @@ The **routing definition** MUST be written in `YAML`:
     # app/config/routing.yml
     hello:
         pattern:  /hello
-        defaults: { _controller: AcmeDemoBundle:Main:hello }
+        defaults: { _controller: AppBundle:Main:hello }
 
 The **DI Container configuration** MUST be written in `XML`:
 
     !xml
     <services>
         <service id="acme_demo.controllers.main"
-            class="Acme\DemoBundle\MainController" />
+            class="AppBundle\MainController" />
     </services>
 
 ---
@@ -488,8 +504,6 @@ Recommended structure for a bundle:
             DemoBundle.php
             Controller/
             Resources/
-                meta/
-                    LICENSE
                 config/
                 doc/
                     index.rst
@@ -497,8 +511,9 @@ Recommended structure for a bundle:
                 views/
                 public/
             Tests/
+			LICENSE
 
-The `DemoBundle` class is mandatory, and both `Resources/meta/LICENSE` and
+The `DemoBundle` class is mandatory, and both `LICENSE` and
 `Resources/doc/index.rst` files should be present.
 
 The `XXX` directory(ies) reflects the namespace structure of the bundle.
@@ -637,4 +652,4 @@ and `app_dev.php`) and loads a different configuration file.
 
 ---
 
-# Read The [Best Practices](http://symfony.com/doc/current/best_practices/index.html)!
+# Read The [Best Practices](https://symfony.com/doc/current/best_practices/index.html)!

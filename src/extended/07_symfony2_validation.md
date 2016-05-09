@@ -27,7 +27,7 @@ specification](http://jcp.org/en/jsr/detail?id=303).
 Given the following class:
 
     !php
-    namespace Acme\DemoBundle\Entity;
+    namespace AppBundle\Entity;
 
     class Author
     {
@@ -37,8 +37,8 @@ Given the following class:
 You can configure a set of **constraints** on it:
 
     !yaml
-    # src/Acme/DemoBundle/Resources/config/validation.yml
-    Acme\DemoBundle\Entity\Author:
+    # src/AppBundle/Resources/config/validation.yml
+    AppBundle\Entity\Author:
         properties:
             name:
                 - NotBlank: ~
@@ -63,7 +63,7 @@ You can configure a set of **constraints** on it:
 If the `$name` property is empty, you will see the following error message:
 
     !text
-    Acme\DemoBundle\Author.name:
+    AppBundle\Author.name:
         This value should not be blank
 
 Most of the time, you won't interact directly with the validator service or need
@@ -92,8 +92,8 @@ Validating class properties is the most basic validation technique. Symfony
 **allows you to validate private, protected or public properties**.
 
     !yaml
-    # src/Acme/DemoBundle/Resources/config/validation.yml
-    Acme\DemoBundle\Entity\Author:
+    # src/AppBundle/Resources/config/validation.yml
+    AppBundle\Entity\Author:
         properties:
             firstName:
                 - NotBlank: ~
@@ -115,8 +115,8 @@ allows you to add a constraint to any public method whose name starts with
 `get` or `is`.
 
     !yaml
-    # src/Acme/DemoBundle/Resources/config/validation.yml
-    Acme\DemoBundle\Entity\Author:
+    # src/AppBundle/Resources/config/validation.yml
+    AppBundle\Entity\Author:
         getters:
             passwordLegal:
                 - "False":
@@ -143,8 +143,8 @@ then apply validation against just one group of constraints.
 ### Example
 
     !yaml
-    # src/Acme/DemoBundle/Resources/config/validation.yml
-    Acme\DemoBundle\Entity\User:
+    # src/AppBundle/Resources/config/validation.yml
+    AppBundle\Entity\User:
         properties:
             email:
                 - Email:    { groups: [ registration ] }

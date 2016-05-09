@@ -13,7 +13,7 @@
             ->add('birthday', 'date')
             ->getForm();
 
-        return $this->render('AcmeDemoBundle:Default:new.html.twig', [
+        return $this->render('default/new.html.twig', [
             'form' => $form->createView(),
         ]);
     }
@@ -29,7 +29,7 @@ View layer. It's achieved through the `createView()` method.
 <br />
 
     !jinja
-    {# src/Acme/DemoBundle/Resources/views/Default/new.html.twig #}
+    {# src/AppBundle/Resources/views/Default/new.html.twig #}
     <form action="{{ path('acme_demo.default_new') }}" method="post">
         {{ form_widget(form) }}
 
@@ -107,7 +107,7 @@ Everything is a **Type**!
         public function setDefaultOptions(OptionsResolverInterface $resolver)
         {
             $resolver->setDefaults([
-                'data_class' => 'My\Person',
+                'data_class' => My\Person::class,
             ]);
         }
 
@@ -125,7 +125,7 @@ Everything is a **Type**!
     public function newAction(Request $request)
     {
         $person = new Person();
-        $form   = $this->createForm(new PersonType(), $person);
+        $form   = $this->createForm(PersonType::class, $person);
 
         if ($form->handleRequest($request)->isValid()) {
             $person->save(); // insert a new `person`
@@ -181,7 +181,7 @@ the `newAction()` and the `updateAction()`:
      */
     private function processForm(Request $request, Person $person)
     {
-        $form = $this->createForm(new PersonType(), $person);
+        $form = $this->createForm(PersonType::class, $person);
 
         if ($form->handleRequest($request)->isValid()) {
             $person->save();
@@ -189,7 +189,7 @@ the `newAction()` and the `updateAction()`:
             return $this->redirect($this->generateUrl('success'));
         }
 
-        return $this->render('AcmeDemoBundle:Default:new.html.twig', [
+        return $this->render('default/new.html.twig', [
             'form' => $form->createView(),
         ]);
     }

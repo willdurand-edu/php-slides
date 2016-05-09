@@ -29,13 +29,13 @@ client.
     # app/config/routing.yml
     homepage:
         pattern:  /
-        defaults: { _controller: AcmeDemoBundle:Hello:index }
+        defaults: { _controller: AppBundle:Hello:index }
 
 ### Controller Implementation
 
     !php
-    // src/Acme/DemoBundle/Controller/HelloController.php
-    namespace Acme\DemoBundle\Controller;
+    // src/AppBundle/Controller/HelloController.php
+    namespace AppBundle\Controller;
 
     use Symfony\Component\HttpFoundation\Response;
 
@@ -75,10 +75,10 @@ Notice that Symfony adds the string `Controller` to the class name (`Blog` =>
 ### Routing Definition
 
     !yaml
-    # src/Acme/DemoBundle/Resources/config/routing.yml
+    # src/AppBundle/Resources/config/routing.yml
     acme_demo.hello_hello:
         pattern:  /hello/{name}
-        defaults: { _controller: AcmeDemoBundle:Hello:hello }
+        defaults: { _controller: AppBundle:Hello:hello }
         requirements:
             _method: GET
 
@@ -86,7 +86,7 @@ Notice that Symfony adds the string `Controller` to the class name (`Blog` =>
 ### Controller Implementation
 
     !php
-    // src/Acme/DemoBundle/Controller/HelloController.php
+    // src/AppBundle/Controller/HelloController.php
 
     class HelloController
     {
@@ -146,7 +146,7 @@ it might need:
 
     !php
     return $this->render(
-        'AcmeDemoBundle:Hello:hello.html.twig', array('name' => $name)
+        'hello/hello.html.twig', array('name' => $name)
     );
 
 ---
@@ -193,10 +193,10 @@ maps a `pattern` (or `path` as of Symfony.2) to a `_controller`:
     # app/config/routing.yml
     homepage:
         pattern:  /
-        defaults: { _controller: AcmeDemoBundle:Hello:index }
+        defaults: { _controller: AppBundle:Hello:index }
 
 This route matches the homepage (`/`) and maps it to the
-`AcmeDemoBundle:Hello:index` controller.
+`AppBundle:Hello:index` controller.
 
 > [http://symfony.com/doc/master/book/routing.html](http://symfony.com/doc/master/book/routing.html)
 
@@ -251,10 +251,10 @@ the `{page}` parameter must be a digit (i.e. a number).
 ### HTTP Method Requirements
 
     !yaml
-    # src/Acme/DemoBundle/Resources/config/routing.yml
+    # src/AppBundle/Resources/config/routing.yml
     acme_demo.hello_hello:
         pattern:  /hello/{name}
-        defaults: { _controller: AcmeDemoBundle:Hello:hello }
+        defaults: { _controller: AppBundle:Hello:hello }
         methods:  [ GET ]
         # methods:  [ GET, POST ]
 
@@ -271,7 +271,7 @@ located in the bundle itself, and you should just require it:
     !yaml
     # app/config/routing.yml
     acme_demo:
-        resource: "@AcmeDemoBundle/Resources/config/routing.yml"
+        resource: '@AppBundle/Resources/config/routing.yml'
 
 
 ### Prefixing Imported Routes
@@ -279,8 +279,8 @@ located in the bundle itself, and you should just require it:
     !yaml
     # app/config/routing.yml
     acme_demo:
-        resource: "@AcmeDemoBundle/Resources/config/routing.yml"
-        prefix: /demo
+        resource: '@AppBundle/Resources/config/routing.yml'
+        prefix:   /demo
 
 The string `/demo` now be prepended to the path of each route loaded from
 the new routing resource.

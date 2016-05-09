@@ -192,8 +192,8 @@ The key to template inheritance is the `{% extends %}` tag.
 A **child template** might look like this:
 
     !jinja
-    {# src/Acme/BlogBundle/Resources/views/Blog/index.html.twig #}
-    {% extends '::base.html.twig' %}
+    {# app/Resources/views/Blog/index.html.twig #}
+    {% extends 'base.html.twig' %}
 
     {% block title %}My cool blog posts{% endblock %}
 
@@ -203,10 +203,6 @@ A **child template** might look like this:
             <p>{{ entry.body }}</p>
         {% endfor %}
     {% endblock %}
-
-The **parent template** is identified by a special string syntax
-(`::base.html.twig`) which indicates that the template lives in
-`app/Resources/views/`.
 
 If you need to get the content of a block from the **parent template**, you can
 use the `{{ parent() }}` function.
@@ -218,9 +214,10 @@ use the `{{ parent() }}` function.
 By default, templates can live in two different locations:
 
 * `app/Resources/views/`: The applications views directory can contain
-  application-wide **base templates** (i.e. your application's layouts) as well as
-  **templates that override bundle templates**;
-* `path/to/bundle/Resources/views/`: Each **bundle houses its templates** in its
+  application-wide **base templates** (i.e. your application's layouts),
+  templates specific to your app as well as  **templates that override bundle
+  templates**;
+* `path/to/bundle/Resources/views/`: Each **(public) bundle houses its templates** in its
   `Resources/views` directory (and subdirectories).
 
 Symfony uses a `bundle:controller:template` string syntax for templates.
@@ -279,23 +276,6 @@ overridden by copying each from the `Resources/views/` directory of the
 
 ---
 
-# The Three-Level Approach
-
-1. Create a `app/Resources/views/base.html.twig` file that contains the **main
-layout** for your application (like in the previous example). Internally, this
-template is called `::base.html.twig`.
-
-2. Create a template for each **section** of your site. The _AcmeBlogBundle_
-would have a template called `AcmeBlogBundle::layout.html.twig` that contains
-only blog section-specific elements.
-
-3. Create **individual templates for each page** and make each extend the
-appropriate section template. For example, the "index" page would be called
-something close to `AcmeBlogBundle:Blog:index.html.twig` and list the actual
-blog posts.
-
----
-
 # Twig Into Symfony
 
 ---
@@ -309,7 +289,7 @@ blog posts.
     {
         // ...
 
-        return $this->render('AcmeBlogBundle:Blog:index.html.twig', array(
+        return $this->render('blog/index.html.twig', array(
             'posts' => $posts,
         ));
     }
@@ -318,7 +298,7 @@ blog posts.
 
     !php
     $engine  = $this->container->get('templating');
-    $content = $engine->render('AcmeBlogBundle:Blog:index.html.twig', array(
+    $content = $engine->render('blog/index.html.twig', array(
         'posts' => $posts,
     ));
 
@@ -333,7 +313,7 @@ Assuming the following routing definition:
     !yaml
     homepage:
         path:     /
-        defaults: { _controller: AcmeDemoBundle:Hello:index }
+        defaults: { _controller: AppBundle:Hello:index }
 
     acme_blog.post_show:
         path:     /posts/{slug}

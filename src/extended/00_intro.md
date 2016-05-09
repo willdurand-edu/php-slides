@@ -15,4 +15,4 @@ easier and more productive.
 Most of the time, a framework implements many kinds of **design patterns**.
 
 > Read more: [Symfony explained to a
-> Developer](http://symfony.com/symfony-explained-to-a-developer).
+> Developer](https://symfony.com/symfony-explained-to-a-developer).

@@ -5,7 +5,7 @@
 # Built-in Commands (1/2)
 
     !bash
-    $ php app/console
+    $ php bin/console
 
 
 ### Global Options
@@ -13,21 +13,21 @@
 You can get **help** information:
 
     !bash
-    $ php app/console help cmd
-    $ php app/console cmd --help
-    $ php app/console cmd -h
+    $ php bin/console help cmd
+    $ php bin/console cmd --help
+    $ php bin/console cmd -h
 
 You can get more verbose messages:
 
     !bash
-    $ php app/console cmd --verbose
-    $ php app/console cmd -v [-vv] [-vvv]
+    $ php bin/console cmd --verbose
+    $ php bin/console cmd -v [-vv] [-vvv]
 
 You can suppress output:
 
     !bash
-    $ php app/console cmd --quiet
-    $ php app/console cmd -q
+    $ php bin/console cmd --quiet
+    $ php bin/console cmd -q
 
 ---
 
@@ -44,19 +44,18 @@ You can suppress output:
       config:dump-reference   Dumps default configuration for an extension
     container
       container:debug         Displays current services for an application
-    init
-      init:acl                Mounts ACL tables in the database
+    debug
+      debug:container         Displays current services for an application
+      debug:router            Displays current routes for an application
     router
-      router:debug            Displays current routes for an application
-      router:dump-apache      Dumps all routes as Apache rewrite rules
       router:match            Helps debug routes by simulating a path info
                               match
     server
       server:run              Runs PHP built-in web server
     translation
       translation:update      Updates the translation file
-    twig
-      twig:lint               Lints a template and outputs encountered
+    lint
+      lint:twig               Lints a template and outputs encountered
                               errors
 
 ---
@@ -67,8 +66,8 @@ Create a `Command` directory inside your bundle and create a php file suffixed
 with `Command.php` for each command that you want to provide:
 
     !php
-    // src/Acme/DemoBundle/Command/GreetCommand.php
-    namespace Acme\DemoBundle\Command;
+    // src/AppBundle/Command/GreetCommand.php
+    namespace AppBundle\Command;
 
     use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
     use Symfony\Component\Console\Input\InputInterface;
@@ -141,7 +140,7 @@ setup to accept a value or simply as a boolean flag without a value.
 ### Usage
 
     !php
-    // php app/console demo:greet --yell
+    // php bin/console demo:greet --yell
 
     if ($input->getOption('yell')) {
         // ...
@@ -168,7 +167,7 @@ setup to accept a value or simply as a boolean flag without a value.
 ### Usage
 
     !php
-    // php app/console demo:greet --iterations=10
+    // php bin/console demo:greet --iterations=10
 
     for ($i = 0; $i < $input->getOption('iterations'); $i++) {
     }

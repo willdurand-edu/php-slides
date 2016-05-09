@@ -286,8 +286,8 @@ them as extensions.
 ### Debugging Services
 
     !bash
-    $ php app/console container:debug
+    $ php bin/console debug:container
 
-    $ php app/console container:debug foo
+    $ php bin/console debug:container foo
 
 > [http://symfony.com/doc/master/book/service_container.html](http://symfony.com/doc/master/book/service_container.html)
