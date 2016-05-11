@@ -3098,7 +3098,7 @@ The pattern has three parts, each separated by a colon: <code>bundle:controller:
             
             <section><h3>Routing Definition</h3>
 <div class="highlight"><pre><span class="c1"># src/AppBundle/Resources/config/routing.yml</span>
-<span class="l-Scalar-Plain">acme_demo.hello_hello</span><span class="p-Indicator">:</span>
+<span class="l-Scalar-Plain">app.hello_hello</span><span class="p-Indicator">:</span>
     <span class="l-Scalar-Plain">pattern</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">/hello/{name}</span>
     <span class="l-Scalar-Plain">defaults</span><span class="p-Indicator">:</span> <span class="p-Indicator">{</span> <span class="nv">_controller</span><span class="p-Indicator">:</span> <span class="nv">AppBundle</span><span class="p-Indicator">:</span><span class="nv">Hello</span><span class="p-Indicator">:</span><span class="nv">hello</span> <span class="p-Indicator">}</span>
     <span class="l-Scalar-Plain">requirements</span><span class="p-Indicator">:</span>
@@ -3466,7 +3466,7 @@ set to <code>1</code>. <code>/blog/2</code> will also match, giving the <code>pa
 the <code>{page}</code> parameter must be a digit (i.e. a number).</p>
 <h3>HTTP Method Requirements</h3>
 <div class="highlight"><pre><span class="c1"># src/AppBundle/Resources/config/routing.yml</span>
-<span class="l-Scalar-Plain">acme_demo.hello_hello</span><span class="p-Indicator">:</span>
+<span class="l-Scalar-Plain">app.hello_hello</span><span class="p-Indicator">:</span>
     <span class="l-Scalar-Plain">pattern</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">/hello/{name}</span>
     <span class="l-Scalar-Plain">defaults</span><span class="p-Indicator">:</span> <span class="p-Indicator">{</span> <span class="nv">_controller</span><span class="p-Indicator">:</span> <span class="nv">AppBundle</span><span class="p-Indicator">:</span><span class="nv">Hello</span><span class="p-Indicator">:</span><span class="nv">hello</span> <span class="p-Indicator">}</span>
     <span class="l-Scalar-Plain">methods</span><span class="p-Indicator">:</span>  <span class="p-Indicator">[</span> <span class="nv">GET</span> <span class="p-Indicator">]</span>
@@ -3509,13 +3509,13 @@ be <code>app/config/routing.yml</code>.</p>
 <p>In order to respect the "bundle" principle, the routing configuration should be
 located in the bundle itself, and you should just require it:</p>
 <div class="highlight"><pre><span class="c1"># app/config/routing.yml</span>
-<span class="l-Scalar-Plain">acme_demo</span><span class="p-Indicator">:</span>
+<span class="l-Scalar-Plain">appa</span><span class="p-Indicator">:</span>
     <span class="l-Scalar-Plain">resource</span><span class="p-Indicator">:</span> <span class="s">&#39;@AppBundle/Resources/config/routing.yml&#39;</span>
 </pre></div>
 
 <h3>Prefixing Imported Routes</h3>
 <div class="highlight"><pre><span class="c1"># app/config/routing.yml</span>
-<span class="l-Scalar-Plain">acme_demo</span><span class="p-Indicator">:</span>
+<span class="l-Scalar-Plain">app</span><span class="p-Indicator">:</span>
     <span class="l-Scalar-Plain">resource</span><span class="p-Indicator">:</span> <span class="s">&#39;@AppBundle/Resources/config/routing.yml&#39;</span>
     <span class="l-Scalar-Plain">prefix</span><span class="p-Indicator">:</span>   <span class="l-Scalar-Plain">/demo</span>
 </pre></div>
@@ -3558,17 +3558,17 @@ the new routing resource.</p></section>
 </pre></div>
 
 <h3>Relative URLs</h3>
-<div class="highlight"><pre><span class="nv">$router</span><span class="o">-&gt;</span><span class="na">generate</span><span class="p">(</span><span class="s1">&#39;acme_demo.hello_hello&#39;</span><span class="p">,</span> <span class="p">[</span> <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;will&#39;</span><span class="err"> </span><span class="p">]);</span>
+<div class="highlight"><pre><span class="nv">$router</span><span class="o">-&gt;</span><span class="na">generate</span><span class="p">(</span><span class="s1">&#39;app.hello_hello&#39;</span><span class="p">,</span> <span class="p">[</span> <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;will&#39;</span><span class="err"> </span><span class="p">]);</span>
 <span class="c1">// /hello/will</span>
 </pre></div>
 
 <h3>Absolute URLs</h3>
-<div class="highlight"><pre><span class="nv">$router</span><span class="o">-&gt;</span><span class="na">generate</span><span class="p">(</span><span class="s1">&#39;acme_demo.hello_hello&#39;</span><span class="p">,</span> <span class="p">[</span> <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;will&#39;</span> <span class="p">],</span> <span class="k">true</span><span class="p">);</span>
+<div class="highlight"><pre><span class="nv">$router</span><span class="o">-&gt;</span><span class="na">generate</span><span class="p">(</span><span class="s1">&#39;app.hello_hello&#39;</span><span class="p">,</span> <span class="p">[</span> <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;will&#39;</span> <span class="p">],</span> <span class="k">true</span><span class="p">);</span>
 <span class="c1">// http://example.com/hello/will</span>
 </pre></div>
 
 <h3>Query String</h3>
-<div class="highlight"><pre><span class="nv">$router</span><span class="o">-&gt;</span><span class="na">generate</span><span class="p">(</span><span class="s1">&#39;acme_demo.hello_hello&#39;</span><span class="p">,</span> <span class="p">[</span>
+<div class="highlight"><pre><span class="nv">$router</span><span class="o">-&gt;</span><span class="na">generate</span><span class="p">(</span><span class="s1">&#39;app.hello_hello&#39;</span><span class="p">,</span> <span class="p">[</span>
     <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;will&#39;</span><span class="p">,</span> <span class="s1">&#39;some&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;thing&#39;</span>
 <span class="p">]);</span>
 <span class="c1">// /hello/will?some=thing</span>
