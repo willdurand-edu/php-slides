@@ -374,7 +374,7 @@ component provided by Symfony.
     !yaml
     # app/config/routing.yml
     my_route_to_expose:
-        pattern:  /foo/{id}/bar
+        path:  /foo/{id}/bar
         defaults: { _controller: FooBarBundle:Foo:bar }
         options:
             expose: true

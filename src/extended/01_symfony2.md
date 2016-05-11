@@ -211,7 +211,7 @@ information from the request and routing configuration you've created.
     !yaml
     # app/config/routing.yml
     hello:
-        pattern:  /hello
+        path:  /hello
         defaults: { _controller: AppBundle:Main:hello }
 
 The `AppBundle:Main:hello` string is a short syntax that points to a
@@ -428,7 +428,7 @@ The **routing definition** MUST be written in `YAML`:
     !yaml
     # app/config/routing.yml
     hello:
-        pattern:  /hello
+        path:  /hello
         defaults: { _controller: AppBundle:Main:hello }
 
 The **DI Container configuration** MUST be written in `XML`:

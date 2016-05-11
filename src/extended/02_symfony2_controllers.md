@@ -28,7 +28,7 @@ client.
     !yaml
     # app/config/routing.yml
     homepage:
-        pattern:  /
+        path:  /
         defaults: { _controller: AppBundle:Hello:index }
 
 ### Controller Implementation
@@ -75,7 +75,7 @@ Notice that Symfony adds the string `Controller` to the class name (`Blog` =>
     !yaml
     # src/AppBundle/Resources/config/routing.yml
     app.hello_hello:
-        pattern:  /hello/{name}
+        path:  /hello/{name}
         defaults: { _controller: AppBundle:Hello:hello }
         requirements:
             _method: GET
@@ -185,12 +185,12 @@ The Symfony router lets you define URLs that you map to different areas of
 your application.
 
 A _route_ is a map from a URL path to a controller. Each route is named, and
-maps a `pattern` (or `path` as of Symfony.2) to a `_controller`:
+maps a `path` to a `_controller`:
 
     !yaml
     # app/config/routing.yml
     homepage:
-        pattern:  /
+        path:  /
         defaults: { _controller: AppBundle:Hello:index }
 
 This route matches the homepage (`/`) and maps it to the
@@ -251,7 +251,7 @@ the `{page}` parameter must be a digit (i.e. a number).
     !yaml
     # src/AppBundle/Resources/config/routing.yml
     app.hello_hello:
-        pattern:  /hello/{name}
+        path:  /hello/{name}
         defaults: { _controller: AppBundle:Hello:hello }
         methods:  [ GET ]
         # methods:  [ GET, POST ]
