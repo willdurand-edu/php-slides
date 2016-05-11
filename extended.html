@@ -2029,7 +2029,7 @@ applications</strong> without imposing on your application.</p>
 information from the request and routing configuration you've created.</p>
 <div class="highlight"><pre><span class="c1"># app/config/routing.yml</span>
 <span class="l-Scalar-Plain">hello</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">pattern</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">/hello</span>
+    <span class="l-Scalar-Plain">path</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">/hello</span>
     <span class="l-Scalar-Plain">defaults</span><span class="p-Indicator">:</span> <span class="p-Indicator">{</span> <span class="nv">_controller</span><span class="p-Indicator">:</span> <span class="nv">AppBundle</span><span class="p-Indicator">:</span><span class="nv">Main</span><span class="p-Indicator">:</span><span class="nv">hello</span> <span class="p-Indicator">}</span>
 </pre></div>
 
@@ -2473,7 +2473,7 @@ again, a convention is just <strong>A</strong> way to do things, not <strong>THE
 <p>The <strong>routing definition</strong> MUST be written in <code>YAML</code>:</p>
 <div class="highlight"><pre><span class="c1"># app/config/routing.yml</span>
 <span class="l-Scalar-Plain">hello</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">pattern</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">/hello</span>
+    <span class="l-Scalar-Plain">path</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">/hello</span>
     <span class="l-Scalar-Plain">defaults</span><span class="p-Indicator">:</span> <span class="p-Indicator">{</span> <span class="nv">_controller</span><span class="p-Indicator">:</span> <span class="nv">AppBundle</span><span class="p-Indicator">:</span><span class="nv">Main</span><span class="p-Indicator">:</span><span class="nv">hello</span> <span class="p-Indicator">}</span>
 </pre></div>
 
@@ -3003,7 +3003,7 @@ client.</li>
             <section><h3>Routing Definition</h3>
 <div class="highlight"><pre><span class="c1"># app/config/routing.yml</span>
 <span class="l-Scalar-Plain">homepage</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">pattern</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">/</span>
+    <span class="l-Scalar-Plain">path</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">/</span>
     <span class="l-Scalar-Plain">defaults</span><span class="p-Indicator">:</span> <span class="p-Indicator">{</span> <span class="nv">_controller</span><span class="p-Indicator">:</span> <span class="nv">AppBundle</span><span class="p-Indicator">:</span><span class="nv">Hello</span><span class="p-Indicator">:</span><span class="nv">index</span> <span class="p-Indicator">}</span>
 </pre></div>
 
@@ -3099,7 +3099,7 @@ The pattern has three parts, each separated by a colon: <code>bundle:controller:
             <section><h3>Routing Definition</h3>
 <div class="highlight"><pre><span class="c1"># src/AppBundle/Resources/config/routing.yml</span>
 <span class="l-Scalar-Plain">app.hello_hello</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">pattern</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">/hello/{name}</span>
+    <span class="l-Scalar-Plain">path</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">/hello/{name}</span>
     <span class="l-Scalar-Plain">defaults</span><span class="p-Indicator">:</span> <span class="p-Indicator">{</span> <span class="nv">_controller</span><span class="p-Indicator">:</span> <span class="nv">AppBundle</span><span class="p-Indicator">:</span><span class="nv">Hello</span><span class="p-Indicator">:</span><span class="nv">hello</span> <span class="p-Indicator">}</span>
     <span class="l-Scalar-Plain">requirements</span><span class="p-Indicator">:</span>
         <span class="l-Scalar-Plain">_method</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">GET</span>
@@ -3331,10 +3331,10 @@ it might need:</p>
             <section><p>The Symfony router lets you define URLs that you map to different areas of
 your application.</p>
 <p>A <em>route</em> is a map from a URL path to a controller. Each route is named, and
-maps a <code>pattern</code> (or <code>path</code> as of Symfony.2) to a <code>_controller</code>:</p>
+maps a <code>path</code> to a <code>_controller</code>:</p>
 <div class="highlight"><pre><span class="c1"># app/config/routing.yml</span>
 <span class="l-Scalar-Plain">homepage</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">pattern</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">/</span>
+    <span class="l-Scalar-Plain">path</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">/</span>
     <span class="l-Scalar-Plain">defaults</span><span class="p-Indicator">:</span> <span class="p-Indicator">{</span> <span class="nv">_controller</span><span class="p-Indicator">:</span> <span class="nv">AppBundle</span><span class="p-Indicator">:</span><span class="nv">Hello</span><span class="p-Indicator">:</span><span class="nv">index</span> <span class="p-Indicator">}</span>
 </pre></div>
 
@@ -3467,7 +3467,7 @@ the <code>{page}</code> parameter must be a digit (i.e. a number).</p>
 <h3>HTTP Method Requirements</h3>
 <div class="highlight"><pre><span class="c1"># src/AppBundle/Resources/config/routing.yml</span>
 <span class="l-Scalar-Plain">app.hello_hello</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">pattern</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">/hello/{name}</span>
+    <span class="l-Scalar-Plain">path</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">/hello/{name}</span>
     <span class="l-Scalar-Plain">defaults</span><span class="p-Indicator">:</span> <span class="p-Indicator">{</span> <span class="nv">_controller</span><span class="p-Indicator">:</span> <span class="nv">AppBundle</span><span class="p-Indicator">:</span><span class="nv">Hello</span><span class="p-Indicator">:</span><span class="nv">hello</span> <span class="p-Indicator">}</span>
     <span class="l-Scalar-Plain">methods</span><span class="p-Indicator">:</span>  <span class="p-Indicator">[</span> <span class="nv">GET</span> <span class="p-Indicator">]</span>
     <span class="c1"># methods:  [ GET, POST ]</span>
@@ -4426,7 +4426,7 @@ be able to generate URL with given parameters like you can do with the <em>Route
 component provided by Symfony.</p>
 <div class="highlight"><pre><span class="c1"># app/config/routing.yml</span>
 <span class="l-Scalar-Plain">my_route_to_expose</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">pattern</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">/foo/{id}/bar</span>
+    <span class="l-Scalar-Plain">path</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">/foo/{id}/bar</span>
     <span class="l-Scalar-Plain">defaults</span><span class="p-Indicator">:</span> <span class="p-Indicator">{</span> <span class="nv">_controller</span><span class="p-Indicator">:</span> <span class="nv">FooBarBundle</span><span class="p-Indicator">:</span><span class="nv">Foo</span><span class="p-Indicator">:</span><span class="nv">bar</span> <span class="p-Indicator">}</span>
     <span class="l-Scalar-Plain">options</span><span class="p-Indicator">:</span>
         <span class="l-Scalar-Plain">expose</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span>
