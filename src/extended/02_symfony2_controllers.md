@@ -74,7 +74,7 @@ Notice that Symfony adds the string `Controller` to the class name (`Blog` =>
 
     !yaml
     # src/AppBundle/Resources/config/routing.yml
-    acme_demo.hello_hello:
+    app.hello_hello:
         pattern:  /hello/{name}
         defaults: { _controller: AppBundle:Hello:hello }
         requirements:
