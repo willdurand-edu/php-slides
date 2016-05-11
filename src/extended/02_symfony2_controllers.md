@@ -250,7 +250,7 @@ the `{page}` parameter must be a digit (i.e. a number).
 
     !yaml
     # src/AppBundle/Resources/config/routing.yml
-    acme_demo.hello_hello:
+    app.hello_hello:
         pattern:  /hello/{name}
         defaults: { _controller: AppBundle:Hello:hello }
         methods:  [ GET ]
@@ -268,7 +268,7 @@ located in the bundle itself, and you should just require it:
 
     !yaml
     # app/config/routing.yml
-    acme_demo:
+    appa:
         resource: '@AppBundle/Resources/config/routing.yml'
 
 
@@ -276,7 +276,7 @@ located in the bundle itself, and you should just require it:
 
     !yaml
     # app/config/routing.yml
-    acme_demo:
+    app:
         resource: '@AppBundle/Resources/config/routing.yml'
         prefix:   /demo
 
@@ -295,19 +295,19 @@ The `Router` is able to generate both relative and absolute URLs.
 ### Relative URLs
 
     !php
-    $router->generate('acme_demo.hello_hello', [ 'name' => 'will' ]);
+    $router->generate('app.hello_hello', [ 'name' => 'will' ]);
     // /hello/will
 
 ### Absolute URLs
 
     !php
-    $router->generate('acme_demo.hello_hello', [ 'name' => 'will' ], true);
+    $router->generate('app.hello_hello', [ 'name' => 'will' ], true);
     // http://example.com/hello/will
 
 ### Query String
 
     !php
-    $router->generate('acme_demo.hello_hello', [
+    $router->generate('app.hello_hello', [
         'name' => 'will', 'some' => 'thing'
     ]);
     // /hello/will?some=thing
