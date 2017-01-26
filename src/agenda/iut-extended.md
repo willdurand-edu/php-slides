@@ -4,10 +4,8 @@
     * Controllers
     * Templating
     * Dependency Injection
-    * Command Line
     * Forms
     * Validation
+    * Security
     * Translation
     * HTTP Cache
-* Stack PHP
-* Hack
